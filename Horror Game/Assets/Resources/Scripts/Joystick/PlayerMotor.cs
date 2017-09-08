@@ -12,11 +12,13 @@ public class PlayerMotor : MonoBehaviour
     public VirtualJoystick joystick;
     private Rigidbody thisRigidBody;
     private Transform camTransform;
+    private HandleCanvas handleCanvas;
 
     void Start ()
     {
         thisRigidBody = GetComponent<Rigidbody>();
         thisRigidBody.drag = drag;
+        handleCanvas = FindObjectOfType<HandleCanvas>();
     }
 
     void Update ()
@@ -29,12 +31,16 @@ public class PlayerMotor : MonoBehaviour
         Move();
     }
 
-    void Move()
+    public void Move()
     {
-        if (thisRigidBody.velocity.magnitude < 6)
+        if(handleCanvas.movementJoytickStop == false)
         {
-            thisRigidBody.velocity = (moveVector * moveSpeed);
+            if (thisRigidBody.velocity.magnitude < 6)
+            {              
+                thisRigidBody.velocity = (moveVector * moveSpeed);
+            }
         }
+        
     }
 
     Vector3 PoolInput()

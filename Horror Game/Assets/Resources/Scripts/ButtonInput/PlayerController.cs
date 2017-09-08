@@ -7,11 +7,11 @@ public class PlayerController : TouchManager
     #region variables
     public enum type
     {        
-        crouchButton, hideButton, pickupButton
+        crouchButton, hideButton, pickupButton, sprintButton
     };
     public type buttonType;
 
-    public Sprite crouchButtonSprite, hideButtonSprite, pickupButtonSprite;
+    public Sprite crouchButtonSprite, hideButtonSprite, pickupButtonSprite, sprintButtonSprite;
 
     public GameObject playerObj = null;
 
@@ -21,6 +21,11 @@ public class PlayerController : TouchManager
 
     public GameObject playerAnimObj;
     private HandleCanvas handleCanvas;
+
+    public CameraMotor cameraMotor;
+    private float sensitivityReduction = .1f;
+
+    public Transform dummyTest;
 
     #endregion
 
@@ -32,6 +37,7 @@ public class PlayerController : TouchManager
         }
         handleCanvas = FindObjectOfType<HandleCanvas>();
         buttonTexture = GetComponent<GUITexture>();
+        cameraMotor = FindObjectOfType<CameraMotor>();
     }   
 
     void Update()
@@ -54,6 +60,10 @@ public class PlayerController : TouchManager
         {
             GetComponent<GUITexture>().texture = pickupButtonSprite.texture;
         }
+        else if(buttonType == type.sprintButton)
+        {
+            GetComponent<GUITexture>().texture = sprintButtonSprite.texture;
+        }
     }
     #endregion
 
@@ -65,7 +75,7 @@ public class PlayerController : TouchManager
             switch (buttonType)
             {
                 case type.crouchButton:
-                    //crouch
+                    //crouch animation, waiting for arms 
                     break;
             }
             switch (buttonType)
@@ -79,7 +89,7 @@ public class PlayerController : TouchManager
                 case type.pickupButton:
                     //pickup item
                     break;
-            }
+            }           
         }
     }
     void OnSecondTouchBegan()
@@ -89,7 +99,7 @@ public class PlayerController : TouchManager
             switch (buttonType)
             {
                 case type.crouchButton:
-                    playerObj.transform.localScale = new Vector3(playerObj.transform.localPosition.x, .5f);
+                    //crouch animation, waiting for arms 
                     break;
             }
             switch (buttonType)
@@ -103,7 +113,7 @@ public class PlayerController : TouchManager
                 case type.pickupButton:
                     //pickup item
                     break;
-            }
+            }           
         }
     }
     #endregion
@@ -112,15 +122,47 @@ public class PlayerController : TouchManager
     void OnFirstTouch()
     {
         if (handleCanvas.canUseButtons == true && handleCanvas.inAnimationState == false)
-        {           
-            //switch (buttonType)
+        {
+            switch (buttonType)
+            {
+                case type.sprintButton:
+                    //sprint
+                    if (handleCanvas.movementJoytickStop == false)
+                    {
+                        if (playerObj.GetComponent<Rigidbody>().velocity.magnitude < 8)
+                        {
+                            Vector3 dir = Camera.main.transform.TransformDirection(Vector3.forward);
+                            dir.Set(dir.x, 0, dir.z);
+                            playerObj.GetComponent<Rigidbody>().velocity = (dir * 7);
+                            cameraMotor.sensitivityX = sensitivityReduction;
+                            cameraMotor.sensitivityY = sensitivityReduction;
+                        }
+                    }
+                    break;
+            }          
         }
     }
     void OnSecondTouch()
     {
         if (handleCanvas.canUseButtons == true && handleCanvas.inAnimationState == false)
         {
-            //switch (buttonType)
+            switch (buttonType)
+            {
+                case type.sprintButton:
+                    //sprint
+                    if (handleCanvas.movementJoytickStop == false)
+                    {
+                        if (playerObj.GetComponent<Rigidbody>().velocity.magnitude < 8)
+                        {
+                            Vector3 dir = Camera.main.transform.TransformDirection(Vector3.forward);
+                            dir.Set(dir.x, 0, dir.z);
+                            playerObj.GetComponent<Rigidbody>().velocity = (dir * 7);
+                            cameraMotor.sensitivityX = sensitivityReduction;
+                            cameraMotor.sensitivityY = sensitivityReduction;
+                        }
+                    }                    
+                    break;                   
+            }
         }
     }
     #endregion
@@ -129,10 +171,14 @@ public class PlayerController : TouchManager
     void OnFirstTouchEnded()
     {
         isOn = 0;
+        cameraMotor.sensitivityX = .6f;
+        cameraMotor.sensitivityY = .6f;
     }
     void OnSecondTouchEnded()
     {
         isOn = 0;
+        cameraMotor.sensitivityX = .6f;
+        cameraMotor.sensitivityY = .6f;
     }
     #endregion
 }

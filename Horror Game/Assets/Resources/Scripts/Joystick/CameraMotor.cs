@@ -16,8 +16,11 @@ public class CameraMotor : MonoBehaviour
     private float distance = .001f;
     private float currentX = 0f;
     private float currentY = 0f;
-    private float sensitivityX = .6f;
-    private float sensitivityY = .6f;
+    public float sensitivityX = .6f;
+    public float sensitivityY = .6f;
+
+    public GameObject playerAnimObj;
+    public Transform cameraChild;
 
     void Start ()
     {
@@ -27,11 +30,13 @@ public class CameraMotor : MonoBehaviour
 	
 	void Update ()
     {
+        Vector3 animDir = new Vector3(cameraChild.position.x, playerAnimObj.transform.position.y, cameraChild.position.z);
+        playerAnimObj.transform.LookAt(animDir);
+
         currentX += joystick.Horizontal() * sensitivityX;
 
         currentY += -joystick.Vertical() * sensitivityY;
         currentY = ClampAngle(currentY, Y_ANGLE_MIN, Y_ANGLE_MAX);
-        Debug.Log(currentY);
     }
 
     void LateUpdate()
@@ -41,7 +46,7 @@ public class CameraMotor : MonoBehaviour
         camTransform.position = this.transform.position + rotation * dir;
 
         camTransform.LookAt(thisTransform.position);
-
+        
         camTransform.position = thisTransform.position;
     }
 

@@ -6,14 +6,11 @@ public class HandleCanvas : MonoBehaviour
 {
     public bool canUseButtons;
     public bool inAnimationState;
+    public bool movementJoytickStop;
 
     void Start()
     {
-
-    }
-
-    void Update()
-    {
-
+        canUseButtons = true;
+        inAnimationState = false;
     }
 }
