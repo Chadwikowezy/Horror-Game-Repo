@@ -13,12 +13,17 @@ public class PlayerMotor : MonoBehaviour
     private Rigidbody thisRigidBody;
     private Transform camTransform;
     private HandleCanvas handleCanvas;
+    private AnimationManager animManager;
+
+    public bool isSprinting;
+    public bool isCrouching = false;
 
     void Start ()
     {
         thisRigidBody = GetComponent<Rigidbody>();
         thisRigidBody.drag = drag;
         handleCanvas = FindObjectOfType<HandleCanvas>();
+        animManager = FindObjectOfType<AnimationManager>();
     }
 
     void Update ()
@@ -38,6 +43,10 @@ public class PlayerMotor : MonoBehaviour
             if (thisRigidBody.velocity.magnitude < 6)
             {              
                 thisRigidBody.velocity = (moveVector * moveSpeed);
+            }
+            else
+            {
+                animManager.SetAnimState("idle");
             }
         }
         
