@@ -21,6 +21,8 @@ public class CameraMotor : MonoBehaviour
 
     public GameObject playerAnimObj;
     public Transform cameraChild;
+    public bool isAnimating;
+    public Transform crouchLOS_OBJ;
 
     void Start ()
     {
@@ -45,8 +47,14 @@ public class CameraMotor : MonoBehaviour
         Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
         camTransform.position = this.transform.position + rotation * dir;
 
-        camTransform.LookAt(thisTransform.position);
-        
+        if (isAnimating == false)
+        {           
+            camTransform.LookAt(thisTransform.position);
+        }
+        else if (isAnimating == true)
+        {
+            camTransform.LookAt(crouchLOS_OBJ.position);
+        }
         camTransform.position = thisTransform.position;
     }
 

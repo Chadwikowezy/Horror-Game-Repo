@@ -22,10 +22,13 @@ public class PlayerController : TouchManager
     public GameObject playerAnimObj;
     private HandleCanvas handleCanvas;
 
-    public CameraMotor cameraMotor;
+    private CameraMotor cameraMotor;
+    private PlayerMotor playerMotor;
     private float sensitivityReduction = .1f;
 
     public Transform dummyTest;
+
+    private AnimationManager animManager;
 
     #endregion
 
@@ -38,6 +41,8 @@ public class PlayerController : TouchManager
         handleCanvas = FindObjectOfType<HandleCanvas>();
         buttonTexture = GetComponent<GUITexture>();
         cameraMotor = FindObjectOfType<CameraMotor>();
+        animManager = FindObjectOfType<AnimationManager>();
+        playerMotor = FindObjectOfType<PlayerMotor>();
     }   
 
     void Update()
@@ -75,7 +80,18 @@ public class PlayerController : TouchManager
             switch (buttonType)
             {
                 case type.crouchButton:
-                    //crouch animation, waiting for arms 
+                    if (playerMotor.isSprinting == false && playerMotor.isCrouching == false)
+                    {
+                        playerMotor.isCrouching = true;
+                        playerMotor.moveSpeed = 2.5f;
+                        animManager.SetAnimState("crouch");
+                        playerObj.tag = "Player_Crouched";
+                        cameraMotor.isAnimating = true;
+                    }
+                    else if(playerMotor.isCrouching == true)
+                    {
+                        StartCoroutine(ReturnToLookPos());
+                    }
                     break;
             }
             switch (buttonType)
@@ -99,7 +115,18 @@ public class PlayerController : TouchManager
             switch (buttonType)
             {
                 case type.crouchButton:
-                    //crouch animation, waiting for arms 
+                    if (playerMotor.isSprinting == false && playerMotor.isCrouching == false)
+                    {
+                        playerMotor.isCrouching = true;
+                        playerMotor.moveSpeed = 2.5f;
+                        animManager.SetAnimState("crouch");
+                        playerObj.tag = "Player_Crouched";
+                        cameraMotor.isAnimating = true;
+                    }
+                    else if (playerMotor.isCrouching == true)
+                    {
+                        StartCoroutine(ReturnToLookPos());
+                    }
                     break;
             }
             switch (buttonType)
@@ -127,10 +154,11 @@ public class PlayerController : TouchManager
             {
                 case type.sprintButton:
                     //sprint
-                    if (handleCanvas.movementJoytickStop == false)
+                    if (handleCanvas.movementJoytickStop == false && playerMotor.isCrouching == false)
                     {
                         if (playerObj.GetComponent<Rigidbody>().velocity.magnitude < 8)
                         {
+                            playerMotor.isSprinting = true;
                             Vector3 dir = Camera.main.transform.TransformDirection(Vector3.forward);
                             dir.Set(dir.x, 0, dir.z);
                             playerObj.GetComponent<Rigidbody>().velocity = (dir * 7);
@@ -138,8 +166,9 @@ public class PlayerController : TouchManager
                             cameraMotor.sensitivityY = sensitivityReduction;
                         }
                     }
-                    break;
-            }          
+                    break;                
+            }
+            
         }
     }
     void OnSecondTouch()
@@ -150,10 +179,11 @@ public class PlayerController : TouchManager
             {
                 case type.sprintButton:
                     //sprint
-                    if (handleCanvas.movementJoytickStop == false)
+                    if (handleCanvas.movementJoytickStop == false && playerMotor.isCrouching == false)
                     {
                         if (playerObj.GetComponent<Rigidbody>().velocity.magnitude < 8)
                         {
+                            playerMotor.isSprinting = true;
                             Vector3 dir = Camera.main.transform.TransformDirection(Vector3.forward);
                             dir.Set(dir.x, 0, dir.z);
                             playerObj.GetComponent<Rigidbody>().velocity = (dir * 7);
@@ -163,6 +193,7 @@ public class PlayerController : TouchManager
                     }                    
                     break;                   
             }
+            
         }
     }
     #endregion
@@ -170,15 +201,36 @@ public class PlayerController : TouchManager
     #region isOnCounter
     void OnFirstTouchEnded()
     {
-        isOn = 0;
-        cameraMotor.sensitivityX = .6f;
-        cameraMotor.sensitivityY = .6f;
+        isOn = 0;     
+        if(playerMotor.isSprinting == true)
+        {
+            cameraMotor.sensitivityX = .6f;
+            cameraMotor.sensitivityY = .6f;
+            playerMotor.isSprinting = false;
+        }
+        
     }
     void OnSecondTouchEnded()
     {
-        isOn = 0;
-        cameraMotor.sensitivityX = .6f;
-        cameraMotor.sensitivityY = .6f;
+        isOn = 0;     
+        if (playerMotor.isSprinting == true)
+        {
+            cameraMotor.sensitivityX = .6f;
+            cameraMotor.sensitivityY = .6f;
+            playerMotor.isSprinting = false;
+        }
+        
+    }
+
+    IEnumerator ReturnToLookPos()
+    {
+        yield return new WaitForSeconds(.4f);
+        playerMotor.isCrouching = false;
+        animManager.SetAnimState("idle");
+        playerObj.tag = "Player";
+        playerMotor.moveSpeed = 5f;
+        yield return new WaitForSeconds(.4f);
+        cameraMotor.isAnimating = false;
     }
     #endregion
 }
