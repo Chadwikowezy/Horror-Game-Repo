@@ -84,7 +84,7 @@ public class PlayerController : TouchManager
                     {
                         playerMotor.isCrouching = true;
                         playerMotor.moveSpeed = 2.5f;
-                        animManager.SetAnimState("crouch");
+                        //animManager.SetAnimState("crouch");
                         playerObj.tag = "Player_Crouched";
                         cameraMotor.isAnimating = true;
                     }
@@ -119,7 +119,7 @@ public class PlayerController : TouchManager
                     {
                         playerMotor.isCrouching = true;
                         playerMotor.moveSpeed = 2.5f;
-                        animManager.SetAnimState("crouch");
+                        //animManager.SetAnimState("crouch");
                         playerObj.tag = "Player_Crouched";
                         cameraMotor.isAnimating = true;
                     }
@@ -226,7 +226,7 @@ public class PlayerController : TouchManager
     {
         yield return new WaitForSeconds(.4f);
         playerMotor.isCrouching = false;
-        animManager.SetAnimState("idle");
+        //animManager.SetAnimState("idle");
         playerObj.tag = "Player";
         playerMotor.moveSpeed = 5f;
         yield return new WaitForSeconds(.4f);
