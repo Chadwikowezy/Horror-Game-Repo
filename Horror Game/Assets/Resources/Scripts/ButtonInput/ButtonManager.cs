@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : TouchManager
+public class ButtonManager : TouchManager
 {
     #region variables
     public enum type
@@ -28,7 +28,7 @@ public class PlayerController : TouchManager
 
     public Transform dummyTest;
 
-    private AnimationManager animManager;
+    //private AnimationManager animManager;
 
     #endregion
 
@@ -41,9 +41,9 @@ public class PlayerController : TouchManager
         handleCanvas = FindObjectOfType<HandleCanvas>();
         buttonTexture = GetComponent<GUITexture>();
         cameraMotor = FindObjectOfType<CameraMotor>();
-        animManager = FindObjectOfType<AnimationManager>();
+        //animManager = FindObjectOfType<AnimationManager>();
         playerMotor = FindObjectOfType<PlayerMotor>();
-    }   
+    }
 
     void Update()
     {

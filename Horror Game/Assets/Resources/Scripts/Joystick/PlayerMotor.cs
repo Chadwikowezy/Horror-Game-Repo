@@ -13,7 +13,7 @@ public class PlayerMotor : MonoBehaviour
     private Rigidbody thisRigidBody;
     private Transform camTransform;
     private HandleCanvas handleCanvas;
-    private AnimationManager animManager;
+    //private AnimationManager animManager;
 
     public bool isSprinting;
     public bool isCrouching = false;
@@ -23,7 +23,7 @@ public class PlayerMotor : MonoBehaviour
         thisRigidBody = GetComponent<Rigidbody>();
         thisRigidBody.drag = drag;
         handleCanvas = FindObjectOfType<HandleCanvas>();
-        animManager = FindObjectOfType<AnimationManager>();
+        //animManager = FindObjectOfType<AnimationManager>();
     }
 
     void Update ()
@@ -46,7 +46,7 @@ public class PlayerMotor : MonoBehaviour
             }
             else
             {
-                animManager.SetAnimState("idle");
+                //animManager.SetAnimState("idle");
             }
         }
         

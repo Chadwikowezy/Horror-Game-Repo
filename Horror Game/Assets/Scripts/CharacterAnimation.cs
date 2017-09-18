@@ -15,7 +15,6 @@ public class CharacterAnimation : MonoBehaviour
     }
     private void Update()
     {
-        print(_rb.velocity.magnitude);
         AnimateLeftArm();
     }
 

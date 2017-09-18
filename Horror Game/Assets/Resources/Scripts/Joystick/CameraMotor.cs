@@ -45,7 +45,7 @@ public class CameraMotor : MonoBehaviour
     {
         Vector3 dir = new Vector3(0, .75f, -distance);
         Quaternion rotation = Quaternion.Euler(currentY, currentX, 0);
-        camTransform.position = this.transform.position + rotation * dir;
+        camTransform.position = Vector3.Lerp(transform.position, this.transform.position + rotation * dir, 1);
 
         if (isAnimating == false)
         {           
