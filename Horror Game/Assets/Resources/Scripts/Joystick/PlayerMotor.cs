@@ -18,6 +18,8 @@ public class PlayerMotor : MonoBehaviour
     public bool isSprinting;
     public bool isCrouching = false;
 
+    public bool isGrounded;
+
     void Start ()
     {
         thisRigidBody = GetComponent<Rigidbody>();
@@ -38,7 +40,7 @@ public class PlayerMotor : MonoBehaviour
 
     public void Move()
     {
-        if(handleCanvas.movementJoytickStop == false)
+        if(handleCanvas.movementJoytickStop == false && isGrounded == true)
         {
             if (thisRigidBody.velocity.magnitude < 6)
             {              
@@ -80,6 +82,21 @@ public class PlayerMotor : MonoBehaviour
         {
             camTransform = GetComponent<CameraMotor>().camTransform;
             return moveVector;
+        }
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if(other.gameObject.tag == "Ground")
+        {
+            isGrounded = true;
+        }
+    }
+    void OnCollisionExit(Collision other)
+    {
+        if(other.gameObject.tag == "Ground")
+        {
+            isGrounded = false;
         }
     }
 }

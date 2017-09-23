@@ -154,7 +154,7 @@ public class ButtonManager : TouchManager
             {
                 case type.sprintButton:
                     //sprint
-                    if (handleCanvas.movementJoytickStop == false && playerMotor.isCrouching == false)
+                    if (handleCanvas.movementJoytickStop == false && playerMotor.isCrouching == false && playerMotor.isGrounded == true)
                     {
                         if (playerObj.GetComponent<Rigidbody>().velocity.magnitude < 8)
                         {
@@ -179,7 +179,7 @@ public class ButtonManager : TouchManager
             {
                 case type.sprintButton:
                     //sprint
-                    if (handleCanvas.movementJoytickStop == false && playerMotor.isCrouching == false)
+                    if (handleCanvas.movementJoytickStop == false && playerMotor.isCrouching == false && playerMotor.isGrounded == true)
                     {
                         if (playerObj.GetComponent<Rigidbody>().velocity.magnitude < 8)
                         {
