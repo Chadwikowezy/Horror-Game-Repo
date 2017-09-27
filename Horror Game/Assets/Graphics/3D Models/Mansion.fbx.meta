@@ -1,0 +1,562 @@
+fileFormatVersion: 2
+guid: 3f48d70f6564eda44af7160ae34f6ca5
+timeCreated: 1506474153
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: _Mansion Blueprint
+    100002: Back Wall
+    100004: Back Wall.001
+    100006: Back Wall.002
+    100008: Bath Wall 1
+    100010: Bath Wall 2
+    100012: Bathroom
+    100014: Bathroom 2
+    100016: Bedroom 1
+    100018: Bedroom 2
+    100020: Closet Wall 1
+    100022: Closet Wall 1.001
+    100024: Closet Wall 2
+    100026: Closet Wall 2.001
+    100028: Closet Wall 3
+    100030: Closet Wall 4
+    100032: Dining Wall 1
+    100034: Dining Wall 2
+    100036: Entry Way
+    100038: Formal Dining
+    100040: Front Wall
+    100042: Half Wall
+    100044: Half Wall 1
+    100046: Half Wall 2
+    100048: Half Wall.001
+    100050: Half Wall.002
+    100052: Kitchen
+    100054: Kitchen Wall 1
+    100056: Left Back Wall
+    100058: Left Wall
+    100060: Left Wall.001
+    100062: Library
+    100064: //RootNode
+    100066: Mansion Floor
+    100068: Master Room
+    100070: Master Room Wall 1
+    100072: Mid Wal
+    100074: Movie Snack Room
+    100076: Outer Walls
+    100078: Railing
+    100080: Railing.001
+    100082: Railing.002
+    100084: Railing.003
+    100086: Railing.004
+    100088: Railing.005
+    100090: Railing.006
+    100092: Railing.007
+    100094: Railing.008
+    100096: Railing.009
+    100098: Railing.010
+    100100: Railing.011
+    100102: Railing.012
+    100104: Railing.013
+    100106: Railing.014
+    100108: Railing.015
+    100110: Railing.016
+    100112: Railing.017
+    100114: Railing.018
+    100116: Railing.019
+    100118: Railing.020
+    100120: Railing.021
+    100122: Railing.022
+    100124: Railing.023
+    100126: Railing.024
+    100128: Railing.025
+    100130: Railing.026
+    100132: Railing.027
+    100134: Railing.028
+    100136: Right Back Wall
+    100138: Right Hall Wall
+    100140: Right Hallway
+    100142: Sitting Area
+    100144: Theater
+    100146: Wall 1
+    100148: Wall 1.001
+    100150: Wall 1.002
+    100152: Wall 1.003
+    100154: Wall 2
+    100156: Wall 2.001
+    100158: Wall 2.002
+    100160: Wall 2.003
+    100162: Wall 3
+    100164: Wall 3.001
+    100166: Wall 4
+    100168: Wall 4.001
+    100170: Wall 5
+    100172: Wall 6
+    100174: Wall 7
+    100176: Wall 8
+    100178: Walll 3
+    400000: _Mansion Blueprint
+    400002: Back Wall
+    400004: Back Wall.001
+    400006: Back Wall.002
+    400008: Bath Wall 1
+    400010: Bath Wall 2
+    400012: Bathroom
+    400014: Bathroom 2
+    400016: Bedroom 1
+    400018: Bedroom 2
+    400020: Closet Wall 1
+    400022: Closet Wall 1.001
+    400024: Closet Wall 2
+    400026: Closet Wall 2.001
+    400028: Closet Wall 3
+    400030: Closet Wall 4
+    400032: Dining Wall 1
+    400034: Dining Wall 2
+    400036: Entry Way
+    400038: Formal Dining
+    400040: Front Wall
+    400042: Half Wall
+    400044: Half Wall 1
+    400046: Half Wall 2
+    400048: Half Wall.001
+    400050: Half Wall.002
+    400052: Kitchen
+    400054: Kitchen Wall 1
+    400056: Left Back Wall
+    400058: Left Wall
+    400060: Left Wall.001
+    400062: Library
+    400064: //RootNode
+    400066: Mansion Floor
+    400068: Master Room
+    400070: Master Room Wall 1
+    400072: Mid Wal
+    400074: Movie Snack Room
+    400076: Outer Walls
+    400078: Railing
+    400080: Railing.001
+    400082: Railing.002
+    400084: Railing.003
+    400086: Railing.004
+    400088: Railing.005
+    400090: Railing.006
+    400092: Railing.007
+    400094: Railing.008
+    400096: Railing.009
+    400098: Railing.010
+    400100: Railing.011
+    400102: Railing.012
+    400104: Railing.013
+    400106: Railing.014
+    400108: Railing.015
+    400110: Railing.016
+    400112: Railing.017
+    400114: Railing.018
+    400116: Railing.019
+    400118: Railing.020
+    400120: Railing.021
+    400122: Railing.022
+    400124: Railing.023
+    400126: Railing.024
+    400128: Railing.025
+    400130: Railing.026
+    400132: Railing.027
+    400134: Railing.028
+    400136: Right Back Wall
+    400138: Right Hall Wall
+    400140: Right Hallway
+    400142: Sitting Area
+    400144: Theater
+    400146: Wall 1
+    400148: Wall 1.001
+    400150: Wall 1.002
+    400152: Wall 1.003
+    400154: Wall 2
+    400156: Wall 2.001
+    400158: Wall 2.002
+    400160: Wall 2.003
+    400162: Wall 3
+    400164: Wall 3.001
+    400166: Wall 4
+    400168: Wall 4.001
+    400170: Wall 5
+    400172: Wall 6
+    400174: Wall 7
+    400176: Wall 8
+    400178: Walll 3
+    2300000: Back Wall
+    2300002: Back Wall.001
+    2300004: Back Wall.002
+    2300006: Bath Wall 1
+    2300008: Bath Wall 2
+    2300010: Closet Wall 1
+    2300012: Closet Wall 1.001
+    2300014: Closet Wall 2
+    2300016: Closet Wall 2.001
+    2300018: Closet Wall 3
+    2300020: Closet Wall 4
+    2300022: Dining Wall 1
+    2300024: Dining Wall 2
+    2300026: Front Wall
+    2300028: Half Wall
+    2300030: Half Wall 1
+    2300032: Half Wall 2
+    2300034: Half Wall.001
+    2300036: Half Wall.002
+    2300038: Kitchen Wall 1
+    2300040: Left Back Wall
+    2300042: Left Wall
+    2300044: Left Wall.001
+    2300046: Mansion Floor
+    2300048: Master Room Wall 1
+    2300050: Mid Wal
+    2300052: Outer Walls
+    2300054: Railing
+    2300056: Railing.001
+    2300058: Railing.002
+    2300060: Railing.003
+    2300062: Railing.004
+    2300064: Railing.005
+    2300066: Railing.006
+    2300068: Railing.007
+    2300070: Railing.008
+    2300072: Railing.009
+    2300074: Railing.010
+    2300076: Railing.011
+    2300078: Railing.012
+    2300080: Railing.013
+    2300082: Railing.014
+    2300084: Railing.015
+    2300086: Railing.016
+    2300088: Railing.017
+    2300090: Railing.018
+    2300092: Railing.019
+    2300094: Railing.020
+    2300096: Railing.021
+    2300098: Railing.022
+    2300100: Railing.023
+    2300102: Railing.024
+    2300104: Railing.025
+    2300106: Railing.026
+    2300108: Railing.027
+    2300110: Railing.028
+    2300112: Right Back Wall
+    2300114: Right Hall Wall
+    2300116: Wall 1
+    2300118: Wall 1.001
+    2300120: Wall 1.002
+    2300122: Wall 1.003
+    2300124: Wall 2
+    2300126: Wall 2.001
+    2300128: Wall 2.002
+    2300130: Wall 2.003
+    2300132: Wall 3
+    2300134: Wall 3.001
+    2300136: Wall 4
+    2300138: Wall 4.001
+    2300140: Wall 5
+    2300142: Wall 6
+    2300144: Wall 7
+    2300146: Wall 8
+    2300148: Walll 3
+    3300000: Back Wall
+    3300002: Back Wall.001
+    3300004: Back Wall.002
+    3300006: Bath Wall 1
+    3300008: Bath Wall 2
+    3300010: Closet Wall 1
+    3300012: Closet Wall 1.001
+    3300014: Closet Wall 2
+    3300016: Closet Wall 2.001
+    3300018: Closet Wall 3
+    3300020: Closet Wall 4
+    3300022: Dining Wall 1
+    3300024: Dining Wall 2
+    3300026: Front Wall
+    3300028: Half Wall
+    3300030: Half Wall 1
+    3300032: Half Wall 2
+    3300034: Half Wall.001
+    3300036: Half Wall.002
+    3300038: Kitchen Wall 1
+    3300040: Left Back Wall
+    3300042: Left Wall
+    3300044: Left Wall.001
+    3300046: Mansion Floor
+    3300048: Master Room Wall 1
+    3300050: Mid Wal
+    3300052: Outer Walls
+    3300054: Railing
+    3300056: Railing.001
+    3300058: Railing.002
+    3300060: Railing.003
+    3300062: Railing.004
+    3300064: Railing.005
+    3300066: Railing.006
+    3300068: Railing.007
+    3300070: Railing.008
+    3300072: Railing.009
+    3300074: Railing.010
+    3300076: Railing.011
+    3300078: Railing.012
+    3300080: Railing.013
+    3300082: Railing.014
+    3300084: Railing.015
+    3300086: Railing.016
+    3300088: Railing.017
+    3300090: Railing.018
+    3300092: Railing.019
+    3300094: Railing.020
+    3300096: Railing.021
+    3300098: Railing.022
+    3300100: Railing.023
+    3300102: Railing.024
+    3300104: Railing.025
+    3300106: Railing.026
+    3300108: Railing.027
+    3300110: Railing.028
+    3300112: Right Back Wall
+    3300114: Right Hall Wall
+    3300116: Wall 1
+    3300118: Wall 1.001
+    3300120: Wall 1.002
+    3300122: Wall 1.003
+    3300124: Wall 2
+    3300126: Wall 2.001
+    3300128: Wall 2.002
+    3300130: Wall 2.003
+    3300132: Wall 3
+    3300134: Wall 3.001
+    3300136: Wall 4
+    3300138: Wall 4.001
+    3300140: Wall 5
+    3300142: Wall 6
+    3300144: Wall 7
+    3300146: Wall 8
+    3300148: Walll 3
+    4300000: Railing.028
+    4300002: Railing.027
+    4300004: Railing.026
+    4300006: Railing.025
+    4300008: Railing.024
+    4300010: Railing.023
+    4300012: Railing.022
+    4300014: Railing.021
+    4300016: Railing.020
+    4300018: Railing.019
+    4300020: Railing.018
+    4300022: Railing.017
+    4300024: Railing.016
+    4300026: Railing.015
+    4300028: Railing.014
+    4300030: Railing.013
+    4300032: Railing.012
+    4300034: Railing.011
+    4300036: Railing.010
+    4300038: Railing.009
+    4300040: Railing.008
+    4300042: Railing.007
+    4300044: Railing.006
+    4300046: Railing.005
+    4300048: Railing.004
+    4300050: Railing.003
+    4300052: Railing.002
+    4300054: Railing.001
+    4300056: Railing
+    4300058: Walll 3
+    4300060: Wall 2.002
+    4300062: Wall 1.003
+    4300064: Half Wall
+    4300066: Wall 2
+    4300068: Wall 1
+    4300070: Back Wall
+    4300072: Closet Wall 2
+    4300074: Closet Wall 1
+    4300076: Half Wall.002
+    4300078: Back Wall.002
+    4300080: Left Wall
+    4300082: Front Wall
+    4300084: Back Wall.001
+    4300086: Left Wall.001
+    4300088: Wall 8
+    4300090: Wall 7
+    4300092: Wall 6
+    4300094: Wall 5
+    4300096: Wall 3.001
+    4300098: Wall 2.003
+    4300100: Wall 1.001
+    4300102: Wall 4
+    4300104: Wall 2.001
+    4300106: Wall 1.002
+    4300108: Wall 3
+    4300110: Dining Wall 1
+    4300112: Dining Wall 2
+    4300114: Half Wall.001
+    4300116: Kitchen Wall 1
+    4300118: Wall 4.001
+    4300120: Mid Wal
+    4300122: Left Back Wall
+    4300124: Right Back Wall
+    4300126: Right Hall Wall
+    4300128: Half Wall 2
+    4300130: Half Wall 1
+    4300132: Closet Wall 1.001
+    4300134: Closet Wall 2.001
+    4300136: Closet Wall 3
+    4300138: Closet Wall 4
+    4300140: Bath Wall 2
+    4300142: Bath Wall 1
+    4300144: Master Room Wall 1
+    4300146: Mansion Floor
+    4300148: Outer Walls
+    6400000: Back Wall
+    6400002: Back Wall.001
+    6400004: Back Wall.002
+    6400006: Bath Wall 1
+    6400008: Bath Wall 2
+    6400010: Closet Wall 1
+    6400012: Closet Wall 1.001
+    6400014: Closet Wall 2
+    6400016: Closet Wall 2.001
+    6400018: Closet Wall 3
+    6400020: Closet Wall 4
+    6400022: Dining Wall 1
+    6400024: Dining Wall 2
+    6400026: Front Wall
+    6400028: Half Wall
+    6400030: Half Wall 1
+    6400032: Half Wall 2
+    6400034: Half Wall.001
+    6400036: Half Wall.002
+    6400038: Kitchen Wall 1
+    6400040: Left Back Wall
+    6400042: Left Wall
+    6400044: Left Wall.001
+    6400046: Mansion Floor
+    6400048: Master Room Wall 1
+    6400050: Mid Wal
+    6400052: Outer Walls
+    6400054: Railing
+    6400056: Railing.001
+    6400058: Railing.002
+    6400060: Railing.003
+    6400062: Railing.004
+    6400064: Railing.005
+    6400066: Railing.006
+    6400068: Railing.007
+    6400070: Railing.008
+    6400072: Railing.009
+    6400074: Railing.010
+    6400076: Railing.011
+    6400078: Railing.012
+    6400080: Railing.013
+    6400082: Railing.014
+    6400084: Railing.015
+    6400086: Railing.016
+    6400088: Railing.017
+    6400090: Railing.018
+    6400092: Railing.019
+    6400094: Railing.020
+    6400096: Railing.021
+    6400098: Railing.022
+    6400100: Railing.023
+    6400102: Railing.024
+    6400104: Railing.025
+    6400106: Railing.026
+    6400108: Railing.027
+    6400110: Railing.028
+    6400112: Right Back Wall
+    6400114: Right Hall Wall
+    6400116: Wall 1
+    6400118: Wall 1.001
+    6400120: Wall 1.002
+    6400122: Wall 1.003
+    6400124: Wall 2
+    6400126: Wall 2.001
+    6400128: Wall 2.002
+    6400130: Wall 2.003
+    6400132: Wall 3
+    6400134: Wall 3.001
+    6400136: Wall 4
+    6400138: Wall 4.001
+    6400140: Wall 5
+    6400142: Wall 6
+    6400144: Wall 7
+    6400146: Wall 8
+    6400148: Walll 3
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 10
+    meshCompression: 0
+    addColliders: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
