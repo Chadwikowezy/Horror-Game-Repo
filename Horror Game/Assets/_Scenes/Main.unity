@@ -1411,6 +1411,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 564800193}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &576945443
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 576945445}
+  - component: {fileID: 576945444}
+  m_Layer: 0
+  m_Name: GenerateLoader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &576945444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 576945443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76784eeddbc4e3f42963c1208bd2d29a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fakeActorObj: {fileID: 1609008690682378, guid: 86ef31e0d0e15b843a8fa9a29ee045db,
+    type: 2}
+--- !u!4 &576945445
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 576945443}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &593917061
 GameObject:
   m_ObjectHideFlags: 0
@@ -5093,6 +5135,46 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1916063500}
+--- !u!1 &1924392409
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1924392411}
+  - component: {fileID: 1924392410}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1924392410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1924392409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9115f544d13661b419ca3f5a03ae4968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1924392411
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1924392409}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 17
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1949318625
 GameObject:
   m_ObjectHideFlags: 0
@@ -5400,11 +5482,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 169fba4755cf9ea4288e33ee8808594d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sectionOneCleared: 0
-  sectionTwoCleared: 0
-  sectionThreeCleared: 0
-  sectionFourCleared: 0
-  sectionFiveCleared: 0
+  masionPuzzle_F1_01: 0
+  masionPuzzle_F1_02: 0
+  masionPuzzle_F1_03: 0
+  masionPuzzle_F2_01: 0
+  masionPuzzle_F2_02: 0
+  masionPuzzle_F2_03: 0
+  mazePuzzle_01: 0
+  mazePuzzle_02: 0
+  mazePuzzle_03: 0
+  mazePuzzle_04: 0
 --- !u!1001 &2013373198
 Prefab:
   m_ObjectHideFlags: 0
@@ -5460,7 +5547,7 @@ GameObject:
   - component: {fileID: 2046149444}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

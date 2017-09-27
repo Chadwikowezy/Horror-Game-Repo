@@ -16,28 +16,4 @@ public class ToolsManager : MonoBehaviour
 
     public int knightsStatue = 0;
     public int keys = 0;
-
-
-    void Start ()
-    {
-        Image[] childrenOnToolbar = GetComponentsInChildren<Image>();
-
-		if(barEmpty == true)
-        {
-            foreach(Image toolbarChild in childrenOnToolbar)
-            {
-                if(toolbarChild != this)
-                {
-                    //toolbarChild.gameObject.SetActive(false);
-                }
-            }
-        }
-        else
-        {
-            foreach (Image toolbarChild in childrenOnToolbar)
-            {
-                //toolbarChild.gameObject.SetActive(true);
-            }
-        }
-	}
 }

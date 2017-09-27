@@ -1,0 +1,62 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using System.IO;
+
+public class SaveData : MonoBehaviour
+{
+    public static ActorContainer actorContainer = new ActorContainer();
+
+    public delegate void SerializeAction();
+    public static event SerializeAction OnLoaded;
+    public static event SerializeAction OnBeforeSave;
+
+    public static void Load(string path)
+    {
+        actorContainer = LoadActors(path);
+
+        foreach(ActorData data in actorContainer.actors)
+        {
+            GameController.GenerateActor(data, GameController.loaderPath, new Vector3(0, 0, 0), Quaternion.identity);
+        }
+        OnLoaded();
+
+        ClearActorList();
+    }
+
+    public static void Save(string path, ActorContainer actors)
+    {
+        OnBeforeSave();
+
+        SaveActors(path, actors);
+
+        ClearActorList();
+    }
+
+    public static void AddActorData(ActorData data)
+    {
+        actorContainer.actors.Add(data);
+    }
+
+    public static void ClearActorList()
+    {
+        actorContainer.actors.Clear();
+    }
+
+    private static ActorContainer LoadActors(string path)
+    {
+        string json = File.ReadAllText(path);
+
+        return JsonUtility.FromJson<ActorContainer>(json);
+    }
+
+    private static void SaveActors(string path, ActorContainer actors)
+    {
+        string json = JsonUtility.ToJson(actors);
+
+        StreamWriter sw = File.CreateText(path);
+        sw.Close();
+
+        File.WriteAllText(path, json);
+    }
+}

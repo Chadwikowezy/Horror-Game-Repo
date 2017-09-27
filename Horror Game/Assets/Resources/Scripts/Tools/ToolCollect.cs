@@ -14,6 +14,8 @@ public class ToolCollect : MonoBehaviour
 
     private bool pickedUp;
 
+    private GameController gameController;
+
     public Sprite
         statueSprite,
         keySprite,
@@ -27,6 +29,7 @@ public class ToolCollect : MonoBehaviour
         player = FindObjectOfType<PlayerMotor>();
         toolManager = FindObjectOfType<ToolsManager>();
         tools = FindObjectsOfType<Tools>();
+        gameController = FindObjectOfType<GameController>();
     }
 
     public void CollectTool()
@@ -86,6 +89,7 @@ public class ToolCollect : MonoBehaviour
                         pickedUp = true;
                         collectDisplay.SetActive(false);
                     }
+                    gameController.Save();
                 }
             }            
         }

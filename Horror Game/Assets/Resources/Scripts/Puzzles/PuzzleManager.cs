@@ -13,10 +13,13 @@ public class PuzzleManager : MonoBehaviour
 
     public Sprite transparentEmpty;
 
-	void Start ()
+    private GameController gameController;
+
+    void Start ()
     {
         toolManager = FindObjectOfType<ToolsManager>();
         sectionManager = FindObjectOfType<SectionManager>();
+        gameController = FindObjectOfType<GameController>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -33,7 +36,8 @@ public class PuzzleManager : MonoBehaviour
                 {
                     toolUI.sprite = transparentEmpty;
                 }
-                sectionManager.sectionOneCleared = true;
+                sectionManager.masionPuzzle_F1_01 = true;
+                gameController.Save();
             }
         }
     }
