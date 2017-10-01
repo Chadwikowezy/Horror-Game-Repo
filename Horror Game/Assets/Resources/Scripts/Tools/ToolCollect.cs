@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ToolCollect : MonoBehaviour
 {
-    public Tools[] tools;
+    public List<Tools> tools = new List<Tools>();
 
     private PlayerMotor player;
     private ToolsManager toolManager;
@@ -28,13 +28,11 @@ public class ToolCollect : MonoBehaviour
     {
         player = FindObjectOfType<PlayerMotor>();
         toolManager = FindObjectOfType<ToolsManager>();
-        tools = FindObjectsOfType<Tools>();
         gameController = FindObjectOfType<GameController>();
     }
 
     public void CollectTool()
     {
-        tools = FindObjectsOfType<Tools>();
         foreach(Tools tool in tools)
         {
             if (tool != null)
