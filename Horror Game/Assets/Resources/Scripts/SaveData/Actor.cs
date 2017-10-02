@@ -10,11 +10,6 @@ public class Actor : MonoBehaviour
     public ActorData data;
     private SectionManager sectionManager;
 
-	void Start ()
-    {
-		
-	}
-	
 	public void StoreData()
     {
         sectionManager = FindObjectOfType<SectionManager>();

@@ -46,9 +46,9 @@ public class PlayerMotor : MonoBehaviour
             {              
                 thisRigidBody.velocity = (moveVector * moveSpeed);
             }
-            else
+            else if(thisRigidBody.velocity.magnitude == 0)
             {
-                //animManager.SetAnimState("idle");
+                isGrounded = true;
             }
         }
         

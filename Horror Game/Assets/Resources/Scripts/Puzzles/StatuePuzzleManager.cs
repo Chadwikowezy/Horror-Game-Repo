@@ -36,7 +36,7 @@ public class StatuePuzzleManager : MonoBehaviour
             sectionDoor = GameObject.Find("SectionDoor_01");
         }
 
-        while(actor == null)
+        if(actor == null)
         {
             actor = FindObjectOfType<Actor>();
         }
@@ -56,18 +56,22 @@ public class StatuePuzzleManager : MonoBehaviour
             {
                 spawnPoint_03 = Random.Range(0, 9);
             }
-            GameObject statue01 = Instantiate(statueObj01, spawnLocations[spawnPoint_01].position, spawnLocations[spawnPoint_01].rotation);
-            GameObject statue02 = Instantiate(statueObj02, spawnLocations[spawnPoint_02].position, spawnLocations[spawnPoint_02].rotation);
-            GameObject statue03 = Instantiate(statueObj03, spawnLocations[spawnPoint_03].position, spawnLocations[spawnPoint_03].rotation);
+            GameObject statue01 = Instantiate(statueObj01, spawnLocations[spawnPoint_01].position,
+                spawnLocations[spawnPoint_01].rotation);
+            GameObject statue02 = Instantiate(statueObj02, spawnLocations[spawnPoint_02].position,
+                spawnLocations[spawnPoint_02].rotation);
+            GameObject statue03 = Instantiate(statueObj03, spawnLocations[spawnPoint_03].position,
+                spawnLocations[spawnPoint_03].rotation);
 
             toolCollect = FindObjectOfType<ToolCollect>();
-            toolCollect.tools.Add(statue01.GetComponent<Tools>());
-            toolCollect.tools.Add(statue02.GetComponent<Tools>());
-            toolCollect.tools.Add(statue03.GetComponent<Tools>());
+            toolCollect.sectionOneTools.Add(statue01.GetComponent<Tools>());
+            toolCollect.sectionOneTools.Add(statue02.GetComponent<Tools>());
+            toolCollect.sectionOneTools.Add(statue03.GetComponent<Tools>());
         }
-        else
+        else if(actor.data.masionPuzzle_F1_01 == true)
         {
             sectionDoor.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 
