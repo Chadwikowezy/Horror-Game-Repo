@@ -51,7 +51,10 @@ public class PlayerMotor : MonoBehaviour
                 isGrounded = true;
             }
         }
-        
+
+        if (isGrounded == false)
+            if (thisRigidBody.velocity.magnitude == 0)
+                isGrounded = true;
     }
 
     Vector3 PoolInput()
