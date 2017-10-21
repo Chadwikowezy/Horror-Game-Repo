@@ -21,7 +21,7 @@ public class StatuePuzzleManager : MonoBehaviour
     public GameObject statueObj01, statueObj02, statueObj03;
     public Transform[] spawnLocations;
 
-    int spawnPoint_01, spawnPoint_02, spawnPoint_03;
+    int spawnPoint_01, spawnPoint_02, spawnPoint_03, spawnPoint_04;
 
     public GameObject sectionDoor;
 
@@ -44,18 +44,23 @@ public class StatuePuzzleManager : MonoBehaviour
         if (actor.data.masionPuzzle_F1_01 == false)
         {
             sectionDoor.SetActive(true);
-            while (spawnPoint_01 == spawnPoint_02 || spawnPoint_01 == spawnPoint_03)
+            while (spawnPoint_01 == spawnPoint_02 || spawnPoint_01 == spawnPoint_03 || spawnPoint_01 == spawnPoint_04)
             {
-                spawnPoint_01 = Random.Range(0, 9);
+                spawnPoint_01 = (Random.Range(0, 6) + Random.Range(0, 5));
             }
-            while (spawnPoint_02 == spawnPoint_01 || spawnPoint_02 == spawnPoint_03)
+            while (spawnPoint_02 == spawnPoint_01 || spawnPoint_02 == spawnPoint_03 || spawnPoint_02 == spawnPoint_04)
             {
-                spawnPoint_02 = Random.Range(0, 9);
+                spawnPoint_02 = (Random.Range(0, 6) + Random.Range(0, 5));
             }
-            while (spawnPoint_03 == spawnPoint_01 || spawnPoint_03 == spawnPoint_02)
+            while (spawnPoint_03 == spawnPoint_01 || spawnPoint_03 == spawnPoint_02 || spawnPoint_03 == spawnPoint_04)
             {
-                spawnPoint_03 = Random.Range(0, 9);
+                spawnPoint_03 = (Random.Range(0, 6) + Random.Range(0, 5));
             }
+            while (spawnPoint_04 == spawnPoint_01 || spawnPoint_04 == spawnPoint_02 || spawnPoint_04 == spawnPoint_03)
+            {
+                spawnPoint_04 = (Random.Range(0, 6) + Random.Range(0, 5));
+            }
+
             GameObject statue01 = Instantiate(statueObj01, spawnLocations[spawnPoint_01].position,
                 spawnLocations[spawnPoint_01].rotation);
             GameObject statue02 = Instantiate(statueObj02, spawnLocations[spawnPoint_02].position,
