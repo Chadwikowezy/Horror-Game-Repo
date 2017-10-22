@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ToolsManager : MonoBehaviour
 {
+    #region variables
     public bool barEmpty = true;
 
     public bool toolbar_01 = false;
@@ -23,4 +24,5 @@ public class ToolsManager : MonoBehaviour
     public bool tileFourSequence;
 
     public int keys = 0;
+    #endregion
 }

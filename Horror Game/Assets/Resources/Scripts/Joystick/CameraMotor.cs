@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CameraMotor : MonoBehaviour
 {
+    #region variables
     private const float Y_ANGLE_MIN = -30;
     private const float Y_ANGLE_MAX = 30;  
 
@@ -14,7 +15,7 @@ public class CameraMotor : MonoBehaviour
     public Transform camTransform { get; set; }
 
     private float distance = .001f;
-    private float currentX = 0f;
+    private float currentX = 135f;
     private float currentY = 0f;
     public float sensitivityX = .2f;
     public float sensitivityY = .2f;
@@ -26,13 +27,17 @@ public class CameraMotor : MonoBehaviour
 
     private Vector3 dir;
     private Quaternion rotation;
+    #endregion
 
+    #region start
     void Start ()
     {
         camTransform = Camera.main.transform;
         cam = Camera.main;
     }
+    #endregion
 
+    #region LateUpdate
     void LateUpdate()
     {
         currentX += joystick.Horizontal() * sensitivityX;
@@ -45,7 +50,9 @@ public class CameraMotor : MonoBehaviour
         rotation = Quaternion.Euler(currentY, currentX, 0);
         //camTransform.position = Vector3.Lerp(transform.position, this.transform.position + rotation * dir, 1); 
     }
+    #endregion
 
+    #region FixedUpdate
     void FixedUpdate()
     {
         if (isAnimating == false)
@@ -60,7 +67,9 @@ public class CameraMotor : MonoBehaviour
             camTransform.LookAt(crouchLOS_OBJ.position);
         }
     }
+    #endregion
 
+    #region ClampAngle float returning function
     float ClampAngle(float angle, float min, float max)
     {
         do
@@ -77,4 +86,5 @@ public class CameraMotor : MonoBehaviour
 
         return Mathf.Clamp(angle, min, max);
     }
+    #endregion
 }

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class StatuePuzzleManager : MonoBehaviour
 {
+    #region variables
     public GameObject[] statueDisplayObjs;
     public Image[] toolUISlots;
     private ToolsManager toolManager;
@@ -25,13 +26,20 @@ public class StatuePuzzleManager : MonoBehaviour
 
     public GameObject sectionDoor;
 
+    public GameObject placeStatuesImg;
+    public GameObject InsufficentMessage;
+    #endregion
+
+    #region start
     void Start ()
     {
         toolManager = FindObjectOfType<ToolsManager>();
         sectionManager = FindObjectOfType<SectionManager>();
         gameController = FindObjectOfType<GameController>();
+        placeStatuesImg.SetActive(false);
+        InsufficentMessage.SetActive(false);
 
-        if(sectionDoor == null)
+        if (sectionDoor == null)
         {
             sectionDoor = GameObject.Find("SectionDoor_01");
         }
@@ -76,28 +84,56 @@ public class StatuePuzzleManager : MonoBehaviour
         else if(actor.data.masionPuzzle_F1_01 == true)
         {
             sectionDoor.SetActive(false);
+            foreach(GameObject stat in statueDisplayObjs)
+            {
+                stat.SetActive(true);
+            }
             gameObject.SetActive(false);
         }
     }
+    #endregion
 
+    #region OnTriggerEnter and OnTriggerExit function calls
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Player")
         {
             if(toolManager.knightsStatue == 3)
             {
-                foreach(GameObject statue in statueDisplayObjs)
-                {
-                    statue.SetActive(true);
-                }
-                foreach (Image toolUI in toolUISlots)
-                {
-                    toolUI.sprite = transparentEmpty;
-                }
-                sectionManager.masionPuzzle_F1_01 = true;
-                sectionDoor.SetActive(false);
-                gameController.Save();
+                placeStatuesImg.SetActive(true);
+            }
+            else
+            {
+                InsufficentMessage.SetActive(true);
             }
         }
     }
+    private void OnTriggerExit(Collider other)
+    { 
+        placeStatuesImg.SetActive(false);
+        InsufficentMessage.SetActive(false);
+    }
+    #endregion
+
+    #region placestatues button event call
+    public void PlaceStatues()
+    {
+        if (toolManager.knightsStatue == 3)
+        {
+            foreach (GameObject statue in statueDisplayObjs)
+            {
+                statue.SetActive(true);
+            }
+            foreach (Image toolUI in toolUISlots)
+            {
+                toolUI.sprite = transparentEmpty;
+            }
+            sectionManager.masionPuzzle_F1_01 = true;
+            sectionDoor.SetActive(false);
+            gameController.Save();
+            placeStatuesImg.SetActive(false);
+            InsufficentMessage.SetActive(false);
+        }
+    }
+    #endregion
 }

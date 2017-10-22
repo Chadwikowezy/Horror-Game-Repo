@@ -6,16 +6,21 @@ using UnityEngine.EventSystems;
 
 public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, IPointerDownHandler
 {
+    #region variables
     private Image bgImg;
     private Image joystickImage;
     private Vector3 inputVector;
+    #endregion
 
+    #region start
     private void Start()
     {
         bgImg = GetComponent<Image>();
         joystickImage = transform.GetChild(0).GetComponent<Image>();
     }
+    #endregion
 
+    #region OnDrag virtual function call using PointerEventdata
     public virtual void OnDrag(PointerEventData ped)
     {
         Vector2 pos;
@@ -36,6 +41,9 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
 
         }
     }
+    #endregion
+
+    #region OnPointerDown & OnPointerUp virtual functions
     public virtual void OnPointerDown(PointerEventData ped)
     {
         OnDrag(ped);
@@ -45,7 +53,9 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
         inputVector = Vector3.zero;
         joystickImage.rectTransform.anchoredPosition = Vector3.zero;
     }
+    #endregion
 
+    #region returning both horizontal and vertical values
     public float Horizontal()
     {
         if (inputVector.x != 0)
@@ -68,4 +78,5 @@ public class VirtualJoystick : MonoBehaviour, IDragHandler, IPointerUpHandler, I
             return Input.GetAxis("Vertical");
         }
     }
+    #endregion
 }

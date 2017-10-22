@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMotor : MonoBehaviour
 {
+    #region variables
     public float moveSpeed = 5f;
     public float drag = .5f;
 
@@ -13,21 +14,21 @@ public class PlayerMotor : MonoBehaviour
     private Rigidbody thisRigidBody;
     private Transform camTransform;
     private HandleCanvas handleCanvas;
-    //private AnimationManager animManager;
 
     public bool isSprinting;
-    public bool isCrouching = false;
-
     public bool isGrounded;
+    #endregion
 
+    #region start
     void Start ()
     {
         thisRigidBody = GetComponent<Rigidbody>();
         thisRigidBody.drag = drag;
         handleCanvas = FindObjectOfType<HandleCanvas>();
-        //animManager = FindObjectOfType<AnimationManager>();
     }
+    #endregion
 
+    #region update
     void Update ()
     {
         //movement vector
@@ -37,7 +38,9 @@ public class PlayerMotor : MonoBehaviour
 
         Move();
     }
+    #endregion
 
+    #region move function call, clamping velocity inside
     public void Move()
     {
         if(handleCanvas.movementJoytickStop == false && isGrounded == true)
@@ -56,7 +59,9 @@ public class PlayerMotor : MonoBehaviour
             if (thisRigidBody.velocity.magnitude == 0)
                 isGrounded = true;
     }
+    #endregion
 
+    #region Vector3 returning functions for input values
     Vector3 PoolInput()
     {
         Vector3 dir = Vector3.zero;
@@ -72,7 +77,6 @@ public class PlayerMotor : MonoBehaviour
         }
         return dir;
     }
-
     Vector3 RotateWithView()
     {
         if (camTransform != null)
@@ -87,7 +91,9 @@ public class PlayerMotor : MonoBehaviour
             return moveVector;
         }
     }
+    #endregion
 
+    #region OnCollisionEnter & OnCollisionExit functions
     void OnCollisionEnter(Collision other)
     {
         if(other.gameObject.tag == "Ground")
@@ -102,4 +108,5 @@ public class PlayerMotor : MonoBehaviour
             isGrounded = false;
         }
     }
+    #endregion
 }

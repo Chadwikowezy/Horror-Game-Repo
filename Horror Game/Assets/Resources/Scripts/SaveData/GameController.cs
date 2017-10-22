@@ -5,19 +5,23 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
+    #region variables
     public const string loaderPath = "Prefabs/Loader";
 
     private static string dataPath = string.Empty;
-
     //public object JsonConvert { get; private set; }
+    #endregion
 
-	void Awake ()
+    #region Awake
+    void Awake ()
     {
         dataPath = System.IO.Path.Combine(Application.persistentDataPath, "actors.json");
         Debug.Log(dataPath);
 	}
-	
-	public static Actor GenerateActor(string path, Vector3 pos, Quaternion rotation)
+    #endregion
+
+    #region static Actor GenerateActor functions
+    public static Actor GenerateActor(string path, Vector3 pos, Quaternion rotation)
     {
         GameObject prefab = Resources.Load<GameObject>(path);
         GameObject actorObj = Instantiate(prefab, pos, rotation) as GameObject;
@@ -26,7 +30,6 @@ public class GameController : MonoBehaviour
 
         return actor;
     }
-
     public static Actor GenerateActor(ActorData data, string path, Vector3 pos, Quaternion rotation)
     {
         Actor actor = GenerateActor(path, pos, rotation);
@@ -35,7 +38,9 @@ public class GameController : MonoBehaviour
 
         return actor;
     }
+    #endregion
 
+    #region Save and Load Event function calls
     public void Save()
     {
         SaveData.Save(dataPath, SaveData.actorContainer);
@@ -44,4 +49,5 @@ public class GameController : MonoBehaviour
     {
         SaveData.Load(dataPath);
     }
+    #endregion
 }

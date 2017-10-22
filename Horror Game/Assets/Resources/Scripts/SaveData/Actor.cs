@@ -7,15 +7,22 @@ using UnityEngine.UI;
 
 public class Actor : MonoBehaviour
 {
+    #region variables
     public ActorData data;
     private SectionManager sectionManager;
+    private PlayerMotor player;
+    #endregion
 
-	public void StoreData()
+    #region Store Data call
+    public void StoreData()
     {
+        player = FindObjectOfType<PlayerMotor>(); 
         sectionManager = FindObjectOfType<SectionManager>();
         MansionSectionManager();
         MazeSectionManager();
+        data.playerPos = player.GetComponent<Transform>().position;
     }
+    #endregion
 
     #region Mansion Puzzle Sections Manager
     void MansionSectionManager()
@@ -46,6 +53,7 @@ public class Actor : MonoBehaviour
         }
     }
     #endregion
+
     #region Maze & Mausoleum Puzzle Sections Manager
     void MazeSectionManager()
     {
@@ -68,12 +76,17 @@ public class Actor : MonoBehaviour
     }
     #endregion
 
+    #region Load Data call
     public void LoadData()
     {
+        player = FindObjectOfType<PlayerMotor>();
+        player.GetComponent<Transform>().position = data.playerPos;
+
         sectionManager = FindObjectOfType<SectionManager>();
         LoadMansionSectionData();
         LoadMazeSectionData();
     }
+    #endregion
 
     #region Load Mansion Puzzle Sections Manager
     void LoadMansionSectionData()
@@ -104,6 +117,7 @@ public class Actor : MonoBehaviour
         }
     }
     #endregion
+
     #region Load Mansion Puzzle Sections Manager
     void LoadMazeSectionData()
     {
@@ -150,6 +164,7 @@ public class Actor : MonoBehaviour
 [Serializable]
 public class ActorData
 {
+    public Vector3 playerPos;
     public bool masionPuzzle_F1_01 = false;
     public bool masionPuzzle_F1_02 = false;
     public bool masionPuzzle_F1_03 = false;

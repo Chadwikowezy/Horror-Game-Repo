@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Tools : MonoBehaviour
 {
+    #region variables
     private SectionManager sectionManager;
     private ToolsManager toolManager;
     private TilesPuzzleManager tilePuzzleManager;
     public SelfDestruct[] toolParentObjs;
 
-    public Transform resetPoint_02;
+    private Transform resetPoint_02;
 
     public enum tool
     {
@@ -20,20 +21,17 @@ public class Tools : MonoBehaviour
         tile_02,
         tile_03,
         tile_04,
-        key01,
-        key02,
-        key03,
         crowbar,
-        lockpick,
-        rope
     };
     public tool toolType;
 
-    public GameObject pickupButton;
+    private ToolCollect toolCollect;
+    #endregion
 
+    #region start
     private void Start()
     {
-        pickupButton = GameObject.Find("ToolsCollect");
+        toolCollect = FindObjectOfType<ToolCollect>();
         sectionManager = FindObjectOfType<SectionManager>();
         toolManager = FindObjectOfType<ToolsManager>();
         tilePuzzleManager = FindObjectOfType<TilesPuzzleManager>();
@@ -74,7 +72,9 @@ public class Tools : MonoBehaviour
             }
         }
     }
+    #endregion
 
+    #region OnTriggerEnter and OnTriggerExit function calls
     private void OnTriggerEnter(Collider other)
     {
         for (int i = 0; i < 1; i++)
@@ -83,8 +83,9 @@ public class Tools : MonoBehaviour
             {
                 if (gameObject.tag == "Tool")
                 {
-                    pickupButton.GetComponent<ToolCollect>().collectDisplay.SetActive(true);
+                    toolCollect.collectDisplay.SetActive(true);
                 }
+                #region Tile Specific information
                 if (gameObject.tag == "Tile")
                 {
                     if (GetComponent<Tools>().toolType == Tools.tool.tile_01)
@@ -187,6 +188,7 @@ public class Tools : MonoBehaviour
                         }
                     }
                 }
+                #endregion
             }
         }       
     }
@@ -194,7 +196,11 @@ public class Tools : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            pickupButton.GetComponent<ToolCollect>().collectDisplay.SetActive(false);
+            if (gameObject.tag == "Tool")
+            {
+                toolCollect.collectDisplay.SetActive(false);
+            }
         }
     }
+    #endregion
 }

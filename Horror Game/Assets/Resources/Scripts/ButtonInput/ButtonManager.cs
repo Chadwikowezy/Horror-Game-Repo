@@ -32,6 +32,7 @@ public class ButtonManager : TouchManager
 
     #endregion
 
+    #region start
     void Start()
     {
         if (playerObj == null)
@@ -41,14 +42,16 @@ public class ButtonManager : TouchManager
         handleCanvas = FindObjectOfType<HandleCanvas>();
         buttonTexture = GetComponent<GUITexture>();
         cameraMotor = FindObjectOfType<CameraMotor>();
-        //animManager = FindObjectOfType<AnimationManager>();
         playerMotor = FindObjectOfType<PlayerMotor>();
     }
+    #endregion
 
+    #region update
     void Update()
     {
         TouchInput(buttonTexture);
     }
+    #endregion
 
     #region assign sprites function
     public void AssignButtonSprites()
@@ -72,79 +75,6 @@ public class ButtonManager : TouchManager
     }
     #endregion
 
-    #region OnFirst and OnSecond touch began
-    void OnFirstTouchBegan()
-    {
-        if (handleCanvas.canUseButtons == true && handleCanvas.inAnimationState == false)
-        {
-            switch (buttonType)
-            {
-                case type.crouchButton:
-                    if (playerMotor.isSprinting == false && playerMotor.isCrouching == false)
-                    {
-                        playerMotor.isCrouching = true;
-                        playerMotor.moveSpeed = 2.5f;
-                        //animManager.SetAnimState("crouch");
-                        playerObj.tag = "Player_Crouched";
-                        cameraMotor.isAnimating = true;
-                    }
-                    else if(playerMotor.isCrouching == true)
-                    {
-                        StartCoroutine(ReturnToLookPos());
-                    }
-                    break;
-            }
-            switch (buttonType)
-            {
-                case type.hideButton:
-                    //hide logic
-                    break;
-            }
-            switch (buttonType)
-            {
-                case type.pickupButton:
-                    //pickup item
-                    break;
-            }           
-        }
-    }
-    void OnSecondTouchBegan()
-    {
-        if (handleCanvas.canUseButtons == true && handleCanvas.inAnimationState == false)
-        {
-            switch (buttonType)
-            {
-                case type.crouchButton:
-                    if (playerMotor.isSprinting == false && playerMotor.isCrouching == false)
-                    {
-                        playerMotor.isCrouching = true;
-                        playerMotor.moveSpeed = 2.5f;
-                        //animManager.SetAnimState("crouch");
-                        playerObj.tag = "Player_Crouched";
-                        cameraMotor.isAnimating = true;
-                    }
-                    else if (playerMotor.isCrouching == true)
-                    {
-                        StartCoroutine(ReturnToLookPos());
-                    }
-                    break;
-            }
-            switch (buttonType)
-            {
-                case type.hideButton:
-                    //hide logic
-                    break;
-            }
-            switch (buttonType)
-            {
-                case type.pickupButton:
-                    //pickup item
-                    break;
-            }           
-        }
-    }
-    #endregion
-
     #region OnFirstTouch
     void OnFirstTouch()
     {
@@ -154,7 +84,7 @@ public class ButtonManager : TouchManager
             {
                 case type.sprintButton:
                     //sprint
-                    if (handleCanvas.movementJoytickStop == false && playerMotor.isCrouching == false && playerMotor.isGrounded == true)
+                    if (handleCanvas.movementJoytickStop == false && playerMotor.isGrounded == true)
                     {
                         if (playerObj.GetComponent<Rigidbody>().velocity.magnitude < 8)
                         {
@@ -179,7 +109,7 @@ public class ButtonManager : TouchManager
             {
                 case type.sprintButton:
                     //sprint
-                    if (handleCanvas.movementJoytickStop == false && playerMotor.isCrouching == false && playerMotor.isGrounded == true)
+                    if (handleCanvas.movementJoytickStop == false && playerMotor.isGrounded == true)
                     {
                         if (playerObj.GetComponent<Rigidbody>().velocity.magnitude < 8)
                         {
@@ -225,8 +155,6 @@ public class ButtonManager : TouchManager
     IEnumerator ReturnToLookPos()
     {
         yield return new WaitForSeconds(.4f);
-        playerMotor.isCrouching = false;
-        //animManager.SetAnimState("idle");
         playerObj.tag = "Player";
         playerMotor.moveSpeed = 5f;
         yield return new WaitForSeconds(.4f);

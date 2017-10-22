@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class TilesPuzzleManager : MonoBehaviour
 {
+    #region variables
     public GameObject[] tileObjects;
 
     public Transform[] spawnLocations;
@@ -20,7 +21,9 @@ public class TilesPuzzleManager : MonoBehaviour
     public GameObject sectionDoor;
 
     private int point_01, point_02, point_03, point_04;
+    #endregion
 
+    #region start
     void Start ()
     {
         if (sectionDoor == null)
@@ -34,7 +37,9 @@ public class TilesPuzzleManager : MonoBehaviour
         }
         GenerateTiles();     
     }
+    #endregion
 
+    #region generate tiles function call
     void GenerateTiles()
     {
         if (actor.data.masionPuzzle_F1_02 == false)
@@ -87,7 +92,9 @@ public class TilesPuzzleManager : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+    #endregion
 
+    #region re-generate tiles function call
     public void ResetTiles()
     {       
         while (spawnPoint_01 == spawnPoint_02 || spawnPoint_01 == spawnPoint_03 ||
@@ -131,4 +138,5 @@ public class TilesPuzzleManager : MonoBehaviour
         GameObject tile04 = Instantiate(tileObjects[3],
             spawnLocations[spawnPoint_04].position, spawnLocations[spawnPoint_04].rotation);
     }
+    #endregion
 }

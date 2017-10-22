@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class ToolCollect : MonoBehaviour
 {
+    #region variables
     public List<Tools> sectionOneTools = new List<Tools>();
 
     private PlayerMotor player;
@@ -20,19 +21,19 @@ public class ToolCollect : MonoBehaviour
 
     public Sprite
         statueSprite,
-        keySprite,
-        crowbarSprite,
-        lockpickSprite,
-        ropeSprite;
+        crowbarSprite;
+    #endregion
 
-
+    #region Start
     void Start()
     {
         player = FindObjectOfType<PlayerMotor>();
         toolManager = FindObjectOfType<ToolsManager>();
         gameController = FindObjectOfType<GameController>();
     }
+    #endregion
 
+    #region Assign Toolbar image sprites
     void AssignToolSprite(Tools tool)
     {
         toolManager = FindObjectOfType<ToolsManager>();
@@ -48,21 +49,11 @@ public class ToolCollect : MonoBehaviour
         else if (tool.toolType == Tools.tool.statue03)
         {
             toolManager.toolBar03.sprite = statueSprite;
-        }
-        if (tool.toolType == Tools.tool.key01)
-        {
-            toolManager.toolBar01.sprite = keySprite;
-        }
-        else if (tool.toolType == Tools.tool.key02)
-        {
-            toolManager.toolBar02.sprite = keySprite;
-        }
-        else if (tool.toolType == Tools.tool.key03)
-        {
-            toolManager.toolBar03.sprite = keySprite;
-        }
+        }        
     }
+    #endregion
 
+    #region Collect Tool function call
     public void CollectTool()
     {
         foreach(Tools tool in sectionOneTools)
@@ -100,4 +91,5 @@ public class ToolCollect : MonoBehaviour
         }
         gameController.Save();
     }
+    #endregion
 }

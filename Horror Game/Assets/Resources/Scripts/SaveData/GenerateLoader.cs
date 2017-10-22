@@ -5,7 +5,8 @@ using System.IO;
 
 public class GenerateLoader : MonoBehaviour
 {
-    private GameController gameController;
+    #region variables
+    public GameController gameController;
 
     private int count = 0;
 
@@ -14,10 +15,15 @@ public class GenerateLoader : MonoBehaviour
     const int MAX_PATH = 260;
 
     private static string dataPath = string.Empty;
+    #endregion
 
-	void Start ()
+    #region Awake function call
+    void Awake ()
     {
-        gameController = FindObjectOfType<GameController>();
+        if(gameController == null)
+        {
+            gameController = FindObjectOfType<GameController>();
+        }
 
         dataPath = System.IO.Path.Combine(Application.persistentDataPath, "actors.json");
         
@@ -30,8 +36,10 @@ public class GenerateLoader : MonoBehaviour
             CallCreateFakeLoader();
         }
 	}
-	
-	void CallCreateFakeLoader()
+    #endregion
+
+    #region create fake loader and call loader functions
+    void CallCreateFakeLoader()
     {
         Instantiate(fakeActorObj, transform.position, Quaternion.identity);
         Destroy(gameObject);
@@ -53,4 +61,5 @@ public class GenerateLoader : MonoBehaviour
             }
         }
     }
+    #endregion
 }
