@@ -392,6 +392,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1889355910916374, guid: dc8173daceda1ba4d88807aa67efa8af, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc8173daceda1ba4d88807aa67efa8af, type: 2}
   m_IsPrefabParent: 0
@@ -4606,6 +4610,11 @@ Transform:
   m_Father: {fileID: 747409090}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &415035227 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1889355910916374, guid: dc8173daceda1ba4d88807aa67efa8af,
+    type: 2}
+  m_PrefabInternal: {fileID: 137091089}
 --- !u!1001 &430020194
 Prefab:
   m_ObjectHideFlags: 0
@@ -16213,7 +16222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOn: 0
-  phoneCamera: {fileID: 0}
+  phoneCamera: {fileID: 415035227}
 --- !u!114 &1744849179
 MonoBehaviour:
   m_ObjectHideFlags: 0
