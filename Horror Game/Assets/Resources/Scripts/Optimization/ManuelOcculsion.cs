@@ -24,16 +24,35 @@ public class ManuelOcculsion : MonoBehaviour
         {
             Vector3 screenPoint = cam.WorldToViewportPoint(occlusionObj.transform.position);
             bool onScreen = screenPoint.z > 0 && screenPoint.x > 0 && 
-                screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1;
+                screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1;          
 
-            if(!onScreen)
+            if (occlusionObj.GetComponent<Renderer>())
             {
-                occlusionObj.SetActive(false);
+                Renderer rend = occlusionObj.GetComponent<Renderer>();
+                if (!onScreen)
+                {
+                    rend.enabled = false;
+                }
+                else
+                {
+                    rend.enabled = true;
+                }
             }
             else
             {
-                occlusionObj.SetActive(true);
-            }
+                Renderer[] rends = occlusionObj.GetComponentsInChildren<Renderer>();
+                foreach(Renderer rend in rends)
+                {
+                    if (!onScreen)
+                    {
+                        rend.enabled = false;
+                    }
+                    else
+                    {
+                        rend.enabled = true;
+                    }
+                }              
+            }           
         }
     }
 }
