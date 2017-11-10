@@ -7,10 +7,25 @@ using UnityEngine.UI;
 
 public class Actor : MonoBehaviour
 {
-    #region variables
+    #region variables & start
     public ActorData data;
     private SectionManager sectionManager;
     private PlayerMotor player;
+
+    private StatuePuzzleManager statuePuzzleManager;
+    private SafePuzzleManager safePuzzleManager;
+    private TilesPuzzleManager tilesPuzzleManager;
+
+    void Start()
+    {
+        statuePuzzleManager = FindObjectOfType<StatuePuzzleManager>();
+        tilesPuzzleManager = FindObjectOfType<TilesPuzzleManager>();
+        safePuzzleManager = FindObjectOfType<SafePuzzleManager>();
+
+        statuePuzzleManager.RecievedCall();
+        tilesPuzzleManager.RecievedCall();
+        safePuzzleManager.RecievedCall();
+    }
     #endregion
 
     #region Store Data call

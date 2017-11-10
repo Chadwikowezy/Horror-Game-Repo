@@ -1,19 +1,38 @@
 fileFormatVersion: 2
-guid: b024baa8209014e4a8f26a33f6173791
-timeCreated: 1506636057
+guid: 118bf1e591863a84798d4fa9c7a46b3f
+timeCreated: 1510272652
 licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Cube
+    100000: Cube
+    100002: Cube.001
+    100004: Cube.002
+    100006: //RootNode
+    400000: Cube
+    400002: Cube.001
+    400004: Cube.002
+    400006: //RootNode
+    2300000: Cube
+    2300002: Cube.001
+    2300004: Cube.002
+    3300000: Cube
+    3300002: Cube.001
+    3300004: Cube.002
+    4300000: Cube.002
+    4300002: Cube.001
+    4300004: Cube
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 4870efe6aeb62af43bffbf5b7256a4ba, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -26,6 +45,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5

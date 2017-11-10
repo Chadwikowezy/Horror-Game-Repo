@@ -23,8 +23,8 @@ public class SafePuzzleManager : MonoBehaviour
     private GameController gameController;
     #endregion
 
-    #region Start
-    void Start ()
+    #region recieved actor call to begin
+    public void RecievedCall()
     {
         if(actor == null)
         {
@@ -48,21 +48,18 @@ public class SafePuzzleManager : MonoBehaviour
             correctValue_02 = Random.Range(0, 10);
             correctValue_03 = Random.Range(0, 10);
 
+            
             while (spawnPoint01 == spawnPoint02 || spawnPoint01 == spawnPoint03 || spawnPoint01 == spawnPoint04)
             {
-                spawnPoint01 = (Random.Range(0, 5) + Random.Range(0, 6));
+                spawnPoint01 = (Random.Range(0, 3)) + (Random.Range(0, 2));
             }
             while (spawnPoint02 == spawnPoint01 || spawnPoint02 == spawnPoint03 || spawnPoint02 == spawnPoint04)
             {
-                spawnPoint02 = (Random.Range(0, 5) + Random.Range(0, 6));
+                spawnPoint02 = (Random.Range(4, 7));
             }
             while (spawnPoint03 == spawnPoint01 || spawnPoint03 == spawnPoint02 || spawnPoint03 == spawnPoint04)
             {
-                spawnPoint03 = (Random.Range(0, 5) + Random.Range(0, 6));
-            }
-            while (spawnPoint04 == spawnPoint01 || spawnPoint04 == spawnPoint02 || spawnPoint04 == spawnPoint03)
-            {
-                spawnPoint04 = (Random.Range(0, 5) + Random.Range(0, 6));
+                spawnPoint03 = (Random.Range(7, 10));
             }
 
             GameObject valueObj_01 = Instantiate(numberPrefab,
@@ -79,12 +76,7 @@ public class SafePuzzleManager : MonoBehaviour
 
             valueObj_01.GetComponentInChildren<Text>().text = correctValue_01.ToString();
             valueObj_02.GetComponentInChildren<Text>().text = correctValue_02.ToString();
-            valueObj_03.GetComponentInChildren<Text>().text = correctValue_03.ToString();
-
-            Debug.Log("Value01: " + correctValue_01);
-            Debug.Log("Value02: " + correctValue_02);
-            Debug.Log("Value03: " + correctValue_03);
-
+            valueObj_03.GetComponentInChildren<Text>().text = correctValue_03.ToString();           
         }
         else if (actor.data.masionPuzzle_F1_03 == true)
         {
@@ -158,7 +150,6 @@ public class SafePuzzleManager : MonoBehaviour
             gameController.Save();
             SafeLockCanvasObj.SetActive(false);
             safeUIPanel.SetActive(false);
-            Debug.Log("FML....");
         }
         else
         {

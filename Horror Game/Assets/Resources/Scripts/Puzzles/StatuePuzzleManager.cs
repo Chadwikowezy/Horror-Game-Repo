@@ -30,8 +30,8 @@ public class StatuePuzzleManager : MonoBehaviour
     public GameObject InsufficentMessage;
     #endregion
 
-    #region start
-    void Start ()
+    #region recieve actor call to begin
+    public void RecievedCall ()
     {
         toolManager = FindObjectOfType<ToolsManager>();
         sectionManager = FindObjectOfType<SectionManager>();
@@ -96,17 +96,23 @@ public class StatuePuzzleManager : MonoBehaviour
     #region OnTriggerEnter and OnTriggerExit function calls
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player")
+        if(actor != null)
         {
-            if(toolManager.knightsStatue == 3)
+            if (actor.data.masionPuzzle_F1_01 == false)
             {
-                placeStatuesImg.SetActive(true);
+                if (other.gameObject.tag == "Player")
+                {
+                    if (toolManager.knightsStatue == 3)
+                    {
+                        placeStatuesImg.SetActive(true);
+                    }
+                    else
+                    {
+                        InsufficentMessage.SetActive(true);
+                    }
+                }
             }
-            else
-            {
-                InsufficentMessage.SetActive(true);
-            }
-        }
+        }   
     }
     private void OnTriggerExit(Collider other)
     { 
