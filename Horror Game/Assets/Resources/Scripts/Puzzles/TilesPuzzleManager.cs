@@ -23,8 +23,8 @@ public class TilesPuzzleManager : MonoBehaviour
     private int point_01, point_02, point_03, point_04;
     #endregion
 
-    #region start
-    void Start ()
+    #region recieved actor call to begin
+    public void RecievedCall()
     {
         if (sectionDoor == null)
         {

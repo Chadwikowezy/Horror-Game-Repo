@@ -12,20 +12,15 @@ public class GenerateLoader : MonoBehaviour
 
     public GameObject fakeActorObj;
 
-    const int MAX_PATH = 260;
-
-    private static string dataPath = string.Empty;
     #endregion
 
     #region Awake function call
-    void Awake ()
+    void Start ()
     {
         if(gameController == null)
         {
             gameController = FindObjectOfType<GameController>();
         }
-
-        dataPath = System.IO.Path.Combine(Application.persistentDataPath, "actors.json");
         
         if(System.IO.File.Exists(Path.Combine(Application.persistentDataPath, "actors.json")))
         {

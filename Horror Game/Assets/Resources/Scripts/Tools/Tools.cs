@@ -8,9 +8,11 @@ public class Tools : MonoBehaviour
     private SectionManager sectionManager;
     private ToolsManager toolManager;
     private TilesPuzzleManager tilePuzzleManager;
-    public SelfDestruct[] toolParentObjs;
+    private GameObject toolParent;
 
     private Transform resetPoint_02;
+
+    private GameController gameController;
 
     public enum tool
     {
@@ -35,8 +37,22 @@ public class Tools : MonoBehaviour
         sectionManager = FindObjectOfType<SectionManager>();
         toolManager = FindObjectOfType<ToolsManager>();
         tilePuzzleManager = FindObjectOfType<TilesPuzzleManager>();
+
+        gameController = FindObjectOfType<GameController>();
+
         resetPoint_02 = GameObject.Find("Reset_02").transform;
-        toolParentObjs = FindObjectsOfType<SelfDestruct>();
+
+        if(transform.tag == "Tile")
+        {
+            SelfDestruct parentObj = GetComponentInParent<SelfDestruct>();
+            toolParent = parentObj.gameObject;
+        }
+        else if(transform.tag == "Tool")
+        {
+            toolParent = GetComponent<GameObject>();
+        }
+
+
         if (sectionManager.masionPuzzle_F1_01 == true)
         {
             if (toolType == tool.statue01)
@@ -95,16 +111,17 @@ public class Tools : MonoBehaviour
                         {
                             toolManager.tilesValue += 1;
                             toolManager.tileOneSequence = true;
-                            Destroy(gameObject.GetComponentInParent<SelfDestruct>().gameObject);
+                            Destroy(toolParent);
                         }
                         else
                         {
                             other.gameObject.transform.position = resetPoint_02.position;
                             toolManager.tilesValue = 0;
-                            toolParentObjs = FindObjectsOfType<SelfDestruct>();
-                            foreach (SelfDestruct oldTools in toolParentObjs)
+
+                            SelfDestruct[] removeTiles = FindObjectsOfType<SelfDestruct>();
+                            foreach(SelfDestruct tile in removeTiles)
                             {
-                                Destroy(oldTools.gameObject);
+                                Destroy(tile.gameObject);
                             }
 
                             tilePuzzleManager = FindObjectOfType<TilesPuzzleManager>();
@@ -118,16 +135,17 @@ public class Tools : MonoBehaviour
                         {
                             toolManager.tilesValue += 1;
                             toolManager.tileTwoSequence = true;
-                            Destroy(gameObject.GetComponentInParent<SelfDestruct>().gameObject);
+                            Destroy(toolParent);
                         }
                         else
                         {
                             other.gameObject.transform.position = resetPoint_02.position;
                             toolManager.tilesValue = 0;
-                            toolParentObjs = FindObjectsOfType<SelfDestruct>();
-                            foreach (SelfDestruct oldTools in toolParentObjs)
+
+                            SelfDestruct[] removeTiles = FindObjectsOfType<SelfDestruct>();
+                            foreach (SelfDestruct tile in removeTiles)
                             {
-                                Destroy(oldTools.gameObject);
+                                Destroy(tile.gameObject);
                             }
 
                             tilePuzzleManager = FindObjectOfType<TilesPuzzleManager>();
@@ -141,16 +159,17 @@ public class Tools : MonoBehaviour
                         {
                             toolManager.tilesValue += 1;
                             toolManager.tileThreeSequence = true;
-                            Destroy(gameObject.GetComponentInParent<SelfDestruct>().gameObject);
+                            Destroy(toolParent);
                         }
                         else
                         {
                             other.gameObject.transform.position = resetPoint_02.position;
                             toolManager.tilesValue = 0;
-                            toolParentObjs = FindObjectsOfType<SelfDestruct>();
-                            foreach (SelfDestruct oldTools in toolParentObjs)
+
+                            SelfDestruct[] removeTiles = FindObjectsOfType<SelfDestruct>();
+                            foreach (SelfDestruct tile in removeTiles)
                             {
-                                Destroy(oldTools.gameObject);
+                                Destroy(tile.gameObject);
                             }
 
                             tilePuzzleManager = FindObjectOfType<TilesPuzzleManager>();
@@ -164,13 +183,16 @@ public class Tools : MonoBehaviour
                         {
                             toolManager.tilesValue += 1;
                             toolManager.tileFourSequence = true;
+                            Destroy(toolParent);
                             if (toolManager.tilesValue == 4)
                             {
                                 tilePuzzleManager = FindObjectOfType<TilesPuzzleManager>();
                                 tilePuzzleManager.sectionDoor.SetActive(false);
                                 SectionManager sectionManager = FindObjectOfType<SectionManager>();
                                 sectionManager.masionPuzzle_F1_02 = true;
-                                Destroy(gameObject.GetComponentInParent<SelfDestruct>().gameObject);
+
+                                gameController.Save();
+
                                 tilePuzzleManager.gameObject.SetActive(false);
                             }
                         }
@@ -178,11 +200,13 @@ public class Tools : MonoBehaviour
                         {
                             other.gameObject.transform.position = resetPoint_02.position;
                             toolManager.tilesValue = 0;
-                            toolParentObjs = FindObjectsOfType<SelfDestruct>();
-                            foreach (SelfDestruct oldTools in toolParentObjs)
+
+                            SelfDestruct[] removeTiles = FindObjectsOfType<SelfDestruct>();
+                            foreach (SelfDestruct tile in removeTiles)
                             {
-                                Destroy(oldTools.gameObject);
+                                Destroy(tile.gameObject);
                             }
+
                             tilePuzzleManager = FindObjectOfType<TilesPuzzleManager>();
                             tilePuzzleManager.ResetTiles();
                         }
