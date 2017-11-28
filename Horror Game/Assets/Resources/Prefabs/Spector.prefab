@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4373934087521574}
   - component: {fileID: 195156008234424598}
+  - component: {fileID: 114693599499096578}
   m_Layer: 0
   m_Name: Spector
   m_TagString: Untagged
@@ -112,6 +113,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1492396615215744}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114693599499096578
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1377262866504762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7401f4dd8fbfe4544bdf4ceb485ec643, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypointDistance: 20
+  idleTime: 3
 --- !u!195 &195156008234424598
 NavMeshAgent:
   m_ObjectHideFlags: 1
@@ -121,7 +135,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 2
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
