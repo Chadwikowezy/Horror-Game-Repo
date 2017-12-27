@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: b92ea411d118e7e4ba26fd12b967b6d2
-timeCreated: 1509755648
+guid: 1f4d96e5ea361ea46832033e9d655177
+timeCreated: 1514359706
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -11,16 +11,16 @@ ModelImporter:
     100006: Number_Dial_2
     100008: Number_Dial_3
     100010: Number_Dials
-    100012: //RootNode
-    100014: Safe
+    100012: Safe
+    100014: //RootNode
     400000: Door
     400002: Handle
     400004: Number_Dial_1
     400006: Number_Dial_2
     400008: Number_Dial_3
     400010: Number_Dials
-    400012: //RootNode
-    400014: Safe
+    400012: Safe
+    400014: //RootNode
     2300000: Door
     2300002: Handle
     2300004: Number_Dial_1
@@ -39,12 +39,6 @@ ModelImporter:
     4300006: Number_Dial_2
     4300008: Number_Dial_1
     4300010: Safe
-    6400000: Door
-    6400002: Handle
-    6400004: Number_Dial_1
-    6400006: Number_Dial_2
-    6400008: Number_Dial_3
-    6400010: Safe
     7400000: Default Take
     9500000: //RootNode
   externalObjects:
@@ -59,7 +53,7 @@ ModelImporter:
       name: unnamed
     second: {fileID: 2100000, guid: 980c50a1b31eba441927c8701bc2ad89, type: 2}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -89,7 +83,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
