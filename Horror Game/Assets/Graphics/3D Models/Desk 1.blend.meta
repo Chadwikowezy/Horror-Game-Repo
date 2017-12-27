@@ -1,28 +1,48 @@
 fileFormatVersion: 2
-guid: d6e83a091afa8b64bbf62f160fe36472
-timeCreated: 1514359722
+guid: 48dd05a99c1cce94a8ead98dcf8c65ad
+timeCreated: 1514359711
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Door_Handle
-    100002: Door_Handle_001
-    100004: //RootNode
-    400000: Door_Handle
-    400002: Door_Handle_001
-    400004: //RootNode
-    2300000: Door_Handle
-    2300002: Door_Handle_001
-    2300004: //RootNode
-    3300000: Door_Handle
-    3300002: Door_Handle_001
-    3300004: //RootNode
-    4300000: Door
-    4300002: Door_Handle_001
-    4300004: Door_Handle
-    6400000: Door_Handle
-    6400002: Door_Handle_001
-    6400004: //RootNode
+    100000: //RootNode
+    100002: Desk_Main_Shape
+    100004: Desk_Top
+    100006: Drawer_1
+    100008: Drawer_2
+    100010: Outter_Door
+    100012: Separator
+    400000: //RootNode
+    400002: Desk_Main_Shape
+    400004: Desk_Top
+    400006: Drawer_1
+    400008: Drawer_2
+    400010: Outter_Door
+    400012: Separator
+    2300000: Desk_Main_Shape
+    2300002: Desk_Top
+    2300004: Drawer_1
+    2300006: Drawer_2
+    2300008: Outter_Door
+    2300010: Separator
+    3300000: Desk_Main_Shape
+    3300002: Desk_Top
+    3300004: Drawer_1
+    3300006: Drawer_2
+    3300008: Outter_Door
+    3300010: Separator
+    4300000: Drawer_2
+    4300002: Drawer_1
+    4300004: Desk_Top
+    4300006: Outter_Door
+    4300008: Separator
+    4300010: Desk_Main_Shape
+    6400000: Desk_Main_Shape
+    6400002: Desk_Top
+    6400004: Drawer_1
+    6400006: Drawer_2
+    6400008: Outter_Door
+    6400010: Separator
     7400000: Default Take
     9500000: //RootNode
   externalObjects:
@@ -34,8 +54,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: unnamed
-    second: {fileID: 2100000, guid: 980c50a1b31eba441927c8701bc2ad89, type: 2}
+      name: Material_001
+    second: {fileID: 2100000, guid: 38e0ddbd76d7f654fb6bed9299ff8e68, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood
+    second: {fileID: 2100000, guid: 7c076bf59d728fc408c4d16b803d7f7b, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -65,7 +90,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.2
     meshCompression: 0
     addColliders: 1
     importVisibility: 1

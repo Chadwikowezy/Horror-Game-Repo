@@ -1,28 +1,44 @@
 fileFormatVersion: 2
-guid: d6e83a091afa8b64bbf62f160fe36472
-timeCreated: 1514359722
+guid: 1f4d96e5ea361ea46832033e9d655177
+timeCreated: 1514359706
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Door_Handle
-    100002: Door_Handle_001
-    100004: //RootNode
-    400000: Door_Handle
-    400002: Door_Handle_001
-    400004: //RootNode
-    2300000: Door_Handle
-    2300002: Door_Handle_001
-    2300004: //RootNode
-    3300000: Door_Handle
-    3300002: Door_Handle_001
-    3300004: //RootNode
+    100000: Door
+    100002: Handle
+    100004: Number_Dial_1
+    100006: Number_Dial_2
+    100008: Number_Dial_3
+    100010: Number_Dials
+    100012: Safe
+    100014: //RootNode
+    400000: Door
+    400002: Handle
+    400004: Number_Dial_1
+    400006: Number_Dial_2
+    400008: Number_Dial_3
+    400010: Number_Dials
+    400012: Safe
+    400014: //RootNode
+    2300000: Door
+    2300002: Handle
+    2300004: Number_Dial_1
+    2300006: Number_Dial_2
+    2300008: Number_Dial_3
+    2300010: Safe
+    3300000: Door
+    3300002: Handle
+    3300004: Number_Dial_1
+    3300006: Number_Dial_2
+    3300008: Number_Dial_3
+    3300010: Safe
     4300000: Door
-    4300002: Door_Handle_001
-    4300004: Door_Handle
-    6400000: Door_Handle
-    6400002: Door_Handle_001
-    6400004: //RootNode
+    4300002: Handle
+    4300004: Number_Dial_3
+    4300006: Number_Dial_2
+    4300008: Number_Dial_1
+    4300010: Safe
     7400000: Default Take
     9500000: //RootNode
   externalObjects:
@@ -67,7 +83,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1

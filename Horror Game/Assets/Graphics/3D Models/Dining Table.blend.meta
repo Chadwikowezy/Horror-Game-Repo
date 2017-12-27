@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 516ebd28da1ef094b8217a191a89802b
-timeCreated: 1509755647
+guid: a24561198b13bc2458b1b856f5a2d6c5
+timeCreated: 1514359718
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
@@ -37,12 +37,6 @@ ModelImporter:
     4300006: Leg_3
     4300008: Leg_2
     4300010: Leg_1
-    6400000: Leg_1
-    6400002: Leg_2
-    6400004: Leg_3
-    6400006: Leg_4
-    6400008: Table_Top_Glass
-    6400010: Table_Top_Wood
     7400000: Default Take
     9500000: //RootNode
   externalObjects:
@@ -52,7 +46,7 @@ ModelImporter:
       name: Material
     second: {fileID: 2100000, guid: 4870efe6aeb62af43bffbf5b7256a4ba, type: 2}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 0
@@ -82,7 +76,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 1
+    addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1

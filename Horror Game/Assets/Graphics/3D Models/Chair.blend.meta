@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: c561a1f160c66704480ae04edb209db3
-timeCreated: 1508886953
+guid: 2e83a3a33d78b03488daf5890bb7afc7
+timeCreated: 1514359710
 licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: Arm_1
     100002: Arm_2
@@ -75,10 +75,17 @@ ModelImporter:
     6400020: Leg_3
     7400000: Default Take
     9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wood__Old_Wood_Texture_jpg
+    second: {fileID: 2100000, guid: d60db5a596059a142bcd26de087a37ef, type: 2}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -91,6 +98,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
@@ -102,7 +110,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 0.4
     meshCompression: 0
     addColliders: 1
     importVisibility: 1

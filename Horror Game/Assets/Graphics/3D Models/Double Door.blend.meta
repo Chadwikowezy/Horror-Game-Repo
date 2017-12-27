@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: 21a2013827601554d93f95d1f52175ea
-timeCreated: 1508886950
+guid: 6edaba20838254a46b2c91d5a9f1dd51
+timeCreated: 1514362952
 licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: Door_1
     100002: Door_2
@@ -45,10 +45,22 @@ ModelImporter:
     6400010: Door_Handle_4
     7400000: Default Take
     9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material
+    second: {fileID: 2100000, guid: 4870efe6aeb62af43bffbf5b7256a4ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: unnamed
+    second: {fileID: 2100000, guid: 980c50a1b31eba441927c8701bc2ad89, type: 2}
   materials:
-    importMaterials: 0
+    importMaterials: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -61,6 +73,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
