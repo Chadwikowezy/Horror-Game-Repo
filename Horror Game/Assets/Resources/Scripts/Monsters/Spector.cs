@@ -8,10 +8,12 @@ public class Spector : MonoBehaviour
     //Variables
     public float waypointDistance;
     public float idleTime;
+    public float alertedDuration;
 
     private float _timer;
     private MonsterStates _previousState;
     private MonsterStates _currentState;
+    private Vector3 _alertPosition;
     private NavMeshAgent _myAgent;
 
     //Properties
@@ -29,6 +31,16 @@ public class Spector : MonoBehaviour
             moveCharacter();
         }
     }
+    public Vector3 AlertPosition
+    {
+        get { return _alertPosition; }
+        set
+        {
+            _alertPosition = value;
+
+            CurrentState = MonsterStates.Alerted;
+        }
+    }
 
     //MonoBehaviour
     private void Start()
@@ -39,20 +51,16 @@ public class Spector : MonoBehaviour
     }
 
     //Functions
-    void alerted()
-    { }
     void chasing()
     { }
     void moveCharacter()
     {
-        print(CurrentState);
-
         if (CurrentState == MonsterStates.Idle)
             StartCoroutine(idle());
         else if (CurrentState == MonsterStates.Patrol)
             StartCoroutine(patrol());
         else if (CurrentState == MonsterStates.Alerted)
-            alerted();
+            StartCoroutine(alerted());
         else if (CurrentState == MonsterStates.Chasing)
             chasing();
     }
@@ -68,6 +76,16 @@ public class Spector : MonoBehaviour
                 CurrentState = MonsterStates.Patrol;
         }
     }
+    void setRandomWaypoint(Vector3 originPosition)
+    {
+        Vector3 randomPosition = originPosition + Random.onUnitSphere * waypointDistance;
+        NavMeshHit hit;
+
+        randomPosition.y = transform.position.y;
+
+        if (NavMesh.SamplePosition(randomPosition, out hit, 0.1f, NavMesh.AllAreas))
+            _myAgent.SetDestination(hit.position);
+    }
 
     //Corutines
     IEnumerator idle()
@@ -76,7 +94,6 @@ public class Spector : MonoBehaviour
         float timeElapsed = 0;
 
         _myAgent.SetDestination(transform.position);
-
 
         while (CurrentState == MonsterStates.Idle && timeElapsed < idleTime)
         {
@@ -92,13 +109,7 @@ public class Spector : MonoBehaviour
     }
     IEnumerator patrol()
     {
-        Vector3 randomPosition = transform.position + Random.onUnitSphere * waypointDistance;
-        NavMeshHit hit;
-
-        randomPosition.y = transform.position.y;
-
-        if (NavMesh.SamplePosition(randomPosition, out hit, 0.1f, NavMesh.AllAreas))
-            _myAgent.SetDestination(hit.position);
+        setRandomWaypoint(transform.position);
 
         while (transform.position != _myAgent.destination && CurrentState == MonsterStates.Patrol)
         {
@@ -108,6 +119,27 @@ public class Spector : MonoBehaviour
         }
 
         if (CurrentState != MonsterStates.Patrol)
+            yield return null;
+
+        changeMoveState();
+    }
+    IEnumerator alerted()
+    {
+        float timeElapsed = 0;
+
+        setRandomWaypoint(_alertPosition);
+        
+        while (CurrentState == MonsterStates.Alerted && timeElapsed < alertedDuration)
+        {
+            timeElapsed += Time.deltaTime;
+
+            if (transform.position == _myAgent.destination)
+                setRandomWaypoint(_alertPosition);
+
+            yield return new WaitForEndOfFrame();
+        }
+
+        if (CurrentState != MonsterStates.Alerted)
             yield return null;
 
         changeMoveState();

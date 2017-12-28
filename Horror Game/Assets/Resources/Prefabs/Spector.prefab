@@ -124,8 +124,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7401f4dd8fbfe4544bdf4ceb485ec643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waypointDistance: 20
+  waypointDistance: 15
   idleTime: 3
+  alertedDuration: 10
 --- !u!195 &195156008234424598
 NavMeshAgent:
   m_ObjectHideFlags: 1
