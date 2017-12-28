@@ -9,12 +9,14 @@ public class Spector : MonoBehaviour
     public float waypointDistance;
     public float idleTime;
     public float alertedDuration;
+    public float detectionDistance;
 
     private float _timer;
     private MonsterStates _previousState;
     private MonsterStates _currentState;
     private Vector3 _alertPosition;
     private NavMeshAgent _myAgent;
+    private GameObject _player;
 
     //Properties
     public MonsterStates PreviousState
@@ -46,13 +48,16 @@ public class Spector : MonoBehaviour
     private void Start()
     {
         _myAgent = GetComponent<NavMeshAgent>();
+        _player = FindObjectOfType<PlayerMotor>().gameObject;
 
         CurrentState = MonsterStates.Idle;
     }
+    private void Update()
+    {
+        detectPlayer();
+    }
 
     //Functions
-    void chasing()
-    { }
     void moveCharacter()
     {
         if (CurrentState == MonsterStates.Idle)
@@ -62,7 +67,7 @@ public class Spector : MonoBehaviour
         else if (CurrentState == MonsterStates.Alerted)
             StartCoroutine(alerted());
         else if (CurrentState == MonsterStates.Chasing)
-            chasing();
+            StartCoroutine(chasing());
     }
     void changeMoveState()
     {
@@ -74,6 +79,18 @@ public class Spector : MonoBehaviour
                 CurrentState = MonsterStates.Idle;
             else
                 CurrentState = MonsterStates.Patrol;
+        }
+    }
+    void detectPlayer()
+    {
+        if ((transform.position - _player.transform.position).magnitude < detectionDistance && _currentState != MonsterStates.Chasing)
+        {
+            Ray ray = new Ray(transform.position, _player.transform.position - transform.position);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, detectionDistance))
+                if (hit.transform.gameObject.tag == "Player")
+                    CurrentState = MonsterStates.Chasing;
         }
     }
     void setRandomWaypoint(Vector3 originPosition)
@@ -143,5 +160,28 @@ public class Spector : MonoBehaviour
             yield return null;
 
         changeMoveState();
+    }
+    IEnumerator chasing()
+    {
+        while (_currentState == MonsterStates.Chasing)
+        {
+            yield return new WaitForEndOfFrame();
+
+            Ray ray = new Ray(transform.position, _player.transform.position - transform.position);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, detectionDistance))
+            {
+                if (hit.transform.gameObject.tag == "Player")
+                {
+                    _myAgent.SetDestination(_player.transform.position);
+                }
+                else
+                {
+                    _alertPosition = _player.transform.position;
+                    CurrentState = MonsterStates.Alerted;
+                }
+            }
+        }
     }
 }
