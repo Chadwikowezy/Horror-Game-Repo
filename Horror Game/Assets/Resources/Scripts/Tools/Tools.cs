@@ -14,45 +14,32 @@ public class Tools : MonoBehaviour
 
     private GameController gameController;
 
-    public enum tool
-    {
-        statue01,
-        statue02,
-        statue03,
-        tile_01,
-        tile_02,
-        tile_03,
-        tile_04,
-        crowbar,
-    };
+    public enum tool { statue01, statue02, statue03, tile_01, tile_02, tile_03, tile_04, crowbar };
     public tool toolType;
 
     private ToolCollect toolCollect;
+
+    private PlayerMotor player;
+    public Vector3 alertedPos;
+    private Spector monster;
+
     #endregion
 
     #region start
     private void Start()
     {
         toolCollect = FindObjectOfType<ToolCollect>();
+        player = FindObjectOfType<PlayerMotor>();
+        monster = FindObjectOfType<Spector>();
         sectionManager = FindObjectOfType<SectionManager>();
         toolManager = FindObjectOfType<ToolsManager>();
-        tilePuzzleManager = FindObjectOfType<TilesPuzzleManager>();
 
         gameController = FindObjectOfType<GameController>();
 
-        resetPoint_02 = GameObject.Find("Reset_02").transform;
-
-        if(transform.tag == "Tile")
-        {
-            SelfDestruct parentObj = GetComponentInParent<SelfDestruct>();
-            toolParent = parentObj.gameObject;
-        }
-        else if(transform.tag == "Tool")
+        if(transform.tag == "Tool")
         {
             toolParent = GetComponent<GameObject>();
         }
-
-
         if (sectionManager.masionPuzzle_F1_01 == true)
         {
             if (toolType == tool.statue01)
@@ -91,6 +78,23 @@ public class Tools : MonoBehaviour
     #endregion
 
     #region OnTriggerEnter and OnTriggerExit function calls
+    void IncorrectTilePressed()
+    {
+        toolManager.tilesValue = 0;
+        toolManager.tileOneSequence = false;
+        toolManager.tileTwoSequence = false;
+        toolManager.tileThreeSequence = false;
+        toolManager.tileFourSequence = false;
+
+        //Audio asset for noise of incorrect tile plays in this moment
+        //monster.AlertPosition = AlertLocation();
+        Debug.Log("Alerted position: " + AlertLocation());
+    }
+    Vector3 AlertLocation()
+    {
+        alertedPos = player.transform.position;
+        return alertedPos;
+    }
     private void OnTriggerEnter(Collider other)
     {
         for (int i = 0; i < 1; i++)
@@ -109,23 +113,15 @@ public class Tools : MonoBehaviour
                         if (toolManager.tileTwoSequence == false && toolManager.tileThreeSequence == false
                             && toolManager.tileFourSequence == false)
                         {
-                            toolManager.tilesValue += 1;
+                            if(toolManager.tileOneSequence == false)
+                            {
+                                toolManager.tilesValue += 1;
+                            }
                             toolManager.tileOneSequence = true;
-                            Destroy(toolParent);
                         }
                         else
                         {
-                            other.gameObject.transform.position = resetPoint_02.position;
-                            toolManager.tilesValue = 0;
-
-                            SelfDestruct[] removeTiles = FindObjectsOfType<SelfDestruct>();
-                            foreach(SelfDestruct tile in removeTiles)
-                            {
-                                Destroy(tile.gameObject);
-                            }
-
-                            tilePuzzleManager = FindObjectOfType<TilesPuzzleManager>();
-                            tilePuzzleManager.ResetTiles();
+                            IncorrectTilePressed();
                         }
                     }
                     else if (GetComponent<Tools>().toolType == Tools.tool.tile_02)
@@ -133,23 +129,15 @@ public class Tools : MonoBehaviour
                         if (toolManager.tileOneSequence == true && toolManager.tileThreeSequence == false
                             && toolManager.tileFourSequence == false)
                         {
-                            toolManager.tilesValue += 1;
+                            if(toolManager.tileTwoSequence == false)
+                            {
+                                toolManager.tilesValue += 1;
+                            }
                             toolManager.tileTwoSequence = true;
-                            Destroy(toolParent);
                         }
                         else
                         {
-                            other.gameObject.transform.position = resetPoint_02.position;
-                            toolManager.tilesValue = 0;
-
-                            SelfDestruct[] removeTiles = FindObjectsOfType<SelfDestruct>();
-                            foreach (SelfDestruct tile in removeTiles)
-                            {
-                                Destroy(tile.gameObject);
-                            }
-
-                            tilePuzzleManager = FindObjectOfType<TilesPuzzleManager>();
-                            tilePuzzleManager.ResetTiles();
+                            IncorrectTilePressed();
                         }
                     }
                     else if (GetComponent<Tools>().toolType == Tools.tool.tile_03)
@@ -157,23 +145,15 @@ public class Tools : MonoBehaviour
                         if (toolManager.tileOneSequence == true && toolManager.tileTwoSequence == true
                             && toolManager.tileFourSequence == false)
                         {
-                            toolManager.tilesValue += 1;
+                            if(toolManager.tileThreeSequence == false)
+                            {
+                                toolManager.tilesValue += 1;
+                            }
                             toolManager.tileThreeSequence = true;
-                            Destroy(toolParent);
                         }
                         else
                         {
-                            other.gameObject.transform.position = resetPoint_02.position;
-                            toolManager.tilesValue = 0;
-
-                            SelfDestruct[] removeTiles = FindObjectsOfType<SelfDestruct>();
-                            foreach (SelfDestruct tile in removeTiles)
-                            {
-                                Destroy(tile.gameObject);
-                            }
-
-                            tilePuzzleManager = FindObjectOfType<TilesPuzzleManager>();
-                            tilePuzzleManager.ResetTiles();
+                            IncorrectTilePressed();
                         }
                     }
                     else if (GetComponent<Tools>().toolType == Tools.tool.tile_04)
@@ -181,9 +161,11 @@ public class Tools : MonoBehaviour
                         if (toolManager.tileOneSequence == true && toolManager.tileTwoSequence == true
                             && toolManager.tileThreeSequence == true)
                         {
-                            toolManager.tilesValue += 1;
+                            if(toolManager.tileFourSequence == false)
+                            {
+                                toolManager.tilesValue += 1;
+                            }
                             toolManager.tileFourSequence = true;
-                            Destroy(toolParent);
                             if (toolManager.tilesValue == 4)
                             {
                                 tilePuzzleManager = FindObjectOfType<TilesPuzzleManager>();
@@ -198,17 +180,7 @@ public class Tools : MonoBehaviour
                         }
                         else
                         {
-                            other.gameObject.transform.position = resetPoint_02.position;
-                            toolManager.tilesValue = 0;
-
-                            SelfDestruct[] removeTiles = FindObjectsOfType<SelfDestruct>();
-                            foreach (SelfDestruct tile in removeTiles)
-                            {
-                                Destroy(tile.gameObject);
-                            }
-
-                            tilePuzzleManager = FindObjectOfType<TilesPuzzleManager>();
-                            tilePuzzleManager.ResetTiles();
+                            IncorrectTilePressed();
                         }
                     }
                 }
