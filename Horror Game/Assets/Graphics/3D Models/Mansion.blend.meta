@@ -3,7 +3,7 @@ guid: aaa2b7c6622d4564ea8f2a8a82ca867d
 timeCreated: 1508702474
 licenseType: Free
 ModelImporter:
-  serializedVersion: 21
+  serializedVersion: 22
   fileIDToRecycleName:
     100000: _Mansion_Blueprint
     100002: _Mansion_Floor_2_Blueprint
@@ -146,6 +146,7 @@ ModelImporter:
     100276: Wall_7
     100278: Wall_8
     100280: Walll_3
+    100282: Entrance_Railing
     400000: _Mansion_Blueprint
     400002: _Mansion_Floor_2_Blueprint
     400004: Back_Wall
@@ -287,6 +288,7 @@ ModelImporter:
     400276: Wall_7
     400278: Wall_8
     400280: Walll_3
+    400282: Entrance_Railing
     2300000: Back_Wall
     2300002: Back_Wall_001
     2300004: Back_Wall_002
@@ -405,6 +407,7 @@ ModelImporter:
     2300230: Wall_7
     2300232: Wall_8
     2300234: Walll_3
+    2300236: Entrance_Railing
     3300000: Back_Wall
     3300002: Back_Wall_001
     3300004: Back_Wall_002
@@ -523,6 +526,7 @@ ModelImporter:
     3300230: Wall_7
     3300232: Wall_8
     3300234: Walll_3
+    3300236: Entrance_Railing
     4300000: Tower_Inner_Walls_Floor2
     4300002: Outer_Walls_001
     4300004: Roof_Interior
@@ -641,6 +645,7 @@ ModelImporter:
     4300230: Bath_Wall_2
     4300232: Bath_Wall_1
     4300234: Master_Room_Wall_1
+    4300236: Entrance_Railing
     6400000: Back_Wall
     6400002: Back_Wall_001
     6400004: Back_Wall_002
@@ -759,12 +764,15 @@ ModelImporter:
     6400230: Wall_7
     6400232: Wall_8
     6400234: Walll_3
+    6400236: Entrance_Railing
     7400000: Default Take
     9500000: //RootNode
+  externalObjects: {}
   materials:
     importMaterials: 0
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -777,6 +785,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
