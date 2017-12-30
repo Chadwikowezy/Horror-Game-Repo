@@ -1,16 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
-public class SpectorAnimController : MonoBehaviour {
+public class SpectorAnimController : MonoBehaviour
+{
+    private Animator _anim;
+    private NavMeshAgent _myAgent;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private void Start()
+    {
+        _anim = GetComponent<Animator>();
+        _myAgent = GetComponentInParent<NavMeshAgent>();
+    }
+    private void Update()
+    {
+        _anim.SetFloat("Speed", _myAgent.velocity.magnitude);
+    }
 }

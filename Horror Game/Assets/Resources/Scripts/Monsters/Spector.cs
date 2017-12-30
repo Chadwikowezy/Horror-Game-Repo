@@ -6,6 +6,8 @@ using UnityEngine.AI;
 public class Spector : MonoBehaviour
 {
     //Variables
+    public float walkSpeed;
+    public float runSpeed;
     public float waypointDistance;
     public float idleTime;
     public float alertedDuration;
@@ -48,13 +50,14 @@ public class Spector : MonoBehaviour
     private void Start()
     {
         _myAgent = GetComponent<NavMeshAgent>();
-        //_player = FindObjectOfType<PlayerMotor>().gameObject;
+        _player = FindObjectOfType<PlayerMotor>().gameObject;
 
         CurrentState = MonsterStates.Idle;
+        AlertPosition = transform.position;
     }
     private void Update()
     {
-        //detectPlayer();
+        detectPlayer();
     }
 
     //Functions
@@ -73,7 +76,7 @@ public class Spector : MonoBehaviour
     {
         float randomNumber = Random.Range(0f, 1f);
 
-        if (CurrentState == MonsterStates.Idle || CurrentState == MonsterStates.Patrol)
+        if (CurrentState == MonsterStates.Idle || CurrentState == MonsterStates.Patrol || CurrentState == MonsterStates.Alerted)
         {
             if (randomNumber < 0.25f)
                 CurrentState = MonsterStates.Idle;
@@ -126,13 +129,12 @@ public class Spector : MonoBehaviour
     }
     IEnumerator patrol()
     {
+        _myAgent.speed = walkSpeed;
         setRandomWaypoint(transform.position);
 
         while (transform.position != _myAgent.destination && CurrentState == MonsterStates.Patrol)
         {
             yield return new WaitForEndOfFrame();
-
-            continue;
         }
 
         if (CurrentState != MonsterStates.Patrol)
@@ -144,6 +146,7 @@ public class Spector : MonoBehaviour
     {
         float timeElapsed = 0;
 
+        _myAgent.speed = runSpeed;
         setRandomWaypoint(_alertPosition);
         
         while (CurrentState == MonsterStates.Alerted && timeElapsed < alertedDuration)
@@ -163,6 +166,8 @@ public class Spector : MonoBehaviour
     }
     IEnumerator chasing()
     {
+        _myAgent.speed = runSpeed;
+
         while (_currentState == MonsterStates.Chasing)
         {
             yield return new WaitForEndOfFrame();
