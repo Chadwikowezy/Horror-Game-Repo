@@ -48,13 +48,13 @@ public class Spector : MonoBehaviour
     private void Start()
     {
         _myAgent = GetComponent<NavMeshAgent>();
-        _player = FindObjectOfType<PlayerMotor>().gameObject;
+        //_player = FindObjectOfType<PlayerMotor>().gameObject;
 
         CurrentState = MonsterStates.Idle;
     }
     private void Update()
     {
-        detectPlayer();
+        //detectPlayer();
     }
 
     //Functions
