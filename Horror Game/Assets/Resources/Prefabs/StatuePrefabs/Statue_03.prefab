@@ -267,7 +267,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1981557413942038}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -63.53794, y: 0.43, z: -179.21315}
+  m_LocalPosition: {x: -69.7021, y: 0.314, z: -179.90433}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 4141295673130716}
@@ -289,7 +289,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4312548492fbb594e90c5c0022811c63, type: 2}
+  - {fileID: 2100000, guid: a969383416150f042adc101634700fa6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -323,9 +323,9 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: af7be707146736249a3ecef3fd8a4bc1, type: 2}
-  - {fileID: 2100000, guid: 06dddeea897165b4186897bd08b3798e, type: 2}
-  - {fileID: 2100000, guid: 4312548492fbb594e90c5c0022811c63, type: 2}
+  - {fileID: 2100000, guid: a969383416150f042adc101634700fa6, type: 2}
+  - {fileID: 2100000, guid: a969383416150f042adc101634700fa6, type: 2}
+  - {fileID: 2100000, guid: a969383416150f042adc101634700fa6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -359,8 +359,8 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: caa2ac57157be0542a4758cdbd808d14, type: 2}
-  - {fileID: 2100000, guid: 4665f8f3049bcb440aa96a1efb55807a, type: 2}
+  - {fileID: 2100000, guid: a969383416150f042adc101634700fa6, type: 2}
+  - {fileID: 2100000, guid: a969383416150f042adc101634700fa6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -394,7 +394,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 4312548492fbb594e90c5c0022811c63, type: 2}
+  - {fileID: 2100000, guid: a969383416150f042adc101634700fa6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -530,6 +530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolType: 2
+  alertedPos: {x: 0, y: 0, z: 0}
 --- !u!114 &114718912792144834
 MonoBehaviour:
   m_ObjectHideFlags: 1

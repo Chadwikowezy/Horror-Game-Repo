@@ -134,6 +134,8 @@ public class StatuePuzzleManager : MonoBehaviour
                 toolUI.sprite = transparentEmpty;
             }
             sectionManager.masionPuzzle_F1_01 = true;
+            TilesPuzzleManager tilePuzzleManager = FindObjectOfType<TilesPuzzleManager>();
+            tilePuzzleManager.colorChartObj.SetActive(true);
             sectionDoor.SetActive(false);
             gameController.Save();
             placeStatuesImg.SetActive(false);
