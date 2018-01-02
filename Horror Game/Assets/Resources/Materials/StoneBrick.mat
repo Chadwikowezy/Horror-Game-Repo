@@ -19,7 +19,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: bc349d82c51338a4b9fe813901571327, type: 3}
+        m_Texture: {fileID: 2800000, guid: bb48e5d095d866d439a82ba2eb07b283, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -27,7 +27,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailMask:
-        m_Texture: {fileID: 2800000, guid: 95dcc1a46bc13834e81216e2d14459ce, type: 3}
+        m_Texture: {fileID: 2800000, guid: 46f1dcafb6a2e3f49b38983caa0339d2, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailNormalMap:
@@ -36,22 +36,22 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 50, y: 50}
+        m_Scale: {x: 15, y: 25}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: db913676abd9e854082916d5447ff7e6, type: 3}
-        m_Scale: {x: 50, y: 50}
+        m_Texture: {fileID: 2800000, guid: 32aa9a90ab7599843ad1de508a574c23, type: 3}
+        m_Scale: {x: 15, y: 25}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 86c5da3b4ec78164cb3b5785914ad6c3, type: 3}
+        m_Texture: {fileID: 2800000, guid: ffabc5d5de303144fa04834d18ee0056, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: edc56fbf72302c7489ec7df04cc2b72f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 84cc58f111ca58341a7371e55187c9d1, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
-        m_Texture: {fileID: 2800000, guid: e89a02e376e7aae4da04c4e0dc462172, type: 3}
+        m_Texture: {fileID: 2800000, guid: 908723b93b654dc44b9fc4893114d26f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -59,7 +59,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _GlossMapScale: 0.532
+    - _GlossMapScale: 0
     - _Glossiness: 0.5
     - _GlossyReflections: 1
     - _Metallic: 0
