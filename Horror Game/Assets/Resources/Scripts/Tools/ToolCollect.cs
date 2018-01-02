@@ -20,7 +20,9 @@ public class ToolCollect : MonoBehaviour
     private TilesPuzzleManager tilePuzzleManager;
 
     public Sprite
-        statueSprite,
+        abstractArt_01,
+        abstractArt_02,
+        abstractArt_03,
         crowbarSprite;
     #endregion
 
@@ -40,15 +42,15 @@ public class ToolCollect : MonoBehaviour
 
         if (tool.toolType == Tools.tool.statue01)
         {
-            toolManager.toolBar01.sprite = statueSprite;
+            toolManager.toolBar01.sprite = abstractArt_01;
         }
         else if (tool.toolType == Tools.tool.statue02)
         {
-            toolManager.toolBar02.sprite = statueSprite;
+            toolManager.toolBar02.sprite = abstractArt_02;
         }
         else if (tool.toolType == Tools.tool.statue03)
         {
-            toolManager.toolBar03.sprite = statueSprite;
+            toolManager.toolBar03.sprite = abstractArt_03;
         }        
     }
     #endregion

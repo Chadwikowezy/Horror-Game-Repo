@@ -51,15 +51,15 @@ public class SafePuzzleManager : MonoBehaviour
             
             while (spawnPoint01 == spawnPoint02 || spawnPoint01 == spawnPoint03 || spawnPoint01 == spawnPoint04)
             {
-                spawnPoint01 = (Random.Range(0, 3)) + (Random.Range(0, 2));
+                spawnPoint01 = (Random.Range(0, 3));
             }
             while (spawnPoint02 == spawnPoint01 || spawnPoint02 == spawnPoint03 || spawnPoint02 == spawnPoint04)
             {
-                spawnPoint02 = (Random.Range(4, 7));
+                spawnPoint02 = (Random.Range(3, 6));
             }
             while (spawnPoint03 == spawnPoint01 || spawnPoint03 == spawnPoint02 || spawnPoint03 == spawnPoint04)
             {
-                spawnPoint03 = (Random.Range(7, 10));
+                spawnPoint03 = (Random.Range(6, 9));
             }
 
             GameObject valueObj_01 = Instantiate(numberPrefab,
@@ -98,7 +98,7 @@ public class SafePuzzleManager : MonoBehaviour
     }
     public void DecrementValue01()
     {
-        if(value_01 > 1)
+        if(value_01 > 0)
         {
             value_01 -= 1;
             _val01.text = value_01.ToString();
@@ -115,7 +115,7 @@ public class SafePuzzleManager : MonoBehaviour
     }
     public void DecrementValue02()
     {
-        if (value_02 > 1)
+        if (value_02 > 0)
         {
             value_02 -= 1;
             _val02.text = value_02.ToString();
@@ -132,7 +132,7 @@ public class SafePuzzleManager : MonoBehaviour
     }
     public void DecrementValue03()
     {
-        if (value_03 > 1)
+        if (value_03 > 0)
         {
             value_03 -= 1;
             _val03.text = value_03.ToString();
