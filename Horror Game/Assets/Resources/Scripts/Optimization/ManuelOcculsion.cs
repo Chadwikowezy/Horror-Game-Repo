@@ -5,12 +5,12 @@ using UnityEngine;
 public class ManuelOcculsion : MonoBehaviour
 {
     private Camera cam;
-    private GameObject[] occlusionObjects;
+    public List<GameObject> occlusionObjects = new List<GameObject>();
 
 	void Start ()
     {
         cam = GetComponent<Camera>();
-        occlusionObjects = GameObject.FindGameObjectsWithTag("Occlusion");
+        //occlusionObjects = GameObject.FindGameObjectsWithTag("Occlusion");
     }
 	
 	void Update ()

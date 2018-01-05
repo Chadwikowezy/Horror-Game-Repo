@@ -87,8 +87,9 @@ public class Tools : MonoBehaviour
         toolManager.tileFourSequence = false;
 
         //Audio asset for noise of incorrect tile plays in this moment
-        //monster.AlertPosition = AlertLocation();
-        Debug.Log("Alerted position: " + AlertLocation());
+        monster.AlertPosition = AlertLocation();
+        monster.CurrentState = MonsterStates.Alerted;
+        Debug.Log("Alerted position: " + AlertLocation() + "\nCurrent State: " + monster.CurrentState.ToString());
     }
     Vector3 AlertLocation()
     {

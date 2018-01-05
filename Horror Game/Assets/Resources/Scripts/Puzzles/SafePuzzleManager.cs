@@ -43,6 +43,7 @@ public class SafePuzzleManager : MonoBehaviour
     {
         if (actor.data.masionPuzzle_F1_03 == false)
         {
+            sectionDoor.SetActive(true);
             SafeLockCanvasObj.SetActive(true);
             correctValue_01 = Random.Range(0, 10);
             correctValue_02 = Random.Range(0, 10);

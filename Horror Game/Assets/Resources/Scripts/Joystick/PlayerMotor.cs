@@ -40,7 +40,7 @@ public class PlayerMotor : MonoBehaviour
     }
     #endregion
 
-    #region move function call, clamping velocity inside
+    #region move function call, and stopping/ reseting movespeed 
     public void Move()
     {
         if(handleCanvas.movementJoytickStop == false && isGrounded == true)
@@ -55,9 +55,18 @@ public class PlayerMotor : MonoBehaviour
             }
         }
 
-        if (isGrounded == false)
+       if (isGrounded == false)
             if (thisRigidBody.velocity.magnitude == 0)
                 isGrounded = true;
+    }
+
+    public void ResetMoveSpeed()
+    {
+        moveSpeed = 5;
+    }
+    public void StopMovement()
+    {
+        moveSpeed = 0;
     }
     #endregion
 

@@ -15,6 +15,7 @@ public class Actor : MonoBehaviour
     private StatuePuzzleManager statuePuzzleManager;
     private SafePuzzleManager safePuzzleManager;
     private TilesPuzzleManager tilesPuzzleManager;
+    private InvisibleFloorPuzzleManager invisibleFloorPuzzleManager;
 
     void Start()
     {
