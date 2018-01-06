@@ -57,8 +57,6 @@ public class Spector : MonoBehaviour
     private void Update()
     {
         detectPlayer();
-
-        print(CurrentState);
     }
 
     //Functions
