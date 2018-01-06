@@ -59,14 +59,6 @@ public class Actor : MonoBehaviour
         {
             data.masionPuzzle_F2_01 = true;
         }
-        if (sectionManager.masionPuzzle_F2_02 == true)
-        {
-            data.masionPuzzle_F2_02 = true;
-        }
-        if (sectionManager.masionPuzzle_F2_03 == true)
-        {
-            data.masionPuzzle_F2_03 = true;
-        }
     }
     #endregion
 
@@ -123,14 +115,6 @@ public class Actor : MonoBehaviour
         {
             sectionManager.masionPuzzle_F2_01 = true;
         }
-        if (data.masionPuzzle_F2_02 == true)
-        {
-            sectionManager.masionPuzzle_F2_02 = true;
-        }
-        if (data.masionPuzzle_F2_03 == true)
-        {
-            sectionManager.masionPuzzle_F2_03 = true;
-        }
     }
     #endregion
 
@@ -185,8 +169,6 @@ public class ActorData
     public bool masionPuzzle_F1_02 = false;
     public bool masionPuzzle_F1_03 = false;
     public bool masionPuzzle_F2_01 = false;
-    public bool masionPuzzle_F2_02 = false;
-    public bool masionPuzzle_F2_03 = false;
     public bool mazePuzzle_01 = false;
     public bool mazePuzzle_02 = false;
     public bool mazePuzzle_03 = false;

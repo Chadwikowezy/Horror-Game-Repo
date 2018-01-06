@@ -20,7 +20,9 @@ public class Puzzle4_TileManager : MonoBehaviour
         player = FindObjectOfType<PlayerMotor>();
         monster = FindObjectOfType<Spector>();
         handleCanvas = FindObjectOfType<HandleCanvas>();
-        if(this.gameObject.tag == "PullPlayer_Tile")
+        thisPuzzleManager = FindObjectOfType<InvisibleFloorPuzzleManager>();
+
+        if (this.gameObject.tag == "PullPlayer_Tile")
         {
             arms.SetActive(false);
         }
@@ -83,5 +85,8 @@ public class Puzzle4_TileManager : MonoBehaviour
         handleCanvas.canUseButtons = true;
 
         hasFinishedProcess = true;
+        thisPuzzleManager.beginFogFollow = false;
+        thisPuzzleManager.fogEffect.SetActive(false);
+        thisPuzzleManager.hasFallen = true;
     }
 }

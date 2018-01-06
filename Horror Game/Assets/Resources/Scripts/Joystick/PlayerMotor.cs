@@ -55,9 +55,9 @@ public class PlayerMotor : MonoBehaviour
             }
         }
 
-       if (isGrounded == false)
+       /*if (isGrounded == false)
             if (thisRigidBody.velocity.magnitude == 0)
-                isGrounded = true;
+                isGrounded = true;*/
     }
 
     public void ResetMoveSpeed()
@@ -103,7 +103,7 @@ public class PlayerMotor : MonoBehaviour
     #endregion
 
     #region OnCollisionEnter & OnCollisionExit functions
-    void OnCollisionEnter(Collision other)
+    void OnCollisionStay(Collision other)
     {
         if(other.gameObject.tag == "Ground")
         {

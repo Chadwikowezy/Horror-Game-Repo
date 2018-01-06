@@ -31,9 +31,7 @@ public class TilesPuzzleManager : MonoBehaviour
         if (sectionDoor == null)
         {
             sectionDoor = GameObject.Find("SectionDoor_02");
-        }
-
-        
+        }        
         GenerateTiles();     
     }
     #endregion
