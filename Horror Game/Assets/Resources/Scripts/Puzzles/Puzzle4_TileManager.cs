@@ -38,9 +38,6 @@ public class Puzzle4_TileManager : MonoBehaviour
             {
                 //Audio asset for noise of incorrect tile plays in this moment
                 monster.AlertPosition = AlertPosition();
-                monster.CurrentState = MonsterStates.Alerted;
-                Debug.Log("Alerted Monster : state : " + monster.CurrentState.ToString());
-
             }
         }
     }

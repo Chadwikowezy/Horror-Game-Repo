@@ -53,11 +53,12 @@ public class Spector : MonoBehaviour
         _player = FindObjectOfType<PlayerMotor>().gameObject;
 
         CurrentState = MonsterStates.Idle;
-        AlertPosition = transform.position;
     }
     private void Update()
     {
         detectPlayer();
+
+        print(CurrentState);
     }
 
     //Functions
@@ -124,8 +125,8 @@ public class Spector : MonoBehaviour
 
         if (CurrentState != MonsterStates.Idle)
             yield return null;
-
-        changeMoveState();
+        else
+            changeMoveState();
     }
     IEnumerator patrol()
     {
@@ -139,23 +140,28 @@ public class Spector : MonoBehaviour
 
         if (CurrentState != MonsterStates.Patrol)
             yield return null;
-
-        changeMoveState();
+        else
+            changeMoveState();
     }
     IEnumerator alerted()
     {
+        bool reachedAlertPos = false;
         float timeElapsed = 0;
 
         _myAgent.speed = runSpeed;
-        setRandomWaypoint(_alertPosition);
+        _myAgent.SetDestination(_alertPosition);
         
         while (CurrentState == MonsterStates.Alerted && timeElapsed < alertedDuration)
         {
-            timeElapsed += Time.deltaTime;
+            if (reachedAlertPos)
+                timeElapsed += Time.deltaTime;
 
             if (transform.position == _myAgent.destination)
+            {
+                reachedAlertPos = true;
+                _myAgent.speed = walkSpeed;
                 setRandomWaypoint(_alertPosition);
-
+            }
             yield return new WaitForEndOfFrame();
         }
 
