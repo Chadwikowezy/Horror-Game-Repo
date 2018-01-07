@@ -10,7 +10,7 @@ public class Puzzle4_TileManager : MonoBehaviour
     private Vector3 alertedPos;
     private Spector monster;
     private HandleCanvas handleCanvas;
-
+    private Camera mainCamera;
     public GameObject arms;
 
     public bool hasFinishedProcess;
@@ -19,6 +19,7 @@ public class Puzzle4_TileManager : MonoBehaviour
     {
         player = FindObjectOfType<PlayerMotor>();
         monster = FindObjectOfType<Spector>();
+        mainCamera = Camera.main;
         handleCanvas = FindObjectOfType<HandleCanvas>();
         thisPuzzleManager = FindObjectOfType<InvisibleFloorPuzzleManager>();
 
@@ -35,6 +36,7 @@ public class Puzzle4_TileManager : MonoBehaviour
             if(this.gameObject.tag == "PullPlayer_Tile")
             {
                 StartCoroutine(ArmPullResetAnim());
+                //call player arm animation effect here
             }
             else if (this.gameObject.tag == "AlertMonster_Tile")
             {
@@ -56,8 +58,9 @@ public class Puzzle4_TileManager : MonoBehaviour
 
         arms.SetActive(true);
 
-        GetComponent<Animator>().SetInteger("Reset", 0);
-        GetComponent<Animator>().SetInteger("Pull", 1);
+        //call arms animtion
+        mainCamera.GetComponent<Animator>().SetInteger("ArmsReset", 0);
+        mainCamera.GetComponent<Animator>().SetInteger("ArmsPull", 1);
 
         yield return new WaitForSeconds(.5f);
 
@@ -66,8 +69,9 @@ public class Puzzle4_TileManager : MonoBehaviour
 
         yield return new WaitForSeconds(.6f);
 
-        GetComponent<Animator>().SetInteger("Pull", 0);
-        GetComponent<Animator>().SetInteger("Reset", 1);
+        //begin resetting arm animation to pull behind player
+        mainCamera.GetComponent<Animator>().SetInteger("ArmsPull", 0);
+        mainCamera.GetComponent<Animator>().SetInteger("ArmsReset", 1);
 
         yield return new WaitForSeconds(.2f);
 
