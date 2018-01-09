@@ -12,19 +12,35 @@ public class CompletedMansionPuzzles : MonoBehaviour
     public SafePuzzleManager safePuzzleManager;
     public InvisibleFloorPuzzleManager invisibleFloorPuzzleManager;
 
+    private PlayerMotor player;
+    public Transform teleportPositionOutside;
+    public Transform teleportPositionInside;
+
+    private RainFollowPlayer rainFollowPlayer;
+
     void OnTriggerEnter(Collider other)
     {
         actor = FindObjectOfType<Actor>();
         gameController = FindObjectOfType<GameController>();
+        rainFollowPlayer = FindObjectOfType<RainFollowPlayer>();
+        player = FindObjectOfType<PlayerMotor>();
 
-        if(actor.data.masionPuzzle_F2_01 == false)
+        if (actor.data.masionPuzzle_F2_01 == false)
         {
             if (other.gameObject.tag == "Player")
             {
-                actor.data.masionPuzzle_F2_01 = true;
-                gameController.Save();
+
                 invisibleFloorPuzzleManager.beginFogFollow = false;
                 invisibleFloorPuzzleManager.fogEffect.SetActive(false);
+
+                actor.data.isOutside = true;
+                rainFollowPlayer.CheckIfCanFollow();
+
+                actor.data.masionPuzzle_F2_01 = true;
+
+                player.transform.position = teleportPositionOutside.transform.position;
+
+                gameController.Save();
 
                 statuePuzzleManager.gameObject.SetActive(false);
                 tilesPuzzleManager.gameObject.SetActive(false);
