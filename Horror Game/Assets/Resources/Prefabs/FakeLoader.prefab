@@ -52,13 +52,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data:
+    playerPos: {x: 0, y: 0, z: 0}
     masionPuzzle_F1_01: 0
     masionPuzzle_F1_02: 0
     masionPuzzle_F1_03: 0
     masionPuzzle_F2_01: 0
-    masionPuzzle_F2_02: 0
-    masionPuzzle_F2_03: 0
     mazePuzzle_01: 0
     mazePuzzle_02: 0
     mazePuzzle_03: 0
     mazePuzzle_04: 0
+    firstRunThru: 1
+    isOutside: 0

@@ -23,9 +23,12 @@ public class Actor : MonoBehaviour
         tilesPuzzleManager = FindObjectOfType<TilesPuzzleManager>();
         safePuzzleManager = FindObjectOfType<SafePuzzleManager>();
 
-        statuePuzzleManager.RecievedCall();
-        tilesPuzzleManager.RecievedCall();
-        safePuzzleManager.RecievedCall();
+        if (data.firstRunThru == true)
+        {
+            statuePuzzleManager.RecievedCall();
+            tilesPuzzleManager.RecievedCall();
+            safePuzzleManager.RecievedCall();
+        }
     }
     #endregion
 
@@ -37,6 +40,7 @@ public class Actor : MonoBehaviour
         MansionSectionManager();
         MazeSectionManager();
         data.playerPos = player.GetComponent<Transform>().position;
+        data.firstRunThru = false;
     }
     #endregion
 
@@ -90,6 +94,7 @@ public class Actor : MonoBehaviour
         player = FindObjectOfType<PlayerMotor>();
         player.GetComponent<Transform>().position = data.playerPos;
 
+        data.firstRunThru = false;
         sectionManager = FindObjectOfType<SectionManager>();
         LoadMansionSectionData();
         LoadMazeSectionData();
@@ -173,5 +178,8 @@ public class ActorData
     public bool mazePuzzle_02 = false;
     public bool mazePuzzle_03 = false;
     public bool mazePuzzle_04 = false;
+
+    public bool firstRunThru = true;
+    public bool isOutside = false;
 }
 #endregion
