@@ -6,6 +6,9 @@ using UnityEngine.UI;
 public class MenuController : MonoBehaviour
 {
     public Image fadeScreenImage;
+    public Slider volumeSlider;
+
+    [Header("Menus")]
     public GameObject optionsMenu;
     public GameObject creditsMenu;
 
@@ -19,8 +22,12 @@ public class MenuController : MonoBehaviour
     [Header("Animators")]
     public Animator menuOptionsAnim;
 
+    private MenuSelections _selections;
+
     private void Start()
     {
+        spawnMenuSelections();
+
         StartCoroutine(flickerLight());
     }
 
@@ -54,16 +61,31 @@ public class MenuController : MonoBehaviour
         }
     }
 
+    void spawnMenuSelections()
+    {
+        _selections = FindObjectOfType<MenuSelections>();
+
+        if (_selections == null)
+        {
+            GameObject menuSelections = new GameObject("Menu Selections");
+            _selections = menuSelections.AddComponent<MenuSelections>();
+        }
+
+        _selections.volumeLevel = volumeSlider.value;
+    }
+
     //Button Functions
     public void newGameButton()
     {
         menuOptionsAnim.SetBool("Loading Game", true);
+        _selections.newGame = true;
 
         StartCoroutine(fadeScreen());
     }
     public void loadGameButton()
     {
         menuOptionsAnim.SetBool("Loading Game", true);
+        _selections.newGame = false;
 
         StartCoroutine(fadeScreen());
     }
@@ -78,5 +100,21 @@ public class MenuController : MonoBehaviour
     public void quitButton()
     {
         Application.Quit();
+    }
+    public void normalDifficultyButton()
+    {
+        _selections.difficultyLevel = 0;
+    }
+    public void hardDifficultyButton()
+    {
+        _selections.difficultyLevel = 1;
+    }
+    public void insaneDifficultyButton()
+    {
+        _selections.difficultyLevel = 2;
+    }
+    public void volumeSliderUpdate()
+    {
+        _selections.volumeLevel = volumeSlider.value;
     }
 }
