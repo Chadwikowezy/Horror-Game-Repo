@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnableChargerUI : MonoBehaviour
 {
     public GameObject phoneChargeButtonEvent;
-    public PhoneManager phoneManager;
+    private PhoneManager phoneManager;
 
     void Start()
     {
