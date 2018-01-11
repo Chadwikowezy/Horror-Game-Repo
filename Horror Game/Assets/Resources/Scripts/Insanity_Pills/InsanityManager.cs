@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PostProcessing;
 using UnityEngine.UI;
 
 public class InsanityManager : MonoBehaviour
@@ -33,11 +34,13 @@ public class InsanityManager : MonoBehaviour
     private int sensitivityLvl;
 
     public bool justCollected = false;
+    private Camera mainCamera;
 
     void Start()
     {
         insanityImg = GetComponentInChildren<Image>();
         cameraMotor = FindObjectOfType<CameraMotor>();
+        mainCamera = Camera.main;
     }
 
     void Update()
@@ -49,6 +52,7 @@ public class InsanityManager : MonoBehaviour
                 sensitivityLvl = 3;
                 cameraMotor.sensitivityX = sensitivityLvl;
                 cameraMotor.sensitivityY = sensitivityLvl;
+                mainCamera.GetComponent<PostProcessingBehaviour>().profile.motionBlur.enabled = false;
                 Color c = insanityImg.color;
                 c.a = 1;
                 if (currentTime > 0)
@@ -67,6 +71,7 @@ public class InsanityManager : MonoBehaviour
                 sensitivityLvl = 4;
                 cameraMotor.sensitivityX = sensitivityLvl;
                 cameraMotor.sensitivityY = sensitivityLvl;
+                mainCamera.GetComponent<PostProcessingBehaviour>().profile.motionBlur.enabled = true;
                 Color c = insanityImg.color;
                 c.a = 1;
                 if (currentTime > 22)
@@ -85,6 +90,7 @@ public class InsanityManager : MonoBehaviour
                 sensitivityLvl = 5;
                 cameraMotor.sensitivityX = sensitivityLvl;
                 cameraMotor.sensitivityY = sensitivityLvl;
+                mainCamera.GetComponent<PostProcessingBehaviour>().profile.motionBlur.enabled = true;
                 Color c = insanityImg.color;
                 c.a = 1;
                 if (currentTime > 44)
@@ -102,6 +108,7 @@ public class InsanityManager : MonoBehaviour
 
     }
 
+    //Chad call this function like so in monster-----> AlterInsanity(1)
     public void AlterInsanity(int setInsanity)
     {
         beginDraining = true;
@@ -120,7 +127,7 @@ public class InsanityManager : MonoBehaviour
 
     public void UpdatePillCount(int pill)
     {
-        Debug.Log("Current before pill count: " + PillStackCount);
+        //Debug.Log("Current before pill count: " + PillStackCount);
         if (PillStackCount < pillStackMin)
         {
             PillStackCount = pillStackMin;
@@ -133,7 +140,7 @@ public class InsanityManager : MonoBehaviour
         {
             PillStackCount += pill;
             AlterInsanity(-1);
-            Debug.Log("Current after pill count: " + PillStackCount);
+            //Debug.Log("Current after pill count: " + PillStackCount);
         }        
         if(pill > 0 && PillStackCount < pillStackMax)
         {
