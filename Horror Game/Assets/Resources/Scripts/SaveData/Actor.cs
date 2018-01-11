@@ -16,12 +16,14 @@ public class Actor : MonoBehaviour
     private SafePuzzleManager safePuzzleManager;
     private TilesPuzzleManager tilesPuzzleManager;
     private InvisibleFloorPuzzleManager invisibleFloorPuzzleManager;
+    private InsanityManager insanityManager;
 
     void Start()
     {
         statuePuzzleManager = FindObjectOfType<StatuePuzzleManager>();
         tilesPuzzleManager = FindObjectOfType<TilesPuzzleManager>();
         safePuzzleManager = FindObjectOfType<SafePuzzleManager>();
+        insanityManager = FindObjectOfType<InsanityManager>();
 
         statuePuzzleManager.RecievedCall();
         tilesPuzzleManager.RecievedCall();
@@ -36,6 +38,7 @@ public class Actor : MonoBehaviour
         sectionManager = FindObjectOfType<SectionManager>();
         MansionSectionManager();
         MazeSectionManager();
+        data.pillsCarried = insanityManager.PillStackCount;
         data.playerPos = player.GetComponent<Transform>().position;
         data.firstRunThru = false;
     }
@@ -90,9 +93,11 @@ public class Actor : MonoBehaviour
     {
         player = FindObjectOfType<PlayerMotor>();
         player.GetComponent<Transform>().position = data.playerPos;
+        insanityManager = FindObjectOfType<InsanityManager>();
 
         data.firstRunThru = false;
         sectionManager = FindObjectOfType<SectionManager>();
+        insanityManager.UpdatePillCount(data.pillsCarried);
         LoadMansionSectionData();
         LoadMazeSectionData();
     }
@@ -178,5 +183,7 @@ public class ActorData
 
     public bool firstRunThru = true;
     public bool isOutside = false;
+
+    public int pillsCarried;
 }
 #endregion

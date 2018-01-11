@@ -7,13 +7,14 @@ using UnityEngine.UI;
 public class InsanityManager : MonoBehaviour
 {
     public Image insanityImg;
+    public Image insanityBreakImg;
     private int currentInsanity = 0;
     public int CurrentInsanity
     {
         get { return currentInsanity; }
         set { currentInsanity = value; }
     }
-    public int maxInsanity = 2;
+    public int maxInsanity = 3;
     public int minInsanity = 0;
     private float fallRate = 5;
     public float currentTime;
@@ -104,8 +105,25 @@ public class InsanityManager : MonoBehaviour
                     }
                 }
             }
+            else if(currentInsanity == 3)
+            {
+                Debug.Log("Knows its max insanity ");
+                Color c = insanityBreakImg.color;
+                c.a = 1;
+                if (currentTime < 100)
+                {
+                    currentTime += (fallRate * 3) * Time.deltaTime;
+                    Debug.Log("Current Time: " + currentTime);
+                    c.a = (currentTime / 100);
+                    insanityBreakImg.color = c;
+                    if (currentTime >= 100)
+                    {
+                        mainCamera.GetComponent<PostProcessingBehaviour>().profile.motionBlur.enabled = false;
+                        Application.LoadLevel(2);
+                    }
+                }
+            }
         }
-
     }
 
     //Chad call this function like so in monster-----> AlterInsanity(1)
@@ -113,16 +131,17 @@ public class InsanityManager : MonoBehaviour
     {
         beginDraining = true;
         CurrentInsanity += setInsanity;
-        if (CurrentInsanity > maxInsanity)
+        currentTime = 100;
+        if (CurrentInsanity >= maxInsanity)
         {
             CurrentInsanity = maxInsanity;
+            currentTime = 0;
         }
         if (CurrentInsanity < minInsanity)
         {
             CurrentInsanity = minInsanity;
         }
         //Debug.Log("current insanity: " + CurrentInsanity);
-        currentTime = 100;
     }
 
     public void UpdatePillCount(int pill)
