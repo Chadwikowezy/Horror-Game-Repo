@@ -23,12 +23,9 @@ public class Actor : MonoBehaviour
         tilesPuzzleManager = FindObjectOfType<TilesPuzzleManager>();
         safePuzzleManager = FindObjectOfType<SafePuzzleManager>();
 
-        if (data.firstRunThru == true)
-        {
-            statuePuzzleManager.RecievedCall();
-            tilesPuzzleManager.RecievedCall();
-            safePuzzleManager.RecievedCall();
-        }
+        statuePuzzleManager.RecievedCall();
+        tilesPuzzleManager.RecievedCall();
+        safePuzzleManager.RecievedCall();
     }
     #endregion
 
