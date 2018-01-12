@@ -17,6 +17,7 @@ public class CompletedMansionPuzzles : MonoBehaviour
     public Transform teleportPositionInside;
 
     private RainFollowPlayer rainFollowPlayer;
+    private PhoneManager phoneManager;
 
     void OnTriggerEnter(Collider other)
     {
@@ -24,6 +25,7 @@ public class CompletedMansionPuzzles : MonoBehaviour
         gameController = FindObjectOfType<GameController>();
         rainFollowPlayer = FindObjectOfType<RainFollowPlayer>();
         player = FindObjectOfType<PlayerMotor>();
+        phoneManager = FindObjectOfType<PhoneManager>();
 
         if (actor.data.masionPuzzle_F2_01 == false)
         {
@@ -39,7 +41,7 @@ public class CompletedMansionPuzzles : MonoBehaviour
                 actor.data.masionPuzzle_F2_01 = true;
 
                 player.transform.position = teleportPositionOutside.transform.position;
-
+                phoneManager.NewMessageNotification();
                 gameController.Save();
 
                 statuePuzzleManager.gameObject.SetActive(false);

@@ -17,6 +17,7 @@ public class Actor : MonoBehaviour
     private TilesPuzzleManager tilesPuzzleManager;
     private InvisibleFloorPuzzleManager invisibleFloorPuzzleManager;
     private InsanityManager insanityManager;
+    private PhoneManager phoneManager;
 
     void Start()
     {
@@ -24,10 +25,13 @@ public class Actor : MonoBehaviour
         tilesPuzzleManager = FindObjectOfType<TilesPuzzleManager>();
         safePuzzleManager = FindObjectOfType<SafePuzzleManager>();
         insanityManager = FindObjectOfType<InsanityManager>();
+        phoneManager = FindObjectOfType<PhoneManager>();
 
         statuePuzzleManager.RecievedCall();
         tilesPuzzleManager.RecievedCall();
         safePuzzleManager.RecievedCall();
+        phoneManager.RecievedCall();
+        phoneManager.NewMessageNotification();
     }
     #endregion
 
@@ -77,14 +81,10 @@ public class Actor : MonoBehaviour
         {
             data.mazePuzzle_02 = true;
         }
-        if (sectionManager.mazePuzzle_03 == true)
+        if (sectionManager.finalEventPuzzle == true)
         {
-            data.mazePuzzle_03 = true;
-        }
-        if (sectionManager.mazePuzzle_04 == true)
-        {
-            data.mazePuzzle_04 = true;
-        }
+            data.finalEventPuzzle = true;
+        }       
     }
     #endregion
 
@@ -136,14 +136,10 @@ public class Actor : MonoBehaviour
         {
             sectionManager.mazePuzzle_02 = true;
         }
-        if (data.mazePuzzle_03 == true)
+        if (data.finalEventPuzzle == true)
         {
-            sectionManager.mazePuzzle_03 = true;
-        }
-        if (data.mazePuzzle_04 == true)
-        {
-            sectionManager.mazePuzzle_04 = true;
-        }
+            sectionManager.finalEventPuzzle = true;
+        }        
     }
     #endregion
 
@@ -178,8 +174,7 @@ public class ActorData
     public bool masionPuzzle_F2_01 = false;
     public bool mazePuzzle_01 = false;
     public bool mazePuzzle_02 = false;
-    public bool mazePuzzle_03 = false;
-    public bool mazePuzzle_04 = false;
+    public bool finalEventPuzzle = false;
 
     public bool firstRunThru = true;
     public bool isOutside = false;

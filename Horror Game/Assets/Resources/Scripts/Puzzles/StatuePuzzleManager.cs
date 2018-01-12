@@ -28,6 +28,8 @@ public class StatuePuzzleManager : MonoBehaviour
 
     public GameObject placeStatuesImg;
     public GameObject InsufficentMessage;
+
+    private PhoneManager phoneManager;
     #endregion
 
     #region recieve actor call to begin
@@ -36,6 +38,7 @@ public class StatuePuzzleManager : MonoBehaviour
         toolManager = FindObjectOfType<ToolsManager>();
         sectionManager = FindObjectOfType<SectionManager>();
         gameController = FindObjectOfType<GameController>();
+        phoneManager = FindObjectOfType<PhoneManager>();
         placeStatuesImg.SetActive(false);
         InsufficentMessage.SetActive(false);
 
@@ -133,6 +136,7 @@ public class StatuePuzzleManager : MonoBehaviour
             TilesPuzzleManager tilePuzzleManager = FindObjectOfType<TilesPuzzleManager>();
             tilePuzzleManager.colorChartObj.SetActive(true);
             sectionDoor.SetActive(false);
+            phoneManager.NewMessageNotification();
             gameController.Save();
             placeStatuesImg.SetActive(false);
             InsufficentMessage.SetActive(false);
