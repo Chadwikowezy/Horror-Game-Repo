@@ -28,6 +28,8 @@ public class StatuePuzzleManager : MonoBehaviour
 
     public GameObject placeStatuesImg;
     public GameObject InsufficentMessage;
+
+    private PhoneManager phoneManager;
     #endregion
 
     #region recieve actor call to begin
@@ -36,6 +38,7 @@ public class StatuePuzzleManager : MonoBehaviour
         toolManager = FindObjectOfType<ToolsManager>();
         sectionManager = FindObjectOfType<SectionManager>();
         gameController = FindObjectOfType<GameController>();
+        phoneManager = FindObjectOfType<PhoneManager>();
         placeStatuesImg.SetActive(false);
         InsufficentMessage.SetActive(false);
 
@@ -43,52 +46,48 @@ public class StatuePuzzleManager : MonoBehaviour
         {
             sectionDoor = GameObject.Find("SectionDoor_01");
         }
-
-        if(actor == null)
+        actor = FindObjectOfType<Actor>();
+        if (actor.data.masionPuzzle_F1_01 == false)
         {
-            actor = FindObjectOfType<Actor>();
-            if (actor.data.masionPuzzle_F1_01 == false)
+            sectionDoor.SetActive(true);
+            while (spawnPoint_01 == spawnPoint_02 || spawnPoint_01 == spawnPoint_03 || spawnPoint_01 == spawnPoint_04)
             {
-                sectionDoor.SetActive(true);
-                while (spawnPoint_01 == spawnPoint_02 || spawnPoint_01 == spawnPoint_03 || spawnPoint_01 == spawnPoint_04)
-                {
-                    spawnPoint_01 = (Random.Range(0, 6) + Random.Range(0, 5));
-                }
-                while (spawnPoint_02 == spawnPoint_01 || spawnPoint_02 == spawnPoint_03 || spawnPoint_02 == spawnPoint_04)
-                {
-                    spawnPoint_02 = (Random.Range(0, 6) + Random.Range(0, 5));
-                }
-                while (spawnPoint_03 == spawnPoint_01 || spawnPoint_03 == spawnPoint_02 || spawnPoint_03 == spawnPoint_04)
-                {
-                    spawnPoint_03 = (Random.Range(0, 6) + Random.Range(0, 5));
-                }
-                while (spawnPoint_04 == spawnPoint_01 || spawnPoint_04 == spawnPoint_02 || spawnPoint_04 == spawnPoint_03)
-                {
-                    spawnPoint_04 = (Random.Range(0, 6) + Random.Range(0, 5));
-                }
-
-                GameObject statue01 = Instantiate(statueObj01, spawnLocations[spawnPoint_01].position,
-                    spawnLocations[spawnPoint_01].rotation);
-                GameObject statue02 = Instantiate(statueObj02, spawnLocations[spawnPoint_02].position,
-                    spawnLocations[spawnPoint_02].rotation);
-                GameObject statue03 = Instantiate(statueObj03, spawnLocations[spawnPoint_03].position,
-                    spawnLocations[spawnPoint_03].rotation);
-
-                toolCollect = FindObjectOfType<ToolCollect>();
-                toolCollect.sectionOneTools.Add(statue01.GetComponent<Tools>());
-                toolCollect.sectionOneTools.Add(statue02.GetComponent<Tools>());
-                toolCollect.sectionOneTools.Add(statue03.GetComponent<Tools>());
+                spawnPoint_01 = (Random.Range(0, 6) + Random.Range(0, 5));
             }
-            else if (actor.data.masionPuzzle_F1_01 == true)
+            while (spawnPoint_02 == spawnPoint_01 || spawnPoint_02 == spawnPoint_03 || spawnPoint_02 == spawnPoint_04)
             {
-                sectionDoor.SetActive(false);
-                foreach (GameObject stat in statueDisplayObjs)
-                {
-                    stat.SetActive(true);
-                }
-                gameObject.SetActive(false);
+                spawnPoint_02 = (Random.Range(0, 6) + Random.Range(0, 5));
             }
-        }      
+            while (spawnPoint_03 == spawnPoint_01 || spawnPoint_03 == spawnPoint_02 || spawnPoint_03 == spawnPoint_04)
+            {
+                spawnPoint_03 = (Random.Range(0, 6) + Random.Range(0, 5));
+            }
+            while (spawnPoint_04 == spawnPoint_01 || spawnPoint_04 == spawnPoint_02 || spawnPoint_04 == spawnPoint_03)
+            {
+                spawnPoint_04 = (Random.Range(0, 6) + Random.Range(0, 5));
+            }
+
+            GameObject statue01 = Instantiate(statueObj01, spawnLocations[spawnPoint_01].position,
+                spawnLocations[spawnPoint_01].rotation);
+            GameObject statue02 = Instantiate(statueObj02, spawnLocations[spawnPoint_02].position,
+                spawnLocations[spawnPoint_02].rotation);
+            GameObject statue03 = Instantiate(statueObj03, spawnLocations[spawnPoint_03].position,
+                spawnLocations[spawnPoint_03].rotation);
+
+            toolCollect = FindObjectOfType<ToolCollect>();
+            toolCollect.sectionOneTools.Add(statue01.GetComponent<Tools>());
+            toolCollect.sectionOneTools.Add(statue02.GetComponent<Tools>());
+            toolCollect.sectionOneTools.Add(statue03.GetComponent<Tools>());
+        }
+        else if (actor.data.masionPuzzle_F1_01 == true)
+        {
+            sectionDoor.SetActive(false);
+            foreach (GameObject stat in statueDisplayObjs)
+            {
+                stat.SetActive(true);
+            }
+            gameObject.SetActive(false);
+        }
     }
     #endregion
 
@@ -137,6 +136,7 @@ public class StatuePuzzleManager : MonoBehaviour
             TilesPuzzleManager tilePuzzleManager = FindObjectOfType<TilesPuzzleManager>();
             tilePuzzleManager.colorChartObj.SetActive(true);
             sectionDoor.SetActive(false);
+            phoneManager.NewMessageNotification();
             gameController.Save();
             placeStatuesImg.SetActive(false);
             InsufficentMessage.SetActive(false);

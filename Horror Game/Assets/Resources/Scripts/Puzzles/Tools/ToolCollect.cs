@@ -91,7 +91,7 @@ public class ToolCollect : MonoBehaviour
                 }
             }            
         }
-        gameController.Save();
+        //gameController.Save();
     }
     #endregion
 }

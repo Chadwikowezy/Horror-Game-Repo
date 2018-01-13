@@ -23,6 +23,7 @@ public class Tools : MonoBehaviour
     public Vector3 alertedPos;
     private Spector monster;
 
+    private PhoneManager phoneManager;
     #endregion
 
     #region start
@@ -33,6 +34,7 @@ public class Tools : MonoBehaviour
         monster = FindObjectOfType<Spector>();
         sectionManager = FindObjectOfType<SectionManager>();
         toolManager = FindObjectOfType<ToolsManager>();
+        phoneManager = FindObjectOfType<PhoneManager>();
 
         gameController = FindObjectOfType<GameController>();
 
@@ -173,7 +175,7 @@ public class Tools : MonoBehaviour
                                 tilePuzzleManager.sectionDoor.SetActive(false);
                                 SectionManager sectionManager = FindObjectOfType<SectionManager>();
                                 sectionManager.masionPuzzle_F1_02 = true;
-
+                                phoneManager.NewMessageNotification();
                                 gameController.Save();
 
                                 tilePuzzleManager.gameObject.SetActive(false);

@@ -16,19 +16,22 @@ public class Actor : MonoBehaviour
     private SafePuzzleManager safePuzzleManager;
     private TilesPuzzleManager tilesPuzzleManager;
     private InvisibleFloorPuzzleManager invisibleFloorPuzzleManager;
+    private InsanityManager insanityManager;
+    private PhoneManager phoneManager;
 
     void Start()
     {
         statuePuzzleManager = FindObjectOfType<StatuePuzzleManager>();
         tilesPuzzleManager = FindObjectOfType<TilesPuzzleManager>();
         safePuzzleManager = FindObjectOfType<SafePuzzleManager>();
+        insanityManager = FindObjectOfType<InsanityManager>();
+        phoneManager = FindObjectOfType<PhoneManager>();
 
-        if (data.firstRunThru == true)
-        {
-            statuePuzzleManager.RecievedCall();
-            tilesPuzzleManager.RecievedCall();
-            safePuzzleManager.RecievedCall();
-        }
+        statuePuzzleManager.RecievedCall();
+        tilesPuzzleManager.RecievedCall();
+        safePuzzleManager.RecievedCall();
+        phoneManager.RecievedCall();
+        phoneManager.NewMessageNotification();
     }
     #endregion
 
@@ -39,6 +42,7 @@ public class Actor : MonoBehaviour
         sectionManager = FindObjectOfType<SectionManager>();
         MansionSectionManager();
         MazeSectionManager();
+        data.pillsCarried = insanityManager.PillStackCount;
         data.playerPos = player.GetComponent<Transform>().position;
         data.firstRunThru = false;
     }
@@ -77,14 +81,10 @@ public class Actor : MonoBehaviour
         {
             data.mazePuzzle_02 = true;
         }
-        if (sectionManager.mazePuzzle_03 == true)
+        if (sectionManager.finalEventPuzzle == true)
         {
-            data.mazePuzzle_03 = true;
-        }
-        if (sectionManager.mazePuzzle_04 == true)
-        {
-            data.mazePuzzle_04 = true;
-        }
+            data.finalEventPuzzle = true;
+        }       
     }
     #endregion
 
@@ -93,9 +93,11 @@ public class Actor : MonoBehaviour
     {
         player = FindObjectOfType<PlayerMotor>();
         player.GetComponent<Transform>().position = data.playerPos;
+        insanityManager = FindObjectOfType<InsanityManager>();
 
         data.firstRunThru = false;
         sectionManager = FindObjectOfType<SectionManager>();
+        insanityManager.UpdatePillCount(data.pillsCarried);
         LoadMansionSectionData();
         LoadMazeSectionData();
     }
@@ -134,14 +136,10 @@ public class Actor : MonoBehaviour
         {
             sectionManager.mazePuzzle_02 = true;
         }
-        if (data.mazePuzzle_03 == true)
+        if (data.finalEventPuzzle == true)
         {
-            sectionManager.mazePuzzle_03 = true;
-        }
-        if (data.mazePuzzle_04 == true)
-        {
-            sectionManager.mazePuzzle_04 = true;
-        }
+            sectionManager.finalEventPuzzle = true;
+        }        
     }
     #endregion
 
@@ -176,10 +174,11 @@ public class ActorData
     public bool masionPuzzle_F2_01 = false;
     public bool mazePuzzle_01 = false;
     public bool mazePuzzle_02 = false;
-    public bool mazePuzzle_03 = false;
-    public bool mazePuzzle_04 = false;
+    public bool finalEventPuzzle = false;
 
     public bool firstRunThru = true;
     public bool isOutside = false;
+
+    public int pillsCarried;
 }
 #endregion

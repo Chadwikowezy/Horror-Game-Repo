@@ -29,6 +29,10 @@ public class EnableChargerUI : MonoBehaviour
             phoneManager.batteryChargingUI.SetActive(false);
             phoneManager.phoneCamera.SetActive(false);
             phoneManager.phoneCameraUIObjs.SetActive(true);
+            if(phoneManager.currentBatteryLife > 0)
+            {
+                phoneManager.phoneIsDead = false;
+            }
         }
     }
 }

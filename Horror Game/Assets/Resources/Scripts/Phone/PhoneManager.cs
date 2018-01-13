@@ -15,12 +15,30 @@ public class PhoneManager : MonoBehaviour
         batteryDrainRate = 1;
     public float currentBatteryLife;
     public Image phoneBattery;
+    public GameObject phoneBatteryObj;
     public GameObject phoneDeadNotification;
 
     public bool chargingPhone = false;
     public GameObject batteryChargingUI;
     public Image chargingBatteryImg;
 
+    public GameObject message_01;
+    public GameObject message_02;
+    public GameObject message_03;
+    public GameObject message_04;
+    public GameObject message_05;
+    public GameObject message_06;
+    public GameObject message_07;
+    public GameObject messageObj;
+    private bool messagesDisplayed = false;
+    private Actor actor;
+
+    public GameObject newMessageNotification;
+
+    public void RecievedCall()
+    {
+        actor = FindObjectOfType<Actor>();
+    }
 
     public void LookThruPhoneLens()
     {
@@ -43,8 +61,92 @@ public class PhoneManager : MonoBehaviour
         {
             phoneCamera.SetActive(true);
             batteryChargingUI.SetActive(true);
-            Debug.Log("Should've enabled battery");
+            //Debug.Log("Should've enabled battery");
         }
+    }
+
+    public void LookAtMessages()
+    {
+        if(chargingPhone == false)
+        {
+            if(isOn == false && phoneIsDead == false)
+            {
+                StartCoroutine(MessagesEnableDelay());
+            }
+            else if (isOn == true)
+            {
+                StartCoroutine(MessagesDisableDelay());
+            }
+            else if (phoneIsDead == true)
+            {
+                StartCoroutine(phoneDeadNotificationDelay());
+            }
+        }
+    }
+
+    IEnumerator MessagesEnableDelay()
+    {
+        yield return new WaitForSeconds(1.25f);
+        phoneCamera.SetActive(true);
+        phoneCameraUIObjs.SetActive(false);
+        messageObj.SetActive(true);
+        isOn = true;
+        if (actor.data.masionPuzzle_F1_01 == false || actor.data.firstRunThru == true)
+        {
+            message_01.SetActive(true);
+        }
+        else if (actor.data.masionPuzzle_F1_01 == true && actor.data.masionPuzzle_F1_02 == false)
+        {
+            message_01.SetActive(true);
+            message_02.SetActive(true);
+        }
+        else if (actor.data.masionPuzzle_F1_02 == true && actor.data.masionPuzzle_F1_03 == false)
+        {
+            message_01.SetActive(true);
+            message_02.SetActive(true);
+            message_03.SetActive(true);
+        }
+        else if (actor.data.masionPuzzle_F1_03 == true && actor.data.masionPuzzle_F2_01 == false)
+        {
+            message_01.SetActive(true);
+            message_02.SetActive(true);
+            message_03.SetActive(true);
+            message_04.SetActive(true);
+        }
+        else if (actor.data.masionPuzzle_F2_01 == true && actor.data.mazePuzzle_01 == false)
+        {
+            message_01.SetActive(true);
+            message_02.SetActive(true);
+            message_03.SetActive(true);
+            message_04.SetActive(true);
+            message_05.SetActive(true);
+        }
+        else if (actor.data.mazePuzzle_01 == true && actor.data.mazePuzzle_02 == false)
+        {
+            message_01.SetActive(true);
+            message_02.SetActive(true);
+            message_03.SetActive(true);
+            message_04.SetActive(true);
+            message_06.SetActive(true);
+        }
+        else if (actor.data.mazePuzzle_02 == true && actor.data.finalEventPuzzle == false)
+        {
+            message_01.SetActive(true);
+            message_02.SetActive(true);
+            message_03.SetActive(true);
+            message_04.SetActive(true);
+            message_06.SetActive(true);
+            message_07.SetActive(true);
+        }
+        messagesDisplayed = true;
+    }
+    IEnumerator MessagesDisableDelay()
+    {
+        yield return new WaitForSeconds(.75f);
+        isOn = false;
+        messageObj.SetActive(false);
+        phoneCamera.SetActive(false);
+        messagesDisplayed = false;
     }
 
     IEnumerator phoneDeadNotificationDelay()
@@ -58,6 +160,7 @@ public class PhoneManager : MonoBehaviour
     {
         if (isOn == true)
         {
+            phoneBatteryObj.SetActive(true);
             if (currentBatteryLife <= maxBatteryLife && currentBatteryLife >= minBatteryLife)
             {
                 currentBatteryLife -= Time.deltaTime * batteryDrainRate;
@@ -77,6 +180,7 @@ public class PhoneManager : MonoBehaviour
         }
         if(chargingPhone == true)
         {
+            phoneBatteryObj.SetActive(false);
             AlterBatteryLife(chargingBatteryImg);
         }
     }
@@ -102,6 +206,8 @@ public class PhoneManager : MonoBehaviour
     IEnumerator LookThruPhoneLensDelay()
     {
         yield return new WaitForSeconds(1.25f);
+        messageObj.SetActive(false);
+        phoneCameraUIObjs.SetActive(true);
         phoneCamera.SetActive(true);
         isOn = true;       
     }
@@ -110,5 +216,23 @@ public class PhoneManager : MonoBehaviour
         yield return new WaitForSeconds(.75f);
         phoneCamera.SetActive(false);
         isOn = false;      
+    }
+
+    public void NewMessageNotification()
+    {
+        StartCoroutine(FlashNotification());
+    }
+
+    IEnumerator FlashNotification()
+    {
+        //player phone vibration sound effect
+        for (int i = 0; i < 4; i++)
+        {
+            newMessageNotification.SetActive(true);
+            yield return new WaitForSeconds(.5f);
+            newMessageNotification.SetActive(false);
+            yield return new WaitForSeconds(.5f);
+        }
+        newMessageNotification.SetActive(false);
     }
 }

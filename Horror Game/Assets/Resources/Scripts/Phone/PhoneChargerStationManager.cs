@@ -18,7 +18,10 @@ public class PhoneChargerStationManager : MonoBehaviour
     {
         if(phoneManager.chargingPhone == true)
         {
+            phoneManager.isOn = false;
             phoneManager.LookThruPhoneLens();
+            phoneManager.messageObj.SetActive(false);
+            phoneManager.phoneCameraUIObjs.SetActive(false);
             if (phoneManager.currentBatteryLife <= phoneManager.maxBatteryLife && phoneManager.currentBatteryLife >= phoneManager.minBatteryLife)
             {
                 phoneManager.currentBatteryLife += Time.deltaTime * phoneManager.batteryDrainRate;
