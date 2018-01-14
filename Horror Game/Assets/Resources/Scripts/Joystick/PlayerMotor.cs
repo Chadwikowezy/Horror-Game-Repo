@@ -8,12 +8,17 @@ public class PlayerMotor : MonoBehaviour
     public float moveSpeed = 5f;
     public float drag = .5f;
 
+    public enum animStates { IDLE, WALK, RUN, HOLDPHONE };
+    public animStates currentState;
+
     public Vector3 moveVector { set; get; }
 
     public VirtualJoystick joystick;
     private Rigidbody thisRigidBody;
     private Transform camTransform;
     private HandleCanvas handleCanvas;
+
+    public bool onPhone = false;
 
     public bool isSprinting;
     public bool isGrounded;
@@ -37,6 +42,8 @@ public class PlayerMotor : MonoBehaviour
         moveVector = RotateWithView();
 
         Move();
+
+        ControlStates();
     }
     #endregion
 
@@ -48,16 +55,38 @@ public class PlayerMotor : MonoBehaviour
             if (thisRigidBody.velocity.magnitude < 6)
             {              
                 thisRigidBody.velocity = (moveVector * moveSpeed);
-            }
+            }           
             else if(thisRigidBody.velocity.magnitude == 0)
             {
                 isGrounded = true;
-            }
+            }           
         }
-
        /*if (isGrounded == false)
             if (thisRigidBody.velocity.magnitude == 0)
                 isGrounded = true;*/
+    }
+
+    void ControlStates()
+    {
+        if (onPhone == false)
+        {
+            if (thisRigidBody.velocity.magnitude > 4 && thisRigidBody.velocity.magnitude <= 6)
+            {
+                currentState = animStates.RUN;
+            }
+            if (thisRigidBody.velocity.magnitude > 0 && thisRigidBody.velocity.magnitude <= 4)
+            {
+                currentState = animStates.WALK;
+            }
+            else if (thisRigidBody.velocity.magnitude <= 0)
+            {
+                currentState = animStates.IDLE;
+            }
+        }
+        else if(onPhone == true)
+        {
+            currentState = animStates.HOLDPHONE;
+        }
     }
 
     public void ResetMoveSpeed()

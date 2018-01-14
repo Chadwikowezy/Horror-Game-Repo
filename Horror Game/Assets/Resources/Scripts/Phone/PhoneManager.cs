@@ -33,11 +33,17 @@ public class PhoneManager : MonoBehaviour
     private bool messagesDisplayed = false;
     private Actor actor;
 
+    private PlayerMotor playerMotor;
+
     public GameObject newMessageNotification;
+
+    public GameObject dummyPhone;
+    public List<GameObject> playerDisableObjs;
 
     public void RecievedCall()
     {
         actor = FindObjectOfType<Actor>();
+        playerMotor = FindObjectOfType<PlayerMotor>();
     }
 
     public void LookThruPhoneLens()
@@ -86,11 +92,18 @@ public class PhoneManager : MonoBehaviour
 
     IEnumerator MessagesEnableDelay()
     {
+        isOn = true;
+        playerMotor.onPhone = true;
+        dummyPhone.SetActive(true);
         yield return new WaitForSeconds(1.25f);
+        dummyPhone.SetActive(true);
+        for (int i = 0; i < playerDisableObjs.Count; i++)
+        {
+            playerDisableObjs[i].layer = LayerMask.NameToLayer("DisableFromView");
+        }
         phoneCamera.SetActive(true);
         phoneCameraUIObjs.SetActive(false);
         messageObj.SetActive(true);
-        isOn = true;
         if (actor.data.masionPuzzle_F1_01 == false || actor.data.firstRunThru == true)
         {
             message_01.SetActive(true);
@@ -142,8 +155,14 @@ public class PhoneManager : MonoBehaviour
     }
     IEnumerator MessagesDisableDelay()
     {
-        yield return new WaitForSeconds(.75f);
         isOn = false;
+        playerMotor.onPhone = false;
+        yield return new WaitForSeconds(.75f);
+        for (int i = 0; i < playerDisableObjs.Count; i++)
+        {
+            playerDisableObjs[i].layer = LayerMask.NameToLayer("Default");
+        }
+        dummyPhone.SetActive(false);
         messageObj.SetActive(false);
         phoneCamera.SetActive(false);
         messagesDisplayed = false;
@@ -205,17 +224,29 @@ public class PhoneManager : MonoBehaviour
 
     IEnumerator LookThruPhoneLensDelay()
     {
+        isOn = true;
+        playerMotor.onPhone = true;
+        dummyPhone.SetActive(true);
         yield return new WaitForSeconds(1.25f);
+        for (int i = 0; i < playerDisableObjs.Count; i++)
+        {
+            playerDisableObjs[i].layer = LayerMask.NameToLayer("DisableFromView");
+        }
         messageObj.SetActive(false);
         phoneCameraUIObjs.SetActive(true);
         phoneCamera.SetActive(true);
-        isOn = true;       
     }
     IEnumerator DisablePhoneLensDelay()
     {
+        isOn = false;
+        playerMotor.onPhone = false;
         yield return new WaitForSeconds(.75f);
+        for (int i = 0; i < playerDisableObjs.Count; i++)
+        {
+            playerDisableObjs[i].layer = LayerMask.NameToLayer("Default");
+        }
+        dummyPhone.SetActive(false);
         phoneCamera.SetActive(false);
-        isOn = false;      
     }
 
     public void NewMessageNotification()
