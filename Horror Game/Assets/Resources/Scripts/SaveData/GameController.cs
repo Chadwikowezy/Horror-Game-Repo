@@ -15,7 +15,6 @@ public class GameController : MonoBehaviour
     #region Awake
     void Awake ()
     {
-        Application.targetFrameRate = 30;
         dataPath = System.IO.Path.Combine(Application.persistentDataPath, "actors.json");
         Debug.Log(dataPath);
 	}
