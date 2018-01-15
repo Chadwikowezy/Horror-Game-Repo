@@ -60,7 +60,7 @@ public class PlayerMotor : MonoBehaviour
             {
                 isGrounded = true;
             }           
-        }
+        }       
        /*if (isGrounded == false)
             if (thisRigidBody.velocity.magnitude == 0)
                 isGrounded = true;*/
@@ -139,6 +139,7 @@ public class PlayerMotor : MonoBehaviour
             isGrounded = true;
         }
     }
+    
     void OnCollisionExit(Collision other)
     {
         if(other.gameObject.tag == "Ground")
