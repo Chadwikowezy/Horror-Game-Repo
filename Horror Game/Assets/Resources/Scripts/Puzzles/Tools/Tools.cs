@@ -14,7 +14,7 @@ public class Tools : MonoBehaviour
 
     private GameController gameController;
 
-    public enum tool { statue01, statue02, statue03, tile_01, tile_02, tile_03, tile_04, crowbar };
+    public enum tool { statue01, statue02, statue03, statue04, statue05, statue06, tile_01, tile_02, tile_03, tile_04, crowbar };
     public tool toolType;
 
     private ToolCollect toolCollect;
@@ -53,6 +53,18 @@ public class Tools : MonoBehaviour
                 Destroy(gameObject);
             }
             if (toolType == tool.statue03)
+            {
+                Destroy(gameObject);
+            }
+            if (toolType == tool.statue04)
+            {
+                Destroy(gameObject);
+            }
+            if (toolType == tool.statue05)
+            {
+                Destroy(gameObject);
+            }
+            if (toolType == tool.statue06)
             {
                 Destroy(gameObject);
             }

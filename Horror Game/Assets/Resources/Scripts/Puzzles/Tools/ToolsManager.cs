@@ -15,7 +15,9 @@ public class ToolsManager : MonoBehaviour
 
     public Image toolBar01, toolBar02, toolBar03, toolBar04;
 
-    public int knightsStatue = 0;
+    public int statuesCollected = 0;
+    public bool correctStatueSequence;
+    public int statueSequence01, statueSequence02, statueSequence03;
 
     public int tilesValue = 0;
     public bool tileOneSequence;

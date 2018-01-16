@@ -6,53 +6,30 @@ public class CompletedMansionPuzzles : MonoBehaviour
 {
     private Actor actor;
     private GameController gameController;
-
-    public StatuePuzzleManager statuePuzzleManager;
-    public TilesPuzzleManager tilesPuzzleManager;
-    public SafePuzzleManager safePuzzleManager;
-    public InvisibleFloorPuzzleManager invisibleFloorPuzzleManager;
-
-    private PlayerMotor player;
-    public Transform teleportPositionOutside;
-    public Transform teleportPositionInside;
-
-    private RainFollowPlayer rainFollowPlayer;
-    private PhoneManager phoneManager;
+    public GameObject completedMansionImg;
 
     void OnTriggerEnter(Collider other)
     {
         actor = FindObjectOfType<Actor>();
         gameController = FindObjectOfType<GameController>();
-        rainFollowPlayer = FindObjectOfType<RainFollowPlayer>();
-        player = FindObjectOfType<PlayerMotor>();
-        phoneManager = FindObjectOfType<PhoneManager>();
 
         if (actor.data.masionPuzzle_F2_01 == false)
         {
             if (other.gameObject.tag == "Player")
             {
-
-                invisibleFloorPuzzleManager.beginFogFollow = false;
-                invisibleFloorPuzzleManager.fogEffect.SetActive(false);
-
-                actor.data.isOutside = true;
-                rainFollowPlayer.CheckIfCanFollow();
-
                 actor.data.masionPuzzle_F2_01 = true;
 
-                player.transform.position = teleportPositionOutside.transform.position;
-                phoneManager.NewMessageNotification();
                 gameController.Save();
 
-                statuePuzzleManager.gameObject.SetActive(false);
-                tilesPuzzleManager.gameObject.SetActive(false);
-                safePuzzleManager.gameObject.SetActive(false);
-                //play transition 
+                StartCoroutine(LoadNextScene());
             }
         }
-        else
-        {
-            gameObject.SetActive(false);
-        }
     }	
+
+    IEnumerator LoadNextScene()
+    {
+        completedMansionImg.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        Application.LoadLevel(3);
+    }
 }
