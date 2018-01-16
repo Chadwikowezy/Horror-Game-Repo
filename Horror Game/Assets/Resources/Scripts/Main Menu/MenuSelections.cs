@@ -7,6 +7,8 @@ public class MenuSelections : MonoBehaviour
     public bool newGame;
     public int difficultyLevel;
     public float volumeLevel;
+    public float lightingLevel;
+    public float sensitivity;
 
     private void Start()
     {

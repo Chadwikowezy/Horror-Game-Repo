@@ -7,6 +7,8 @@ public class MenuController : MonoBehaviour
 {
     public Image fadeScreenImage;
     public Slider volumeSlider;
+    public Slider lightingSlider;
+    public Slider sensitivitySlider;
 
     [Header("Menus")]
     public GameObject optionsMenu;
@@ -72,6 +74,8 @@ public class MenuController : MonoBehaviour
         }
 
         _selections.volumeLevel = volumeSlider.value;
+        _selections.lightingLevel = lightingSlider.value;
+        _selections.sensitivity = sensitivitySlider.value;
     }
 
     //Button Functions
@@ -116,5 +120,13 @@ public class MenuController : MonoBehaviour
     public void volumeSliderUpdate()
     {
         _selections.volumeLevel = volumeSlider.value;
+    }
+    public void lightingSliderUpdate()
+    {
+        _selections.lightingLevel = lightingSlider.value;
+    }
+    public void sensitivitySliderUpdate()
+    {
+        _selections.sensitivity = sensitivitySlider.value;
     }
 }
