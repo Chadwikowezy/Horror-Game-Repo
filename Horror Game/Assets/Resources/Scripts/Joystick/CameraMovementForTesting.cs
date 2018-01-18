@@ -13,7 +13,7 @@ public class CameraMovementForTesting : MonoBehaviour
     {
 		
 	}
-	void FixedUpdate ()
+    void FixedUpdate ()
     {
         if (Input.GetKey(KeyCode.W))
             transform.Translate(Vector3.forward * camSpeed);
