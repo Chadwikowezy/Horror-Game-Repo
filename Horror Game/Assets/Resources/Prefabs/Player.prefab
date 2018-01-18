@@ -4507,8 +4507,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1680895926089448}
-  m_LocalRotation: {x: -0, y: 0.7974792, z: -0, w: -0.6033465}
-  m_LocalPosition: {x: -31.3, y: 1, z: -173.9}
+  m_LocalRotation: {x: 0, y: 0.6992268, z: 0, w: 0.7148999}
+  m_LocalPosition: {x: -58.48, y: 1, z: -146.56}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4281661748896294}
@@ -4516,7 +4516,7 @@ Transform:
   - {fileID: 4747649779955742}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 254.22, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 88.73, z: 0}
 --- !u!4 &4236103843153482
 Transform:
   m_ObjectHideFlags: 1
@@ -7353,12 +7353,156 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1449560904313234}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ecdbe83970119f46aa47b7653eaca38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   occlusionObjects: []
+  entraceObjs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  masterBedroomObjs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  kitchen:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  dinningRoom:
+  - {fileID: 0}
+  - {fileID: 0}
+  study:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  livingArea:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  raisedSittingArea:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  gameRoom:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  bath_02:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  bedroom_01:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  bedroom_02:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  bath_03:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  theatre:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  bar:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  doors:
+  - {fileID: 0}
+  - {fileID: 0}
+  glassDoors:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114055406976221660
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7399,8 +7543,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joystick: {fileID: 0}
   lineOfSight: {fileID: 4183496253267870}
-  sensitivityX: 1.5
-  sensitivityY: 1.5
+  sensitivityX: 3
+  sensitivityY: 3
   playerAnimObj: {fileID: 1707277611323346}
   cameraChild: {fileID: 4562605106430584}
   isAnimating: 0
@@ -7795,9 +7939,9 @@ MonoBehaviour:
   masionPuzzle_F1_02: 0
   masionPuzzle_F1_03: 0
   masionPuzzle_F2_01: 0
-  mazePuzzle_01: 0
-  mazePuzzle_02: 0
-  finalEventPuzzle: 0
+  mausoleumPuzzle: 0
+  cryptPuzzle: 0
+  graveYardPuzzle: 0
 --- !u!114 &114368664739863558
 MonoBehaviour:
   m_ObjectHideFlags: 1

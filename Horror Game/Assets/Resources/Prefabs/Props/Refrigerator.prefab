@@ -36,6 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4578505893522276}
+  - component: {fileID: 65417764980835362}
   m_Layer: 0
   m_Name: Refrigerator
   m_TagString: Untagged
@@ -102,7 +103,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4078054850732602}
-  - component: {fileID: 95855296983783958}
   m_Layer: 0
   m_Name: Refrigerator
   m_TagString: Untagged
@@ -117,7 +117,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1895237841080856}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0.127, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4116721547125908}
@@ -159,14 +159,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1235395798915720}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -54.26927, y: 1.3498029, z: -144.08246}
-  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 8.859352, y: -1.8081007, z: -7.7816315}
+  m_LocalScale: {x: 0.75000143, y: 0.75, z: 0.75000143}
   m_Children:
   - {fileID: 4078054850732602}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &4685329012642142
 Transform:
   m_ObjectHideFlags: 1
@@ -357,20 +357,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1195580882294842}
   m_Mesh: {fileID: 4300006, guid: d77b80c6041e570428e956402887f486, type: 3}
---- !u!95 &95855296983783958
-Animator:
-  serializedVersion: 3
+--- !u!65 &65417764980835362
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1895237841080856}
+  m_GameObject: {fileID: 1235395798915720}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: d77b80c6041e570428e956402887f486, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  serializedVersion: 2
+  m_Size: {x: 2.11, y: 3.5, z: 2.02}
+  m_Center: {x: 0, y: 0.12, z: -0.03}
