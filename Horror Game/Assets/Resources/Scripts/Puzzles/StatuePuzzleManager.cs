@@ -31,7 +31,7 @@ public class StatuePuzzleManager : MonoBehaviour
 
     private PhoneManager phoneManager;
 
-
+    private Spector spector;
     #endregion
 
     #region recieve actor call to begin
@@ -39,6 +39,7 @@ public class StatuePuzzleManager : MonoBehaviour
     {
         toolManager = FindObjectOfType<ToolsManager>();
         sectionManager = FindObjectOfType<SectionManager>();
+        spector = FindObjectOfType<Spector>();
         gameController = FindObjectOfType<GameController>();
         phoneManager = FindObjectOfType<PhoneManager>();
         placeStatuesImg.SetActive(false);
@@ -194,6 +195,8 @@ public class StatuePuzzleManager : MonoBehaviour
                 toolCollect.slotThreeFilled = false;
                 toolCollect.correctSequence = 0;
             }
+            spector.AlertPosition = transform.position;
+
         }
     }
     #endregion
