@@ -9,8 +9,8 @@ public class SectionManager : MonoBehaviour
     public bool masionPuzzle_F1_02 = false;
     public bool masionPuzzle_F1_03 = false;
     public bool masionPuzzle_F2_01 = false;
-    public bool mazePuzzle_01 = false;
-    public bool mazePuzzle_02 = false;
-    public bool finalEventPuzzle = false;
+    public bool mausoleumPuzzle = false;
+    public bool cryptPuzzle = false;
+    public bool graveYardPuzzle = false;
     #endregion
 }

@@ -19,10 +19,20 @@ public class ToolCollect : MonoBehaviour
 
     private TilesPuzzleManager tilePuzzleManager;
 
+    public bool slotOneFilled = false;
+    public bool slotTwoFilled = false;
+    public bool slotThreeFilled = false;
+
+
+    public int correctSequence = 0;
+
     public Sprite
         abstractArt_01,
         abstractArt_02,
         abstractArt_03,
+        abstractArt_04,
+        abstractArt_05,
+        abstractArt_06,
         crowbarSprite;
     #endregion
 
@@ -42,54 +52,209 @@ public class ToolCollect : MonoBehaviour
 
         if (tool.toolType == Tools.tool.statue01)
         {
-            toolManager.toolBar01.sprite = abstractArt_01;
+            if(slotOneFilled == false)
+            {
+                toolManager.toolBar01.sprite = abstractArt_01;
+                slotOneFilled = true;
+            }
+            else if(slotOneFilled == true && slotTwoFilled == false)
+            {
+                toolManager.toolBar02.sprite = abstractArt_01;
+                slotTwoFilled = true;
+            }
+            else if(slotOneFilled == true && slotTwoFilled == true && slotThreeFilled == false)
+            {
+                toolManager.toolBar03.sprite = abstractArt_01;
+                slotThreeFilled = true;
+            }
         }
         else if (tool.toolType == Tools.tool.statue02)
         {
-            toolManager.toolBar02.sprite = abstractArt_02;
+            if (slotOneFilled == false)
+            {
+                toolManager.toolBar01.sprite = abstractArt_02;
+                slotOneFilled = true;
+            }
+            else if (slotOneFilled == true && slotTwoFilled == false)
+            {
+                toolManager.toolBar02.sprite = abstractArt_02;
+                slotTwoFilled = true;
+            }
+            else if (slotOneFilled == true && slotTwoFilled == true && slotThreeFilled == false)
+            {
+                toolManager.toolBar03.sprite = abstractArt_02;
+                slotThreeFilled = true;
+            }
         }
         else if (tool.toolType == Tools.tool.statue03)
         {
-            toolManager.toolBar03.sprite = abstractArt_03;
-        }        
+            if (slotOneFilled == false)
+            {
+                toolManager.toolBar01.sprite = abstractArt_03;
+                slotOneFilled = true;
+            }
+            else if (slotOneFilled == true && slotTwoFilled == false)
+            {
+                toolManager.toolBar02.sprite = abstractArt_03;
+                slotTwoFilled = true;
+            }
+            else if (slotOneFilled == true && slotTwoFilled == true && slotThreeFilled == false)
+            {
+                toolManager.toolBar03.sprite = abstractArt_03;
+                slotThreeFilled = true;
+            }
+        }
+        else if (tool.toolType == Tools.tool.statue04)
+        {
+            if (slotOneFilled == false)
+            {
+                toolManager.toolBar01.sprite = abstractArt_04;
+                slotOneFilled = true;
+            }
+            else if (slotOneFilled == true && slotTwoFilled == false)
+            {
+                toolManager.toolBar02.sprite = abstractArt_04;
+                slotTwoFilled = true;
+            }
+            else if (slotOneFilled == true && slotTwoFilled == true && slotThreeFilled == false)
+            {
+                toolManager.toolBar03.sprite = abstractArt_04;
+                slotThreeFilled = true;
+            }
+        }
+        else if (tool.toolType == Tools.tool.statue05)
+        {
+            if (slotOneFilled == false)
+            {
+                toolManager.toolBar01.sprite = abstractArt_05;
+                slotOneFilled = true;
+            }
+            else if (slotOneFilled == true && slotTwoFilled == false)
+            {
+                toolManager.toolBar02.sprite = abstractArt_05;
+                slotTwoFilled = true;
+            }
+            else if (slotOneFilled == true && slotTwoFilled == true && slotThreeFilled == false)
+            {
+                toolManager.toolBar03.sprite = abstractArt_05;
+                slotThreeFilled = true;
+            }
+        }
+        else if (tool.toolType == Tools.tool.statue06)
+        {
+            if (slotOneFilled == false)
+            {
+                toolManager.toolBar01.sprite = abstractArt_06;
+                slotOneFilled = true;
+            }
+            else if (slotOneFilled == true && slotTwoFilled == false)
+            {
+                toolManager.toolBar02.sprite = abstractArt_06;
+                slotTwoFilled = true;
+            }
+            else if (slotOneFilled == true && slotTwoFilled == true && slotThreeFilled == false)
+            {
+                toolManager.toolBar03.sprite = abstractArt_06;
+                slotThreeFilled = true;
+            }
+        }
     }
     #endregion
 
     #region Collect Tool function call
     public void CollectTool()
     {
-        foreach(Tools tool in sectionOneTools)
+        if(toolManager.statuesCollected < 3)
         {
-            if (tool != null)
+            foreach (Tools tool in sectionOneTools)
             {
-                if (Vector3.Distance(player.transform.position, tool.gameObject.transform.position) <= 2f)
+                if (tool != null)
                 {
-                    if (tool.GetComponent<Tools>().toolType == Tools.tool.statue01)
+                    if (Vector3.Distance(player.transform.position, tool.gameObject.transform.position) <= 2f)
                     {
-                        toolManager.knightsStatue += 1;
-                        AssignToolSprite(tool);
-                        Destroy(tool.gameObject);
-                        pickedUp = true;
-                        collectDisplay.SetActive(false);
+                        if (tool.GetComponent<Tools>().toolType == Tools.tool.statue01)
+                        {
+                            toolManager.statuesCollected += 1;
+                            AssignToolSprite(tool);
+                            if(toolManager.statueSequence01 == 1 || toolManager.statueSequence02 == 1 || toolManager.statueSequence03 == 1)
+                            {
+                                correctSequence++;
+                            }
+                            tool.gameObject.SetActive(false);
+                            pickedUp = true;
+                            collectDisplay.SetActive(false);
+                        }
+                        if (tool.GetComponent<Tools>().toolType == Tools.tool.statue02)
+                        {
+                            toolManager.statuesCollected += 1;
+                            AssignToolSprite(tool);
+                            if (toolManager.statueSequence01 == 2 || toolManager.statueSequence02 == 2 || toolManager.statueSequence03 == 2)
+                            {
+                                correctSequence++;
+                            }
+                            tool.gameObject.SetActive(false);
+                            pickedUp = true;
+                            collectDisplay.SetActive(false);
+                        }
+                        if (tool.GetComponent<Tools>().toolType == Tools.tool.statue03)
+                        {
+                            toolManager.statuesCollected += 1;
+                            AssignToolSprite(tool);
+                            if (toolManager.statueSequence01 == 3 || toolManager.statueSequence02 == 3 || toolManager.statueSequence03 == 3)
+                            {
+                                correctSequence++;
+                            }
+                            tool.gameObject.SetActive(false);
+                            pickedUp = true;
+                            collectDisplay.SetActive(false);
+                        }
+                        if (tool.GetComponent<Tools>().toolType == Tools.tool.statue04)
+                        {
+                            toolManager.statuesCollected += 1;
+                            AssignToolSprite(tool);
+                            if (toolManager.statueSequence01 == 4 || toolManager.statueSequence02 == 4 || toolManager.statueSequence03 == 4)
+                            {
+                                correctSequence++;
+                            }
+                            tool.gameObject.SetActive(false);
+                            pickedUp = true;
+                            collectDisplay.SetActive(false);
+                        }
+                        if (tool.GetComponent<Tools>().toolType == Tools.tool.statue05)
+                        {
+                            toolManager.statuesCollected += 1;
+                            AssignToolSprite(tool);
+                            if (toolManager.statueSequence01 == 5 || toolManager.statueSequence02 == 5 || toolManager.statueSequence03 == 5)
+                            {
+                                correctSequence++;
+                            }
+                            tool.gameObject.SetActive(false);
+                            pickedUp = true;
+                            collectDisplay.SetActive(false);
+                        }
+                        if (tool.GetComponent<Tools>().toolType == Tools.tool.statue06)
+                        {
+                            toolManager.statuesCollected += 1;
+                            AssignToolSprite(tool);
+                            if (toolManager.statueSequence01 == 6 || toolManager.statueSequence02 == 6 || toolManager.statueSequence03 == 6)
+                            {
+                                correctSequence++;
+                            }
+                            tool.gameObject.SetActive(false);
+                            pickedUp = true;
+                            collectDisplay.SetActive(false);
+                        }
                     }
-                    if (tool.GetComponent<Tools>().toolType == Tools.tool.statue02)
+                    if(correctSequence == 3)
                     {
-                        toolManager.knightsStatue += 1;
-                        AssignToolSprite(tool);
-                        Destroy(tool.gameObject);
-                        pickedUp = true;
-                        collectDisplay.SetActive(false);
+                        toolManager.correctStatueSequence = true;
                     }
-                    if (tool.GetComponent<Tools>().toolType == Tools.tool.statue03)
+                    else
                     {
-                        toolManager.knightsStatue += 1;
-                        AssignToolSprite(tool);
-                        Destroy(tool.gameObject);
-                        pickedUp = true;
-                        collectDisplay.SetActive(false);
-                    }                                                                      
+                        toolManager.correctStatueSequence = false;
+                    }
                 }
-            }            
+            }           
         }
         //gameController.Save();
     }

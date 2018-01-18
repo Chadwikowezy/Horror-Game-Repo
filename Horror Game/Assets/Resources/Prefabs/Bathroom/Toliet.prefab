@@ -53,7 +53,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4037595992407740}
-  - component: {fileID: 95303151092544974}
+  - component: {fileID: 65925248826236208}
   m_Layer: 0
   m_Name: Toliet
   m_TagString: Untagged
@@ -67,9 +67,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1800678854418204}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -65.79, y: 0.56, z: -135.60176}
-  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -15.808, y: -4.833, z: 22.705597}
+  m_LocalScale: {x: 0.15000013, y: 0.15, z: 0.15000013}
   m_Children:
   - {fileID: 4303709910672106}
   - {fileID: 4165062909849024}
@@ -184,20 +184,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1622490042069480}
   m_Mesh: {fileID: 4300002, guid: ce46a269d27daff439c4bcf1ba54d7a1, type: 3}
---- !u!95 &95303151092544974
-Animator:
-  serializedVersion: 3
+--- !u!65 &65925248826236208
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1800678854418204}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: ce46a269d27daff439c4bcf1ba54d7a1, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 7.8, z: 6.18}
+  m_Center: {x: 0, y: 0.16, z: -2.12}

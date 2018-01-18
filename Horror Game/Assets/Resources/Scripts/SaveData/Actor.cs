@@ -18,30 +18,56 @@ public class Actor : MonoBehaviour
     private InvisibleFloorPuzzleManager invisibleFloorPuzzleManager;
     private InsanityManager insanityManager;
     private PhoneManager phoneManager;
+    private ToolsManager toolManager;
 
     void Start()
+    {      
+        insanityManager = FindObjectOfType<InsanityManager>();
+        phoneManager = FindObjectOfType<PhoneManager>();
+     
+        phoneManager.RecievedCall();
+        phoneManager.NewMessageNotification();
+
+        if(Application.loadedLevel == 2)
+        {
+            MansionSceneStartCall();
+        }
+    }
+
+    void MansionSceneStartCall()
     {
         statuePuzzleManager = FindObjectOfType<StatuePuzzleManager>();
         tilesPuzzleManager = FindObjectOfType<TilesPuzzleManager>();
         safePuzzleManager = FindObjectOfType<SafePuzzleManager>();
-        insanityManager = FindObjectOfType<InsanityManager>();
-        phoneManager = FindObjectOfType<PhoneManager>();
+        toolManager = FindObjectOfType<ToolsManager>();
 
         statuePuzzleManager.RecievedCall();
         tilesPuzzleManager.RecievedCall();
         safePuzzleManager.RecievedCall();
-        phoneManager.RecievedCall();
-        phoneManager.NewMessageNotification();
     }
     #endregion
 
     #region Store Data call
     public void StoreData()
     {
-        player = FindObjectOfType<PlayerMotor>(); 
         sectionManager = FindObjectOfType<SectionManager>();
-        MansionSectionManager();
-        MazeSectionManager();
+        if (Application.loadedLevel == 2)
+        {
+            MansionSectionManager();
+            data.statueObjectsForPedestal.Add(toolManager.statueSequence01);
+            data.statueObjectsForPedestal.Add(toolManager.statueSequence02);
+            data.statueObjectsForPedestal.Add(toolManager.statueSequence03);
+        }
+        else if (Application.loadedLevel == 3)
+        {
+            MazeSectionManager();
+        }
+        else if (Application.loadedLevel == 4)
+        {
+            GraveyardSectionManager();
+        }
+
+        player = FindObjectOfType<PlayerMotor>();
         data.pillsCarried = insanityManager.PillStackCount;
         data.playerPos = player.GetComponent<Transform>().position;
         data.firstRunThru = false;
@@ -73,18 +99,24 @@ public class Actor : MonoBehaviour
     #region Maze & Mausoleum Puzzle Sections Manager
     void MazeSectionManager()
     {
-        if(sectionManager.mazePuzzle_01 == true)
+        if(sectionManager.mausoleumPuzzle == true)
         {
-            data.mazePuzzle_01 = true;
+            data.mausoleumPuzzle = true;
         }
-        if (sectionManager.mazePuzzle_02 == true)
+        if (sectionManager.cryptPuzzle == true)
         {
-            data.mazePuzzle_02 = true;
+            data.cryptPuzzle = true;
+        }     
+    }
+    #endregion
+
+    #region Graveyard Puzzle Sections Manager
+    void GraveyardSectionManager()
+    {
+        if(sectionManager.graveYardPuzzle == true)
+        {
+            data.graveYardPuzzle = true;
         }
-        if (sectionManager.finalEventPuzzle == true)
-        {
-            data.finalEventPuzzle = true;
-        }       
     }
     #endregion
 
@@ -95,11 +127,28 @@ public class Actor : MonoBehaviour
         player.GetComponent<Transform>().position = data.playerPos;
         insanityManager = FindObjectOfType<InsanityManager>();
 
-        data.firstRunThru = false;
         sectionManager = FindObjectOfType<SectionManager>();
         insanityManager.UpdatePillCount(data.pillsCarried);
-        LoadMansionSectionData();
-        LoadMazeSectionData();
+
+        if (Application.loadedLevel == 2)
+        {
+            toolManager = FindObjectOfType<ToolsManager>();
+            LoadMansionSectionData();
+            if(data.statueObjectsForPedestal.Count > 0)
+            {
+                toolManager.statueSequence01 = data.statueObjectsForPedestal[0];
+                toolManager.statueSequence02 = data.statueObjectsForPedestal[1];
+                toolManager.statueSequence03 = data.statueObjectsForPedestal[2];
+            }
+        }
+        else if(Application.loadedLevel == 3)
+        {
+            LoadMazeSectionData();
+        }
+        else if (Application.loadedLevel == 4)
+        {
+            LoadGraveyardSectionData();
+        }
     }
     #endregion
 
@@ -128,21 +177,26 @@ public class Actor : MonoBehaviour
     #region Load Mansion Puzzle Sections Manager
     void LoadMazeSectionData()
     {
-        if (data.mazePuzzle_01 == true)
+        if (data.mausoleumPuzzle == true)
         {
-            sectionManager.mazePuzzle_01 = true;
+            sectionManager.mausoleumPuzzle = true;
         }
-        if (data.mazePuzzle_02 == true)
+        if (data.cryptPuzzle == true)
         {
-            sectionManager.mazePuzzle_02 = true;
-        }
-        if (data.finalEventPuzzle == true)
-        {
-            sectionManager.finalEventPuzzle = true;
-        }        
+            sectionManager.cryptPuzzle = true;
+        }       
     }
     #endregion
 
+    #region Load Graveyard Sections Manager
+    void LoadGraveyardSectionData()
+    {
+        if(data.graveYardPuzzle == true)
+        {
+            sectionManager.graveYardPuzzle = true;
+        }
+    }
+    #endregion
     #region Applying Save Data Methodology
     public void ApplyData()
     {
@@ -167,18 +221,20 @@ public class Actor : MonoBehaviour
 [Serializable]
 public class ActorData
 {
+    //Main Menu scene
+    public bool firstRunThru = true;
+
     public Vector3 playerPos;
     public bool masionPuzzle_F1_01 = false;
     public bool masionPuzzle_F1_02 = false;
     public bool masionPuzzle_F1_03 = false;
     public bool masionPuzzle_F2_01 = false;
-    public bool mazePuzzle_01 = false;
-    public bool mazePuzzle_02 = false;
-    public bool finalEventPuzzle = false;
-
-    public bool firstRunThru = true;
-    public bool isOutside = false;
+    public bool mausoleumPuzzle = false;
+    public bool cryptPuzzle = false;
+    public bool graveYardPuzzle = false;
 
     public int pillsCarried;
+
+    public List<int> statueObjectsForPedestal;
 }
 #endregion

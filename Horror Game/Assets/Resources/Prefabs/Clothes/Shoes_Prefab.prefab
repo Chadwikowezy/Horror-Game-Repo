@@ -70,6 +70,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4365110509805936}
+  - component: {fileID: 65275062243561550}
   m_Layer: 0
   m_Name: Shoes_Prefab
   m_TagString: Untagged
@@ -175,8 +176,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1507478235753126}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -75.2075, y: 0.053, z: -177.358}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -1.1222076, y: -1.2331795, z: 1.7406616}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4675309952179946}
@@ -185,7 +186,7 @@ Transform:
   - {fileID: 4768901662805050}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!4 &4385076210558414
 Transform:
   m_ObjectHideFlags: 1
@@ -500,3 +501,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1672440639590560}
   m_Mesh: {fileID: 4300004, guid: 43150e339faf14747bbee990fa7f477a, type: 3}
+--- !u!65 &65275062243561550
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1507478235753126}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.29, y: 0.2, z: 0.3}
+  m_Center: {x: -0.09, y: 0, z: 0.06}
