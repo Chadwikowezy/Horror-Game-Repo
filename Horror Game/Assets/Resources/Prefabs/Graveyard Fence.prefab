@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4944084796273634}
   - component: {fileID: 33467367566000278}
   - component: {fileID: 23060486930282364}
-  - component: {fileID: 64400740059990792}
   m_Layer: 0
   m_Name: Fence_Bottom
   m_TagString: Untagged
@@ -37,7 +36,6 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4801810212731576}
-  - component: {fileID: 95786376929966342}
   m_Layer: 0
   m_Name: Graveyard Fence
   m_TagString: Untagged
@@ -55,7 +53,6 @@ GameObject:
   - component: {fileID: 4928377933339074}
   - component: {fileID: 33506462999433558}
   - component: {fileID: 23270896804747036}
-  - component: {fileID: 64866391564116568}
   m_Layer: 0
   m_Name: Fence_Top
   m_TagString: Untagged
@@ -71,6 +68,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4378835024456164}
+  - component: {fileID: 65725591129175892}
   m_Layer: 0
   m_Name: Graveyard Fence
   m_TagString: Untagged
@@ -88,7 +86,6 @@ GameObject:
   - component: {fileID: 4502417251590608}
   - component: {fileID: 33548599839290310}
   - component: {fileID: 23499603767576636}
-  - component: {fileID: 64115340148157540}
   m_Layer: 0
   m_Name: Fence
   m_TagString: Untagged
@@ -103,7 +100,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1502474352440718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 6.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4801810212731576}
@@ -288,62 +285,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1703439301270858}
   m_Mesh: {fileID: 4300004, guid: ef5cf8a67d80139478f9d0a02edaa556, type: 3}
---- !u!64 &64115340148157540
-MeshCollider:
+--- !u!65 &65725591129175892
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1703439301270858}
+  m_GameObject: {fileID: 1502474352440718}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300004, guid: ef5cf8a67d80139478f9d0a02edaa556, type: 3}
---- !u!64 &64400740059990792
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1094128671977912}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300002, guid: ef5cf8a67d80139478f9d0a02edaa556, type: 3}
---- !u!64 &64866391564116568
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1269576496334556}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: ef5cf8a67d80139478f9d0a02edaa556, type: 3}
---- !u!95 &95786376929966342
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1102224883270876}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: ef5cf8a67d80139478f9d0a02edaa556, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  m_Size: {x: 6.75, y: 4.309287, z: 1.5}
+  m_Center: {x: 0, y: 0.095356464, z: 0}
