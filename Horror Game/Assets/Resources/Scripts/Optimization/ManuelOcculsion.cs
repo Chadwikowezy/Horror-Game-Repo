@@ -6,9 +6,9 @@ public class ManuelOcculsion : MonoBehaviour
 {
     private Camera cam;
     private PlayerMotor player;
-    public List<GameObject> occlusionObjects = new List<GameObject>();
+    //public List<GameObject> occlusionObjects = new List<GameObject>();
 
-    //First floor
+    [Header("!!First Floor!!")]
     public List<GameObject> entraceObjs = new List<GameObject>();
     public List<GameObject> masterBedroomObjs = new List<GameObject>();
     public List<GameObject> kitchen = new List<GameObject>();
@@ -26,69 +26,86 @@ public class ManuelOcculsion : MonoBehaviour
     public List<GameObject> doors = new List<GameObject>();
     public List<GameObject> glassDoors = new List<GameObject>();
 
+    [Header("!!Second Floor!!")]
+    public List<GameObject> f2_Bath_02 = new List<GameObject>();
+    public List<GameObject> f2_MasterBed= new List<GameObject>();
+    public List<GameObject> f2_Bath_01 = new List<GameObject>();
+    public List<GameObject> f2_Bedroom_03 = new List<GameObject>();
+    public List<GameObject> f2_Bedroom_02 = new List<GameObject>();
+    public List<GameObject> f2_Bedroom_01 = new List<GameObject>();
+    public List<GameObject> f2_Hallway = new List<GameObject>();
 
     void Start ()
     {
         cam = GetComponent<Camera>();
-        player = FindObjectOfType<PlayerMotor>();
-        
+        player = FindObjectOfType<PlayerMotor>();       
     }
 
     void Update ()
-    {       
-        ColliderCulling(entraceObjs);
-        ColliderCulling(masterBedroomObjs);
-        ColliderCulling(kitchen);
-        ColliderCulling(dinningRoom);
-        ColliderCulling(study);
-        ColliderCulling(livingArea);
-        ColliderCulling(raisedSittingArea);
-        ColliderCulling(gameRoom);
-        ColliderCulling(bath_02);
-        ColliderCulling(bedroom_01);
-        ColliderCulling(bedroom_02);
-        ColliderCulling(bath_03);
-        ColliderCulling(theatre);
-        ColliderCulling(bar);
-        ColliderCulling(doors);
-        ColliderCulling(glassDoors);
+    {
+        FirstFloorCulling(entraceObjs);
+        FirstFloorCulling(masterBedroomObjs);
+        FirstFloorCulling(kitchen);
+        FirstFloorCulling(dinningRoom);
+        FirstFloorCulling(study);
+        FirstFloorCulling(livingArea);
+        FirstFloorCulling(raisedSittingArea);
+        FirstFloorCulling(gameRoom);
+        FirstFloorCulling(bath_02);
+        FirstFloorCulling(bedroom_01);
+        FirstFloorCulling(bedroom_02);
+        FirstFloorCulling(bath_03);
+        FirstFloorCulling(theatre);
+        FirstFloorCulling(bar);
+        FirstFloorCulling(doors);
+        FirstFloorCulling(glassDoors);
 
-        OcclusionCulling();
+        SecondFloorCulling(f2_Bath_02);
+        SecondFloorCulling(f2_MasterBed);
+        SecondFloorCulling(f2_Bath_01);
+        SecondFloorCulling(f2_Bedroom_03);
+        SecondFloorCulling(f2_Bedroom_02);
+        SecondFloorCulling(f2_Bedroom_01);
+        SecondFloorCulling(f2_Hallway);
+        //OcclusionCulling();
     }
 
-    void ColliderCulling(List<GameObject> colliderObjs)
+    void FirstFloorCulling(List<GameObject> colliderObjs)
     {
-        foreach(GameObject colliderObj in colliderObjs)
+        foreach (GameObject colliderObj in colliderObjs)
         {
-            if(Vector3.Distance(colliderObj.transform.position, player.transform.position) > 30)
+            if(colliderObj != null)
             {
-                colliderObj.SetActive(false);
-            }
-            else
-            {
-                colliderObj.SetActive(true);
-                if (colliderObj.GetComponent<Collider>())
+                if (Vector3.Distance(colliderObj.transform.position, player.transform.position) > 30 || player.transform.position.y >= 6)
                 {
-                    float localScaleToMultiply;
-                    if (colliderObj.transform.localScale.z >= colliderObj.transform.localScale.x)
+                    colliderObj.SetActive(false);
+                }
+                else
+                {
+                    colliderObj.SetActive(true);
+                    if (colliderObj.GetComponent<Collider>())
                     {
-                        localScaleToMultiply = colliderObj.transform.localScale.z;
-                    }
-                    else if (colliderObj.transform.localScale.x > colliderObj.transform.localScale.z)
-                    {
-                        localScaleToMultiply = colliderObj.transform.localScale.x;
-                    }
-                    else
-                    {
-                        localScaleToMultiply = colliderObj.transform.localScale.y;
-                    }
-                    if (Vector3.Distance(colliderObj.transform.position, player.transform.position) < localScaleToMultiply * 5)
-                    {
-                        colliderObj.GetComponent<Collider>().enabled = true;
-                    }
-                    else
-                    {
-                        colliderObj.GetComponent<Collider>().enabled = false;
+                        float localScaleToMultiply;
+                        if (colliderObj.transform.localScale.z >= colliderObj.transform.localScale.x)
+                        {
+                            localScaleToMultiply = colliderObj.transform.localScale.z;
+                        }
+                        else if (colliderObj.transform.localScale.x > colliderObj.transform.localScale.z)
+                        {
+                            localScaleToMultiply = colliderObj.transform.localScale.x;
+                        }
+                        else
+                        {
+                            localScaleToMultiply = colliderObj.transform.localScale.y;
+                        }
+                        if (Vector3.Distance(colliderObj.transform.position, player.transform.position) < localScaleToMultiply * 5)
+                        {
+                            colliderObj.GetComponent<Collider>().enabled = true;
+                        }
+                        else
+                        {
+                            colliderObj.GetComponent<Collider>().enabled = false;
+                        }
                     }
                 }
             }
@@ -96,7 +113,50 @@ public class ManuelOcculsion : MonoBehaviour
         }
     }
 
-    void OcclusionCulling()
+    void SecondFloorCulling(List<GameObject> colliderObjs)
+    {
+        foreach (GameObject colliderObj in colliderObjs)
+        {
+            if(colliderObj != null)
+            {
+                if (Vector3.Distance(colliderObj.transform.position, player.transform.position) > 30 || player.transform.position.y < 6)
+                {
+                    colliderObj.SetActive(false);
+                }
+                else
+                {
+                    colliderObj.SetActive(true);
+                    if (colliderObj.GetComponent<Collider>())
+                    {
+                        float localScaleToMultiply;
+                        if (colliderObj.transform.localScale.z >= colliderObj.transform.localScale.x)
+                        {
+                            localScaleToMultiply = colliderObj.transform.localScale.z;
+                        }
+                        else if (colliderObj.transform.localScale.x > colliderObj.transform.localScale.z)
+                        {
+                            localScaleToMultiply = colliderObj.transform.localScale.x;
+                        }
+                        else
+                        {
+                            localScaleToMultiply = colliderObj.transform.localScale.y;
+                        }
+                        if (Vector3.Distance(colliderObj.transform.position, player.transform.position) < localScaleToMultiply * 5)
+                        {
+                            colliderObj.GetComponent<Collider>().enabled = true;
+                        }
+                        else
+                        {
+                            colliderObj.GetComponent<Collider>().enabled = false;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+
+    /*void OcclusionCulling()
     {
         foreach(GameObject occlusionObj in occlusionObjects)
         {
@@ -132,5 +192,5 @@ public class ManuelOcculsion : MonoBehaviour
                 }              
             }           
         }
-    }
+    }*/
 }

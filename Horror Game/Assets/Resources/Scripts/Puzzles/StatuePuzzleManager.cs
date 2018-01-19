@@ -45,10 +45,6 @@ public class StatuePuzzleManager : MonoBehaviour
         placeStatuesImg.SetActive(false);
         InsufficentMessage.SetActive(false);
 
-        if (sectionDoor == null)
-        {
-            sectionDoor = GameObject.Find("SectionDoor_01");
-        }
         actor = FindObjectOfType<Actor>();
         if (actor.data.masionPuzzle_F1_01 == false)
         {

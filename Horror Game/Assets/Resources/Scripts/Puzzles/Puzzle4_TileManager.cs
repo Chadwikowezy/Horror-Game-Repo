@@ -61,10 +61,10 @@ public class Puzzle4_TileManager : MonoBehaviour
         //call arms animtion
         mainCamera.GetComponent<Animator>().SetInteger("ArmsReset", 0);
         mainCamera.GetComponent<Animator>().SetInteger("ArmsPull", 1);
+        handleCanvas.canUseButtons = false;
 
         yield return new WaitForSeconds(.5f);
 
-        handleCanvas.canUseButtons = false;
         player.StopMovement();
 
         yield return new WaitForSeconds(.6f);

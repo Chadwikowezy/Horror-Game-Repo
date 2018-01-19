@@ -27,11 +27,7 @@ public class TilesPuzzleManager : MonoBehaviour
 
     #region recieved actor call to begin
     public void RecievedCall()
-    {
-        if (sectionDoor == null)
-        {
-            sectionDoor = GameObject.Find("SectionDoor_02");
-        }        
+    {       
         GenerateTiles();     
     }
     #endregion
@@ -44,9 +40,10 @@ public class TilesPuzzleManager : MonoBehaviour
             actor = FindObjectOfType<Actor>();
             if (actor.data.masionPuzzle_F1_02 == false)
             {
+                sectionDoor.SetActive(true);
+
                 toolCollect = FindObjectOfType<ToolCollect>();
 
-                sectionDoor.SetActive(true);
                 while (spawnPoint_01 == spawnPoint_02 || spawnPoint_01 == spawnPoint_03 ||
                     spawnPoint_01 == spawnPoint_04 || spawnPoint_01 == spawnPoint_05)
                 {
