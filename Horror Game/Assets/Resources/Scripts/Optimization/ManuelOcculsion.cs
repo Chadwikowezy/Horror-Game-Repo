@@ -25,7 +25,7 @@ public class ManuelOcculsion : MonoBehaviour
     public List<GameObject> bar = new List<GameObject>();
     public List<GameObject> doors = new List<GameObject>();
     public List<GameObject> glassDoors = new List<GameObject>();
-
+    
     [Header("!!Second Floor!!")]
     public List<GameObject> f2_Bath_02 = new List<GameObject>();
     public List<GameObject> f2_MasterBed= new List<GameObject>();
@@ -34,6 +34,12 @@ public class ManuelOcculsion : MonoBehaviour
     public List<GameObject> f2_Bedroom_02 = new List<GameObject>();
     public List<GameObject> f2_Bedroom_01 = new List<GameObject>();
     public List<GameObject> f2_Hallway = new List<GameObject>();
+
+    [Header("!!Tower!!")]
+    public List<GameObject> tower_floor01 = new List<GameObject>();
+    public List<GameObject> tower_floor02 = new List<GameObject>();
+    public List<GameObject> tower_floor03 = new List<GameObject>();
+    public List<GameObject> tower_floor04 = new List<GameObject>();
 
     void Start ()
     {
