@@ -11,10 +11,13 @@ public class CameraMovementForTesting : MonoBehaviour
 
 	void Start ()
     {
-		
+        Cursor.lockState = CursorLockMode.Locked;
 	}
     void FixedUpdate ()
     {
+        if (Input.GetKey(KeyCode.Escape))
+            Cursor.lockState = CursorLockMode.None;
+
         if (Input.GetKey(KeyCode.W))
             transform.Translate(Vector3.forward * camSpeed);
         if (Input.GetKey(KeyCode.S))
