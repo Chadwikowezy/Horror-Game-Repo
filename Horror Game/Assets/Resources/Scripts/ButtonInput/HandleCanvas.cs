@@ -17,7 +17,7 @@ public class HandleCanvas : MonoBehaviour
     #region awake & start
     void Awake()
     {
-        //Application.targetFrameRate = 30;       
+        Application.targetFrameRate = 45;       
     }
 
     void Start()
