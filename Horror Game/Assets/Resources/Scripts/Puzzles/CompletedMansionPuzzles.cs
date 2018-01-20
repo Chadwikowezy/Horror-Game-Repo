@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CompletedMansionPuzzles : MonoBehaviour
 {
@@ -30,6 +31,6 @@ public class CompletedMansionPuzzles : MonoBehaviour
     {
         completedMansionImg.SetActive(true);
         yield return new WaitForSeconds(2f);
-        Application.LoadLevel(3);
+        SceneManager.LoadScene("Maze-Crypt");
     }
 }

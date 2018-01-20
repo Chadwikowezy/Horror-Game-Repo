@@ -8,6 +8,7 @@ public class RainFollowPlayer : MonoBehaviour
     private PlayerMotor player;
     private Actor actor;
     public Vector3 followVector;
+    public GameObject balconyRainEffect;
 
     void Start()
     {
@@ -23,17 +24,26 @@ public class RainFollowPlayer : MonoBehaviour
     {
         actor = FindObjectOfType<Actor>();
 
-        if (actor.data.masionPuzzle_F2_01 == true)
+        if (actor.data.masionPuzzle_F2_01 == true && actor.data.mausoleumPuzzle == false)
         {
-            rainEffect.SetActive(true);
-
-            followVector = new Vector3(player.transform.position.x, player.transform.position.y + 7.1f, player.transform.position.z);
-            //transform.position = followVector;       
-            transform.position = Vector3.Lerp(transform.position, followVector, Time.fixedDeltaTime);
+            if (player.transform.position.y < 2)
+            {
+                rainEffect.SetActive(true);
+                followVector = new Vector3(player.transform.position.x, player.transform.position.y + 7f, player.transform.position.z);
+                //transform.position = followVector;       
+                transform.position = Vector3.Lerp(transform.position, followVector, Time.fixedDeltaTime);
+                balconyRainEffect.SetActive(false);
+            }
+            if (player.transform.position.y >= 2)
+            {
+                balconyRainEffect.SetActive(true);
+            }
+           
         }
         else
         {
             rainEffect.SetActive(false);
+            balconyRainEffect.SetActive(false);
         }
     }
 }

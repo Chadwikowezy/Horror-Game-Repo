@@ -10,8 +10,6 @@ public class Tools : MonoBehaviour
     private TilesPuzzleManager tilePuzzleManager;
     private GameObject toolParent;
 
-    private Transform resetPoint_02;
-
     private GameController gameController;
 
     public enum tool { statue01, statue02, statue03, statue04, statue05, statue06, tile_01, tile_02, tile_03, tile_04, crowbar };
@@ -102,7 +100,6 @@ public class Tools : MonoBehaviour
 
         //Audio asset for noise of incorrect tile plays in this moment
         monster.AlertPosition = AlertLocation();
-        monster.CurrentState = MonsterStates.Alerted;
         Debug.Log("Alerted position: " + AlertLocation() + "\nCurrent State: " + monster.CurrentState.ToString());
     }
     Vector3 AlertLocation()
@@ -184,7 +181,10 @@ public class Tools : MonoBehaviour
                             if (toolManager.tilesValue == 4)
                             {
                                 tilePuzzleManager = FindObjectOfType<TilesPuzzleManager>();
-                                tilePuzzleManager.sectionDoor.SetActive(false);
+                                if (tilePuzzleManager.sectionDoor == enabled)
+                                {
+                                    tilePuzzleManager.sectionDoor.SetActive(false);
+                                }
                                 SectionManager sectionManager = FindObjectOfType<SectionManager>();
                                 sectionManager.masionPuzzle_F1_02 = true;
                                 phoneManager.NewMessageNotification();

@@ -108,25 +108,25 @@ public class PhoneManager : MonoBehaviour
         {
             message_01.SetActive(true);
         }
-        else if (actor.data.masionPuzzle_F1_01 == true && actor.data.masionPuzzle_F1_02 == false)
+        if (actor.data.masionPuzzle_F1_01 == true)
         {
             message_01.SetActive(true);
             message_02.SetActive(true);
         }
-        else if (actor.data.masionPuzzle_F1_02 == true && actor.data.masionPuzzle_F1_03 == false)
+        if (actor.data.masionPuzzle_F1_02 == true)
         {
             message_01.SetActive(true);
             message_02.SetActive(true);
             message_03.SetActive(true);
         }
-        else if (actor.data.masionPuzzle_F1_03 == true && actor.data.masionPuzzle_F2_01 == false)
+        if (actor.data.masionPuzzle_F1_03 == true)
         {
             message_01.SetActive(true);
             message_02.SetActive(true);
             message_03.SetActive(true);
             message_04.SetActive(true);
         }
-        else if (actor.data.masionPuzzle_F2_01 == true && actor.data.mausoleumPuzzle == false)
+        if (actor.data.masionPuzzle_F2_01 == true)
         {
             message_01.SetActive(true);
             message_02.SetActive(true);
@@ -134,7 +134,7 @@ public class PhoneManager : MonoBehaviour
             message_04.SetActive(true);
             message_05.SetActive(true);
         }
-        else if (actor.data.mausoleumPuzzle == true && actor.data.cryptPuzzle == false)
+        if (actor.data.mausoleumPuzzle == true)
         {
             message_01.SetActive(true);
             message_02.SetActive(true);
@@ -142,7 +142,7 @@ public class PhoneManager : MonoBehaviour
             message_04.SetActive(true);
             message_06.SetActive(true);
         }
-        else if (actor.data.cryptPuzzle == true && actor.data.graveYardPuzzle == false)
+        if (actor.data.cryptPuzzle == true)
         {
             message_01.SetActive(true);
             message_02.SetActive(true);

@@ -66,6 +66,12 @@ public class ManuelOcculsion : MonoBehaviour
         FirstFloorCulling(doors);
         FirstFloorCulling(glassDoors);
 
+        TowerCulling(tower_floor01);
+        TowerCulling(tower_floor02);
+
+        TowerCulling(tower_floor03);
+        TowerCulling(tower_floor04);
+
         SecondFloorCulling(f2_Bath_02);
         SecondFloorCulling(f2_MasterBed);
         SecondFloorCulling(f2_Bath_01);
@@ -162,6 +168,48 @@ public class ManuelOcculsion : MonoBehaviour
         }
     }
 
+    void TowerCulling(List<GameObject> colliderObjs)
+    {
+        foreach (GameObject colliderObj in colliderObjs)
+        {
+            if (colliderObj != null)
+            {
+                if (Vector3.Distance(colliderObj.transform.position, player.transform.position) > 20)
+                {
+                    colliderObj.SetActive(false);
+                }
+                else
+                {
+                    colliderObj.SetActive(true);
+                    if (colliderObj.GetComponent<Collider>())
+                    {
+                        float localScaleToMultiply;
+                        if (colliderObj.transform.localScale.z >= colliderObj.transform.localScale.x)
+                        {
+                            localScaleToMultiply = colliderObj.transform.localScale.z;
+                        }
+                        else if (colliderObj.transform.localScale.x > colliderObj.transform.localScale.z)
+                        {
+                            localScaleToMultiply = colliderObj.transform.localScale.x;
+                        }
+                        else
+                        {
+                            localScaleToMultiply = colliderObj.transform.localScale.y;
+                        }
+                        if (Vector3.Distance(colliderObj.transform.position, player.transform.position) < localScaleToMultiply * 5)
+                        {
+                            colliderObj.GetComponent<Collider>().enabled = true;
+                        }
+                        else
+                        {
+                            colliderObj.GetComponent<Collider>().enabled = false;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
     /*void OcclusionCulling()
     {
         foreach(GameObject occlusionObj in occlusionObjects)
