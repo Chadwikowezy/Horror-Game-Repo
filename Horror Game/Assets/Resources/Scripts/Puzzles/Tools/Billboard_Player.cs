@@ -6,8 +6,7 @@ public class Billboard_Player : MonoBehaviour
 {
     #region variables
     private PlayerMotor player;
-    private Vector3 lookVector;
-    public GameObject childImg;
+    public GameObject exclamationPoint;
     #endregion
 
     #region Start
@@ -20,15 +19,13 @@ public class Billboard_Player : MonoBehaviour
     #region update
     void Update ()
     {
-        if(Vector3.Distance(player.transform.position, transform.position) <= 4f)
+        if(Vector3.Distance(player.transform.position, transform.position) <= 5f)
         {
-            childImg.SetActive(true);
-            lookVector = new Vector3(player.transform.position.x, transform.position.y, player.transform.position.z);
-            transform.LookAt(lookVector);
+            exclamationPoint.SetActive(true);
         }
         else
         {
-            childImg.SetActive(false);
+            exclamationPoint.SetActive(false);
         }
     }
     #endregion
