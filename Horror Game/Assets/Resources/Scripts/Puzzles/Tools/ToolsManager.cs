@@ -15,16 +15,20 @@ public class ToolsManager : MonoBehaviour
 
     public Image toolBar01, toolBar02, toolBar03, toolBar04;
 
+    [Header("Statues related")]
     public int statuesCollected = 0;
     public bool correctStatueSequence;
     public int statueSequence01, statueSequence02, statueSequence03;
 
+    [Header("Mansion Tiles related")]
     public int tilesValue = 0;
     public bool tileOneSequence;
     public bool tileTwoSequence;
     public bool tileThreeSequence;
     public bool tileFourSequence;
 
+    [Header("Maze-Crypt related")]
     public int keys = 0;
+    public bool hasCrowbar = false;
     #endregion
 }
