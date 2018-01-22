@@ -79,6 +79,7 @@ public class ManuelOcculsion : MonoBehaviour
         SecondFloorCulling(f2_Bedroom_02);
         SecondFloorCulling(f2_Bedroom_01);
         SecondFloorCulling(f2_Hallway);
+
         //OcclusionCulling();
     }
 
@@ -218,33 +219,21 @@ public class ManuelOcculsion : MonoBehaviour
             bool onScreen = screenPoint.z > 0 && screenPoint.x > 0 && 
                 screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1;          
 
-            if (occlusionObj.GetComponent<Renderer>())
+            if (occlusionObj == enabled)
             {
-                Renderer rend = occlusionObj.GetComponent<Renderer>();
-                if (!onScreen)
-                {
-                    rend.enabled = false;
-                }
-                else
-                {
-                    rend.enabled = true;
-                }
-            }
-            else
-            {
-                Renderer[] rends = occlusionObj.GetComponentsInChildren<Renderer>();
-                foreach(Renderer rend in rends)
+                Renderer[] rend = occlusionObj.GetComponentsInChildren<Renderer>();
+                foreach (Renderer item in rend)
                 {
                     if (!onScreen)
                     {
-                        rend.enabled = false;
+                        item.enabled = false;
                     }
                     else
                     {
-                        rend.enabled = true;
+                        item.enabled = true;
                     }
-                }              
-            }           
+                }               
+            }          
         }
     }*/
 }
