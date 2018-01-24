@@ -23,8 +23,8 @@ public class ManuelOcculsion : MonoBehaviour
     public List<GameObject> bath_03 = new List<GameObject>();
     public List<GameObject> theatre = new List<GameObject>();
     public List<GameObject> bar = new List<GameObject>();
-    public List<GameObject> doors = new List<GameObject>();
-    public List<GameObject> glassDoors = new List<GameObject>();
+    //public List<GameObject> doors = new List<GameObject>();
+    //public List<GameObject> glassDoors = new List<GameObject>();
     
     [Header("!!Second Floor!!")]
     public List<GameObject> f2_Bath_02 = new List<GameObject>();
@@ -63,8 +63,8 @@ public class ManuelOcculsion : MonoBehaviour
         FirstFloorCulling(bath_03);
         FirstFloorCulling(theatre);
         FirstFloorCulling(bar);
-        FirstFloorCulling(doors);
-        FirstFloorCulling(glassDoors);
+        //FirstFloorCulling(doors);
+        //FirstFloorCulling(glassDoors);
 
         TowerCulling(tower_floor01);
         TowerCulling(tower_floor02);

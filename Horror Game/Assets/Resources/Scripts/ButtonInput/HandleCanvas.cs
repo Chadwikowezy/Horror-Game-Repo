@@ -7,8 +7,6 @@ public class HandleCanvas : MonoBehaviour
 {
     #region variables
     public bool canUseButtons;
-    public bool inAnimationState;
-    public bool movementJoytickStop;
 
     private float framerate = 0.0f;
     public Text framerateTxt;
@@ -23,7 +21,6 @@ public class HandleCanvas : MonoBehaviour
     void Start()
     {
         canUseButtons = true;
-        inAnimationState = false;
     }
 
     void Update()

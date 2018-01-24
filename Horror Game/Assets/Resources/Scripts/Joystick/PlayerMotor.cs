@@ -50,7 +50,7 @@ public class PlayerMotor : MonoBehaviour
     #region move function call, and stopping/ reseting movespeed 
     public void Move()
     {
-        if(handleCanvas.movementJoytickStop == false && isGrounded == true)
+        if(handleCanvas.canUseButtons == true && isGrounded == true)
         {
             if (thisRigidBody.velocity.magnitude < 6)
             {              

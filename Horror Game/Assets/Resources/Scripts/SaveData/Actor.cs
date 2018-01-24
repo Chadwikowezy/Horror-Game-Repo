@@ -21,14 +21,24 @@ public class Actor : MonoBehaviour
     private PhoneManager phoneManager;
     private ToolsManager toolManager;
 
+    private SceneLaunchManager sceneLaunchManager;
+
     void Start()
     {      
-        insanityManager = FindObjectOfType<InsanityManager>();
-        phoneManager = FindObjectOfType<PhoneManager>();
-     
-        phoneManager.RecievedCall();
-        phoneManager.NewMessageNotification();
+        if(SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Main Menu") &&
+            SceneManager.GetActiveScene() != SceneManager.GetSceneByName("OpeningCutscene"))
+        {
+            insanityManager = FindObjectOfType<InsanityManager>();
+            phoneManager = FindObjectOfType<PhoneManager>();
 
+            phoneManager.RecievedCall();
+            phoneManager.NewMessageNotification();
+        }    
+        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Main Menu"))
+        {
+            sceneLaunchManager = FindObjectOfType<SceneLaunchManager>();
+            sceneLaunchManager.RecievedCall();
+        }
         if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Mansion"))
         {
             MansionSceneStartCall();
@@ -48,10 +58,33 @@ public class Actor : MonoBehaviour
     }
     #endregion
 
+    public void ResetDataAttributes()
+    {
+        data.playerPos = Vector3.zero;
+        data.firstRunThru = true;
+        data.masionPuzzle_F1_01 = false;
+        data.masionPuzzle_F1_02 = false;
+        data.masionPuzzle_F1_03 = false;
+        data.masionPuzzle_F2_01 = false;
+        data.mausoleumPuzzle = false;
+        data.cryptPuzzle = false;
+        data.graveYardPuzzle = false;
+        data.pillsCarried = 0;
+        data.statueObjectsForPedestal.Clear();
+    }
+
     #region Store Data call
     public void StoreData()
     {
-        sectionManager = FindObjectOfType<SectionManager>();
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Main Menu") &&
+            SceneManager.GetActiveScene() != SceneManager.GetSceneByName("OpeningCutscene"))
+        {
+            data.firstRunThru = false;
+            sectionManager = FindObjectOfType<SectionManager>();
+            player = FindObjectOfType<PlayerMotor>();
+            data.pillsCarried = insanityManager.PillStackCount;
+            data.playerPos = player.GetComponent<Transform>().position;
+        }
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Mansion"))
         {
             MansionSectionManager();
@@ -68,10 +101,6 @@ public class Actor : MonoBehaviour
             GraveyardSectionManager();
         }
 
-        player = FindObjectOfType<PlayerMotor>();
-        data.pillsCarried = insanityManager.PillStackCount;
-        data.playerPos = player.GetComponent<Transform>().position;
-        data.firstRunThru = false;
     }
     #endregion
 
@@ -124,21 +153,26 @@ public class Actor : MonoBehaviour
     #region Load Data call
     public void LoadData()
     {
-        player = FindObjectOfType<PlayerMotor>();
-        if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Maze-Crypt") && 
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Main Menu") &&
+           SceneManager.GetActiveScene() != SceneManager.GetSceneByName("OpeningCutscene"))
+        {
+            player = FindObjectOfType<PlayerMotor>();
+            insanityManager = FindObjectOfType<InsanityManager>();
+            sectionManager = FindObjectOfType<SectionManager>();
+            insanityManager.UpdatePillCount(data.pillsCarried);
+        }
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Maze-Crypt") && 
             data.masionPuzzle_F2_01 == true && data.mausoleumPuzzle == false)
         {
-            data.playerPos = player.GetComponent<Transform>().position;
-        }
-        else
-        {
-            player.GetComponent<Transform>().position = data.playerPos;
-        }
-        insanityManager = FindObjectOfType<InsanityManager>();
-
-        sectionManager = FindObjectOfType<SectionManager>();
-        insanityManager.UpdatePillCount(data.pillsCarried);
-
+            if(data.mausoleumPuzzle == false)
+            {
+                data.playerPos = player.GetComponent<Transform>().position;
+            }
+            else
+            {
+                player.GetComponent<Transform>().position = data.playerPos;
+            }
+        }      
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Mansion"))
         {
             toolManager = FindObjectOfType<ToolsManager>();
@@ -148,6 +182,10 @@ public class Actor : MonoBehaviour
                 toolManager.statueSequence01 = data.statueObjectsForPedestal[0];
                 toolManager.statueSequence02 = data.statueObjectsForPedestal[1];
                 toolManager.statueSequence03 = data.statueObjectsForPedestal[2];
+            }
+            if(data.firstRunThru == false)
+            {
+                player.GetComponent<Transform>().position = data.playerPos;
             }
         }
         else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Maze-Crypt"))
