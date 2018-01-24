@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Destructible : MonoBehaviour
+public class OnTriggerDestroy : MonoBehaviour
 {
+
     [SerializeField]
     private GameObject prefab;
 
@@ -11,11 +12,7 @@ public class Destructible : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            //if player.crowbar = true  
-            Instantiate(prefab, transform.position, Quaternion.identity);
-            Destroy(gameObject);
-            Destroy(prefab);
-        } 
+            //destroy doortrigger
+        }
     }
-
 }
