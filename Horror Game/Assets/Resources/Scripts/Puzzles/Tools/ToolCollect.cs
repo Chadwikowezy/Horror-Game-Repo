@@ -23,7 +23,6 @@ public class ToolCollect : MonoBehaviour
     public bool slotTwoFilled = false;
     public bool slotThreeFilled = false;
 
-
     public int correctSequence = 0;
 
     public Sprite
@@ -32,8 +31,7 @@ public class ToolCollect : MonoBehaviour
         abstractArt_03,
         abstractArt_04,
         abstractArt_05,
-        abstractArt_06,
-        crowbarSprite;
+        abstractArt_06;
     #endregion
 
     #region Start
@@ -46,10 +44,11 @@ public class ToolCollect : MonoBehaviour
     #endregion
 
     #region Assign Toolbar image sprites
-    void AssignToolSprite(Tools tool)
+    public void AssignToolSprite(Tools tool)
     {
         toolManager = FindObjectOfType<ToolsManager>();
 
+        #region statue related
         if (tool.toolType == Tools.tool.statue01)
         {
             if(slotOneFilled == false)
@@ -158,6 +157,7 @@ public class ToolCollect : MonoBehaviour
                 slotThreeFilled = true;
             }
         }
+        #endregion    
     }
     #endregion
 
