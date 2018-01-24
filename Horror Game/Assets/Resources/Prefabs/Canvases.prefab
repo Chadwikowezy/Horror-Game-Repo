@@ -692,6 +692,7 @@ GameObject:
   - component: {fileID: 223564649767026346}
   - component: {fileID: 114658045048598782}
   - component: {fileID: 114490902194438566}
+  - component: {fileID: 114599392809878246}
   m_Layer: 5
   m_Name: Joystick Canvas
   m_TagString: Untagged
@@ -842,7 +843,6 @@ GameObject:
   - component: {fileID: 224220057197525620}
   - component: {fileID: 223050933822099916}
   - component: {fileID: 114010479502948868}
-  - component: {fileID: 114166649200740372}
   m_Layer: 5
   m_Name: Frame Rate Canvas
   m_TagString: Untagged
@@ -1743,21 +1743,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114166649200740372
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1662238152174524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7895524ace5b2a48a4ebf3b67fd3e09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  canUseButtons: 0
-  inAnimationState: 0
-  movementJoytickStop: 0
-  framerateTxt: {fileID: 114550973238795068}
 --- !u!114 &114176120260954092
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3248,6 +3233,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Lighting Level:'
+--- !u!114 &114599392809878246
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1542373791163474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7895524ace5b2a48a4ebf3b67fd3e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canUseButtons: 0
+  inAnimationState: 0
+  movementJoytickStop: 0
+  framerateTxt: {fileID: 114550973238795068}
 --- !u!114 &114599724485793570
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3319,8 +3319,6 @@ MonoBehaviour:
   abstractArt_04: {fileID: 21300000, guid: c82eb247c3731334cbac6581f65e1158, type: 3}
   abstractArt_05: {fileID: 21300000, guid: 2987021ddb633e8408cb65ba8e5e4d07, type: 3}
   abstractArt_06: {fileID: 21300000, guid: 011e9a23c6dbed948a461d4bd750acee, type: 3}
-  crowbarSprite: {fileID: 21300000, guid: b7471ad646894dd46acc987af5fb0d52, type: 3}
-  keySprite: {fileID: 21300000, guid: d91a48478568c3043b5a1dc4431380da, type: 3}
 --- !u!114 &114646942330437660
 MonoBehaviour:
   m_ObjectHideFlags: 1
