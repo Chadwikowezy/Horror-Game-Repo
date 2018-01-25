@@ -9,12 +9,11 @@ public class SceneLaunchManager : MonoBehaviour
     private Actor actor;
     private GameController gameController;
 
-	public void RecievedCall ()
+    public void RecievedCall ()
     {
         actor = FindObjectOfType<Actor>();
         gameController = FindObjectOfType<GameController>();
     }
-
     public void StartButton()
     {
         StartCoroutine(StartDelay());
@@ -27,8 +26,6 @@ public class SceneLaunchManager : MonoBehaviour
         gameController.Save();
         SceneManager.LoadScene("Mansion");
     }
-
-
     public void ContinueButton()
     {
         StartCoroutine(ContinueDelay());
@@ -38,6 +35,8 @@ public class SceneLaunchManager : MonoBehaviour
         yield return new WaitForSeconds(3f);
         if (System.IO.File.Exists(Path.Combine(Application.persistentDataPath, "actors.json")))
         {
+            gameController.Save();
+
             if (actor.data.masionPuzzle_F1_01 == false ||
             actor.data.masionPuzzle_F1_02 == false ||
             actor.data.masionPuzzle_F1_03 == false ||
@@ -56,6 +55,12 @@ public class SceneLaunchManager : MonoBehaviour
             {
                 SceneManager.LoadScene("Graveyard");
             }
+        }
+        else
+        {
+            //SceneManager.LoadScene("OpeningCutscene");
+            gameController.Save();
+            SceneManager.LoadScene("Mansion");
         }
     }
 }
