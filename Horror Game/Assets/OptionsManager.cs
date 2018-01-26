@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class OptionsManager : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class OptionsManager : MonoBehaviour
     private GameController gameController;
     public GameObject optionsPanel;
 
+    public List<GameObject> difficultyButtons = new List<GameObject>();
     public Slider audioLevel;
     public Slider lightLevel;
     public Slider sensitivity;
@@ -16,14 +18,16 @@ public class OptionsManager : MonoBehaviour
     private CameraMotor camMotor;
     private InsanityManager insanityManager;
 
-    public int lightValue;
-    public int audioValue;
-    public int sensitivityValue;
+    public List<Light> pointLights = new List<Light>();
 
     void Start()
     {
-        camMotor = FindObjectOfType<CameraMotor>();
-        insanityManager = FindObjectOfType<InsanityManager>();
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Main Menu") &&
+          SceneManager.GetActiveScene() != SceneManager.GetSceneByName("OpeningCutscene"))
+        {
+            camMotor = FindObjectOfType<CameraMotor>();
+            insanityManager = FindObjectOfType<InsanityManager>();
+        }
     }
 
     //create a recieved call here, call it in actors start
@@ -44,10 +48,45 @@ public class OptionsManager : MonoBehaviour
     }
     public void SetDifficulty(int scaleValue)
     {
-        actor.data.setMaxInsanity = scaleValue;
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Main Menu") &&
+          SceneManager.GetActiveScene() != SceneManager.GetSceneByName("OpeningCutscene") &&
+          SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Graveyard Cutscene"))
+        {
+            gameController = FindObjectOfType<GameController>();
+            actor = FindObjectOfType<Actor>();
+            actor.data.setMaxInsanity = scaleValue;
+
+            gameController.Save();
+            int scene = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(scene, LoadSceneMode.Single);
+        }
     }
     public void OptionsToggle()
     {
         optionsPanel.SetActive(!optionsPanel.active);
+
+        if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Main Menu") &&
+          SceneManager.GetActiveScene() != SceneManager.GetSceneByName("OpeningCutscene"))
+        {
+            if (optionsPanel == enabled)
+            {
+                actor = FindObjectOfType<Actor>();
+
+                sensitivity.value = actor.data.sensitivity;
+                camMotor.sensitivityX = sensitivity.value;
+                camMotor.sensitivityY = sensitivity.value;
+
+                insanityManager.maxInsanity = actor.data.setMaxInsanity;
+
+                audioLevel.value = actor.data.audioLevel;
+                //set audio
+
+                lightLevel.value = actor.data.lightLevel;
+                for (int i = 0; i < pointLights.Count; i++)
+                {
+                    pointLights[i].intensity = (lightLevel.value / 10f);
+                }
+            }
+        }
     }
 }

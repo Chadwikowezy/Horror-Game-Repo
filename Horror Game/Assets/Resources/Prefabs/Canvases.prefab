@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 114741951030815704}
   - component: {fileID: 114889485865751578}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: Insane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -711,7 +711,7 @@ GameObject:
   - component: {fileID: 114946457830813124}
   - component: {fileID: 114952937045210024}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: Hard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1442,7 +1442,7 @@ GameObject:
   - component: {fileID: 114641277028144914}
   - component: {fileID: 114617210656733550}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Normal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2452,9 +2452,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   optionsPanel: {fileID: 1516903537410002}
+  difficultyButtons:
+  - {fileID: 1971212897495052}
+  - {fileID: 1546807534710724}
+  - {fileID: 1038018943218412}
   audioLevel: {fileID: 114016108896835668}
   lightLevel: {fileID: 114048175718476102}
   sensitivity: {fileID: 114890711406389966}
+  pointLights: []
 --- !u!114 &114304566342285892
 MonoBehaviour:
   m_ObjectHideFlags: 1
