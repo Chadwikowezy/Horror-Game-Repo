@@ -60,7 +60,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.4
   far clip plane: 200
   field of view: 60
   orthographic: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetCameraPos: {fileID: 0}
   lookTarget: {fileID: 0}
-  moveSpeed: 5
+  moveSpeed: 10
   rotSpeed: 0.15
 --- !u!124 &124776207046050234
 Behaviour:

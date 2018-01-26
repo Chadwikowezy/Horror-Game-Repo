@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Graveyard_Gravestone : MonoBehaviour
 {
@@ -8,6 +9,10 @@ public class Graveyard_Gravestone : MonoBehaviour
     public float detectionDistance;
 
     public GameObject collectButton;
+    public GameObject locket;
+    public GameObject[] secondHalfWaypoints;
+
+    private bool collected;
 
     private void Start()
     {
@@ -15,24 +20,33 @@ public class Graveyard_Gravestone : MonoBehaviour
     }
     private void Update()
     {
-        if ((manager.player.transform.position - transform.position).magnitude < detectionDistance)
+        if ((manager.player.transform.position - transform.position).magnitude < detectionDistance && !collected)
             showCollectButton();
     }
 
     void showCollectButton()
     {
-        //Play locket intro animation that transitions into examining animation
-        //Set player "Stoped" property to true
+        locket.GetComponent<Animator>().enabled = true;
+        manager.player.GetComponent<CutscenePlayer>().Stoped = true;
 
         collectButton.SetActive(true);
     }
     public void collectObject()
     {
-        //Play locket collect animation
+        CutscenePlayer playerScript = manager.player.GetComponent<CutscenePlayer>();
+        CutsceneCamera cam = FindObjectOfType<CutsceneCamera>();
 
-        manager.monster.SetActive(true);
+        foreach (GameObject waypoint in secondHalfWaypoints)
+            waypoint.SetActive(true);
+
+        cam.lookTarget = transform;
+        collected = true;
+        Destroy(locket);
+        //manager.monster.SetActive(true);
         //monster plays jump scare animation on activation
-        //player plays jump back animation on monster activation
+        playerScript.Stoped = false;
+        playerScript.knockBack(manager.player.transform.TransformPoint(-manager.player.transform.forward), 5);
         //Set player "Stoped" property to false
+        collectButton.SetActive(false);
     }
 }
