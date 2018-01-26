@@ -20,6 +20,9 @@ public class Actor : MonoBehaviour
     private InsanityManager insanityManager;
     private PhoneManager phoneManager;
     private ToolsManager toolManager;
+    private CameraMotor camMotor;
+
+    private OptionsManager optionsManager;
 
     private SceneLaunchManager sceneLaunchManager;
 
@@ -71,6 +74,10 @@ public class Actor : MonoBehaviour
         data.graveYardPuzzle = false;
         data.pillsCarried = 0;
         data.statueObjectsForPedestal.Clear();
+        data.setMaxInsanity = 3;
+        data.audioLevel = 3;
+        data.lightLevel = 2;
+        data.sensitivity = 2;
     }
 
     #region Store Data call
@@ -88,6 +95,7 @@ public class Actor : MonoBehaviour
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Mansion"))
         {
             MansionSectionManager();
+            data.statueObjectsForPedestal.Clear();
             data.statueObjectsForPedestal.Add(toolManager.statueSequence01);
             data.statueObjectsForPedestal.Add(toolManager.statueSequence02);
             data.statueObjectsForPedestal.Add(toolManager.statueSequence03);
@@ -152,18 +160,54 @@ public class Actor : MonoBehaviour
     #region Load Data call
     public void LoadData()
     {
+        optionsManager = FindObjectOfType<OptionsManager>();
+        //setting audio involved
+        if (data.audioLevel > 0)
+        {
+            optionsManager.audioLevel.value = data.audioLevel;
+        }
+        //setting light involved
+        if (data.lightLevel > 0)
+        {
+            optionsManager.lightLevel.value = data.lightLevel;
+            if (optionsManager.pointLights.Count > 0)
+            {
+                for (int i = 0; i < optionsManager.pointLights.Count; i++)
+                {
+                    optionsManager.pointLights[i].intensity = (data.lightLevel / 10f);
+                }
+            }
+
+        }
+        if (data.sensitivity > 0)
+        {
+            optionsManager.sensitivity.value = data.sensitivity;
+        }
+
         if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Main Menu") &&
            SceneManager.GetActiveScene() != SceneManager.GetSceneByName("OpeningCutscene"))
         {
             player = FindObjectOfType<PlayerMotor>();
             insanityManager = FindObjectOfType<InsanityManager>();
             sectionManager = FindObjectOfType<SectionManager>();
+            camMotor = FindObjectOfType<CameraMotor>();
+            //setting insanity involved         
             insanityManager.UpdatePillCount(data.pillsCarried);
+            if (data.setMaxInsanity > 0)
+            {
+                insanityManager.maxInsanity = data.setMaxInsanity;
+            }
+            //setting sensitivity involved
+            if (data.sensitivity > 0)
+            {
+                camMotor.sensitivityX = data.sensitivity;
+                camMotor.sensitivityY = data.sensitivity;
+            }
         }
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Maze-Crypt") && 
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Maze-Crypt") &&
             data.masionPuzzle_F2_01 == true && data.mausoleumPuzzle == false)
         {
-            if(data.mausoleumPuzzle == false)
+            if (data.mausoleumPuzzle == false)
             {
                 data.playerPos = player.GetComponent<Transform>().position;
             }
@@ -171,18 +215,18 @@ public class Actor : MonoBehaviour
             {
                 player.GetComponent<Transform>().position = data.playerPos;
             }
-        }      
+        }
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Mansion"))
         {
             toolManager = FindObjectOfType<ToolsManager>();
             LoadMansionSectionData();
-            if(data.statueObjectsForPedestal.Count > 0)
+            if (data.statueObjectsForPedestal.Count > 0)
             {
                 toolManager.statueSequence01 = data.statueObjectsForPedestal[0];
                 toolManager.statueSequence02 = data.statueObjectsForPedestal[1];
                 toolManager.statueSequence03 = data.statueObjectsForPedestal[2];
             }
-            if(data.firstRunThru == false)
+            if (data.firstRunThru == false)
             {
                 player.GetComponent<Transform>().position = data.playerPos;
             }
@@ -243,6 +287,7 @@ public class Actor : MonoBehaviour
         }
     }
     #endregion
+
     #region Applying Save Data Methodology
     public void ApplyData()
     {

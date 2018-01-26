@@ -44,13 +44,13 @@ public class SceneLaunchManager : MonoBehaviour
             {
                 SceneManager.LoadScene("Mansion");
             }
-            else if (actor.data.masionPuzzle_F2_01 == true &&
+            if (actor.data.masionPuzzle_F2_01 == true &&
                 actor.data.mausoleumPuzzle == false ||
                 actor.data.cryptPuzzle == false)
             {
                 SceneManager.LoadScene("Maze-Crypt");
             }
-            else if (actor.data.cryptPuzzle == true &&
+            if (actor.data.cryptPuzzle == true &&
                 actor.data.graveYardPuzzle == false)
             {
                 SceneManager.LoadScene("Graveyard");
@@ -59,6 +59,7 @@ public class SceneLaunchManager : MonoBehaviour
         else
         {
             //SceneManager.LoadScene("OpeningCutscene");
+            actor.ResetDataAttributes();
             gameController.Save();
             SceneManager.LoadScene("Mansion");
         }

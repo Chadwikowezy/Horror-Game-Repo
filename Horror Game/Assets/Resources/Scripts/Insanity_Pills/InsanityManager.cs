@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PostProcessing;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class InsanityManager : MonoBehaviour
 {
@@ -67,7 +68,7 @@ public class InsanityManager : MonoBehaviour
                     }
                 }
             }
-            else if (CurrentInsanity == 1)
+            else if (CurrentInsanity == 1 && maxInsanity == 3)
             {
                 sensitivityLvl = 4;
                 cameraMotor.sensitivityX = sensitivityLvl;
@@ -86,7 +87,7 @@ public class InsanityManager : MonoBehaviour
                     }
                 }
             }
-            else if (CurrentInsanity == 2)
+            else if (CurrentInsanity == 2 && maxInsanity == 3 || currentInsanity == 1 && maxInsanity == 2)
             {
                 sensitivityLvl = 5;
                 cameraMotor.sensitivityX = sensitivityLvl;
@@ -105,21 +106,21 @@ public class InsanityManager : MonoBehaviour
                     }
                 }
             }
-            else if(currentInsanity == 3)
+            else if (currentInsanity == 3 && maxInsanity == 3 || currentInsanity == 1 && maxInsanity == 1 || currentInsanity == 2 && maxInsanity == 2)
             {
-                Debug.Log("Knows its max insanity ");
                 Color c = insanityBreakImg.color;
                 c.a = 1;
                 if (currentTime < 100)
                 {
                     currentTime += (fallRate * 3) * Time.deltaTime;
-                    Debug.Log("Current Time: " + currentTime);
                     c.a = (currentTime / 100);
                     insanityBreakImg.color = c;
                     if (currentTime >= 100)
                     {
                         mainCamera.GetComponent<PostProcessingBehaviour>().profile.motionBlur.enabled = false;
-                        Application.LoadLevel(2);
+
+                        int scene = SceneManager.GetActiveScene().buildIndex;
+                        SceneManager.LoadScene(scene, LoadSceneMode.Single);
                     }
                 }
             }

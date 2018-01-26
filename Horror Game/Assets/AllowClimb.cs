@@ -11,7 +11,9 @@ public class AllowClimb : MonoBehaviour
     public Animator playerAnimObj;
 
     public bool isClimbing;
-    private bool canClimb;
+    public bool canClimb;
+
+    public Transform lookPos;
 
     private Vector3 climbOrientation = new Vector3(0, 0, 0);
 
@@ -33,14 +35,26 @@ public class AllowClimb : MonoBehaviour
             playerAnimObj.SetInteger("Run", 0);
             playerAnimObj.SetInteger("Phone", 0);
             //playerAnimObj.SetInteger("Climb", 1);
+
             Vector3 playerDir = new Vector3(transform.position.x, player.transform.position.y, transform.position.z);
             player.transform.LookAt(playerDir);
 
-            player.GetComponentInChildren<Camera>().transform.LookAt(transform.position);
-            player.GetComponent<Rigidbody>().useGravity = false;
-            player.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * 1f);
-            player.GetComponent<Rigidbody>().AddRelativeForce(Vector3.up * 1f);
+            player.GetComponentInChildren<Camera>().transform.LookAt(lookPos.position);
+
+            StartCoroutine(ClimbPhase());
         }
+        else
+        {
+            player.GetComponent<Rigidbody>().useGravity = true;
+        }
+    }
+    IEnumerator ClimbPhase()
+    {
+        yield return new WaitForSeconds(1f);
+        player.GetComponent<Rigidbody>().useGravity = false;
+        player.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * .25f);
+        player.GetComponent<Rigidbody>().AddRelativeForce(Vector3.up * .25f);
+        yield return new WaitForSeconds(1f);
     }
 
     public void ClimbButtonEvent()
@@ -84,6 +98,7 @@ public class AllowClimb : MonoBehaviour
     {
         if (other.gameObject.GetComponent<PlayerMotor>())
         {
+            player.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * .5f);
             player.GetComponent<Rigidbody>().useGravity = true;
             handleCanvas.canUseButtons = true;
             canClimb = false;
