@@ -5,8 +5,10 @@ using UnityEngine.AI;
 
 public class CutsceneSpector : MonoBehaviour
 {
+    public bool chasingPlayer;
     public float changeSpeedWaitTime;
     public float runSpeed;
+    public GameObject finalWaypoint;
 
     private bool changedSpeed;
     private float _timer;
@@ -19,12 +21,15 @@ public class CutsceneSpector : MonoBehaviour
         _myAgent = GetComponent<NavMeshAgent>();
         _anim = GetComponentInChildren<Animator>();
         _player = FindObjectOfType<CutscenePlayer>();
+        chasingPlayer = true;
     }
     private void Update()
     {
         _anim.SetFloat("Speed", _myAgent.velocity.magnitude);
-        _myAgent.SetDestination(_player.transform.position);
 
+        if (chasingPlayer)
+            _myAgent.SetDestination(_player.transform.position);
+        
         if (_timer < changeSpeedWaitTime && !changedSpeed)
             _timer += Time.deltaTime;
         else if (!changedSpeed)
