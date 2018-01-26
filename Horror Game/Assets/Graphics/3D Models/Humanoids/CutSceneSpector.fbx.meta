@@ -1,0 +1,770 @@
+fileFormatVersion: 2
+guid: 71b4138f7f3c13442a1dbdcc468a1021
+timeCreated: 1516936453
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Head
+    100004: Head_end
+    100006: Hips
+    100008: LeftArm
+    100010: LeftFingerBase
+    100012: LeftFoot
+    100014: LeftForeArm
+    100016: LeftHand
+    100018: LeftHandFinger1
+    100020: LeftHandFinger1_end
+    100022: LeftLeg
+    100024: LeftShoulder
+    100026: LeftToeBase
+    100028: LeftToeBase_end
+    100030: LeftUpLeg
+    100032: LHipJoint
+    100034: LowerBack
+    100036: LThumb
+    100038: LThumb_end
+    100040: Neck
+    100042: Neck1
+    100044: RHipJoint
+    100046: RightArm
+    100048: RightFingerBase
+    100050: RightFoot
+    100052: RightForeArm
+    100054: RightHand
+    100056: RightHandFinger1
+    100058: RightHandFinger1_end
+    100060: RightLeg
+    100062: RightShoulder
+    100064: RightToeBase
+    100066: RightToeBase_end
+    100068: RightUpLeg
+    100070: RThumb
+    100072: RThumb_end
+    100074: Spector
+    100076: Spector:Body
+    100078: Spector:High-poly
+    100080: Spector:Long01
+    100082: Spector:Teeth_base
+    100084: Spine
+    100086: Spine1
+    400000: //RootNode
+    400002: Head
+    400004: Head_end
+    400006: Hips
+    400008: LeftArm
+    400010: LeftFingerBase
+    400012: LeftFoot
+    400014: LeftForeArm
+    400016: LeftHand
+    400018: LeftHandFinger1
+    400020: LeftHandFinger1_end
+    400022: LeftLeg
+    400024: LeftShoulder
+    400026: LeftToeBase
+    400028: LeftToeBase_end
+    400030: LeftUpLeg
+    400032: LHipJoint
+    400034: LowerBack
+    400036: LThumb
+    400038: LThumb_end
+    400040: Neck
+    400042: Neck1
+    400044: RHipJoint
+    400046: RightArm
+    400048: RightFingerBase
+    400050: RightFoot
+    400052: RightForeArm
+    400054: RightHand
+    400056: RightHandFinger1
+    400058: RightHandFinger1_end
+    400060: RightLeg
+    400062: RightShoulder
+    400064: RightToeBase
+    400066: RightToeBase_end
+    400068: RightUpLeg
+    400070: RThumb
+    400072: RThumb_end
+    400074: Spector
+    400076: Spector:Body
+    400078: Spector:High-poly
+    400080: Spector:Long01
+    400082: Spector:Teeth_base
+    400084: Spine
+    400086: Spine1
+    4300000: Spector:Teeth_base
+    4300002: Spector:High-poly
+    4300004: Spector:Long01
+    4300006: Spector:Body
+    7400000: Spector|SpecA01Stand
+    7400002: Spector|SpecA04Look
+    7400004: Spector|SpecB03Walk1
+    7400006: Spector|SpecC03Run
+    9500000: //RootNode
+    13700000: Spector:Body
+    13700002: Spector:High-poly
+    13700004: Spector:Long01
+    13700006: Spector:Teeth_base
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Spector_Body_Young_caucasian_male_detailed
+    second: {fileID: 2100000, guid: 3d32d3632e7c1834e9f62fb30cb4bb75, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Spector_High-poly_Eye_brownlight
+    second: {fileID: 2100000, guid: ab5e42f52c1a3b143ba642471e24d4e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Spector_Long01_Long01
+    second: {fileID: 2100000, guid: e5980842a065bfe49b6b81d3e24af559, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Spector_Teeth_base_Teethmaterial
+    second: {fileID: 2100000, guid: 10279a408d65de649ba93231006c7cc7, type: 2}
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Spector|SpecA01Stand
+      takeName: Spector|SpecA01Stand
+      firstFrame: 0
+      lastFrame: 90
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Spector|SpecA04Look
+      takeName: Spector|SpecA04Look
+      firstFrame: 0
+      lastFrame: 250
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 1
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Spector|SpecB03Walk1
+      takeName: Spector|SpecB03Walk1
+      firstFrame: 0
+      lastFrame: 229
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 1
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Spector|SpecC03Run
+      takeName: Spector|SpecC03Run
+      firstFrame: 1
+      lastFrame: 22.4
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 0
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 1
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human:
+    - boneName: Hips
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LeftUpLeg
+      humanName: LeftUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: RightUpLeg
+      humanName: RightUpperLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LeftLeg
+      humanName: LeftLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: RightLeg
+      humanName: RightLowerLeg
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LeftFoot
+      humanName: LeftFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: RightFoot
+      humanName: RightFoot
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LowerBack
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Spine
+      humanName: Chest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Neck
+      humanName: Neck
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Neck1
+      humanName: Head
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LeftShoulder
+      humanName: LeftShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: RightShoulder
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LeftArm
+      humanName: LeftUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: RightArm
+      humanName: RightUpperArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LeftForeArm
+      humanName: LeftLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: RightForeArm
+      humanName: RightLowerArm
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LeftHand
+      humanName: LeftHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: RightHand
+      humanName: RightHand
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LeftToeBase
+      humanName: LeftToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: RightToeBase
+      humanName: RightToes
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Head
+      humanName: RightEye
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LThumb
+      humanName: Left Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LeftFingerBase
+      humanName: Left Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: LeftHandFinger1
+      humanName: Left Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: RThumb
+      humanName: Right Thumb Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: RightFingerBase
+      humanName: Right Index Proximal
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: RightHandFinger1
+      humanName: Right Index Intermediate
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: Spine1
+      humanName: UpperChest
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: CutSceneSpector(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spector
+      parentName: CutSceneSpector(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 100, y: 100, z: 100}
+    - name: Hips
+      parentName: Spector
+      position: {x: -0, y: 0, z: 0.011117489}
+      rotation: {x: 0.49484956, y: -1.9336812e-11, z: 2.0644715e-11, w: 0.8689787}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LHipJoint
+      parentName: Hips
+      position: {x: 6.246367e-20, y: 3.87956e-11, z: -6.539034e-11}
+      rotation: {x: 0.55334103, y: -0.5451714, z: 0.49443176, w: 0.39005014}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: LeftUpLeg
+      parentName: LHipJoint
+      position: {x: 0.000000007511116, y: 0.0010482903, z: -0.000000015718397}
+      rotation: {x: -0.52320445, y: 0.6203147, z: 0.3940656, w: -0.43148485}
+      scale: {x: 0.99999994, y: 0.99999994, z: 1.0000001}
+    - name: LeftLeg
+      parentName: LeftUpLeg
+      position: {x: 0.0000000062564673, y: 0.0055223834, z: 2.881363e-10}
+      rotation: {x: -0.00000003169965, y: 0.0022178686, z: -0.000000004423139, w: 0.99999756}
+      scale: {x: 0.99999994, y: 1, z: 0.99999994}
+    - name: LeftFoot
+      parentName: LeftLeg
+      position: {x: -0.00000006711993, y: 0.0047428412, z: 0.0000000018057771}
+      rotation: {x: -0.60202193, y: 0.018802602, z: 0.024919778, w: 0.7978691}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: LeftToeBase
+      parentName: LeftFoot
+      position: {x: 0.000000015826663, y: 0.0016269875, z: -0.0000000049566733}
+      rotation: {x: -0.11704535, y: 0.007775849, z: 0.019076338, w: 0.9929129}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: LeftToeBase_end
+      parentName: LeftToeBase
+      position: {x: -0, y: 0.00020900049, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LowerBack
+      parentName: Hips
+      position: {x: 3.035766e-20, y: 0.00088829256, z: 0.0000000057742}
+      rotation: {x: 0.35198277, y: -3.874244e-11, z: -6.8301156e-11, w: 0.9360065}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Spine
+      parentName: LowerBack
+      position: {x: 4.7704895e-20, y: 0.0017800722, z: 0.000000019874424}
+      rotation: {x: -0.09721744, y: 4.4454093e-11, z: 2.9723307e-11, w: 0.9952632}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spine1
+      parentName: Spine
+      position: {x: -2.6643349e-17, y: 0.0017470671, z: 6.239861e-10}
+      rotation: {x: 0.0009952273, y: -3.7073357e-12, z: 0.0000000037251429, w: 0.9999995}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftShoulder
+      parentName: Spine1
+      position: {x: -0.00026906727, y: 0.0009284393, z: 0.00030450735}
+      rotation: {x: 0.0019162594, y: -0.04887501, z: 0.7471456, w: 0.6628583}
+      scale: {x: 0.9999998, y: 0.9999999, z: 1}
+    - name: LeftArm
+      parentName: LeftShoulder
+      position: {x: 0.00000035801523, y: 0.0015273363, z: -0.000000023487955}
+      rotation: {x: 0.03268722, y: 0.027274808, z: -0.059885647, w: 0.99729705}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: LeftForeArm
+      parentName: LeftArm
+      position: {x: -0.0000002494439, y: 0.0031908713, z: -0.000000008869957}
+      rotation: {x: 0.000000025882494, y: -0.00042823385, z: -0.00000005406446, w: 0.99999994}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftHand
+      parentName: LeftForeArm
+      position: {x: 0.000000019641831, y: 0.002693998, z: 0.000000019108306}
+      rotation: {x: 0.09337864, y: 0.004936213, z: 0.06953547, w: 0.99318725}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LThumb
+      parentName: LeftHand
+      position: {x: -0.000012487932, y: 0.0004221857, z: 0.00021734386}
+      rotation: {x: -0.092784606, y: 0.9166476, z: 0.2995335, w: -0.2478464}
+      scale: {x: 0.9999999, y: 0.9999998, z: 0.99999994}
+    - name: LThumb_end
+      parentName: LThumb
+      position: {x: -0, y: 0.000322588, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: LeftFingerBase
+      parentName: LeftHand
+      position: {x: -0.000000028298091, y: 0.00034713215, z: -0.00000005655922}
+      rotation: {x: -0.05488313, y: -0.79253495, z: -0.01969254, w: 0.6070325}
+      scale: {x: 0.99999994, y: 1.0000001, z: 0.9999999}
+    - name: LeftHandFinger1
+      parentName: LeftFingerBase
+      position: {x: 0.00000004801899, y: 0.0007892688, z: -0.000000036200507}
+      rotation: {x: 0.034332134, y: 0.0045060506, z: 0.012602971, w: 0.9993209}
+      scale: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
+    - name: LeftHandFinger1_end
+      parentName: LeftHandFinger1
+      position: {x: -0, y: 0.000273767, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Neck
+      parentName: Spine1
+      position: {x: 2.1380466e-18, y: 0.0017239517, z: 1.8626451e-11}
+      rotation: {x: 0.14963141, y: -0.0000000010898374, z: -1.6493075e-10, w: 0.9887419}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Neck1
+      parentName: Neck
+      position: {x: -1.1895866e-17, y: 0.000627959, z: 0.000000023760366}
+      rotation: {x: -0.00000028312203, y: 9.767983e-16, z: -0.000000003835778, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Head
+      parentName: Neck1
+      position: {x: -5.3336242e-17, y: 0.0006279618, z: 0.00000002812594}
+      rotation: {x: -0.16696973, y: -7.114755e-10, z: -0.0000000036541923, w: 0.98596203}
+      scale: {x: 1, y: 0.9999999, z: 1}
+    - name: Head_end
+      parentName: Head
+      position: {x: -0, y: 0.001541582, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightShoulder
+      parentName: Spine1
+      position: {x: 0.00026906698, y: 0.0009284393, z: 0.00030450735}
+      rotation: {x: 0.0019162594, y: 0.048875026, z: -0.74714565, w: 0.6628582}
+      scale: {x: 0.9999999, y: 0.9999999, z: 1}
+    - name: RightArm
+      parentName: RightShoulder
+      position: {x: -0.00000035803328, y: 0.0015273363, z: -0.000000023511237}
+      rotation: {x: 0.032687183, y: -0.027274841, z: 0.05988574, w: 0.997297}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightForeArm
+      parentName: RightArm
+      position: {x: 0.00000025047206, y: 0.0031908718, z: -0.00000000886277}
+      rotation: {x: -0.00000008456344, y: 0.0004284236, z: 0.00000018909037, w: 0.99999994}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightHand
+      parentName: RightForeArm
+      position: {x: -0.000000019576438, y: 0.0026939982, z: 0.00000001910443}
+      rotation: {x: 0.0933787, y: -0.004936422, z: -0.06953555, w: 0.99318725}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RThumb
+      parentName: RightHand
+      position: {x: 0.00001248806, y: 0.00042218543, z: 0.00021734394}
+      rotation: {x: 0.092787065, y: 0.9166476, z: 0.29953334, w: 0.247846}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: RThumb_end
+      parentName: RThumb
+      position: {x: -0, y: 0.00032258837, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightFingerBase
+      parentName: RightHand
+      position: {x: 0.000000029589136, y: 0.00034713198, z: -0.000000056372954}
+      rotation: {x: -0.054882407, y: 0.79253477, z: 0.019692732, w: 0.6070327}
+      scale: {x: 0.9999999, y: 0.99999976, z: 0.99999994}
+    - name: RightHandFinger1
+      parentName: RightFingerBase
+      position: {x: -0.000000048503278, y: 0.0007892693, z: -0.000000035343692}
+      rotation: {x: 0.034331534, y: -0.004502742, z: -0.012602973, w: 0.99932086}
+      scale: {x: 0.9999998, y: 1, z: 1}
+    - name: RightHandFinger1_end
+      parentName: RightHandFinger1
+      position: {x: -0, y: 0.00027376707, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RHipJoint
+      parentName: Hips
+      position: {x: 6.246367e-20, y: 3.87956e-11, z: -6.539034e-11}
+      rotation: {x: 0.5533409, y: 0.5451715, z: -0.49443167, w: 0.39005026}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: RightUpLeg
+      parentName: RHipJoint
+      position: {x: -0.000000007501803, y: 0.0010482902, z: -0.000000015709084}
+      rotation: {x: 0.5232044, y: 0.6203147, z: 0.39406565, w: 0.43148473}
+      scale: {x: 1, y: 1, z: 1.0000001}
+    - name: RightLeg
+      parentName: RightUpLeg
+      position: {x: -0.000000006466091, y: 0.0055223843, z: 2.8722585e-10}
+      rotation: {x: -0.00000003077351, y: -0.0022178458, z: -0.000000008311133, w: 0.99999756}
+      scale: {x: 1, y: 1, z: 1}
+    - name: RightFoot
+      parentName: RightLeg
+      position: {x: 0.00000006712016, y: 0.0047428412, z: 0.0000000017993708}
+      rotation: {x: -0.60202193, y: -0.01880275, z: -0.024919605, w: 0.7978691}
+      scale: {x: 1, y: 0.99999994, z: 1}
+    - name: RightToeBase
+      parentName: RightFoot
+      position: {x: -0.000000015905535, y: 0.0016269872, z: -0.000000004940375}
+      rotation: {x: -0.11704522, y: -0.007771417, z: -0.01907721, w: 0.99291295}
+      scale: {x: 0.99999994, y: 0.9999999, z: 1}
+    - name: RightToeBase_end
+      parentName: RightToeBase
+      position: {x: -0, y: 0.0002090005, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Spector:Body
+      parentName: CutSceneSpector(Clone)
+      position: {x: 0.13343105, y: -0.13211131, z: -0.21045537}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 8.579949, y: 8.579949, z: 8.579949}
+    - name: Spector:High-poly
+      parentName: CutSceneSpector(Clone)
+      position: {x: 0.13343105, y: -0.13211131, z: -0.21045537}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 8.579949, y: 8.579949, z: 8.579949}
+    - name: Spector:Long01
+      parentName: CutSceneSpector(Clone)
+      position: {x: 0.13343105, y: -0.13211131, z: -0.21045537}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 8.579949, y: 8.579949, z: 8.579949}
+    - name: Spector:Teeth_base
+      parentName: CutSceneSpector(Clone)
+      position: {x: 0.13343105, y: -0.13211131, z: -0.21045537}
+      rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
+      scale: {x: 8.579949, y: 8.579949, z: 8.579949}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
