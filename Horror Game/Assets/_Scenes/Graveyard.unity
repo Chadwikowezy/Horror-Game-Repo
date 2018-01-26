@@ -1260,7 +1260,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1556465393}
   m_Layer: 0
-  m_Name: Graveyard Terrain
+  m_Name: Trees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9178,7 +9178,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4047439241072110, guid: 8085e5fa6a200f04e90f89eb862487f7, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.313
+      value: -0.549
       objectReference: {fileID: 0}
     - target: {fileID: 4047439241072110, guid: 8085e5fa6a200f04e90f89eb862487f7, type: 2}
       propertyPath: m_LocalPosition.z
@@ -9190,7 +9190,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4047439241072110, guid: 8085e5fa6a200f04e90f89eb862487f7, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4047439241072110, guid: 8085e5fa6a200f04e90f89eb862487f7, type: 2}
       propertyPath: m_LocalRotation.z
@@ -9198,7 +9198,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4047439241072110, guid: 8085e5fa6a200f04e90f89eb862487f7, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 4047439241072110, guid: 8085e5fa6a200f04e90f89eb862487f7, type: 2}
       propertyPath: m_RootOrder
@@ -10717,10 +10717,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1031554569}
+  - {fileID: 1432245890}
   - {fileID: 645972952}
   - {fileID: 586045065}
   - {fileID: 1556465393}
-  - {fileID: 1432245890}
   - {fileID: 284141650}
   - {fileID: 2099815719}
   - {fileID: 659781664}
@@ -14208,7 +14208,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4237386805227296, guid: 6c1a292e53c4c1842941d5e38c02219a, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6c1a292e53c4c1842941d5e38c02219a, type: 2}
@@ -15818,7 +15818,7 @@ MonoBehaviour:
   mausoleum: {fileID: 659781663}
   largeTombstone: {fileID: 1731929164}
   player: {fileID: 1528438318}
-  monster: {fileID: 0}
+  monster: {fileID: 1613956583}
 --- !u!4 &1419663588
 Transform:
   m_ObjectHideFlags: 0
@@ -15951,7 +15951,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 953685293}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!154 &1432245891
 TerrainCollider:
@@ -16596,7 +16596,7 @@ Transform:
   - {fileID: 1046387814}
   - {fileID: 1847575346}
   m_Father: {fileID: 953685293}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1561674197
 GameObject:
@@ -16851,6 +16851,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1597603961}
   m_Mesh: {fileID: 4300160, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
+--- !u!1 &1613956583 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1369114256670140, guid: 8085e5fa6a200f04e90f89eb862487f7,
+    type: 2}
+  m_PrefabInternal: {fileID: 832023669}
 --- !u!1 &1627797717
 GameObject:
   m_ObjectHideFlags: 0
@@ -17255,7 +17260,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerPrefab: {fileID: 1663106779}
   targetPrefab: {fileID: 1754977996}
-  torque: 50
+  speed: 0
+  xRot: 0
+  yRot: 0
+  zRot: 0
+  rot: {x: 0, y: 0, z: 0}
 --- !u!65 &1663106781
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18562,7 +18571,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerPrefab: {fileID: 1754977996}
   targetPrefab: {fileID: 1663106779}
-  torque: 50
+  speed: 0
+  xRot: 0
+  yRot: 0
+  zRot: 0
+  rot: {x: 0, y: 0, z: 0}
 --- !u!65 &1754977999
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21107,7 +21120,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4582504635343312, guid: 04102f911e9e0bf43a1f337994494864, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4582504635343312, guid: 04102f911e9e0bf43a1f337994494864, type: 2}
       propertyPath: m_LocalScale.x

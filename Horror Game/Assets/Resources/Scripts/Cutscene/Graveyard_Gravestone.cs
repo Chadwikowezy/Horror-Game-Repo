@@ -42,11 +42,9 @@ public class Graveyard_Gravestone : MonoBehaviour
         cam.lookTarget = transform;
         collected = true;
         Destroy(locket);
-        //manager.monster.SetActive(true);
-        //monster plays jump scare animation on activation
+        manager.monster.SetActive(true);
         playerScript.Stoped = false;
         playerScript.knockBack(manager.player.transform.TransformPoint(-manager.player.transform.forward), 5);
-        //Set player "Stoped" property to false
         collectButton.SetActive(false);
     }
 }

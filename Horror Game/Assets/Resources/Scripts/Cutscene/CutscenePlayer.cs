@@ -56,7 +56,7 @@ public class CutscenePlayer : MonoBehaviour
 
         float originalAcceleration = _myAgent.acceleration;
 
-        moveSpeed = moveSpeed * 3;
+        moveSpeed = moveSpeed * 4;
         _myAgent.destination = direction * amount;
         _myAgent.speed = 2;
         _myAgent.angularSpeed = 0;
