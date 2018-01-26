@@ -100,7 +100,6 @@ public class Actor : MonoBehaviour
         {
             GraveyardSectionManager();
         }
-
     }
     #endregion
 
@@ -283,5 +282,10 @@ public class ActorData
     public int pillsCarried;
 
     public List<int> statueObjectsForPedestal;
+
+    public int setMaxInsanity;
+    public int audioLevel;
+    public int lightLevel;
+    public int sensitivity;
 }
 #endregion

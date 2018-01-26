@@ -30,6 +30,7 @@ public class PlayerMotor : MonoBehaviour
         thisRigidBody = GetComponent<Rigidbody>();
         thisRigidBody.drag = drag;
         handleCanvas = FindObjectOfType<HandleCanvas>();
+        Physics.IgnoreLayerCollision(8, 13);
     }
     #endregion
 

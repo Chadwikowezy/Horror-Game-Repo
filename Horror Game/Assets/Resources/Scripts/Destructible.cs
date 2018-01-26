@@ -14,7 +14,6 @@ public class Destructible : MonoBehaviour
             //if player.crowbar = true  
             Instantiate(prefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
-            Destroy(prefab);
         } 
     }
 

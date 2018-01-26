@@ -11,16 +11,24 @@ public class OnTriggerLerp : MonoBehaviour
     private GameObject targetPrefab;
 
     [SerializeField]
-    private float torque;
+    private float speed;
+
+    [SerializeField]
+    private float xRot;
+    [SerializeField]
+    private float yRot;
+    [SerializeField]
+    private float zRot;
+
+    [SerializeField]
+    private Vector3 rot; 
 
     private void LerpRotation()
     {
-        Quaternion rot = transform.rotation;
-        Quaternion newRot = Quaternion.Euler(0, 0, 45);
-        transform.rotation = Quaternion.RotateTowards(rot, newRot, Time.deltaTime * torque);
+        targetPrefab.transform.Rotate(targetPrefab.transform.position, zRot);
     }
 
-    void OnTriggerEnter(Collider col)
+    void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "Player")
         {

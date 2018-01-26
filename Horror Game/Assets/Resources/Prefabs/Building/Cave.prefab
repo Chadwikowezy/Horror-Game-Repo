@@ -461,7 +461,7 @@ GameObject:
   - component: {fileID: 64826700907952656}
   m_Layer: 0
   m_Name: CaveObj
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -687,7 +687,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1558071355657202}
   m_LocalRotation: {x: -0, y: 0.9987063, z: -0, w: -0.05085137}
-  m_LocalPosition: {x: -0.14658928, y: 0.4450023, z: -0.2350967}
+  m_LocalPosition: {x: -0.14658928, y: 0.4450023, z: -0.2471}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4208012694287574}
@@ -742,7 +742,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1951274476133072}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.6630106, y: 0.21959019, z: 2.6039758}
+  m_LocalPosition: {x: 3.6630106, y: 0.04, z: 2.6039758}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4807971486364630}
@@ -771,7 +771,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1997970488293696}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.29001045, y: 0.4280023, z: -5.7701964}
+  m_LocalPosition: {x: 0.29001045, y: 0.3, z: -5.7701964}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4401808352122716}
@@ -838,8 +838,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1287736209992188}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7190213, y: 0.11219248, z: -0.35222065}
-  m_LocalScale: {x: 0.6684188, y: 0.9252107, z: 1}
+  m_LocalPosition: {x: 0.75578, y: 0.11219248, z: -0.35222065}
+  m_LocalScale: {x: 0.5577522, y: 0.9252107, z: 1}
   m_Children:
   - {fileID: 4199814744381112}
   - {fileID: 4021505072830914}
@@ -860,8 +860,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1632496324309070}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.41, y: 0, z: 0.86}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 71.31, y: -3.008, z: -207.51}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4690684191788966}
   - {fileID: 4256685074296328}
@@ -1874,7 +1874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerPrefab: {fileID: 1383336819316264}
   targetPrefab: {fileID: 1183742837728566}
-  xPos: -0.8
+  xPos: 2
   yPos: 0
   zPos: 0
   activated: 0
@@ -1891,7 +1891,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerPrefab: {fileID: 1941235072822992}
   targetPrefab: {fileID: 1486759634097730}
-  xPos: -0.8
+  xPos: -2
   yPos: 0
   zPos: 0
   activated: 0
@@ -1908,7 +1908,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   triggerPrefab: {fileID: 1163579858263118}
   targetPrefab: {fileID: 1655425968059280}
-  xPos: -0.8
+  xPos: -2
   yPos: 0
   zPos: 0
   activated: 0

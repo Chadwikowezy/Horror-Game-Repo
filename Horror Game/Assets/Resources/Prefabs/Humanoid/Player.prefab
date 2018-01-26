@@ -2618,13 +2618,13 @@ GameObject:
   - component: {fileID: 114130146976885466}
   - component: {fileID: 114056876754041026}
   - component: {fileID: 114361651972044904}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1682541994702002
 GameObject:
   m_ObjectHideFlags: 1
@@ -4505,8 +4505,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1680895926089448}
-  m_LocalRotation: {x: -0, y: 0.9238797, z: -0, w: 0.38268322}
-  m_LocalPosition: {x: -78.584, y: 1, z: -172.805}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -62.96, y: 7, z: -160.48}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4281661748896294}
@@ -4514,7 +4514,7 @@ Transform:
   - {fileID: 4747649779955742}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 135, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4236103843153482
 Transform:
   m_ObjectHideFlags: 1
@@ -7474,15 +7474,6 @@ MonoBehaviour:
   - {fileID: 0}
   bar:
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  doors:
-  - {fileID: 0}
-  - {fileID: 0}
-  glassDoors:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
