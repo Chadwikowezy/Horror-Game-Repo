@@ -19,6 +19,7 @@ public class PlayerMotor : MonoBehaviour
     private HandleCanvas handleCanvas;
 
     public bool onPhone = false;
+    public bool hasCrowbar = false;
 
     public bool isSprinting;
     public bool isGrounded;
@@ -30,7 +31,7 @@ public class PlayerMotor : MonoBehaviour
         thisRigidBody = GetComponent<Rigidbody>();
         thisRigidBody.drag = drag;
         handleCanvas = FindObjectOfType<HandleCanvas>();
-        Physics.IgnoreLayerCollision(8, 13);
+        Physics.IgnoreLayerCollision(0, 13);
     }
     #endregion
 

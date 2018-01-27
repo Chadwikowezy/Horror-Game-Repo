@@ -11,9 +11,12 @@ public class Destructible : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            //if player.crowbar = true  
-            Instantiate(prefab, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            if (col.gameObject.GetComponent<PlayerMotor>().hasCrowbar)
+            {
+                Instantiate(prefab, transform.position, Quaternion.identity);
+                Destroy(gameObject);
+            }
+            
         } 
     }
 
