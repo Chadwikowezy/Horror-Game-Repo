@@ -50,7 +50,12 @@ public class Graveyard_StartGame : MonoBehaviour
     {
         AudioSource source = GetComponent<AudioSource>();
 
-        yield return new WaitForSeconds(3f);
+        source.clip = clips[0];
+        source.Play();
+
+        yield return new WaitForSeconds(2f);
+
+        source.clip = clips[1];
 
         if (numOfFlickers % 2 == 0)
             numOfFlickers++;
@@ -59,7 +64,7 @@ public class Graveyard_StartGame : MonoBehaviour
         {
             yield return new WaitForSeconds(Random.Range(minWaitTime, maxWaitTime));
 
-            GetComponent<AudioSource>().Play();
+            source.Play();
 
             foreach (Light light in flickeringLights)
                 light.enabled = !light.enabled;
