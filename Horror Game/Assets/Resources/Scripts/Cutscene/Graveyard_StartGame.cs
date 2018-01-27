@@ -5,6 +5,8 @@ using UnityEngine.AI;
 
 public class Graveyard_StartGame : MonoBehaviour
 {
+    public AudioClip[] clips;
+
     public float detectionDistance;
     public GameObject[] doors;
     public GameObject monster;
@@ -15,6 +17,7 @@ public class Graveyard_StartGame : MonoBehaviour
     public float minWaitTime;
     public float maxWaitTime;
 
+    private bool _gameActive;
     private GameObject _player;
 
     private void Start()
@@ -23,11 +26,14 @@ public class Graveyard_StartGame : MonoBehaviour
     }
     private void Update()
     {
-        if ((_player.transform.position - transform.position).magnitude < detectionDistance)
-            StartCoroutine(activateGameplay());
+        if ((_player.transform.position - transform.position).magnitude < detectionDistance && !_gameActive)
+        {
+            activateGameplay();
+            _gameActive = true;
+        }
     }
 
-    IEnumerator activateGameplay ()
+    void activateGameplay()
     {
         CutsceneSpector spector = monster.GetComponent<CutsceneSpector>();
 
@@ -38,18 +44,22 @@ public class Graveyard_StartGame : MonoBehaviour
             door.transform.rotation = Quaternion.Euler(new Vector3(0, 180,0));
 
         StartCoroutine(flickerLight());
-
-        yield return null;
     }
 
     IEnumerator flickerLight()
     {
+        AudioSource source = GetComponent<AudioSource>();
+
+        yield return new WaitForSeconds(3f);
+
         if (numOfFlickers % 2 == 0)
             numOfFlickers++;
 
         for (int i = 0; i < numOfFlickers; i++)
         {
-            yield return new WaitForSeconds(Random.Range(0.05f, 0.2f));
+            yield return new WaitForSeconds(Random.Range(minWaitTime, maxWaitTime));
+
+            GetComponent<AudioSource>().Play();
 
             foreach (Light light in flickeringLights)
                 light.enabled = !light.enabled;
