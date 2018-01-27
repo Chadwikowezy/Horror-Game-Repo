@@ -18,9 +18,9 @@ public class OnTriggerTranslation : MonoBehaviour
     private float zPos;
 
     [SerializeField]
-    private bool activated = false;
+    public bool activated = false;
 
-    private void TranslateBlock()
+    public void TranslateBlock()
     {
         targetPrefab.transform.Translate(xPos, yPos, zPos);
     }
@@ -32,7 +32,7 @@ public class OnTriggerTranslation : MonoBehaviour
             
             if (activated == false)
             {
-                TranslateBlock();
+                //TranslateBlock();
                 activated = true;
             }
             

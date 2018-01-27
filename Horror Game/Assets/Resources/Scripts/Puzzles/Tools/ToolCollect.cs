@@ -31,7 +31,9 @@ public class ToolCollect : MonoBehaviour
         abstractArt_03,
         abstractArt_04,
         abstractArt_05,
-        abstractArt_06;
+        abstractArt_06, 
+        key,
+        crowbar;
     #endregion
 
     #region Start

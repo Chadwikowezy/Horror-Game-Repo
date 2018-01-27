@@ -12,7 +12,7 @@ public class Tools : MonoBehaviour
 
     private GameController gameController;
 
-    public enum tool { statue01, statue02, statue03, statue04, statue05, statue06, tile_01, tile_02, tile_03, tile_04 };
+    public enum tool { statue01, statue02, statue03, statue04, statue05, statue06, tile_01, tile_02, tile_03, tile_04, crowbar_01, key_01, key_02, button_01, button_02, button_03 };
     public tool toolType;
 
     private ToolCollect toolCollect;
