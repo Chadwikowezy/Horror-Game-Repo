@@ -11,7 +11,9 @@ public class CameraMotor : MonoBehaviour
     public VirtualJoystick joystick;
 
     public Transform lineOfSight;
-    private Camera cam;
+
+    public Transform head;//swtiched from cam main to head
+
     public Transform camTransform { get; set; }
 
     private float distance = .001f;
@@ -33,7 +35,6 @@ public class CameraMotor : MonoBehaviour
     void Start ()
     {
         camTransform = Camera.main.transform;
-        cam = Camera.main;
     }
     #endregion
 
@@ -57,7 +58,7 @@ public class CameraMotor : MonoBehaviour
     {
         if (isAnimating == false)
         {
-            cam.transform.rotation = Quaternion.Lerp(cam.transform.rotation, rotation, Time.deltaTime * 5);
+            head.transform.rotation = Quaternion.Lerp(head.transform.rotation, rotation, Time.deltaTime * 5);
 
             Vector3 animDir = new Vector3(cameraChild.position.x, playerAnimObj.transform.position.y, cameraChild.position.z);
             playerAnimObj.transform.LookAt(animDir);

@@ -176,7 +176,7 @@ public class PhoneManager : MonoBehaviour
     }
 
     private void Update()
-    {
+    {        
         if (isOn == true)
         {
             phoneBatteryObj.SetActive(true);
@@ -235,6 +235,9 @@ public class PhoneManager : MonoBehaviour
         messageObj.SetActive(false);
         phoneCameraUIObjs.SetActive(true);
         phoneCamera.SetActive(true);
+
+        Camera cam = Camera.main;
+        cam.farClipPlane = 1;
     }
     IEnumerator DisablePhoneLensDelay()
     {
@@ -247,6 +250,9 @@ public class PhoneManager : MonoBehaviour
         }
         dummyPhone.SetActive(false);
         phoneCamera.SetActive(false);
+
+        Camera cam = Camera.main;
+        cam.farClipPlane = 70;
     }
 
     public void NewMessageNotification()
