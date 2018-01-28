@@ -7,8 +7,10 @@ public class OnTriggerTranslation : MonoBehaviour
 
     [SerializeField]
     private GameObject triggerPrefab;
-    [SerializeField]
-    private GameObject targetPrefab;
+
+    public GameObject targetPrefab;
+
+    public GameObject rotateWall_01Bttn;
 
     [SerializeField]
     private float xPos;
@@ -23,6 +25,12 @@ public class OnTriggerTranslation : MonoBehaviour
     public void TranslateBlock()
     {
         targetPrefab.transform.Translate(xPos, yPos, zPos);
+    }
+
+    public void RemoveWall_01()
+    {
+        targetPrefab.transform.Translate(xPos, yPos, zPos);
+        rotateWall_01Bttn.SetActive(false);
     }
 
     void OnTriggerEnter(Collider col)

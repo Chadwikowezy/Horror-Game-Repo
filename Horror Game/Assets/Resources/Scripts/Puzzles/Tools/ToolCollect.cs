@@ -8,6 +8,8 @@ public class ToolCollect : MonoBehaviour
     #region variables
     public List<Tools> sectionOneTools = new List<Tools>();
 
+    public List<Tools> mausoleumTools = new List<Tools>();
+
     private PlayerMotor player;
     private ToolsManager toolManager;
 
@@ -50,7 +52,6 @@ public class ToolCollect : MonoBehaviour
     {
         toolManager = FindObjectOfType<ToolsManager>();
 
-        #region statue related
         if (tool.toolType == Tools.tool.statue01)
         {
             if(slotOneFilled == false)
@@ -159,7 +160,60 @@ public class ToolCollect : MonoBehaviour
                 slotThreeFilled = true;
             }
         }
-        #endregion    
+        else if (tool.toolType == Tools.tool.key_01)
+        {
+            if (slotOneFilled == false)
+            {
+                toolManager.toolBar01.sprite = key;
+                slotOneFilled = true;
+            }
+            else if (slotOneFilled == true && slotTwoFilled == false)
+            {
+                toolManager.toolBar02.sprite = key;
+                slotTwoFilled = true;
+            }
+            else if (slotOneFilled == true && slotTwoFilled == true && slotThreeFilled == false)
+            {
+                toolManager.toolBar03.sprite = key;
+                slotThreeFilled = true;
+            }
+        }
+        else if (tool.toolType == Tools.tool.key_02)
+        {
+            if (slotOneFilled == false)
+            {
+                toolManager.toolBar01.sprite = key;
+                slotOneFilled = true;
+            }
+            else if (slotOneFilled == true && slotTwoFilled == false)
+            {
+                toolManager.toolBar02.sprite = key;
+                slotTwoFilled = true;
+            }
+            else if (slotOneFilled == true && slotTwoFilled == true && slotThreeFilled == false)
+            {
+                toolManager.toolBar03.sprite = key;
+                slotThreeFilled = true;
+            }
+        }
+        else if (tool.toolType == Tools.tool.crowbar_01)
+        {
+            if (slotOneFilled == false)
+            {
+                toolManager.toolBar01.sprite = crowbar;
+                slotOneFilled = true;
+            }
+            else if (slotOneFilled == true && slotTwoFilled == false)
+            {
+                toolManager.toolBar02.sprite = crowbar;
+                slotTwoFilled = true;
+            }
+            else if (slotOneFilled == true && slotTwoFilled == true && slotThreeFilled == false)
+            {
+                toolManager.toolBar03.sprite = crowbar;
+                slotThreeFilled = true;
+            }
+        }
     }
     #endregion
 
@@ -261,4 +315,39 @@ public class ToolCollect : MonoBehaviour
         //gameController.Save();
     }
     #endregion
+
+    public void CollectMausoleumObjects()
+    {     
+        foreach (Tools tool in mausoleumTools)
+        {
+            if (tool != null)
+            {
+                Debug.Log("Blah");
+                if (Vector3.Distance(player.transform.position, tool.gameObject.transform.position) <= 7f)
+                {
+                    if (tool.GetComponent<Tools>().toolType == Tools.tool.key_01)
+                    {
+                        toolManager.keysCollected += 1;
+                        AssignToolSprite(tool);
+                        tool.gameObject.SetActive(false);
+                        collectDisplay.SetActive(false);
+                    }
+                    if (tool.GetComponent<Tools>().toolType == Tools.tool.key_02)
+                    {
+                        toolManager.keysCollected += 1;
+                        AssignToolSprite(tool);
+                        tool.gameObject.SetActive(false);
+                        collectDisplay.SetActive(false);
+                    }
+                    if (tool.GetComponent<Tools>().toolType == Tools.tool.crowbar_01)
+                    {
+                        toolManager.hasCrowbar = true;
+                        AssignToolSprite(tool);
+                        tool.gameObject.SetActive(false);
+                        collectDisplay.SetActive(false);
+                    }
+                }
+            }
+        }
+    }
 }

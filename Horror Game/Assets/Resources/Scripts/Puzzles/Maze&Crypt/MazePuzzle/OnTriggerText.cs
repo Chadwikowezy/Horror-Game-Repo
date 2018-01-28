@@ -48,5 +48,5 @@ public class OnTriggerText : MonoBehaviour
             targetPrefab.SetActive(false);
         };
     }
-
+    
 }

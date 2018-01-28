@@ -12,6 +12,7 @@ public class OnTriggerInput : MonoBehaviour
 
 
 
+
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")

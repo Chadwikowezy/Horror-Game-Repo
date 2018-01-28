@@ -28,7 +28,7 @@ public class ToolsManager : MonoBehaviour
     public bool tileFourSequence;
 
     [Header("Maze-Crypt related")]
-    public int keys = 0;
+    public int keysCollected = 0;
     public bool hasCrowbar = false;
     #endregion
 }
