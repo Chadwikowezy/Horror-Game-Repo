@@ -41,6 +41,11 @@ public class Tools : MonoBehaviour
         {
             toolParent = GetComponent<GameObject>();
         }
+        RemoveTools();
+    }
+
+    public void RemoveTools()
+    {
         if (sectionManager.masionPuzzle_F1_01 == true)
         {
             if (toolType == tool.statue01)
@@ -87,7 +92,7 @@ public class Tools : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        if(sectionManager.mausoleumPuzzle == true)
+        if (sectionManager.mausoleumPuzzle == true)
         {
             if (toolType == tool.key_01)
             {
@@ -205,6 +210,15 @@ public class Tools : MonoBehaviour
                                 sectionManager.masionPuzzle_F1_02 = true;
                                 phoneManager.NewMessageNotification();
                                 gameController.Save();
+
+                                GameObject[] tiles = GameObject.FindGameObjectsWithTag("Tile");
+                                for (int j = 0; j < tiles.Length; j++)
+                                {
+                                    if(tiles != null)
+                                    {
+                                        tiles[j].SetActive(false);
+                                    }
+                                }
 
                                 tilePuzzleManager.gameObject.SetActive(false);
                             }

@@ -41,10 +41,13 @@ public class ManuelOcculsion : MonoBehaviour
     public List<GameObject> tower_floor03 = new List<GameObject>();
     public List<GameObject> tower_floor04 = new List<GameObject>();
 
+   // [Header("MansionParts")]
+    //public List<GameObject> mansionPieces = new List<GameObject>();
+
     void Start ()
     {
         cam = GetComponent<Camera>();
-        player = FindObjectOfType<PlayerMotor>();       
+        player = FindObjectOfType<PlayerMotor>();
     }
 
     void Update ()
@@ -63,12 +66,11 @@ public class ManuelOcculsion : MonoBehaviour
         FirstFloorCulling(bath_03);
         FirstFloorCulling(theatre);
         FirstFloorCulling(bar);
-        //FirstFloorCulling(doors);
-        //FirstFloorCulling(glassDoors);
+
+        //TowerCulling(mansionPieces);
 
         TowerCulling(tower_floor01);
         TowerCulling(tower_floor02);
-
         TowerCulling(tower_floor03);
         TowerCulling(tower_floor04);
 
@@ -79,8 +81,6 @@ public class ManuelOcculsion : MonoBehaviour
         SecondFloorCulling(f2_Bedroom_02);
         SecondFloorCulling(f2_Bedroom_01);
         SecondFloorCulling(f2_Hallway);
-
-        //OcclusionCulling();
     }
 
     void FirstFloorCulling(List<GameObject> colliderObjs)

@@ -49,16 +49,16 @@ public class SceneLaunchManager : MonoBehaviour
             {
                 SceneManager.LoadScene("Mansion");
             }
-            if (actor.data.masionPuzzle_F1_01 == true ||
-                actor.data.masionPuzzle_F1_02 == true ||
-                actor.data.masionPuzzle_F1_03 == true ||
+            else if (actor.data.masionPuzzle_F1_01 == true &&
+                actor.data.masionPuzzle_F1_02 == true &&
+                actor.data.masionPuzzle_F1_03 == true &&
                 actor.data.masionPuzzle_F2_01 == true &&
                 actor.data.mausoleumPuzzle == false ||
                 actor.data.cryptPuzzle == false)
             {
                 SceneManager.LoadScene("Maze-Crypt");
             }
-            if (actor.data.cryptPuzzle == true &&
+            else if (actor.data.cryptPuzzle == true &&
                 actor.data.graveYardPuzzle == false)
             {
                 SceneManager.LoadScene("Graveyard");
@@ -70,6 +70,10 @@ public class SceneLaunchManager : MonoBehaviour
             actor.ResetDataAttributes();
             gameController.Save();
             SceneManager.LoadScene("Mansion");
+            if (System.IO.File.Exists(Path.Combine(Application.persistentDataPath, "actors.json")))
+            {
+                File.Delete("actors.json");
+            }
         }
     }
 }
