@@ -10,16 +10,18 @@ public class OnTriggerInput : MonoBehaviour
     [SerializeField]
     private GameObject Sprite;
 
-
+    public bool isActive = false;
 
 
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")
         {
-            Sprite.SetActive(true);
-            print("Collision");
-
+            if (isActive == false)
+            {
+                Sprite.SetActive(true);
+                print("Collision");
+            }
         };
     }
 
@@ -27,21 +29,20 @@ public class OnTriggerInput : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            for (int i = 0; i < Input.touchCount; ++i)
+            if(isActive == false)
             {
-                if (Input.GetTouch(i).phase == TouchPhase.Began)
+                for (int i = 0; i < Input.touchCount; ++i)
                 {
-                    if (col.gameObject.GetComponent<OnTriggerTranslation>().activated == false)
+                    if (Input.GetTouch(i).phase == TouchPhase.Began)
                     {
-                        col.gameObject.GetComponent<OnTriggerTranslation>().TranslateBlock();
-                        Sprite.SetActive(false);
+                        if (col.gameObject.GetComponent<OnTriggerTranslation>().activated == false)
+                        {
+                            //col.gameObject.GetComponent<OnTriggerTranslation>().TranslateBlock();
+                            Sprite.SetActive(false);
+                        }
                     }
-                    
-
                 }
-                    
             }
-
         };
     }
 

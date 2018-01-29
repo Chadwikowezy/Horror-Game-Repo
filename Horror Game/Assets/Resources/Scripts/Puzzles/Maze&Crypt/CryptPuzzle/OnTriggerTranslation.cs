@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class OnTriggerTranslation : MonoBehaviour
 {
-
-    [SerializeField]
-    private GameObject triggerPrefab;
+    private Spector spector;
 
     public GameObject targetPrefab;
 
-    public GameObject rotateWall_01Bttn;
+    public GameObject rotateWallBttn;
+
+    private OnTriggerInput onTriggerInput;
 
     [SerializeField]
     private float xPos;
@@ -22,15 +22,37 @@ public class OnTriggerTranslation : MonoBehaviour
     [SerializeField]
     public bool activated = false;
 
-    public void TranslateBlock()
+    void Start()
+    {
+        spector = FindObjectOfType<Spector>();
+        onTriggerInput = GetComponent<OnTriggerInput>();
+    }
+
+    public void TranslateBlock_01()
     {
         targetPrefab.transform.Translate(xPos, yPos, zPos);
     }
-
+    
     public void RemoveWall_01()
     {
         targetPrefab.transform.Translate(xPos, yPos, zPos);
-        rotateWall_01Bttn.SetActive(false);
+        rotateWallBttn.SetActive(false);
+        spector.AlertPosition = transform.position;
+        onTriggerInput.isActive = true;
+    }
+    public void RemoveWall_02()
+    {
+        targetPrefab.transform.Translate(xPos, yPos, zPos);
+        rotateWallBttn.SetActive(false);
+        spector.AlertPosition = transform.position;
+        onTriggerInput.isActive = true;
+    }
+    public void RemoveWall_03()
+    {
+        targetPrefab.transform.Translate(xPos, yPos, zPos);
+        rotateWallBttn.SetActive(false);
+        spector.AlertPosition = transform.position;
+        onTriggerInput.isActive = true;
     }
 
     void OnTriggerEnter(Collider col)
