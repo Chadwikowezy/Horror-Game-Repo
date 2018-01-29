@@ -20,9 +20,20 @@ public class OnTriggerTeleport : MonoBehaviour
     [SerializeField]
     private bool activated = false;
 
+    public GameObject Ambience_01,
+                      Ambience_02;
+
+    //public AudioClip clip_01;
+                    
+    //public AudioSource source;
+
     private void Teleport()
     {
         targetPrefab.transform.position = new Vector3(xPos,yPos,zPos);
+        //source.clip = GetComponent<OnTriggerTeleport>().clip_01;
+        Ambience_01.SetActive(false);
+        Ambience_02.SetActive(true);
+        //source.Play();
     }
 
     void OnTriggerEnter(Collider col)
@@ -36,7 +47,7 @@ public class OnTriggerTeleport : MonoBehaviour
                 activated = true;
             }
 
-            print("Collision");
+            //print("Collision");
         };
     }
 }

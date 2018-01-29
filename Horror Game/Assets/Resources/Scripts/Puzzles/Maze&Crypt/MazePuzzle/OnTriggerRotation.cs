@@ -23,7 +23,26 @@ public class OnTriggerRotation : MonoBehaviour
 
     public AudioSource source;
 
-    private void RotateBlock()
+    IEnumerator AudioDelay()
+    {
+        yield return new WaitForSeconds(1);
+        PlayAudio_Whispering();
+    }
+
+    public void PlayAudio_DrumEcho()
+    {
+        source.clip = GetComponent<OnTriggerRotation>().clip_01;
+        source.Play();
+        StartCoroutine("AudioDelay");
+    }
+
+    public void PlayAudio_Whispering()
+    {
+        source.clip = GetComponent<OnTriggerRotation>().clip_02;
+        source.Play();
+    }
+
+    public void RotateBlock()
     {
         targetPrefab.transform.Rotate(xRot, yRot, zRot);
         SecondaryTargetPrefab.transform.Rotate(xRot, yRot, zRot);
@@ -33,8 +52,8 @@ public class OnTriggerRotation : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            RotateBlock();
-            print("Collision");
+            //RotateBlock();
+            //print("Collision");
         };
     }
 }
