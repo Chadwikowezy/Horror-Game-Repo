@@ -32,10 +32,14 @@ public class Actor : MonoBehaviour
             SceneManager.GetActiveScene() != SceneManager.GetSceneByName("OpeningCutscene"))
         {
             insanityManager = FindObjectOfType<InsanityManager>();
-            phoneManager = FindObjectOfType<PhoneManager>();
 
-            phoneManager.RecievedCall();
-            phoneManager.NewMessageNotification();
+            if (SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Graveyard"))
+            {
+                phoneManager = FindObjectOfType<PhoneManager>();
+
+                phoneManager.RecievedCall();
+                phoneManager.NewMessageNotification();
+            }
         }    
         if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Main Menu"))
         {
