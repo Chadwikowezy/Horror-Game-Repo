@@ -33,9 +33,10 @@ public class Graveyard_LevelManager : MonoBehaviour
                 startingLights[i].color = _currentLightColor;
         }
 
-        yield return new WaitForSeconds(3f);
-
         for (int i = 0; i < startingLights.Length; i++)
+        {
             startingLights[i].gameObject.GetComponent<LightGlow>().enabled = true;
+            yield return new WaitForSeconds(1f);
+        }
     }
 }
