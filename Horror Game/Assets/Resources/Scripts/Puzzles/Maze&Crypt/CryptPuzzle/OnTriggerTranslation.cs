@@ -22,10 +22,22 @@ public class OnTriggerTranslation : MonoBehaviour
     [SerializeField]
     public bool activated = false;
 
+    public AudioClip clip_01,
+                     clip_02;
+
+    public AudioSource source;
+
     void Start()
     {
         spector = FindObjectOfType<Spector>();
         onTriggerInput = GetComponent<OnTriggerInput>();
+        source = GetComponent<AudioSource>();
+    }
+
+    IEnumerator AudioDelay()
+    {
+        yield return new WaitForSeconds(1);
+        PlayAudio_WallMove();
     }
 
     public void TranslateBlock_01()
@@ -55,6 +67,20 @@ public class OnTriggerTranslation : MonoBehaviour
         onTriggerInput.isActive = true;
     }
 
+    public void PlayAudio_MetalClick()
+    {
+        source.clip = GetComponent<OnTriggerTranslation>().clip_01;
+        source.Play();
+        StartCoroutine("AudioDelay");
+    }
+
+    public void PlayAudio_WallMove()
+    {
+        source.clip = GetComponent<OnTriggerTranslation>().clip_02;
+        source.Play(); 
+    }
+
+    
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")

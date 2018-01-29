@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MausoleumPuzzleManager : MonoBehaviour
 {
@@ -24,4 +25,9 @@ public class MausoleumPuzzleManager : MonoBehaviour
     {
 		
 	}
+
+    public void sceneChange()
+    {
+        SceneManager.LoadScene("Graveyard Cutscene", LoadSceneMode.Additive);
+    }
 }

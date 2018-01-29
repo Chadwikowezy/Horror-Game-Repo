@@ -18,6 +18,11 @@ public class OnTriggerRotation : MonoBehaviour
     [SerializeField]
     private float zRot;
 
+    public AudioClip clip_01,
+                     clip_02;
+
+    public AudioSource source;
+
     private void RotateBlock()
     {
         targetPrefab.transform.Rotate(xRot, yRot, zRot);
