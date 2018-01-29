@@ -11,9 +11,6 @@ public class LightGlow : MonoBehaviour
     public float period;
 
     private Light _light;
-    private float _fadeTarget;
-    private float _theta;
-    private float _distance;
 
     private void Start()
     {
@@ -22,9 +19,6 @@ public class LightGlow : MonoBehaviour
     }
     private void Update()
     {
-        _theta = Time.timeSinceLevelLoad / period;
-        _distance = amplitude * Mathf.Sin(_theta);
-
-        _light.intensity = startIntensity +  _distance;
+        
     }
 }
