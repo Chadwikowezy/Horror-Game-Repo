@@ -12,7 +12,6 @@ public class OnTriggerInput : MonoBehaviour
 
     public bool isActive = false;
 
-
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")
@@ -20,7 +19,7 @@ public class OnTriggerInput : MonoBehaviour
             if (isActive == false)
             {
                 Sprite.SetActive(true);
-                print("Collision");
+                //print("Collision");
             }
         };
     }

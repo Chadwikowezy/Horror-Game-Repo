@@ -92,7 +92,7 @@ public class OnTriggerTranslation : MonoBehaviour
                 activated = true;
             }
             
-            print("Collision");
+            //print("Collision");
         };
     }
 }

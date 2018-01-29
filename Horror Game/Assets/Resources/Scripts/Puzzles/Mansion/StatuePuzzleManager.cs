@@ -169,6 +169,16 @@ public class StatuePuzzleManager : MonoBehaviour
             sectionManager.masionPuzzle_F1_01 = true;
             TilesPuzzleManager tilePuzzleManager = FindObjectOfType<TilesPuzzleManager>();
             tilePuzzleManager.colorChartObj.SetActive(true);
+
+            GameObject[] statueObjs = GameObject.FindGameObjectsWithTag("Tool");
+            if(statueObjs != null)
+            {
+                for (int i = 0; i < statueObjs.Length; i++)
+                {
+                    statueObjs[i].SetActive(false);
+                }
+            }           
+
             sectionDoor.SetActive(false);
             phoneManager.NewMessageNotification();
             gameController.Save();
