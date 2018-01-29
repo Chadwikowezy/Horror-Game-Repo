@@ -55,6 +55,8 @@ public class InsanityManager : MonoBehaviour
                 cameraMotor.sensitivityX = sensitivityLvl;
                 cameraMotor.sensitivityY = sensitivityLvl;
                 mainCamera.GetComponent<PostProcessingBehaviour>().profile.motionBlur.enabled = false;
+                mainCamera.GetComponent<PostProcessingBehaviour>().profile.depthOfField.enabled = false;
+
                 Color c = insanityImg.color;
                 c.a = 1;
                 if (currentTime > 0)
@@ -74,6 +76,8 @@ public class InsanityManager : MonoBehaviour
                 cameraMotor.sensitivityX = sensitivityLvl;
                 cameraMotor.sensitivityY = sensitivityLvl;
                 mainCamera.GetComponent<PostProcessingBehaviour>().profile.motionBlur.enabled = true;
+                mainCamera.GetComponent<PostProcessingBehaviour>().profile.depthOfField.enabled = true;
+
                 Color c = insanityImg.color;
                 c.a = 1;
                 if (currentTime > 22)
@@ -93,6 +97,8 @@ public class InsanityManager : MonoBehaviour
                 cameraMotor.sensitivityX = sensitivityLvl;
                 cameraMotor.sensitivityY = sensitivityLvl;
                 mainCamera.GetComponent<PostProcessingBehaviour>().profile.motionBlur.enabled = true;
+                mainCamera.GetComponent<PostProcessingBehaviour>().profile.depthOfField.enabled = true;
+
                 Color c = insanityImg.color;
                 c.a = 1;
                 if (currentTime > 44)
@@ -118,7 +124,7 @@ public class InsanityManager : MonoBehaviour
                     if (currentTime >= 100)
                     {
                         mainCamera.GetComponent<PostProcessingBehaviour>().profile.motionBlur.enabled = false;
-
+                        mainCamera.GetComponent<PostProcessingBehaviour>().profile.depthOfField.enabled = false;
                         int scene = SceneManager.GetActiveScene().buildIndex;
                         SceneManager.LoadScene(scene, LoadSceneMode.Single);
                     }

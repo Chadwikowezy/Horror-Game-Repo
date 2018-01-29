@@ -10,12 +10,15 @@ public class HandleCanvas : MonoBehaviour
 
     private float framerate = 0.0f;
     public Text framerateTxt;
+
+    static int desiredFramerate = 60;
     #endregion
 
     #region awake & start
     void Awake()
     {
-        Application.targetFrameRate = 60;       
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = desiredFramerate;       
     }
 
     void Start()

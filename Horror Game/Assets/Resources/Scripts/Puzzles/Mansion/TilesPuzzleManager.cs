@@ -35,6 +35,7 @@ public class TilesPuzzleManager : MonoBehaviour
     #region generate tiles function call
     void GenerateTiles()
     {
+        Debug.Log("Generated tiles");
         if (actor == null)
         {
             actor = FindObjectOfType<Actor>();
