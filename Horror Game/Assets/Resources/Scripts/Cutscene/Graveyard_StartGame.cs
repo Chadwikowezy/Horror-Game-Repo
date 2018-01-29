@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 public class Graveyard_StartGame : MonoBehaviour
 {
@@ -44,6 +45,7 @@ public class Graveyard_StartGame : MonoBehaviour
             door.transform.rotation = Quaternion.Euler(new Vector3(0, 180,0));
 
         StartCoroutine(flickerLight());
+        StartCoroutine(loadGameplayScene());
     }
 
     IEnumerator flickerLight()
@@ -69,5 +71,10 @@ public class Graveyard_StartGame : MonoBehaviour
             foreach (Light light in flickeringLights)
                 light.enabled = !light.enabled;
         }
+    }
+    IEnumerator loadGameplayScene()
+    {
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene("Graveyard");
     }
 }
