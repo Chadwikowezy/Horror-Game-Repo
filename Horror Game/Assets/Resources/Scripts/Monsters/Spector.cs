@@ -14,6 +14,7 @@ public class Spector : MonoBehaviour
     public float detectionDistance;
     public float attackDistance;
 
+    private bool _attacking;
     private float _timer;
     private MonsterStates _previousState;
     private MonsterStates _currentState;
@@ -88,6 +89,9 @@ public class Spector : MonoBehaviour
     }
     void detectPlayer()
     {
+        if (_attacking)
+            return;
+
         if ((transform.position - _player.transform.position).magnitude < detectionDistance && _currentState != MonsterStates.Chasing)
         {
             Ray ray = new Ray(transform.position, _player.transform.position - transform.position);
@@ -202,8 +206,13 @@ public class Spector : MonoBehaviour
     IEnumerator Attacking()
     {
         //Do Attack Stuffs Here
+        _attacking = true;
+        _myAgent.speed = 0;
+        _player.GetComponent<CameraMotor>().MonsterAttackEffect();
 
-        CurrentState = MonsterStates.Patrol;
+        print("HI");
+
+        //CurrentState = MonsterStates.Patrol;
         yield return null;
     }
 }
