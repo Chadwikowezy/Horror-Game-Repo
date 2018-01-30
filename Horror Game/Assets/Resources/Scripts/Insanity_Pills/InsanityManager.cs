@@ -43,6 +43,8 @@ public class InsanityManager : MonoBehaviour
         insanityImg = GetComponentInChildren<Image>();
         cameraMotor = FindObjectOfType<CameraMotor>();
         mainCamera = Camera.main;
+        mainCamera.GetComponent<PostProcessingBehaviour>().profile.motionBlur.enabled = false;
+        mainCamera.GetComponent<PostProcessingBehaviour>().profile.depthOfField.enabled = false;
     }
 
     void Update()
