@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class OnTriggerInput : MonoBehaviour
 {
+    #region Variables
     [SerializeField]
     private GameObject triggerPrefab;
 
@@ -11,7 +12,9 @@ public class OnTriggerInput : MonoBehaviour
     private GameObject Sprite;
 
     public bool isActive = false;
+    #endregion
 
+    #region Triggers
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")
@@ -53,5 +56,5 @@ public class OnTriggerInput : MonoBehaviour
 
         };
     }
-
+    #endregion
 }

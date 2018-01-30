@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class OnTriggerTranslation : MonoBehaviour
 {
+    #region Variables
     private Spector spector;
 
     public GameObject targetPrefab;
@@ -26,18 +27,23 @@ public class OnTriggerTranslation : MonoBehaviour
                      clip_02;
 
     public AudioSource source;
+    #endregion
+  
+    #region Coroutines
+    IEnumerator AudioDelay()
+    {
+        yield return new WaitForSeconds(1);
+        PlayAudio_WallMove();
+    }
+    #endregion
+
+    #region Functions
 
     void Start()
     {
         spector = FindObjectOfType<Spector>();
         onTriggerInput = GetComponent<OnTriggerInput>();
         source = GetComponent<AudioSource>();
-    }
-
-    IEnumerator AudioDelay()
-    {
-        yield return new WaitForSeconds(1);
-        PlayAudio_WallMove();
     }
 
     public void TranslateBlock_01()
@@ -79,8 +85,9 @@ public class OnTriggerTranslation : MonoBehaviour
         source.clip = GetComponent<OnTriggerTranslation>().clip_02;
         source.Play(); 
     }
+    #endregion
 
-    
+    #region Triggers
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")
@@ -95,4 +102,5 @@ public class OnTriggerTranslation : MonoBehaviour
             //print("Collision");
         };
     }
+    #endregion
 }

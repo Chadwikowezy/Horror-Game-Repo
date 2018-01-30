@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class OnTriggerRotation : MonoBehaviour
 {
+    #region Variables
     [SerializeField]
     private GameObject triggerPrefab;
     [SerializeField]
     private GameObject targetPrefab;
     [SerializeField]
     private GameObject SecondaryTargetPrefab;
+
+    public Vector3 from,
+                     to;
+
+    private Spector spector;
 
     [SerializeField]
     private float xRot;
@@ -18,17 +24,33 @@ public class OnTriggerRotation : MonoBehaviour
     [SerializeField]
     private float zRot;
 
+    public float speed;
+
+    [SerializeField]
+    private Vector3 newRot;
+
     public AudioClip clip_01,
                      clip_02;
 
     public AudioSource source;
 
+    [SerializeField]
+    public bool activated = false;
+    #endregion
+
+    #region Coroutines
     IEnumerator AudioDelay()
     {
         yield return new WaitForSeconds(1);
         PlayAudio_Whispering();
     }
+    #endregion
 
+    #region Functions
+    public void Start()
+    {
+        spector = FindObjectOfType<Spector>();
+    }
     public void PlayAudio_DrumEcho()
     {
         source.clip = GetComponent<OnTriggerRotation>().clip_01;
@@ -48,12 +70,26 @@ public class OnTriggerRotation : MonoBehaviour
         SecondaryTargetPrefab.transform.Rotate(xRot, yRot, zRot);
     }
 
-    void OnTriggerEnter(Collider col)
+    public void RotateBlock_02()
     {
-        if (col.gameObject.tag == "Player")
-        {
-            //RotateBlock();
-            //print("Collision");
-        };
+        targetPrefab.transform.Rotate(xRot, yRot, zRot);
+        //play anim
     }
+
+    public void ConfirmBlock()
+    {
+        if(targetPrefab.gameObject.transform.eulerAngles == newRot)
+        {
+            source.clip = GetComponent<OnTriggerRotation>().clip_01;
+            source.Play();
+
+        }
+
+        else
+        {
+            spector.AlertPosition = transform.position;
+        }
+    }
+
+    #endregion
 }

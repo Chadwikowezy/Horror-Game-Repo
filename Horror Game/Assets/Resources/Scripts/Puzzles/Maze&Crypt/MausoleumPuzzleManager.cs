@@ -5,13 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class MausoleumPuzzleManager : MonoBehaviour
 {
+    #region Variables
     public List<Transform> keyTransforms = new List<Transform>();
     public Transform crowbarTransform;
 
     public List<Tools> tools = new List<Tools>();
 
     private ToolCollect toolCollect;
+    #endregion
 
+    #region Functions
 	void Start ()
     {
         toolCollect = FindObjectOfType<ToolCollect>();
@@ -30,4 +33,5 @@ public class MausoleumPuzzleManager : MonoBehaviour
     {
         SceneManager.LoadScene("Graveyard Cutscene", LoadSceneMode.Additive);
     }
+    #endregion
 }

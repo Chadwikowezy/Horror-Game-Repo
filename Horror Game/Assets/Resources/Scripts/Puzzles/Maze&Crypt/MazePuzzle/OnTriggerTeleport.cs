@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OnTriggerTeleport : MonoBehaviour
 {
-
+    #region Variables
     [SerializeField]
     private GameObject triggerPrefab;
     [SerializeField]
@@ -24,9 +24,11 @@ public class OnTriggerTeleport : MonoBehaviour
                       Ambience_02;
 
     //public AudioClip clip_01;
-                    
-    //public AudioSource source;
 
+    //public AudioSource source;
+    #endregion
+  
+    #region Functions
     private void Teleport()
     {
         targetPrefab.transform.position = new Vector3(xPos,yPos,zPos);
@@ -35,7 +37,9 @@ public class OnTriggerTeleport : MonoBehaviour
         Ambience_02.SetActive(true);
         //source.Play();
     }
+    #endregion
 
+    #region Triggers
     void OnTriggerEnter(Collider col)
     {
         if (col.gameObject.tag == "Player")
@@ -50,4 +54,5 @@ public class OnTriggerTeleport : MonoBehaviour
             //print("Collision");
         };
     }
+    #endregion 
 }
