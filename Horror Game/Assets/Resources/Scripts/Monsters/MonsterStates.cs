@@ -3,5 +3,6 @@
     Idle,
     Patrol,
     Alerted,
-    Chasing
+    Chasing,
+    Attacking
 }

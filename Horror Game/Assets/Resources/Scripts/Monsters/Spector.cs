@@ -12,6 +12,7 @@ public class Spector : MonoBehaviour
     public float idleTime;
     public float alertedDuration;
     public float detectionDistance;
+    public float attackDistance;
 
     private float _timer;
     private MonsterStates _previousState;
@@ -70,6 +71,8 @@ public class Spector : MonoBehaviour
             StartCoroutine(alerted());
         else if (CurrentState == MonsterStates.Chasing)
             StartCoroutine(chasing());
+        else if (CurrentState == MonsterStates.Attacking)
+            StartCoroutine(Attacking());
     }
     void changeMoveState()
     {
@@ -184,6 +187,9 @@ public class Spector : MonoBehaviour
                 if (hit.transform.gameObject.tag == "Player")
                 {
                     _myAgent.SetDestination(_player.transform.position);
+
+                    if ((transform.position - _player.transform.position).magnitude < attackDistance)
+                        CurrentState = MonsterStates.Attacking;
                 }
                 else
                 {
@@ -192,5 +198,12 @@ public class Spector : MonoBehaviour
                 }
             }
         }
+    }
+    IEnumerator Attacking()
+    {
+        //Do Attack Stuffs Here
+
+        CurrentState = MonsterStates.Patrol;
+        yield return null;
     }
 }
