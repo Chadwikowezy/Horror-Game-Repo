@@ -24,7 +24,8 @@ public class CameraMotor : MonoBehaviour
 
     public GameObject playerAnimObj;
     public Transform cameraChild;
-    public bool isAnimating;
+    private HandleCanvas handleCanvas;
+    private InsanityManager insanityManager;
     public Transform crouchLOS_OBJ;
 
     private Vector3 dir;
@@ -35,6 +36,8 @@ public class CameraMotor : MonoBehaviour
     void Start ()
     {
         camTransform = Camera.main.transform;
+        handleCanvas = FindObjectOfType<HandleCanvas>();
+        insanityManager = FindObjectOfType<InsanityManager>();
     }
     #endregion
 
@@ -56,17 +59,17 @@ public class CameraMotor : MonoBehaviour
     #region FixedUpdate
     void FixedUpdate()
     {
-        if (isAnimating == false)
+        if (handleCanvas.canUseButtons == true)
         {
             head.transform.rotation = Quaternion.Lerp(head.transform.rotation, rotation, Time.deltaTime * 5);
 
             Vector3 animDir = new Vector3(cameraChild.position.x, playerAnimObj.transform.position.y, cameraChild.position.z);
             playerAnimObj.transform.LookAt(animDir);
         }
-        else if (isAnimating == true)
+        /*else if (isAnimating == true)
         {
             camTransform.LookAt(crouchLOS_OBJ.position);
-        }
+        }*/
     }
     #endregion
 
@@ -88,4 +91,31 @@ public class CameraMotor : MonoBehaviour
         return Mathf.Clamp(angle, min, max);
     }
     #endregion
+
+    public void MonsterAttackEffect()//Chad - for spector attack
+    {
+        handleCanvas.canUseButtons = false;
+        Spector spector = FindObjectOfType<Spector>();
+
+        Vector3 monsterDir = new Vector3(spector.transform.position.x, transform.position.y, spector.transform.position.z);
+        transform.LookAt(monsterDir);
+
+
+        head.transform.LookAt(monsterDir);
+        playerAnimObj.transform.LookAt(monsterDir);
+
+        StartCoroutine(AttackDelay());
+    }
+
+    IEnumerator AttackDelay()
+    {
+        yield return new WaitForSeconds(1.5f);
+        Spector spector = FindObjectOfType<Spector>();
+        Vector3 knockbackDir = spector.transform.position - transform.position;
+
+        GetComponent<Rigidbody>().AddForce(-knockbackDir * 50f);
+        yield return new WaitForSeconds(.5f);
+        insanityManager.AlterInsanity(1);
+        handleCanvas.canUseButtons = true;
+    }
 }
