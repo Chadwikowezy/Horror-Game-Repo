@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Graveyard_LevelManager : MonoBehaviour
 {
+    public GameObject player;
+
     [Space(10), Header("Start Light Fade In")]
     public Light[] startingLights;
     public float fadeDuration;
 
     private void Start()
     {
+        player.transform.localScale = new Vector3(1.3f, 1.3f, 1.3f);
         StartCoroutine(lightFadeIn());
     }
 
