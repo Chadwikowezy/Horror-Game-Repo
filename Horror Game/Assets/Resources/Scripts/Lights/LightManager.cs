@@ -41,7 +41,7 @@ public class LightManager : MonoBehaviour
     {
         foreach(Light light in lights)
         {
-            if(Vector3.Distance(light.transform.position, spector.transform.position) <= 10f)
+            if(Vector3.Distance(light.transform.position, spector.transform.position) <= 15f)
             {
                 if(Time.time > changeTime)
                 {
