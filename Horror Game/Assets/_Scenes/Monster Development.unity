@@ -154,7 +154,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4373934087521574, guid: 4503f3abd4534d2489031a6b6dfa5275, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 6
+      value: -0.77
       objectReference: {fileID: 0}
     - target: {fileID: 4373934087521574, guid: 4503f3abd4534d2489031a6b6dfa5275, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1865,32 +1865,32 @@ Prefab:
     - target: {fileID: 224001984395836464, guid: 8cabfcf6ce519f34485013ff2a797677,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 184.70673
+      value: 310.20673
       objectReference: {fileID: 0}
     - target: {fileID: 224001984395836464, guid: 8cabfcf6ce519f34485013ff2a797677,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 119.814896
+      value: 198.3149
       objectReference: {fileID: 0}
     - target: {fileID: 224575183613908510, guid: 8cabfcf6ce519f34485013ff2a797677,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 184.70673
+      value: 310.20673
       objectReference: {fileID: 0}
     - target: {fileID: 224575183613908510, guid: 8cabfcf6ce519f34485013ff2a797677,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 119.814896
+      value: 198.3149
       objectReference: {fileID: 0}
     - target: {fileID: 224692444849994772, guid: 8cabfcf6ce519f34485013ff2a797677,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 184.70673
+      value: 310.20673
       objectReference: {fileID: 0}
     - target: {fileID: 224692444849994772, guid: 8cabfcf6ce519f34485013ff2a797677,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 119.814896
+      value: 198.3149
       objectReference: {fileID: 0}
     - target: {fileID: 224049279870786096, guid: 8cabfcf6ce519f34485013ff2a797677,
         type: 2}
@@ -1905,12 +1905,12 @@ Prefab:
     - target: {fileID: 224945646043039478, guid: 8cabfcf6ce519f34485013ff2a797677,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 184.70673
+      value: 310.20673
       objectReference: {fileID: 0}
     - target: {fileID: 224945646043039478, guid: 8cabfcf6ce519f34485013ff2a797677,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 119.814896
+      value: 198.3149
       objectReference: {fileID: 0}
     - target: {fileID: 224778934534757094, guid: 8cabfcf6ce519f34485013ff2a797677,
         type: 2}
@@ -1925,22 +1925,22 @@ Prefab:
     - target: {fileID: 224175256582245146, guid: 8cabfcf6ce519f34485013ff2a797677,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 184.70673
+      value: 310.20673
       objectReference: {fileID: 0}
     - target: {fileID: 224175256582245146, guid: 8cabfcf6ce519f34485013ff2a797677,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 119.814896
+      value: 198.3149
       objectReference: {fileID: 0}
     - target: {fileID: 224220057197525620, guid: 8cabfcf6ce519f34485013ff2a797677,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 184.70673
+      value: 310.20673
       objectReference: {fileID: 0}
     - target: {fileID: 224220057197525620, guid: 8cabfcf6ce519f34485013ff2a797677,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 119.814896
+      value: 198.3149
       objectReference: {fileID: 0}
     - target: {fileID: 224595916579041046, guid: 8cabfcf6ce519f34485013ff2a797677,
         type: 2}
@@ -1955,12 +1955,12 @@ Prefab:
     - target: {fileID: 224483597415431590, guid: 8cabfcf6ce519f34485013ff2a797677,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 184.70673
+      value: 310.20673
       objectReference: {fileID: 0}
     - target: {fileID: 224483597415431590, guid: 8cabfcf6ce519f34485013ff2a797677,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 119.814896
+      value: 198.3149
       objectReference: {fileID: 0}
     - target: {fileID: 114599392809878246, guid: 8cabfcf6ce519f34485013ff2a797677,
         type: 2}
@@ -9219,6 +9219,7 @@ MonoBehaviour:
   lineOfSight: {fileID: 502165890}
   playerCam: {fileID: 729270282}
   camTargetPos: {fileID: 1095161416}
+  yCamLimit: 45
   sensitivityX: 3
   sensitivityY: 3
   playerAnimObj: {fileID: 1672481031}
