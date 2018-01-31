@@ -207,6 +207,7 @@ public class Spector : MonoBehaviour
     {
         //Do Attack Stuffs Here
         _attacking = true;
+        _myAgent.SetDestination(transform.position);
         _myAgent.speed = 0;
         _player.GetComponent<CameraMotor>().MonsterAttackEffect();
 

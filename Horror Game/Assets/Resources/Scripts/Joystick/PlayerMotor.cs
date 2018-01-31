@@ -7,6 +7,7 @@ public class PlayerMotor : MonoBehaviour
     #region variables
     public float moveSpeed = 5f;
     public float drag = .5f;
+    public float sensitivity = 1;
 
     public enum animStates { IDLE, WALK, RUN, HOLDPHONE };
     public animStates currentState;
@@ -14,6 +15,7 @@ public class PlayerMotor : MonoBehaviour
     public Vector3 moveVector { set; get; }
 
     public VirtualJoystick joystick;
+    public VirtualJoystick rotJoystick;
     private Rigidbody thisRigidBody;
     private Transform camTransform;
     private HandleCanvas handleCanvas;
@@ -23,6 +25,8 @@ public class PlayerMotor : MonoBehaviour
 
     public bool isSprinting;
     public bool isGrounded;
+
+    private Vector3 newRot;
     #endregion
 
     #region start
@@ -40,14 +44,17 @@ public class PlayerMotor : MonoBehaviour
     {
         //movement vector
         moveVector = PoolInput();
-        //rotation vector
-        moveVector = RotateWithView();
-
-        Move();
 
         ControlStates();
     }
     #endregion
+    #region FixedUpdate
+    private void FixedUpdate()
+    {
+        Move();
+    }
+    #endregion
+
 
     #region move function call, and stopping/ reseting movespeed 
     public void Move()
@@ -56,12 +63,14 @@ public class PlayerMotor : MonoBehaviour
         {
             if (thisRigidBody.velocity.magnitude < 6)
             {              
-                thisRigidBody.velocity = (moveVector * moveSpeed);
+                thisRigidBody.velocity = (transform.TransformDirection(moveVector) * moveSpeed);
             }           
             else if(thisRigidBody.velocity.magnitude == 0)
             {
                 isGrounded = true;
-            }           
+            }
+
+            RotatePlayer();
         }       
        /*if (isGrounded == false)
             if (thisRigidBody.velocity.magnitude == 0)
@@ -76,11 +85,11 @@ public class PlayerMotor : MonoBehaviour
             {
                 currentState = animStates.RUN;
             }
-            if (thisRigidBody.velocity.magnitude > 0 && thisRigidBody.velocity.magnitude <= 4)
+            if (thisRigidBody.velocity.magnitude > 0.1f && thisRigidBody.velocity.magnitude <= 4)
             {
                 currentState = animStates.WALK;
             }
-            else if (thisRigidBody.velocity.magnitude <= 0)
+            else if (thisRigidBody.velocity.magnitude <= 0.1f)
             {
                 currentState = animStates.IDLE;
             }
@@ -117,19 +126,11 @@ public class PlayerMotor : MonoBehaviour
         }
         return dir;
     }
-    Vector3 RotateWithView()
+    void RotatePlayer()
     {
-        if (camTransform != null)
-        {
-            Vector3 dir = camTransform.TransformDirection(moveVector);
-            dir.Set(dir.x, 0, dir.z);
-            return dir.normalized * moveVector.magnitude;
-        }
-        else
-        {
-            camTransform = GetComponent<CameraMotor>().camTransform;
-            return moveVector;
-        }
+        newRot.y += rotJoystick.Horizontal() * sensitivity;
+
+        transform.rotation = Quaternion.Euler(newRot);
     }
     #endregion
 
