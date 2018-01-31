@@ -7,6 +7,10 @@ public class LightManager : MonoBehaviour
     public List<Light> lights = new List<Light>();
     private Spector spector;
 
+    public List<GameObject> lightObjects = new List<GameObject>();
+
+    private PlayerMotor player;
+
     private float timeOn = .1f;
     private float timeOff = .5f;
     private float changeTime = 0;
@@ -14,11 +18,23 @@ public class LightManager : MonoBehaviour
 	void Start ()
     {
         spector = FindObjectOfType<Spector>();
-	}
+        player = FindObjectOfType<PlayerMotor>();
+    }
 	
 	void LateUpdate ()
     {
-        FlashOnSpectorDistance();
+        for (int i = 0; i < lightObjects.Count; i++)
+        {
+            if(Vector3.Distance(lightObjects[i].transform.position, player.transform.position) < 30f)
+            {
+                lightObjects[i].SetActive(true);
+                FlashOnSpectorDistance();
+            }
+            else
+            {
+                lightObjects[i].SetActive(false);
+            }
+        }
     }
 
     void FlashOnSpectorDistance()
