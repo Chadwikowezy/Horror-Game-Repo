@@ -8,6 +8,8 @@ public class CameraMotor : MonoBehaviour
     private const float Y_ANGLE_MIN = -30;
     private const float Y_ANGLE_MAX = 30;
 
+    public GameObject camerasPrefab;
+
     public float movSpeed;
 
     public VirtualJoystick joystick;
@@ -44,6 +46,9 @@ public class CameraMotor : MonoBehaviour
         camTransform = Camera.main.transform;
         handleCanvas = FindObjectOfType<HandleCanvas>();
         insanityManager = FindObjectOfType<InsanityManager>();
+
+        if (playerCam == null)
+            playerCam = Instantiate(camerasPrefab, transform.position, transform.rotation).transform;
     }
     #endregion
 
