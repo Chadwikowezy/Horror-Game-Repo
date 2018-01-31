@@ -109,11 +109,14 @@ public class CameraMotor : MonoBehaviour
         handleCanvas.canUseButtons = false;
         Spector spector = FindObjectOfType<Spector>();
 
-        Vector3 monsterDir = new Vector3(spector.transform.position.x, transform.position.y + 0.5f, spector.transform.position.z);
-        transform.LookAt(monsterDir);
+        Vector3 playerDir = new Vector3(spector.transform.position.x, transform.position.y, spector.transform.position.z);
+        transform.LookAt(playerDir);
 
-        playerCam.transform.LookAt(monsterDir);
-        playerAnimObj.transform.LookAt(monsterDir);
+        Vector3 camDir = new Vector3(spector.transform.position.x, playerCam.transform.position.y, spector.transform.position.z);
+        playerCam.transform.LookAt(camDir);
+
+        Vector3 animObjDir = new Vector3(spector.transform.position.x, playerAnimObj.transform.position.y, spector.transform.position.z);
+        playerAnimObj.transform.LookAt(animObjDir);
 
         StartCoroutine(AttackDelay());
     }

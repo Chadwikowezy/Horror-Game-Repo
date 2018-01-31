@@ -442,7 +442,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1791960010506276
 GameObject:
   m_ObjectHideFlags: 1
@@ -804,7 +804,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 224434837199912596}
   m_HandleRect: {fileID: 224204829428838322}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 1
   m_MaxValue: 4
   m_WholeNumbers: 1
   m_Value: 3
@@ -989,9 +989,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   optionsPanel: {fileID: 1774973961428172}
+  difficultyButtons: []
   audioLevel: {fileID: 114490038001664790}
   lightLevel: {fileID: 114070853606573834}
   sensitivity: {fileID: 114913824839258506}
+  pointLights: []
 --- !u!114 &114242259176117986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1401,7 +1403,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 224886391024505670}
   m_HandleRect: {fileID: 224307102214885878}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 1
   m_MaxValue: 4
   m_WholeNumbers: 1
   m_Value: 3
@@ -1781,8 +1783,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 224606924145908492}
   m_HandleRect: {fileID: 224779686535243182}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 4
+  m_MinValue: 4
+  m_MaxValue: 7
   m_WholeNumbers: 1
   m_Value: 3
   m_OnValueChanged:

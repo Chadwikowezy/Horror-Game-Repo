@@ -84,7 +84,7 @@ public class OptionsManager : MonoBehaviour
                 lightLevel.value = actor.data.lightLevel;
                 for (int i = 0; i < pointLights.Count; i++)
                 {
-                    pointLights[i].intensity = (lightLevel.value / 10f);
+                    pointLights[i].intensity = lightLevel.value;
                 }
             }
         }

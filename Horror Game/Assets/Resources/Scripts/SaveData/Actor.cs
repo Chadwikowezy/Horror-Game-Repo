@@ -178,7 +178,7 @@ public class Actor : MonoBehaviour
             {
                 for (int i = 0; i < optionsManager.pointLights.Count; i++)
                 {
-                    optionsManager.pointLights[i].intensity = (data.lightLevel / 10f);
+                    optionsManager.pointLights[i].intensity = data.lightLevel;
                 }
             }
 

@@ -37,7 +37,7 @@ public class PhoneManager : MonoBehaviour
 
     public GameObject newMessageNotification;
 
-    public GameObject dummyPhone;
+    //public GameObject dummyPhone;
     public List<GameObject> playerDisableObjs;
 
     public void RecievedCall()
@@ -66,7 +66,7 @@ public class PhoneManager : MonoBehaviour
         else if(chargingPhone == true)
         {
             phoneCamera.SetActive(true);
-            batteryChargingUI.SetActive(true);
+            batteryChargingUI.SetActive(true);           
             //Debug.Log("Should've enabled battery");
         }
     }
@@ -94,9 +94,9 @@ public class PhoneManager : MonoBehaviour
     {
         isOn = true;
         playerMotor.onPhone = true;
-        dummyPhone.SetActive(true);
+        //dummyPhone.SetActive(true);
         yield return new WaitForSeconds(1.25f);
-        dummyPhone.SetActive(true);
+        //dummyPhone.SetActive(true);
         for (int i = 0; i < playerDisableObjs.Count; i++)
         {
             playerDisableObjs[i].layer = LayerMask.NameToLayer("DisableFromView");
@@ -162,7 +162,7 @@ public class PhoneManager : MonoBehaviour
         {
             playerDisableObjs[i].layer = LayerMask.NameToLayer("Default");
         }
-        dummyPhone.SetActive(false);
+        //dummyPhone.SetActive(false);
         messageObj.SetActive(false);
         phoneCamera.SetActive(false);
         messagesDisplayed = false;
@@ -179,6 +179,8 @@ public class PhoneManager : MonoBehaviour
     {        
         if (isOn == true)
         {
+            Camera.main.farClipPlane = 35;
+
             phoneBatteryObj.SetActive(true);
             if (currentBatteryLife <= maxBatteryLife && currentBatteryLife >= minBatteryLife)
             {
@@ -197,11 +199,16 @@ public class PhoneManager : MonoBehaviour
             }
             AlterBatteryLife(phoneBattery);
         }
-        if(chargingPhone == true)
+        else if (isOn == false)
+        {
+            Camera.main.farClipPlane = 70;
+        }
+        if (chargingPhone == true)
         {
             phoneBatteryObj.SetActive(false);
             AlterBatteryLife(chargingBatteryImg);
         }
+        
     }
 
     void AlterBatteryLife(Image batteryDisplay)
@@ -226,7 +233,7 @@ public class PhoneManager : MonoBehaviour
     {
         isOn = true;
         playerMotor.onPhone = true;
-        dummyPhone.SetActive(true);
+        //dummyPhone.SetActive(true);
         yield return new WaitForSeconds(1.25f);
         for (int i = 0; i < playerDisableObjs.Count; i++)
         {
@@ -245,7 +252,7 @@ public class PhoneManager : MonoBehaviour
         {
             playerDisableObjs[i].layer = LayerMask.NameToLayer("Default");
         }
-        dummyPhone.SetActive(false);
+        //dummyPhone.SetActive(false);
         phoneCamera.SetActive(false);
     }
 
