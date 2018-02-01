@@ -21308,15 +21308,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4979302856595566, guid: 6f67412c7c4e6c34aa5b7beb10f7fd96, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4979302856595566, guid: 6f67412c7c4e6c34aa5b7beb10f7fd96, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4979302856595566, guid: 6f67412c7c4e6c34aa5b7beb10f7fd96, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4979302856595566, guid: 6f67412c7c4e6c34aa5b7beb10f7fd96, type: 2}
       propertyPath: m_LocalRotation.w
@@ -21325,6 +21325,18 @@ Prefab:
     - target: {fileID: 4979302856595566, guid: 6f67412c7c4e6c34aa5b7beb10f7fd96, type: 2}
       propertyPath: m_RootOrder
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4979302856595566, guid: 6f67412c7c4e6c34aa5b7beb10f7fd96, type: 2}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4979302856595566, guid: 6f67412c7c4e6c34aa5b7beb10f7fd96, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4979302856595566, guid: 6f67412c7c4e6c34aa5b7beb10f7fd96, type: 2}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6f67412c7c4e6c34aa5b7beb10f7fd96, type: 2}
@@ -22386,28 +22398,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114130146976885466, guid: c70bbcd8c6afb8f44ae36647f3aecec5,
-        type: 2}
-      propertyPath: joystick
-      value: 
-      objectReference: {fileID: 1520327140}
     - target: {fileID: 114056876754041026, guid: c70bbcd8c6afb8f44ae36647f3aecec5,
         type: 2}
       propertyPath: joystick
       value: 
       objectReference: {fileID: 148723915}
-    - target: {fileID: 4233436027156558, guid: c70bbcd8c6afb8f44ae36647f3aecec5, type: 2}
-      propertyPath: m_LocalScale.x
-      value: 1.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4233436027156558, guid: c70bbcd8c6afb8f44ae36647f3aecec5, type: 2}
-      propertyPath: m_LocalScale.y
-      value: 1.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 4233436027156558, guid: c70bbcd8c6afb8f44ae36647f3aecec5, type: 2}
-      propertyPath: m_LocalScale.z
-      value: 1.3
-      objectReference: {fileID: 0}
     - target: {fileID: 114056876754041026, guid: c70bbcd8c6afb8f44ae36647f3aecec5,
         type: 2}
       propertyPath: lineOfSight
@@ -22418,6 +22413,11 @@ Prefab:
       propertyPath: playerCam
       value: 
       objectReference: {fileID: 607923831}
+    - target: {fileID: 114130146976885466, guid: c70bbcd8c6afb8f44ae36647f3aecec5,
+        type: 2}
+      propertyPath: joystick
+      value: 
+      objectReference: {fileID: 1520327140}
     - target: {fileID: 114130146976885466, guid: c70bbcd8c6afb8f44ae36647f3aecec5,
         type: 2}
       propertyPath: rotJoystick
