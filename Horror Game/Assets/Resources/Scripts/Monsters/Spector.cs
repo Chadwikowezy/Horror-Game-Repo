@@ -211,8 +211,6 @@ public class Spector : MonoBehaviour
         _myAgent.speed = 0;
         _player.GetComponent<CameraMotor>().MonsterAttackEffect();
 
-        print("HI");
-
         //CurrentState = MonsterStates.Patrol;
         yield return null;
     }
