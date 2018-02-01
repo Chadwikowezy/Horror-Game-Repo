@@ -26,7 +26,8 @@ public class MausoleumPuzzleManager : MonoBehaviour
 	
 	void Update ()
     {
-		
+        //print(tools);	
+
 	}
 
     public void sceneChange()
