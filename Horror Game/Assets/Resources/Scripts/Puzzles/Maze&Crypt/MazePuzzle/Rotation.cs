@@ -7,6 +7,14 @@ public class Rotation : MonoBehaviour
     #region Variables
     [SerializeField]
     private GameObject triggerPrefab;
+    [SerializeField]
+    private GameObject inputTrigger;
+    [SerializeField]
+    private GameObject inputSprite;
+    public GameObject triggerObj;
+
+    private ToolsManager toolManager;
+    public AudioSource source;
 
     [Range(0,1)]
     public float speed;
@@ -15,8 +23,13 @@ public class Rotation : MonoBehaviour
     public float maxAngle = 90.0F;
     public float value;
 
+    public int doorReq = 0;
+
     public Vector3 rot,
                 newRot;
+
+    public bool rotated = false;
+
     #endregion
 
     #region Coroutines
@@ -29,9 +42,10 @@ public class Rotation : MonoBehaviour
         {
             _newRot = Quaternion.Slerp(transform.rotation, targetRot, speed);
             gameObject.transform.rotation = _newRot;
+            Debug.Log("newRot" + _newRot);
             yield return new WaitForFixedUpdate();
         }
-
+        
         newRot.z += value;
        //fix 
     }
@@ -52,17 +66,36 @@ public class Rotation : MonoBehaviour
     #endregion
 
     #region Functions
-    public void Lerp()
+
+    private void Start()
+    {
+        toolManager = FindObjectOfType<ToolsManager>();
+    }
+
+    public void Lerp() //Coffin
     {
         rot = gameObject.transform.eulerAngles;
         StartCoroutine(MoveObject(newRot, (Time.time - 0) / 5));
     }
 
-    public void Lerp_02()
-    {
-        rot = gameObject.transform.eulerAngles;
-        StartCoroutine(MoveObject_02(newRot, (Time.time - 0) / 5));
-    }
+    public void Lerp_02() //Doors
+    {       
+        
+        if (toolManager.keysCollected == doorReq)
+        {
+            if (rotated == false)
+            {
+                rot = gameObject.transform.eulerAngles;
+                StartCoroutine(MoveObject_02(newRot, (Time.time - 0) / 5));
+                rotated = true;
+                triggerObj.SetActive(false);
+                inputSprite.SetActive(false);
+                source.Play();
+            }
+        }
+       
+        
+    }   
 
     public void PlayAudio()
     {

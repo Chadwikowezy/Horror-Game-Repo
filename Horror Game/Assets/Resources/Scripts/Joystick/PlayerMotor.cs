@@ -21,7 +21,6 @@ public class PlayerMotor : MonoBehaviour
     private HandleCanvas handleCanvas;
 
     public bool onPhone = false;
-    public bool hasCrowbar = false;
 
     public bool isSprinting;
     public bool isGrounded;

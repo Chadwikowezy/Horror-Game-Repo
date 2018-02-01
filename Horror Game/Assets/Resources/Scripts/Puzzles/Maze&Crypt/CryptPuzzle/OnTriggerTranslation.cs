@@ -33,7 +33,7 @@ public class OnTriggerTranslation : MonoBehaviour
     IEnumerator AudioDelay()
     {
         yield return new WaitForSeconds(1);
-        PlayAudio_WallMove();
+        PlayAudio_02();
     }
     #endregion
 
@@ -73,34 +73,18 @@ public class OnTriggerTranslation : MonoBehaviour
         onTriggerInput.isActive = true;
     }
 
-    public void PlayAudio_MetalClick()
+    public void PlayAudio_01()
     {
         source.clip = GetComponent<OnTriggerTranslation>().clip_01;
         source.Play();
         StartCoroutine("AudioDelay");
     }
 
-    public void PlayAudio_WallMove()
+    public void PlayAudio_02()
     {
         source.clip = GetComponent<OnTriggerTranslation>().clip_02;
         source.Play(); 
     }
     #endregion
 
-    #region Triggers
-    void OnTriggerEnter(Collider col)
-    {
-        if (col.gameObject.tag == "Player")
-        {
-            
-            if (activated == false)
-            {
-                //TranslateBlock();
-                activated = true;
-            }
-            
-            //print("Collision");
-        };
-    }
-    #endregion
 }
