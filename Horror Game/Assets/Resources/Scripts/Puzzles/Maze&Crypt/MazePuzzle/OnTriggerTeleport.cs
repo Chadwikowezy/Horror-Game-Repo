@@ -9,13 +9,8 @@ public class OnTriggerTeleport : MonoBehaviour
     private GameObject triggerPrefab;
     [SerializeField]
     private GameObject targetPrefab;
-
     [SerializeField]
-    private float xPos;
-    [SerializeField]
-    private float yPos;
-    [SerializeField]
-    private float zPos;
+    private GameObject destination;
 
     [SerializeField]
     private bool activated = false;
@@ -23,19 +18,26 @@ public class OnTriggerTeleport : MonoBehaviour
     public GameObject Ambience_01,
                       Ambience_02;
 
-    //public AudioClip clip_01;
-
-    //public AudioSource source;
     #endregion
-  
+
+    IEnumerator FunctionDelay()
+    {
+        yield return new WaitForSeconds(0.2f);
+        
+    }
+
     #region Functions
+    public void Start()
+    {
+        targetPrefab = GameObject.FindGameObjectWithTag("Player");
+    }
     private void Teleport()
     {
-        targetPrefab.transform.position = new Vector3(xPos,yPos,zPos);
-        //source.clip = GetComponent<OnTriggerTeleport>().clip_01;
+        AudioSource source = GetComponent<AudioSource>();
+        targetPrefab.transform.position = destination.transform.position;
         Ambience_01.SetActive(false);
         Ambience_02.SetActive(true);
-        //source.Play();
+        source.Play();
     }
     #endregion
 
@@ -51,7 +53,6 @@ public class OnTriggerTeleport : MonoBehaviour
                 activated = true;
             }
 
-            //print("Collision");
         };
     }
     #endregion 

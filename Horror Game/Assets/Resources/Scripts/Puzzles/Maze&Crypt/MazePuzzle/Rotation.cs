@@ -7,6 +7,14 @@ public class Rotation : MonoBehaviour
     #region Variables
     [SerializeField]
     private GameObject triggerPrefab;
+    [SerializeField]
+    private GameObject inputTrigger;
+    [SerializeField]
+    private GameObject inputSprite;
+    public GameObject triggerObj;
+
+    private ToolsManager toolManager;
+    public AudioSource source;
 
     [Range(0,1)]
     public float speed;
@@ -15,14 +23,24 @@ public class Rotation : MonoBehaviour
     public float maxAngle = 90.0F;
     public float value;
 
+    public int doorReq = 0;
+
     public Vector3 rot,
                 newRot;
+
+    public bool hasFinishedLooped = true;
+
+    public bool rotated = false;
+
+    public Quaternion resetTargetRotation;
+    public Vector3 resetLocalRotation;
     #endregion
 
     #region Coroutines
     IEnumerator MoveObject(Vector3 target, float overTime)
     {
         float startTime = Time.time;
+
         Quaternion targetRot = Quaternion.Euler(target);
         Quaternion _newRot;
         while (transform.localRotation.eulerAngles.y < target.z - 1)
@@ -31,9 +49,26 @@ public class Rotation : MonoBehaviour
             gameObject.transform.rotation = _newRot;
             yield return new WaitForFixedUpdate();
         }
+        
+        if(newRot.z < 360)
+        {
+            newRot.z += value;
+        }
+        else
+        {
+            newRot.z = value;
+            rot.Set(0, 0, 0);
+            targetRot.Set(resetTargetRotation.x, resetTargetRotation.y, resetTargetRotation.z, resetTargetRotation.w);//Needs to be equal to new rot starting values
+            transform.eulerAngles = new Vector3(resetLocalRotation.x, resetLocalRotation.y, resetLocalRotation.z);//Needs to be equal to objects local transform rotation values
 
-        newRot.z += value;
-       //fix 
+            while (transform.localRotation.eulerAngles.y >= target.z)
+            {
+                _newRot = Quaternion.Slerp(transform.rotation, targetRot, speed);
+                gameObject.transform.rotation = targetRot;
+                Debug.Log("newRot" + _newRot);
+                yield return new WaitForFixedUpdate();
+            }
+        }
     }
 
     IEnumerator MoveObject_02(Vector3 target, float overTime)
@@ -52,22 +87,52 @@ public class Rotation : MonoBehaviour
     #endregion
 
     #region Functions
-    public void Lerp()
+
+    private void Start()
     {
-        rot = gameObject.transform.eulerAngles;
-        StartCoroutine(MoveObject(newRot, (Time.time - 0) / 5));
+        toolManager = FindObjectOfType<ToolsManager>();
     }
 
-    public void Lerp_02()
+    public void Lerp() //Coffin
     {
-        rot = gameObject.transform.eulerAngles;
-        StartCoroutine(MoveObject_02(newRot, (Time.time - 0) / 5));
+        if(hasFinishedLooped == true)
+        {
+            StartCoroutine(LerpDelay());
+        }
     }
+    IEnumerator LerpDelay()
+    {
+        hasFinishedLooped = false;
+        yield return new WaitForSeconds(.75f);
+        rot = gameObject.transform.eulerAngles;
+        StartCoroutine(MoveObject(newRot, (Time.time - 0) / 5));
+        PlayAudio();
+        yield return new WaitForSeconds(.75f);
+        hasFinishedLooped = true;
+    }
+
+    public void Lerp_02() //Doors
+    {       
+        
+        if (toolManager.keysCollected == doorReq)
+        {
+            if (rotated == false)
+            {
+                rot = gameObject.transform.eulerAngles;
+                StartCoroutine(MoveObject_02(newRot, (Time.time - 0) / 5));
+                rotated = true;
+                triggerObj.SetActive(false);
+                inputSprite.SetActive(false);
+                source.Play();
+            }
+        }
+       
+        
+    }   
 
     public void PlayAudio()
     {
-        AudioSource audio = GetComponent<AudioSource>();
-        audio.Play();
+        source.Play();
     }
 
     public void Rotate()

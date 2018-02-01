@@ -11,9 +11,8 @@ public class OnTriggerRotation : MonoBehaviour
     private GameObject targetPrefab;
     [SerializeField]
     private GameObject SecondaryTargetPrefab;
-
-    public Vector3 from,
-                     to;
+    [SerializeField]
+    private GameObject inputSprite;
 
     private Spector spector;
 
@@ -34,15 +33,15 @@ public class OnTriggerRotation : MonoBehaviour
 
     public AudioSource source;
 
-    [SerializeField]
     public bool activated = false;
     #endregion
 
     #region Coroutines
     IEnumerator AudioDelay()
     {
+        yield return new WaitForSeconds(.2f);
+        PlayAudio_02();
         yield return new WaitForSeconds(1);
-        PlayAudio_Whispering();
     }
     #endregion
 
@@ -51,14 +50,14 @@ public class OnTriggerRotation : MonoBehaviour
     {
         spector = FindObjectOfType<Spector>();
     }
-    public void PlayAudio_DrumEcho()
+    public void PlayAudio_01()
     {
         source.clip = GetComponent<OnTriggerRotation>().clip_01;
         source.Play();
         StartCoroutine("AudioDelay");
     }
 
-    public void PlayAudio_Whispering()
+    public void PlayAudio_02()
     {
         source.clip = GetComponent<OnTriggerRotation>().clip_02;
         source.Play();
@@ -73,7 +72,6 @@ public class OnTriggerRotation : MonoBehaviour
     public void RotateBlock_02()
     {
         targetPrefab.transform.Rotate(xRot, yRot, zRot);
-        //play anim
     }
 
     public void ConfirmBlock()

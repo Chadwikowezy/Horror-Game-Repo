@@ -12,6 +12,7 @@ public class OnTriggerInput : MonoBehaviour
     private GameObject Sprite;
 
     public bool isActive = false;
+    public bool activated = false;
     #endregion
 
     #region Triggers
@@ -19,32 +20,8 @@ public class OnTriggerInput : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            if (isActive == false)
-            {
-                Sprite.SetActive(true);
-                //print("Collision");
-            }
-        };
-    }
+            Sprite.SetActive(true);
 
-    private void OnTriggerStay(Collider col)
-    {
-        if (col.gameObject.tag == "Player")
-        {
-            if(isActive == false)
-            {
-                for (int i = 0; i < Input.touchCount; ++i)
-                {
-                    if (Input.GetTouch(i).phase == TouchPhase.Began)
-                    {
-                        if (col.gameObject.GetComponent<OnTriggerTranslation>().activated == false)
-                        {
-                            //col.gameObject.GetComponent<OnTriggerTranslation>().TranslateBlock();
-                            Sprite.SetActive(false);
-                        }
-                    }
-                }
-            }
         };
     }
 
@@ -53,7 +30,7 @@ public class OnTriggerInput : MonoBehaviour
         if (col.gameObject.tag == "Player")
         {
             Sprite.SetActive(false);
-
+            
         };
     }
     #endregion

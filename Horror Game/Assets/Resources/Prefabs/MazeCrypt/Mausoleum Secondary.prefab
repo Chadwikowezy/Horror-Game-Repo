@@ -716,7 +716,7 @@ GameObject:
   - component: {fileID: 33676051078172096}
   - component: {fileID: 23975467458869742}
   - component: {fileID: 64461927616854058}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Interior_Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13275,12 +13275,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerPrefab: {fileID: 1749746184847522}
+  inputTrigger: {fileID: 0}
+  inputSprite: {fileID: 0}
+  triggerObj: {fileID: 0}
+  source: {fileID: 0}
   speed: 0.1
   minAngle: 0
   maxAngle: 0
   value: 45
+  doorReq: 0
   rot: {x: 0, y: 0, z: 0}
   newRot: {x: -90, y: 0, z: 45}
+  hasFinishedLooped: 1
+  rotated: 0
+  resetTargetRotation: {x: -90, y: 0, z: 45, w: 0}
+  resetLocalRotation: {x: -90, y: 0, z: 0}
 --- !u!114 &114414562549746756
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13405,12 +13414,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   triggerPrefab: {fileID: 1433812221668502}
+  inputTrigger: {fileID: 0}
+  inputSprite: {fileID: 0}
+  triggerObj: {fileID: 0}
+  source: {fileID: 82167203733566092}
   speed: 0.1
   minAngle: 0
   maxAngle: 90
   value: 0
+  doorReq: 1
   rot: {x: 0, y: 0, z: 0}
   newRot: {x: 0, y: 90, z: 0}
+  hasFinishedLooped: 1
+  rotated: 0
+  resetTargetRotation: {x: 0, y: 0, z: 0, w: 0}
+  resetLocalRotation: {x: 0, y: 0, z: 0}
 --- !u!114 &114918279382189772
 MonoBehaviour:
   m_ObjectHideFlags: 1
