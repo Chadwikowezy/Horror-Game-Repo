@@ -248,7 +248,7 @@ public class PhoneManager : MonoBehaviour
         phoneCamera.GetComponent<Animator>().Play("Phone_FlyOut");
         isOn = false;
         playerMotor.onPhone = false;
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.6f);
         for (int i = 0; i < playerDisableObjs.Count; i++)
         {
             playerDisableObjs[i].layer = LayerMask.NameToLayer("Default");
