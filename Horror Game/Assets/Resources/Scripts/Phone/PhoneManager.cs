@@ -234,7 +234,7 @@ public class PhoneManager : MonoBehaviour
         isOn = true;
         playerMotor.onPhone = true;
         //dummyPhone.SetActive(true);
-        yield return new WaitForSeconds(1.25f);
+        yield return new WaitForSeconds(.01f);
         for (int i = 0; i < playerDisableObjs.Count; i++)
         {
             playerDisableObjs[i].layer = LayerMask.NameToLayer("DisableFromView");
@@ -245,9 +245,10 @@ public class PhoneManager : MonoBehaviour
     }
     IEnumerator DisablePhoneLensDelay()
     {
+        phoneCamera.GetComponent<Animator>().Play("Phone_FlyOut");
         isOn = false;
         playerMotor.onPhone = false;
-        yield return new WaitForSeconds(.75f);
+        yield return new WaitForSeconds(1f);
         for (int i = 0; i < playerDisableObjs.Count; i++)
         {
             playerDisableObjs[i].layer = LayerMask.NameToLayer("Default");

@@ -40,12 +40,12 @@ public class CharacterAnimation : MonoBehaviour
             playerAnimObj.SetInteger("Walk", 0);
             playerAnimObj.SetInteger("Idle", 1);
         }
-        else if(playerMotor.currentState == PlayerMotor.animStates.HOLDPHONE)
-        {
-            playerAnimObj.SetInteger("Run", 0);
-            playerAnimObj.SetInteger("Walk", 0);
-            playerAnimObj.SetInteger("Idle", 0);
-            playerAnimObj.SetInteger("Phone", 1);
-        }
+        //else if(playerMotor.currentState == PlayerMotor.animStates.HOLDPHONE)
+        //{
+        //    playerAnimObj.SetInteger("Run", 0);
+        //    playerAnimObj.SetInteger("Walk", 0);
+        //    playerAnimObj.SetInteger("Idle", 0);
+        //    playerAnimObj.SetInteger("Phone", 1);
+        //}
     }
 }

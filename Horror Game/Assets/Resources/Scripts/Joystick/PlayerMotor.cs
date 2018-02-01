@@ -78,8 +78,8 @@ public class PlayerMotor : MonoBehaviour
 
     void ControlStates()
     {
-        if (onPhone == false)
-        {
+        //if (onPhone == false)
+        //{
             if (thisRigidBody.velocity.magnitude > 4 && thisRigidBody.velocity.magnitude <= 6)
             {
                 currentState = animStates.RUN;
@@ -92,11 +92,11 @@ public class PlayerMotor : MonoBehaviour
             {
                 currentState = animStates.IDLE;
             }
-        }
-        else if(onPhone == true)
-        {
-            currentState = animStates.HOLDPHONE;
-        }
+        //}
+        //else if(onPhone == true)
+        //{
+        //    currentState = animStates.HOLDPHONE;
+        //}
     }
 
     public void ResetMoveSpeed()

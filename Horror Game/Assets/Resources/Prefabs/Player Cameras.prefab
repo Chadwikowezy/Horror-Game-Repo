@@ -66,6 +66,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4062769951955188}
+  - component: {fileID: 95699813761862834}
   m_Layer: 0
   m_Name: Phone
   m_TagString: Untagged
@@ -3465,8 +3466,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1929419884055374}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 55.6, y: 8.110001, z: -8.03}
+  m_LocalRotation: {x: -0.009258878, y: 0.9315756, z: 0.023690801, w: 0.36265692}
+  m_LocalPosition: {x: -78.68727, y: 1.8034079, z: -172.36511}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4062769951955188}
@@ -5751,6 +5752,23 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95699813761862834
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1036899485216908}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8db62466d8cd1544ca36c18f7f0d4200, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!108 &108250427469619474
 Light:
   m_ObjectHideFlags: 1
@@ -6827,14 +6845,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   masterBedroomObjs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
