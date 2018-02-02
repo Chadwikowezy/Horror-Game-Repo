@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4979302856595566}
+  - component: {fileID: 114060704133636422}
   m_Layer: 0
   m_Name: Match
   m_TagString: Untagged
@@ -184,7 +185,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 0.95983773, b: 0.7352941, a: 1}
   m_Intensity: 5
-  m_Range: 5
+  m_Range: 7.5
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -209,6 +210,20 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114060704133636422
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1119674671576942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bfecb818f1d9bd44afcab3a759f95d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  matchTargetPosition: {fileID: 0}
+  matchLiftime: 10
+  matchSpeed: 0.2
 --- !u!198 &198985437819629218
 ParticleSystem:
   m_ObjectHideFlags: 1
