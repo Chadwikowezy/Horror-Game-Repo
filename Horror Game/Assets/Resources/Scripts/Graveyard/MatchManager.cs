@@ -13,8 +13,19 @@ public class MatchManager : MonoBehaviour
     public float noMatchesFadeSpeed;
 
     public Image noMatchesImage;
+    public Text matchCountText;
 
     private GameObject _currentMatch;
+
+    public int CurrentMatchCount
+    {
+        get { return currentMatchCount; }
+        set
+        {
+            currentMatchCount = value;
+            matchCountText.text = currentMatchCount.ToString();
+        }
+    }
 
     private void FixedUpdate()
     {
@@ -27,9 +38,9 @@ public class MatchManager : MonoBehaviour
         if (_currentMatch != null)
             return;
 
-        if (currentMatchCount > 0)
+        if (CurrentMatchCount > 0)
         {
-            currentMatchCount--;
+            CurrentMatchCount--;
             _currentMatch = Instantiate(matchPrefab, targetParentObject.transform);
         }
         else
@@ -42,12 +53,31 @@ public class MatchManager : MonoBehaviour
         if (_currentMatch != null)
             return;
 
-        if (currentMatchCount > 0)
+        if (CurrentMatchCount > 0)
         {
-            currentMatchCount--;
+            CurrentMatchCount--;
             _currentMatch = Instantiate(matchPrefab, targetPosition.position, Quaternion.identity);
 
             _currentMatch.GetComponent<Match>().strikeMatch(targetPosition);
+        }
+        else
+        {
+            noMatchesImage.color = Color.white;
+        }
+    }
+    public void strikePlayerMatch(Transform holdPosition)
+    {
+        Vector3 spawnPosition = holdPosition.position - new Vector3(-1, 1, 0);
+
+        if (_currentMatch != null)
+            return;
+
+        if (CurrentMatchCount > 0)
+        {
+            CurrentMatchCount--;
+            _currentMatch = Instantiate(matchPrefab, spawnPosition, Quaternion.identity);
+
+            _currentMatch.GetComponent<Match>().strikeMatch(holdPosition);
         }
         else
         {
