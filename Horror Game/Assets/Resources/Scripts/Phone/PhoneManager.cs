@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PhoneManager : MonoBehaviour
 {
+    #region variables and recieve call funcion
     public bool isOn = false;
     public bool phoneIsDead = false;
     public GameObject phoneCamera;
@@ -33,9 +34,13 @@ public class PhoneManager : MonoBehaviour
     private bool messagesDisplayed = false;
     private Actor actor;
 
+    public int cullingCount;
+
     private PlayerMotor playerMotor;
 
     public GameObject newMessageNotification;
+
+    public bool canActivatePhone = true;
 
     //public GameObject dummyPhone;
     public List<GameObject> playerDisableObjs;
@@ -44,7 +49,9 @@ public class PhoneManager : MonoBehaviour
     {
         actor = FindObjectOfType<Actor>();
         playerMotor = FindObjectOfType<PlayerMotor>();
+        cullingCount = Camera.main.cullingMask;
     }
+    #endregion
 
     public void LookThruPhoneLens()
     {
@@ -92,80 +99,139 @@ public class PhoneManager : MonoBehaviour
 
     IEnumerator MessagesEnableDelay()
     {
-        isOn = true;
-        playerMotor.onPhone = true;
-        //dummyPhone.SetActive(true);
-        yield return new WaitForSeconds(1.25f);
-        //dummyPhone.SetActive(true);
-        for (int i = 0; i < playerDisableObjs.Count; i++)
+        if(canActivatePhone == true)
         {
-            playerDisableObjs[i].layer = LayerMask.NameToLayer("DisableFromView");
+            isOn = true;
+            playerMotor.onPhone = true;
+            yield return new WaitForSeconds(.01f);
+
+            for (int i = 0; i < playerDisableObjs.Count; i++)
+            {
+                playerDisableObjs[i].layer = LayerMask.NameToLayer("DisableFromView");
+            }
+            phoneCamera.SetActive(true);
+            phoneCameraUIObjs.SetActive(false);
+            messageObj.SetActive(true);
+            #region messages
+            if (actor.data.masionPuzzle_F1_01 == false || actor.data.firstRunThru == true)
+            {
+                message_01.SetActive(true);
+            }
+            if (actor.data.masionPuzzle_F1_01 == true)
+            {
+                message_01.SetActive(true);
+                message_02.SetActive(true);
+            }
+            if (actor.data.masionPuzzle_F1_02 == true)
+            {
+                message_01.SetActive(true);
+                message_02.SetActive(true);
+                message_03.SetActive(true);
+            }
+            if (actor.data.masionPuzzle_F1_03 == true)
+            {
+                message_01.SetActive(true);
+                message_02.SetActive(true);
+                message_03.SetActive(true);
+                message_04.SetActive(true);
+            }
+            if (actor.data.masionPuzzle_F2_01 == true)
+            {
+                message_01.SetActive(true);
+                message_02.SetActive(true);
+                message_03.SetActive(true);
+                message_04.SetActive(true);
+                message_05.SetActive(true);
+            }
+            if (actor.data.mausoleumPuzzle == true)
+            {
+                message_01.SetActive(true);
+                message_02.SetActive(true);
+                message_03.SetActive(true);
+                message_04.SetActive(true);
+                message_06.SetActive(true);
+            }
+            if (actor.data.cryptPuzzle == true)
+            {
+                message_01.SetActive(true);
+                message_02.SetActive(true);
+                message_03.SetActive(true);
+                message_04.SetActive(true);
+                message_06.SetActive(true);
+                message_07.SetActive(true);
+            }
+            #endregion
+            messagesDisplayed = true;
+
+            yield return new WaitForSeconds(.5f);
+            Camera.main.farClipPlane = 2;
+            Camera.main.cullingMask = 5 << 5;
+
+            canActivatePhone = false;
         }
-        phoneCamera.SetActive(true);
-        phoneCameraUIObjs.SetActive(false);
-        messageObj.SetActive(true);
-        if (actor.data.masionPuzzle_F1_01 == false || actor.data.firstRunThru == true)
+    }
+    IEnumerator LookThruPhoneLensDelay()
+    {
+        if(canActivatePhone == true)
         {
-            message_01.SetActive(true);
+            isOn = true;
+            playerMotor.onPhone = true;
+            yield return new WaitForSeconds(.01f);
+
+            for (int i = 0; i < playerDisableObjs.Count; i++)
+            {
+                playerDisableObjs[i].layer = LayerMask.NameToLayer("DisableFromView");
+            }
+            phoneCamera.SetActive(true);
+            messageObj.SetActive(false);
+            phoneCameraUIObjs.SetActive(true);
+
+            yield return new WaitForSeconds(.5f);
+            Camera.main.farClipPlane = 2;
+            Camera.main.cullingMask = 5 << 5;
+
+            canActivatePhone = false;
         }
-        if (actor.data.masionPuzzle_F1_01 == true)
-        {
-            message_01.SetActive(true);
-            message_02.SetActive(true);
-        }
-        if (actor.data.masionPuzzle_F1_02 == true)
-        {
-            message_01.SetActive(true);
-            message_02.SetActive(true);
-            message_03.SetActive(true);
-        }
-        if (actor.data.masionPuzzle_F1_03 == true)
-        {
-            message_01.SetActive(true);
-            message_02.SetActive(true);
-            message_03.SetActive(true);
-            message_04.SetActive(true);
-        }
-        if (actor.data.masionPuzzle_F2_01 == true)
-        {
-            message_01.SetActive(true);
-            message_02.SetActive(true);
-            message_03.SetActive(true);
-            message_04.SetActive(true);
-            message_05.SetActive(true);
-        }
-        if (actor.data.mausoleumPuzzle == true)
-        {
-            message_01.SetActive(true);
-            message_02.SetActive(true);
-            message_03.SetActive(true);
-            message_04.SetActive(true);
-            message_06.SetActive(true);
-        }
-        if (actor.data.cryptPuzzle == true)
-        {
-            message_01.SetActive(true);
-            message_02.SetActive(true);
-            message_03.SetActive(true);
-            message_04.SetActive(true);
-            message_06.SetActive(true);
-            message_07.SetActive(true);
-        }
-        messagesDisplayed = true;
     }
     IEnumerator MessagesDisableDelay()
     {
-        isOn = false;
-        playerMotor.onPhone = false;
-        yield return new WaitForSeconds(.75f);
-        for (int i = 0; i < playerDisableObjs.Count; i++)
+        if(canActivatePhone == false)
         {
-            playerDisableObjs[i].layer = LayerMask.NameToLayer("Default");
+            phoneCamera.GetComponent<Animator>().Play("Phone_FlyOut");
+            isOn = false;
+            playerMotor.onPhone = false;
+            yield return new WaitForSeconds(0.6f);
+            for (int i = 0; i < playerDisableObjs.Count; i++)
+            {
+                playerDisableObjs[i].layer = LayerMask.NameToLayer("Default");
+            }
+            //dummyPhone.SetActive(false);
+            messageObj.SetActive(false);
+            phoneCamera.SetActive(false);
+            messagesDisplayed = false;
+
+            yield return new WaitForSeconds(.4f);
+            canActivatePhone = true;
         }
-        //dummyPhone.SetActive(false);
-        messageObj.SetActive(false);
-        phoneCamera.SetActive(false);
-        messagesDisplayed = false;
+    } 
+    IEnumerator DisablePhoneLensDelay()
+    {
+        if(canActivatePhone == false)
+        {
+            phoneCamera.GetComponent<Animator>().Play("Phone_FlyOut");
+            isOn = false;
+            playerMotor.onPhone = false;
+            yield return new WaitForSeconds(0.6f);
+            for (int i = 0; i < playerDisableObjs.Count; i++)
+            {
+                playerDisableObjs[i].layer = LayerMask.NameToLayer("Default");
+            }
+            //dummyPhone.SetActive(false);
+            phoneCamera.SetActive(false);
+
+            yield return new WaitForSeconds(.4f);
+            canActivatePhone = true;
+        }
     }
 
     IEnumerator phoneDeadNotificationDelay()
@@ -178,9 +244,7 @@ public class PhoneManager : MonoBehaviour
     private void Update()
     {        
         if (isOn == true)
-        {
-            Camera.main.farClipPlane = 35;
-
+        {      
             phoneBatteryObj.SetActive(true);
             if (currentBatteryLife <= maxBatteryLife && currentBatteryLife >= minBatteryLife)
             {
@@ -199,9 +263,10 @@ public class PhoneManager : MonoBehaviour
             }
             AlterBatteryLife(phoneBattery);
         }
-        else if (isOn == false)
+        else if(isOn == false)
         {
             Camera.main.farClipPlane = 70;
+            Camera.main.cullingMask = cullingCount;
         }
         if (chargingPhone == true)
         {
@@ -229,33 +294,7 @@ public class PhoneManager : MonoBehaviour
         }
     }
 
-    IEnumerator LookThruPhoneLensDelay()
-    {
-        isOn = true;
-        playerMotor.onPhone = true;
-        //dummyPhone.SetActive(true);
-        yield return new WaitForSeconds(.01f);
-        for (int i = 0; i < playerDisableObjs.Count; i++)
-        {
-            playerDisableObjs[i].layer = LayerMask.NameToLayer("DisableFromView");
-        }
-        messageObj.SetActive(false);
-        phoneCameraUIObjs.SetActive(true);
-        phoneCamera.SetActive(true);
-    }
-    IEnumerator DisablePhoneLensDelay()
-    {
-        phoneCamera.GetComponent<Animator>().Play("Phone_FlyOut");
-        isOn = false;
-        playerMotor.onPhone = false;
-        yield return new WaitForSeconds(0.6f);
-        for (int i = 0; i < playerDisableObjs.Count; i++)
-        {
-            playerDisableObjs[i].layer = LayerMask.NameToLayer("Default");
-        }
-        //dummyPhone.SetActive(false);
-        phoneCamera.SetActive(false);
-    }
+    
 
     public void NewMessageNotification()
     {

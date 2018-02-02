@@ -24,7 +24,7 @@ public class SceneLaunchManager : MonoBehaviour
         //SceneManager.LoadScene("OpeningCutscene");
         actor.ResetDataAttributes();
         gameController.Save();
-        SceneManager.LoadScene("Mansion");
+        SceneManager.LoadScene("OpeningCutscene");
         if (System.IO.File.Exists(Path.Combine(Application.persistentDataPath, "actors.json")))
         {
             File.Delete("actors.json");
@@ -69,11 +69,7 @@ public class SceneLaunchManager : MonoBehaviour
             //SceneManager.LoadScene("OpeningCutscene");
             actor.ResetDataAttributes();
             gameController.Save();
-            SceneManager.LoadScene("Mansion");
-            if (System.IO.File.Exists(Path.Combine(Application.persistentDataPath, "actors.json")))
-            {
-                File.Delete("actors.json");
-            }
+            SceneManager.LoadScene("OpeningCutscene");
         }
     }
 }

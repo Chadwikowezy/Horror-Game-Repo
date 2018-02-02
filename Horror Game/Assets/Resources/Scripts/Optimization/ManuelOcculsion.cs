@@ -41,9 +41,6 @@ public class ManuelOcculsion : MonoBehaviour
     public List<GameObject> tower_floor03 = new List<GameObject>();
     public List<GameObject> tower_floor04 = new List<GameObject>();
 
-   // [Header("MansionParts")]
-    //public List<GameObject> mansionPieces = new List<GameObject>();
-
     void Start ()
     {
         cam = GetComponent<Camera>();
@@ -66,8 +63,6 @@ public class ManuelOcculsion : MonoBehaviour
         FirstFloorCulling(bath_03);
         FirstFloorCulling(theatre);
         FirstFloorCulling(bar);
-
-        //TowerCulling(mansionPieces);
 
         TowerCulling(tower_floor01);
         TowerCulling(tower_floor02);
@@ -211,29 +206,4 @@ public class ManuelOcculsion : MonoBehaviour
 
         }
     }
-    /*void OcclusionCulling()
-    {
-        foreach(GameObject occlusionObj in occlusionObjects)
-        {
-            Vector3 screenPoint = cam.WorldToViewportPoint(occlusionObj.transform.position);
-            bool onScreen = screenPoint.z > 0 && screenPoint.x > 0 && 
-                screenPoint.x < 1 && screenPoint.y > 0 && screenPoint.y < 1;          
-
-            if (occlusionObj == enabled)
-            {
-                Renderer[] rend = occlusionObj.GetComponentsInChildren<Renderer>();
-                foreach (Renderer item in rend)
-                {
-                    if (!onScreen)
-                    {
-                        item.enabled = false;
-                    }
-                    else
-                    {
-                        item.enabled = true;
-                    }
-                }               
-            }          
-        }
-    }*/
 }

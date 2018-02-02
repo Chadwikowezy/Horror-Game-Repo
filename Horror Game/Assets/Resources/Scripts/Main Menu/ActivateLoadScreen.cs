@@ -5,11 +5,6 @@ using UnityEngine;
 public class ActivateLoadScreen : MonoBehaviour
 {
     public GameObject loadEffect;
-
-	void Awake ()
-    {
-        StartCoroutine(OnStartLoadDelay());
-	}
 	
 	IEnumerator OnStartLoadDelay()
     {
