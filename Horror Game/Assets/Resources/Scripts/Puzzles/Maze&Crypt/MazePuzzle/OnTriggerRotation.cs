@@ -13,8 +13,14 @@ public class OnTriggerRotation : MonoBehaviour
     private GameObject SecondaryTargetPrefab;
     [SerializeField]
     private GameObject inputSprite;
+    [SerializeField]
+    private GameObject inputSprite02;
+    [SerializeField]
+    private GameObject inputTrigger;
+    public GameObject item;
 
     private Spector spector;
+    private Rotation rotation;
 
     [SerializeField]
     private float xRot;
@@ -28,10 +34,11 @@ public class OnTriggerRotation : MonoBehaviour
     [SerializeField]
     private Vector3 newRot;
 
-    public AudioClip clip_01,
-                     clip_02;
+    public AudioClip clip_01,clip_02;
 
     public AudioSource source;
+
+    public Animator anim;
 
     public bool activated = false;
     #endregion
@@ -49,6 +56,8 @@ public class OnTriggerRotation : MonoBehaviour
     public void Start()
     {
         spector = FindObjectOfType<Spector>();
+        rotation = targetPrefab.gameObject.GetComponent<Rotation>();
+
     }
     public void PlayAudio_01()
     {
@@ -76,11 +85,15 @@ public class OnTriggerRotation : MonoBehaviour
 
     public void ConfirmBlock()
     {
-        if(targetPrefab.gameObject.transform.eulerAngles == newRot)
+        if (rotation.timesRotated == rotation.correctRotation)  
         {
-            source.clip = GetComponent<OnTriggerRotation>().clip_01;
-            source.Play();
-
+            PlayAudio_01();
+            inputTrigger.SetActive(false);
+            anim.Play("CoffinOpen");
+            item.SetActive(true);
+            inputTrigger.SetActive(false);
+            inputSprite02.SetActive(false);
+            inputSprite.SetActive(false);
         }
 
         else

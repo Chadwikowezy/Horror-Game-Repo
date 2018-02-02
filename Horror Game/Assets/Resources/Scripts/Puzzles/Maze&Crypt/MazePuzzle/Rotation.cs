@@ -19,18 +19,23 @@ public class Rotation : MonoBehaviour
     [Range(0,1)]
     public float speed;
 
-    public float minAngle = 0.0F;
-    public float maxAngle = 90.0F;
+    private float minAngle = 0.0F;
+    private float maxAngle = 90.0F;
     public float value;
+
+    public int correctRotation = 0;
+    private int min = 0;
+    private int max = 7;
+    public int timesRotated = 0;
 
     public int doorReq = 0;
 
     public Vector3 rot,
                 newRot;
 
-    public bool hasFinishedLooped = true;
+    private bool hasFinishedLooped = true;
 
-    public bool rotated = false;
+    private bool rotated = false;
 
     public Quaternion resetTargetRotation;
     public Vector3 resetLocalRotation;
@@ -91,6 +96,7 @@ public class Rotation : MonoBehaviour
     private void Start()
     {
         toolManager = FindObjectOfType<ToolsManager>();
+        correctRotation = Random.Range(min, max); 
     }
 
     public void Lerp() //Coffin
@@ -98,6 +104,16 @@ public class Rotation : MonoBehaviour
         if(hasFinishedLooped == true)
         {
             StartCoroutine(LerpDelay());
+
+            if (timesRotated <= 6)
+            {
+                timesRotated += 1;
+            }
+
+            else
+            {
+                timesRotated = 0;
+            }
         }
     }
     IEnumerator LerpDelay()
