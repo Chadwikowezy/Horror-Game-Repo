@@ -8,10 +8,10 @@ public class OnTriggerTranslation : MonoBehaviour
     private Spector spector;
 
     public GameObject targetPrefab;
-
-    public GameObject rotateWallBttn;
-
-    private OnTriggerInput onTriggerInput;
+    [SerializeField]
+    private GameObject inputTrigger;
+    [SerializeField]
+    private GameObject inputSprite;
 
     [SerializeField]
     private float xPos;
@@ -42,7 +42,6 @@ public class OnTriggerTranslation : MonoBehaviour
     void Start()
     {
         spector = FindObjectOfType<Spector>();
-        onTriggerInput = GetComponent<OnTriggerInput>();
         source = GetComponent<AudioSource>();
     }
 
@@ -53,24 +52,27 @@ public class OnTriggerTranslation : MonoBehaviour
     
     public void RemoveWall_01()
     {
+        inputTrigger.SetActive(false);
+        inputSprite.SetActive(false);
         targetPrefab.transform.Translate(xPos, yPos, zPos);
-        rotateWallBttn.SetActive(false);
         spector.AlertPosition = transform.position;
-        onTriggerInput.isActive = true;
+        PlayAudio_01();
     }
     public void RemoveWall_02()
     {
+        inputTrigger.SetActive(false);
+        inputSprite.SetActive(false);
         targetPrefab.transform.Translate(xPos, yPos, zPos);
-        rotateWallBttn.SetActive(false);
         spector.AlertPosition = transform.position;
-        onTriggerInput.isActive = true;
+        PlayAudio_01();
     }
     public void RemoveWall_03()
     {
+        inputTrigger.SetActive(false);
+        inputSprite.SetActive(false);
         targetPrefab.transform.Translate(xPos, yPos, zPos);
-        rotateWallBttn.SetActive(false);
         spector.AlertPosition = transform.position;
-        onTriggerInput.isActive = true;
+        PlayAudio_01();
     }
 
     public void PlayAudio_01()
