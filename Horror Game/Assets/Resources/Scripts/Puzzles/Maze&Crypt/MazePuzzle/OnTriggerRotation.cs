@@ -41,6 +41,7 @@ public class OnTriggerRotation : MonoBehaviour
     public Animator anim;
 
     public bool activated = false;
+    public bool option_01, option_02, option_03;
     #endregion
 
     #region Coroutines
@@ -72,10 +73,11 @@ public class OnTriggerRotation : MonoBehaviour
         source.Play();
     }
 
-    public void RotateBlock()
+    public void RotateBlock() //Mushrooms
     {
         targetPrefab.transform.Rotate(xRot, yRot, zRot);
         SecondaryTargetPrefab.transform.Rotate(xRot, yRot, zRot);
+        PlayAudio_01();
     }
 
     public void RotateBlock_02()
@@ -85,21 +87,76 @@ public class OnTriggerRotation : MonoBehaviour
 
     public void ConfirmBlock()
     {
-        if (rotation.timesRotated == rotation.correctRotation)  
+        RotationCalculator();
+
+        if (rotation.correctRotation == 0)
         {
-            PlayAudio_01();
-            inputTrigger.SetActive(false);
-            anim.Play("CoffinOpen");
-            item.SetActive(true);
-            inputTrigger.SetActive(false);
-            inputSprite02.SetActive(false);
-            inputSprite.SetActive(false);
+
+            if (option_01 == true)
+            {
+                PlayAudio_01();
+                inputTrigger.SetActive(false);
+                anim.Play("CoffinOpen");
+                item.SetActive(true);
+                inputTrigger.SetActive(false);
+                inputSprite02.SetActive(false);
+                inputSprite.SetActive(false);
+            }
+        }
+
+        if (rotation.correctRotation == 1)
+        {
+            
+            if (option_02 == true)
+            {
+                PlayAudio_01();
+                inputTrigger.SetActive(false);
+                anim.Play("CoffinOpen");
+                item.SetActive(true);
+                inputTrigger.SetActive(false);
+                inputSprite02.SetActive(false);
+                inputSprite.SetActive(false);
+            }
+        }
+
+        if (rotation.correctRotation == 2)
+        {
+            
+            if (option_03 == true)
+            {
+                PlayAudio_01();
+                inputTrigger.SetActive(false);
+                anim.Play("CoffinOpen");
+                item.SetActive(true);
+                inputTrigger.SetActive(false);
+                inputSprite02.SetActive(false);
+                inputSprite.SetActive(false);
+            }
         }
 
         else
         {
             spector.AlertPosition = transform.position;
         }
+    }
+
+    public void RotationCalculator()
+    {
+        if (rotation.timesRotated == 1)
+        {            
+            option_01 = true;
+        }
+
+        if (rotation.timesRotated == 3)
+        {
+            option_02 = true;
+        }
+
+        if (rotation.timesRotated == 5)
+        {            
+            option_03 = true;
+        }
+
     }
 
     #endregion

@@ -322,7 +322,7 @@ public class ToolCollect : MonoBehaviour
         {
             if (tool != null)
             {
-                Debug.Log("Blah");
+                //Debug.Log("Blah");
                 if (Vector3.Distance(player.transform.position, tool.gameObject.transform.position) <= 7f)
                 {
                     if (tool.GetComponent<Tools>().toolType == Tools.tool.key_01)

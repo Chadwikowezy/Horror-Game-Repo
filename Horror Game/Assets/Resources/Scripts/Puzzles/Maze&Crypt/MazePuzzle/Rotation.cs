@@ -25,7 +25,7 @@ public class Rotation : MonoBehaviour
 
     public int correctRotation = 0;
     private int min = 0;
-    private int max = 7;
+    private int max = 3;
     public int timesRotated = 0;
 
     public int doorReq = 0;
@@ -116,6 +116,7 @@ public class Rotation : MonoBehaviour
             }
         }
     }
+
     IEnumerator LerpDelay()
     {
         hasFinishedLooped = false;
