@@ -11,6 +11,7 @@ public class CameraMotor : MonoBehaviour
     public GameObject camerasPrefab;
 
     public float movSpeed;
+    public float lookDamp;
 
     public VirtualJoystick joystick;
 
@@ -99,7 +100,7 @@ public class CameraMotor : MonoBehaviour
 
         targetEuler.x = targetEuler.x + -joystick.Vertical() * yCamLimit;
         targetEuler.z = 0;
-        lookRotation = Quaternion.Slerp(playerCam.transform.rotation, Quaternion.Euler(targetEuler), sensitivityX * 0.01f);
+        lookRotation = Quaternion.Slerp(playerCam.transform.rotation, Quaternion.Euler(targetEuler), lookDamp * Time.fixedDeltaTime);
 
         playerCam.rotation = lookRotation;
     }
