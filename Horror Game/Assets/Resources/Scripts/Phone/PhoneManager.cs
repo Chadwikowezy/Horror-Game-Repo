@@ -49,7 +49,8 @@ public class PhoneManager : MonoBehaviour
     {
         actor = FindObjectOfType<Actor>();
         playerMotor = FindObjectOfType<PlayerMotor>();
-        cullingCount = Camera.main.cullingMask;
+        //cullingCount = Camera.main.cullingMask;
+        //Debug.Log("Current Culling: " + cullingCount);
     }
     #endregion
 

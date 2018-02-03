@@ -8,7 +8,7 @@ public class OPCS_Player : MonoBehaviour
     public int controlSpeed;
     public List<Transform> pathNodes = new List<Transform>();
     public int nextPathNode;
-    private NavMeshAgent myNav;
+    public NavMeshAgent myNav;
     private Animator anim;
     private CutsceneCamera cam;
 
@@ -27,6 +27,10 @@ public class OPCS_Player : MonoBehaviour
 	void LateUpdate ()
     {
         SetNextPos();
+        if(myNav.speed > 0)
+        {
+            //play puddle footstep clip
+        }
     }
 
     void SetNextPos()
@@ -40,7 +44,7 @@ public class OPCS_Player : MonoBehaviour
 
                 if (nextPathNode == 6)
                 {
-                    Debug.Log(pathNodes[nextPathNode].name);
+                    //Debug.Log(pathNodes[nextPathNode].name);
                     canPath = false;
                     buttonEvent.SetActive(true);
                 }
