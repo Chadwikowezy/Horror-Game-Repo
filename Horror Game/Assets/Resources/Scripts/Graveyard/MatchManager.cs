@@ -14,8 +14,10 @@ public class MatchManager : MonoBehaviour
 
     public Image noMatchesImage;
     public Text matchCountText;
+    public Button collectMatchesButton;
 
     private GameObject _currentMatch;
+    private MatchHolder _currentMatchHolder;
 
     public int CurrentMatchCount
     {
@@ -33,6 +35,18 @@ public class MatchManager : MonoBehaviour
             noMatchesImage.color = Color.Lerp(noMatchesImage.color, Color.clear, noMatchesFadeSpeed);
     }
 
+    public void toggleMatchCollectButton(MatchHolder currentMatchHolder)
+    {
+        _currentMatchHolder = currentMatchHolder;
+        collectMatchesButton.gameObject.SetActive(!collectMatchesButton.IsActive());
+    }
+    public void collectMatches()
+    {
+        CurrentMatchCount += _currentMatchHolder.matchCount;
+        Destroy(_currentMatchHolder.gameObject);
+        _currentMatchHolder = null;
+        collectMatchesButton.gameObject.SetActive(false);
+    }
     public void strikeMatch()
     {
         if (_currentMatch != null)
