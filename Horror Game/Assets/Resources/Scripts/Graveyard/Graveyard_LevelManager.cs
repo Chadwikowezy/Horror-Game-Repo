@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Graveyard_LevelManager : MonoBehaviour
 {
@@ -9,6 +10,37 @@ public class Graveyard_LevelManager : MonoBehaviour
     [Space(10), Header("Start Light Fade In")]
     public Light[] startingLights;
     public float fadeDuration;
+
+    [Space(10), Header("Collected Objects")]
+    public Image knifeImage;
+    public Image compassImage;
+    public Sprite knifeSprite;
+    public Sprite compassSprite;
+    private bool _hasKnife;
+    private bool _hasCompass;
+
+    public bool HasKnife
+    {
+        get { return _hasKnife; }
+        set
+        {
+            _hasKnife = value;
+
+            if (_hasKnife == true)
+                knifeImage.sprite = knifeSprite;
+        }
+    }
+    public bool HasCompass
+    {
+        get { return _hasCompass; }
+        set
+        {
+            _hasCompass = value;
+
+            if (_hasCompass == true)
+                compassImage.sprite = compassSprite;
+        }
+    }
 
     private void Start()
     {
