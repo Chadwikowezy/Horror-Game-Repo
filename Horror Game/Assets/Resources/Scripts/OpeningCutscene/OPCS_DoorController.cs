@@ -31,6 +31,8 @@ public class OPCS_DoorController : MonoBehaviour
 
     IEnumerator OpenDelay()
     {
+        //play door creeking opening sound
+
         yield return new WaitForSeconds(2f);
         player.canPath = true;
         player.nextPathNode++;
@@ -47,15 +49,18 @@ public class OPCS_DoorController : MonoBehaviour
         yield return new WaitForSeconds(2f);
         PlayerSlam();
 
+        yield return new WaitForSeconds(.65f);
+        //player door slam sound
+
         yield return new WaitForSeconds(.2f);
         cam.rotSpeed = .4f;
         cam.target = cam.panRotTransforms[3].transform;
 
         yield return new WaitForSeconds(3f);
         cam.rotSpeed = .3f;
-        cam.target = null;
+        cam.target = cam.panRotTransforms[4].transform;
 
-        yield return new WaitForSeconds(3.3f);
+        yield return new WaitForSeconds(4f);
         SceneManager.LoadScene("Mansion");
     }
 
@@ -63,6 +68,6 @@ public class OPCS_DoorController : MonoBehaviour
     {
         state = doorStates.SLAMMED;
         anim.SetInteger("OpenDoor", 0);
-        anim.SetInteger("SlamDoor", 1);
+        anim.SetInteger("SlamDoor", 1);      
     }
 }

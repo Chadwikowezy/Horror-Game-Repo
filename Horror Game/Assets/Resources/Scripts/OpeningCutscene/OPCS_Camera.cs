@@ -14,7 +14,31 @@ public class OPCS_Camera : MonoBehaviour
 
     private Quaternion camRotation;
 
-	void FixedUpdate ()
+    public GameObject phoneObj;
+    private OPCS_Player player;
+
+    void Start()
+    {
+        player = FindObjectOfType<OPCS_Player>();
+        player.myNav.speed = 0;
+        StartCoroutine(ReadPhoneDelay());
+    }
+
+    IEnumerator ReadPhoneDelay()
+    {
+        //play phone vibration sound
+
+        yield return new WaitForSeconds(1f);
+        phoneObj.SetActive(true);
+
+        yield return new WaitForSeconds(12f);
+        phoneObj.GetComponent<Animator>().Play("Phone_FlyOut");
+        yield return new WaitForSeconds(.5f);
+        phoneObj.SetActive(false);
+        player.myNav.speed = 2;
+    }
+
+    void FixedUpdate ()
     {
         transform.position = Vector3.Lerp(transform.position, targetCamPos.position, moveSpeed * 0.1f);
 

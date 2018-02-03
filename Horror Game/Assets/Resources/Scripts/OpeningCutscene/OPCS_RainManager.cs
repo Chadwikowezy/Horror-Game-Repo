@@ -10,6 +10,7 @@ public class OPCS_RainManager : MonoBehaviour
 	void Start ()
     {
         player = FindObjectOfType<OPCS_Player>();
+        //play rain sound effect
     }
 
     void LateUpdate()
