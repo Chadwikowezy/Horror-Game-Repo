@@ -17,21 +17,24 @@ public class OPCS_Camera : MonoBehaviour
     public GameObject phoneObj;
     private OPCS_Player player;
     public OPCS_AudioManager audioManager;
-    public AudioSource audio;
+    public AudioSource audioSource;
 
     void Start()
     {
         player = FindObjectOfType<OPCS_Player>();
         player.myNav.speed = 0;
+        audioManager = FindObjectOfType<OPCS_AudioManager>();
+
         StartCoroutine(ReadPhoneDelay());
-        audioManager = GameObject.Find("AudioManager").GetComponent<OPCS_AudioManager>();
+        audioManager = FindObjectOfType<OPCS_AudioManager>();
     }
 
     IEnumerator ReadPhoneDelay()
-    {        
-        audio.clip = audioManager.audioclip_01;
-        audio.Play(); 
-        yield return new WaitForSeconds(1f);
+    {
+        audioSource.clip = audioManager.audioclip_01;
+        audioSource.Play(); 
+        
+        yield return new WaitForSeconds(2f);
         phoneObj.SetActive(true);
 
         yield return new WaitForSeconds(12f);
