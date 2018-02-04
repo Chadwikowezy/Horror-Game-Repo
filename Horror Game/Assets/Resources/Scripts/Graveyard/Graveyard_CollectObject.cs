@@ -4,35 +4,16 @@ using UnityEngine;
 
 public class Graveyard_CollectObject : MonoBehaviour
 {
-    public bool compass;
-    public bool knife;
+    public GameObject collectButton;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
-        {
-            if (compass)
-            {
-                //activate compass collect button
-            }
-            else
-            {
-                //activate knife collect button
-            }
-        }
+            collectButton.SetActive(true);
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player")
-        {
-            if (compass)
-            {
-                //de-activate compass collect button
-            }
-            else
-            {
-                //de-activate knife collect button
-            }
-        }
+            collectButton.SetActive(false);
     }
 }
