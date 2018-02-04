@@ -10,18 +10,18 @@ public class OPCS_Player : MonoBehaviour
     public int nextPathNode;
     public NavMeshAgent myNav;
     private Animator anim;
-    private CutsceneCamera cam;
 
     public GameObject buttonEvent;
     public bool canPath = true;
+    public bool footprintsPlay = true;
+    public AudioSource audio;
 
-	void Start ()
+    void Start ()
     {
         nextPathNode = 0;
         myNav = GetComponent<NavMeshAgent>();
         myNav.SetDestination(pathNodes[nextPathNode].position);
         anim = GetComponentInChildren<Animator>();
-        cam = FindObjectOfType<CutsceneCamera>();
     }
 	
 	void LateUpdate ()
@@ -29,7 +29,11 @@ public class OPCS_Player : MonoBehaviour
         SetNextPos();
         if(myNav.speed > 0)
         {
-            //play puddle footstep clip
+            if(footprintsPlay == true)
+            {
+                audio.Play();
+                footprintsPlay = false;
+            }
         }
     }
 
@@ -45,6 +49,7 @@ public class OPCS_Player : MonoBehaviour
                 if (nextPathNode == 6)
                 {
                     //Debug.Log(pathNodes[nextPathNode].name);
+                    audio.Stop();
                     canPath = false;
                     buttonEvent.SetActive(true);
                 }

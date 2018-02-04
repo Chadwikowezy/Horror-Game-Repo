@@ -34,17 +34,20 @@ public class OPCS_DoorController : MonoBehaviour
         //play door creeking opening sound
 
         yield return new WaitForSeconds(2f);
+        
         player.canPath = true;
         player.nextPathNode++;
         cam.rotSpeed = .1f;
-
+        //footsteps start
         player.GetComponent<NavMeshAgent>().speed = 1;
 
         yield return new WaitForSeconds(2f);
         cam.target = cam.panRotTransforms[1].transform;
-
+        //footsteps stop option1
+        
         yield return new WaitForSeconds(2f);
         cam.target = cam.panRotTransforms[2].transform;
+        //footsteps stop option2
 
         yield return new WaitForSeconds(2f);
         PlayerSlam();
