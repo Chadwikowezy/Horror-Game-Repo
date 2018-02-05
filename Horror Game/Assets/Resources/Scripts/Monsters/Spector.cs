@@ -6,6 +6,8 @@ using UnityEngine.AI;
 public class Spector : MonoBehaviour
 {
     //Variables
+    public AnimationClip attackAnim;
+
     public float walkSpeed;
     public float runSpeed;
     public float waypointDistance;
@@ -15,7 +17,6 @@ public class Spector : MonoBehaviour
     public float attackDistance;
 
     private bool _attacking;
-    private float _timer;
     private MonsterStates _previousState;
     private MonsterStates _currentState;
     private Vector3 _alertPosition;
@@ -140,8 +141,6 @@ public class Spector : MonoBehaviour
 
         while ((transform.position - _myAgent.destination).magnitude > 0.33f && CurrentState == MonsterStates.Patrol)
         {
-            print(transform.position);
-            print(_myAgent.destination);
             yield return new WaitForEndOfFrame();
         }
 
@@ -207,13 +206,20 @@ public class Spector : MonoBehaviour
     }
     IEnumerator Attacking()
     {
-        //Do Attack Stuffs Here
         _attacking = true;
         _myAgent.SetDestination(transform.position);
         _myAgent.speed = 0;
         _player.GetComponent<CameraMotor>().MonsterAttackEffect();
+        GetComponentInChildren<Animator>().CrossFade("Spector Attack", 0.25f);
 
-        //CurrentState = MonsterStates.Patrol;
-        yield return null;
+        yield return new WaitForSeconds(attackAnim.length);
+
+        _myAgent.speed = runSpeed;
+        setRandomWaypoint(-transform.forward * 5);
+
+        yield return new WaitForSeconds(3f);
+
+        _attacking = false;
+        CurrentState = MonsterStates.Patrol;
     }
 }
