@@ -11,8 +11,12 @@ public class OnTriggerTeleport : MonoBehaviour
     private GameObject targetPrefab;
     [SerializeField]
     private GameObject destination;
-
     [SerializeField]
+    private GameObject brokenPhone;
+
+    public AudioSource phoneDrop;
+
+   [SerializeField]
     private bool activated = false;
 
     public GameObject Ambience_01,
@@ -35,6 +39,8 @@ public class OnTriggerTeleport : MonoBehaviour
     {
         AudioSource source = GetComponent<AudioSource>();
         targetPrefab.transform.position = destination.transform.position;
+        phoneDrop.Play();
+        Instantiate(brokenPhone, destination.gameObject.transform.position, Quaternion.identity);
         Ambience_01.SetActive(false);
         Ambience_02.SetActive(true);
         source.Play();
