@@ -23,6 +23,8 @@ public class Tools : MonoBehaviour
     private Spector monster;
 
     private PhoneManager phoneManager;
+
+    public GameObject fingerPrint;
     #endregion
 
     #region start

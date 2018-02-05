@@ -37,7 +37,7 @@ public class OPCS_Camera : MonoBehaviour
         yield return new WaitForSeconds(2f);
         phoneObj.SetActive(true);
 
-        yield return new WaitForSeconds(12f);
+        yield return new WaitForSeconds(30f);
         phoneObj.GetComponent<Animator>().Play("Phone_FlyOut");
         yield return new WaitForSeconds(.5f);
         phoneObj.SetActive(false);

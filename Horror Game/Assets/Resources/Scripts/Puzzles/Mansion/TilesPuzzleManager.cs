@@ -20,8 +20,6 @@ public class TilesPuzzleManager : MonoBehaviour
     
     public GameObject sectionDoor;
 
-    public GameObject colorChartObj;
-
     private int point_01, point_02, point_03, point_04;
     #endregion
 
@@ -81,28 +79,11 @@ public class TilesPuzzleManager : MonoBehaviour
                 GameObject tile03 = Instantiate(tileObjects[2], spawnLocations[spawnPoint_03].position,
                     spawnLocations[spawnPoint_03].rotation);
                 GameObject tile04 = Instantiate(tileObjects[3], spawnLocations[spawnPoint_04].position,
-                    spawnLocations[spawnPoint_04].rotation);      
-                
-                if(actor.data.masionPuzzle_F1_01 == true)
-                {
-                    colorChartObj.SetActive(true);
-                }
-                else
-                {
-                    colorChartObj.SetActive(false);
-                }
+                    spawnLocations[spawnPoint_04].rotation);                                      
             }
             else
             {
-                sectionDoor.SetActive(false);
-                if (actor.data.masionPuzzle_F1_01 == true)
-                {
-                    colorChartObj.SetActive(true);
-                }
-                else
-                {
-                    colorChartObj.SetActive(false);
-                }
+                sectionDoor.SetActive(false);               
                 gameObject.SetActive(false);
             }
         }

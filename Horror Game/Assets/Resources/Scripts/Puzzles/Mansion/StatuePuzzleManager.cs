@@ -112,6 +112,13 @@ public class StatuePuzzleManager : MonoBehaviour
                 toolManager.statueSequence03 = Random.Range(1, 7);
             }
 
+            DetermineFingerPrints(statue01.GetComponent<Tools>(), 1);
+            DetermineFingerPrints(statue02.GetComponent<Tools>(), 2);
+            DetermineFingerPrints(statue03.GetComponent<Tools>(), 3);
+            DetermineFingerPrints(statue04.GetComponent<Tools>(), 4);
+            DetermineFingerPrints(statue05.GetComponent<Tools>(), 5);
+            DetermineFingerPrints(statue06.GetComponent<Tools>(), 6);
+
         }
         else if (actor.data.masionPuzzle_F1_01 == true)
         {
@@ -125,6 +132,21 @@ public class StatuePuzzleManager : MonoBehaviour
     }
     #endregion
 
+    void DetermineFingerPrints(Tools statue, int value)
+    {
+        if (toolManager.statueSequence01 == value)
+        {
+            statue.fingerPrint.SetActive(true);
+        }      
+        else if(toolManager.statueSequence02 == value)
+        {
+            statue.fingerPrint.SetActive(true);
+        }
+        else if (toolManager.statueSequence03 == value)
+        {
+            statue.fingerPrint.SetActive(true);
+        }
+    }
     #region OnTriggerEnter and OnTriggerExit function calls
     private void OnTriggerEnter(Collider other)
     {
@@ -167,8 +189,6 @@ public class StatuePuzzleManager : MonoBehaviour
                 toolUI.sprite = transparentEmpty;
             }
             sectionManager.masionPuzzle_F1_01 = true;
-            TilesPuzzleManager tilePuzzleManager = FindObjectOfType<TilesPuzzleManager>();
-            tilePuzzleManager.colorChartObj.SetActive(true);
 
             GameObject[] statueObjs = GameObject.FindGameObjectsWithTag("Tool");
             if(statueObjs != null)
