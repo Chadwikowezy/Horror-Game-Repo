@@ -138,8 +138,10 @@ public class Spector : MonoBehaviour
         _myAgent.speed = walkSpeed;
         setRandomWaypoint(transform.position);
 
-        while (transform.position != _myAgent.destination && CurrentState == MonsterStates.Patrol)
+        while ((transform.position - _myAgent.destination).magnitude > 0.33f && CurrentState == MonsterStates.Patrol)
         {
+            print(transform.position);
+            print(_myAgent.destination);
             yield return new WaitForEndOfFrame();
         }
 
