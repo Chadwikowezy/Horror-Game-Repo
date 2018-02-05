@@ -22,6 +22,9 @@ public class MatchHolder : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")
+        {
             animatedMatch.SetActive(false);
+            manager.toggleMatchCollectButton(this);
+        }
     }
 }
