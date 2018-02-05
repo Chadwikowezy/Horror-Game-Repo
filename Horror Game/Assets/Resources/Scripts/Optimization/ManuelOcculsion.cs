@@ -94,19 +94,26 @@ public class ManuelOcculsion : MonoBehaviour
                     if (colliderObj.GetComponent<Collider>())
                     {
                         float localScaleToMultiply;
-                        if (colliderObj.transform.localScale.z >= colliderObj.transform.localScale.x)
+                        if (colliderObj.transform.localScale.z >= colliderObj.transform.localScale.x
+                            && colliderObj.transform.localScale.z >= colliderObj.transform.localScale.y)
                         {
                             localScaleToMultiply = colliderObj.transform.localScale.z;
                         }
-                        else if (colliderObj.transform.localScale.x > colliderObj.transform.localScale.z)
+                        else if (colliderObj.transform.localScale.x >= colliderObj.transform.localScale.z
+                            && colliderObj.transform.localScale.x >= colliderObj.transform.localScale.y)
                         {
                             localScaleToMultiply = colliderObj.transform.localScale.x;
                         }
-                        else
+                        else if (colliderObj.transform.localScale.y >= colliderObj.transform.localScale.z
+                            && colliderObj.transform.localScale.y >= colliderObj.transform.localScale.z)
                         {
                             localScaleToMultiply = colliderObj.transform.localScale.y;
                         }
-                        if (Vector3.Distance(colliderObj.transform.position, player.transform.position) < localScaleToMultiply * 5)
+                        else
+                        {
+                            localScaleToMultiply = 10;
+                        }
+                        if (Vector3.Distance(colliderObj.transform.position, player.transform.position) < localScaleToMultiply * 10)
                         {
                             colliderObj.GetComponent<Collider>().enabled = true;
                         }
@@ -137,19 +144,26 @@ public class ManuelOcculsion : MonoBehaviour
                     if (colliderObj.GetComponent<Collider>())
                     {
                         float localScaleToMultiply;
-                        if (colliderObj.transform.localScale.z >= colliderObj.transform.localScale.x)
+                        if (colliderObj.transform.localScale.z >= colliderObj.transform.localScale.x
+                            && colliderObj.transform.localScale.z >= colliderObj.transform.localScale.y)
                         {
                             localScaleToMultiply = colliderObj.transform.localScale.z;
                         }
-                        else if (colliderObj.transform.localScale.x > colliderObj.transform.localScale.z)
+                        else if (colliderObj.transform.localScale.x >= colliderObj.transform.localScale.z
+                            && colliderObj.transform.localScale.x >= colliderObj.transform.localScale.y)
                         {
                             localScaleToMultiply = colliderObj.transform.localScale.x;
                         }
-                        else
+                        else if (colliderObj.transform.localScale.y >= colliderObj.transform.localScale.z
+                            && colliderObj.transform.localScale.y >= colliderObj.transform.localScale.z)
                         {
                             localScaleToMultiply = colliderObj.transform.localScale.y;
                         }
-                        if (Vector3.Distance(colliderObj.transform.position, player.transform.position) < localScaleToMultiply * 5)
+                        else
+                        {
+                            localScaleToMultiply = 10;
+                        }
+                        if (Vector3.Distance(colliderObj.transform.position, player.transform.position) < localScaleToMultiply * 10)
                         {
                             colliderObj.GetComponent<Collider>().enabled = true;
                         }
@@ -180,19 +194,26 @@ public class ManuelOcculsion : MonoBehaviour
                     if (colliderObj.GetComponent<Collider>())
                     {
                         float localScaleToMultiply;
-                        if (colliderObj.transform.localScale.z >= colliderObj.transform.localScale.x)
+                        if (colliderObj.transform.localScale.z >= colliderObj.transform.localScale.x
+                            && colliderObj.transform.localScale.z >= colliderObj.transform.localScale.y)
                         {
                             localScaleToMultiply = colliderObj.transform.localScale.z;
                         }
-                        else if (colliderObj.transform.localScale.x > colliderObj.transform.localScale.z)
+                        else if (colliderObj.transform.localScale.x >= colliderObj.transform.localScale.z
+                            && colliderObj.transform.localScale.x >= colliderObj.transform.localScale.y)
                         {
                             localScaleToMultiply = colliderObj.transform.localScale.x;
                         }
-                        else
+                        else if (colliderObj.transform.localScale.y >= colliderObj.transform.localScale.z
+                            && colliderObj.transform.localScale.y >= colliderObj.transform.localScale.z)
                         {
                             localScaleToMultiply = colliderObj.transform.localScale.y;
                         }
-                        if (Vector3.Distance(colliderObj.transform.position, player.transform.position) < localScaleToMultiply * 5)
+                        else
+                        {
+                            localScaleToMultiply = 10;
+                        }
+                        if (Vector3.Distance(colliderObj.transform.position, player.transform.position) < localScaleToMultiply * 10)
                         {
                             colliderObj.GetComponent<Collider>().enabled = true;
                         }

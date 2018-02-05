@@ -28,8 +28,6 @@ public class PhoneManager : MonoBehaviour
     public GameObject message_03;
     public GameObject message_04;
     public GameObject message_05;
-    public GameObject message_06;
-    public GameObject message_07;
     public GameObject messageObj;
     private bool messagesDisplayed = false;
     private Actor actor;
@@ -143,24 +141,7 @@ public class PhoneManager : MonoBehaviour
                 message_03.SetActive(true);
                 message_04.SetActive(true);
                 message_05.SetActive(true);
-            }
-            if (actor.data.mausoleumPuzzle == true)
-            {
-                message_01.SetActive(true);
-                message_02.SetActive(true);
-                message_03.SetActive(true);
-                message_04.SetActive(true);
-                message_06.SetActive(true);
-            }
-            if (actor.data.cryptPuzzle == true)
-            {
-                message_01.SetActive(true);
-                message_02.SetActive(true);
-                message_03.SetActive(true);
-                message_04.SetActive(true);
-                message_06.SetActive(true);
-                message_07.SetActive(true);
-            }
+            }          
             #endregion
             messagesDisplayed = true;
 
