@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class Spector : MonoBehaviour
 {
     //Variables
+    public GameObject head;
     public AnimationClip attackAnim;
 
     public float walkSpeed;
@@ -22,9 +23,8 @@ public class Spector : MonoBehaviour
     private Vector3 _alertPosition;
     private NavMeshAgent _myAgent;
     private GameObject _player;
-
-    private AudioManager audioManager;
-    public bool playChaseSound = true;
+    private AudioManager _audioManager;
+    
 
     //Properties
     public MonsterStates PreviousState
@@ -57,17 +57,13 @@ public class Spector : MonoBehaviour
     {
         _myAgent = GetComponent<NavMeshAgent>();
         _player = FindObjectOfType<PlayerMotor>().gameObject;
+        _audioManager = FindObjectOfType<AudioManager>();
 
-        CurrentState = MonsterStates.Idle;
-        audioManager = FindObjectOfType<AudioManager>();
+        CurrentState = MonsterStates.Idle;   
     }
     private void Update()
     {
         detectPlayer();
-        if(CurrentState != MonsterStates.Chasing)
-        {
-            playChaseSound = true;
-        }
     }
 
     //Functions
@@ -105,6 +101,8 @@ public class Spector : MonoBehaviour
         {
             Ray ray = new Ray(transform.position, _player.transform.position - transform.position);
             RaycastHit hit;
+
+            print(CurrentState);
 
             if (Physics.Raycast(ray, out hit, detectionDistance))
                 if (hit.transform.gameObject.tag == "Player")
@@ -186,20 +184,14 @@ public class Spector : MonoBehaviour
     }
     IEnumerator chasing()
     {
-        if(playChaseSound == true)
-        {
-            audioManager.SpectorBeginSound(1);//violing sound looped
-            Debug.Log("Played Violin chase sound");
-            playChaseSound = false;
-        }
-
+        _audioManager.SpectorBeginSound(1);
         _myAgent.speed = runSpeed;
 
         while (_currentState == MonsterStates.Chasing)
         {
             yield return new WaitForEndOfFrame();
 
-            Ray ray = new Ray(transform.position, _player.transform.position - transform.position);
+            Ray ray = new Ray(head.transform.position, _player.transform.position - head.transform.position);
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit, detectionDistance))
@@ -221,7 +213,7 @@ public class Spector : MonoBehaviour
     }
     IEnumerator Attacking()
     {
-        audioManager.SpectorBeginSound(0);//scream sound
+        _audioManager.SpectorBeginSound(0);//scream sound
 
         _attacking = true;
         _myAgent.SetDestination(transform.position);
