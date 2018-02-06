@@ -43,10 +43,13 @@ public class PhoneManager : MonoBehaviour
     //public GameObject dummyPhone;
     public List<GameObject> playerDisableObjs;
 
+    private AudioManager audioManager;
+
     public void RecievedCall()
     {
         actor = FindObjectOfType<Actor>();
         playerMotor = FindObjectOfType<PlayerMotor>();
+        audioManager = FindObjectOfType<AudioManager>();
         //cullingCount = Camera.main.cullingMask;
         //Debug.Log("Current Culling: " + cullingCount);
     }
@@ -100,6 +103,7 @@ public class PhoneManager : MonoBehaviour
     {
         if(canActivatePhone == true)
         {
+            audioManager.phoneBeginSound(1);//playing camera click
             isOn = true;
             playerMotor.onPhone = true;
             yield return new WaitForSeconds(.01f);
@@ -156,6 +160,7 @@ public class PhoneManager : MonoBehaviour
     {
         if(canActivatePhone == true)
         {
+            audioManager.phoneBeginSound(1);//playing camera click
             isOn = true;
             playerMotor.onPhone = true;
             yield return new WaitForSeconds(.01f);
@@ -179,6 +184,7 @@ public class PhoneManager : MonoBehaviour
     {
         if(canActivatePhone == false)
         {
+            audioManager.phoneBeginSound(1);//playing camera click
             phoneCamera.GetComponent<Animator>().Play("Phone_FlyOut");
             isOn = false;
             playerMotor.onPhone = false;
@@ -200,6 +206,7 @@ public class PhoneManager : MonoBehaviour
     {
         if(canActivatePhone == false)
         {
+            audioManager.phoneBeginSound(1);//playing camera click
             phoneCamera.GetComponent<Animator>().Play("Phone_FlyOut");
             isOn = false;
             playerMotor.onPhone = false;
@@ -276,8 +283,6 @@ public class PhoneManager : MonoBehaviour
         }
     }
 
-    
-
     public void NewMessageNotification()
     {
         StartCoroutine(FlashNotification());
@@ -289,6 +294,7 @@ public class PhoneManager : MonoBehaviour
         for (int i = 0; i < 4; i++)
         {
             newMessageNotification.SetActive(true);
+            audioManager.phoneBeginSound(0);//playing vibration sound
             yield return new WaitForSeconds(.5f);
             newMessageNotification.SetActive(false);
             yield return new WaitForSeconds(.5f);

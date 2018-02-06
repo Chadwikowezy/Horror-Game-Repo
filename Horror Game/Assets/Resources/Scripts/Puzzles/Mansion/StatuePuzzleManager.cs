@@ -32,6 +32,8 @@ public class StatuePuzzleManager : MonoBehaviour
     private PhoneManager phoneManager;
 
     private Spector spector;
+
+    private AudioManager audioManager;
     #endregion
 
     #region recieve actor call to begin
@@ -42,6 +44,7 @@ public class StatuePuzzleManager : MonoBehaviour
         spector = FindObjectOfType<Spector>();
         gameController = FindObjectOfType<GameController>();
         phoneManager = FindObjectOfType<PhoneManager>();
+        audioManager = FindObjectOfType<AudioManager>();
         placeStatuesImg.SetActive(false);
         InsufficentMessage.SetActive(false);
 
@@ -180,6 +183,8 @@ public class StatuePuzzleManager : MonoBehaviour
     {
         if (toolManager.statuesCollected == 3 && toolManager.correctStatueSequence == true)
         {
+            audioManager.ObjectBegin(2);//woman wailing sound
+
             foreach (GameObject statue in statueDisplayObjs)
             {
                 statue.GetComponent<PedistalObjectLoad>().ReceievedCall();
@@ -207,6 +212,8 @@ public class StatuePuzzleManager : MonoBehaviour
         }
         if(toolManager.correctStatueSequence == false)
         {
+            audioManager.ObjectBegin(1);//creepy string sound
+
             foreach (Tools statue in toolCollect.sectionOneTools)
             {
                 statue.gameObject.SetActive(true);

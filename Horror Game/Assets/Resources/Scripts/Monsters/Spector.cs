@@ -23,6 +23,9 @@ public class Spector : MonoBehaviour
     private NavMeshAgent _myAgent;
     private GameObject _player;
 
+    private AudioManager audioManager;
+    public bool playChaseSound = true;
+
     //Properties
     public MonsterStates PreviousState
     {
@@ -56,10 +59,15 @@ public class Spector : MonoBehaviour
         _player = FindObjectOfType<PlayerMotor>().gameObject;
 
         CurrentState = MonsterStates.Idle;
+        audioManager = FindObjectOfType<AudioManager>();
     }
     private void Update()
     {
         detectPlayer();
+        if(CurrentState != MonsterStates.Chasing)
+        {
+            playChaseSound = true;
+        }
     }
 
     //Functions
@@ -178,6 +186,13 @@ public class Spector : MonoBehaviour
     }
     IEnumerator chasing()
     {
+        if(playChaseSound == true)
+        {
+            audioManager.SpectorBeginSound(1);//violing sound looped
+            Debug.Log("Played Violin chase sound");
+            playChaseSound = false;
+        }
+
         _myAgent.speed = runSpeed;
 
         while (_currentState == MonsterStates.Chasing)
@@ -206,6 +221,8 @@ public class Spector : MonoBehaviour
     }
     IEnumerator Attacking()
     {
+        audioManager.SpectorBeginSound(0);//scream sound
+
         _attacking = true;
         _myAgent.SetDestination(transform.position);
         _myAgent.speed = 0;

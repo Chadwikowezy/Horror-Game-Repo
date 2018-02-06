@@ -26,6 +26,11 @@ public class PlayerMotor : MonoBehaviour
     public bool isGrounded;
 
     private Vector3 newRot;
+
+    private AudioManager audioManager;
+
+    public bool playStepsAudio = true;
+    public bool playRunAudio = true;
     #endregion
 
     #region start
@@ -35,6 +40,7 @@ public class PlayerMotor : MonoBehaviour
         thisRigidBody.drag = drag;
         handleCanvas = FindObjectOfType<HandleCanvas>();
         Physics.IgnoreLayerCollision(0, 13);
+        audioManager = FindObjectOfType<AudioManager>();
     }
     #endregion
 
@@ -62,36 +68,63 @@ public class PlayerMotor : MonoBehaviour
         {
             if (thisRigidBody.velocity.magnitude < 6)
             {              
-                thisRigidBody.velocity = (transform.TransformDirection(moveVector) * moveSpeed);
+                thisRigidBody.velocity = (transform.TransformDirection(moveVector) * moveSpeed);                
             }           
             else if(thisRigidBody.velocity.magnitude == 0)
             {
                 isGrounded = true;
             }
-
+            if (currentState == animStates.RUN)
+            {
+                audioManager.playerSteps.clip = audioManager.playerStepClips[1];
+                audioManager.playerSteps.volume = 0.7f;
+                if (playRunAudio == true)
+                {
+                    audioManager.StepsBegin();
+                    playRunAudio = false;
+                }
+                playStepsAudio = true;
+            }
+            else if (currentState == animStates.WALK)
+            {
+                audioManager.playerSteps.clip = audioManager.playerStepClips[0];
+                audioManager.playerSteps.volume = 0.55f;
+                if (playStepsAudio == true)
+                {
+                    audioManager.StepsBegin();
+                    playStepsAudio = false;
+                }
+                playRunAudio = true;
+            }
+            else if (currentState == animStates.IDLE)
+            {
+                audioManager.StepsStop();
+                playStepsAudio = true;
+                playRunAudio = true;
+            }
             RotatePlayer();
-        }       
-       /*if (isGrounded == false)
-            if (thisRigidBody.velocity.magnitude == 0)
-                isGrounded = true;*/
+        }
+        /*if (isGrounded == false)
+             if (thisRigidBody.velocity.magnitude == 0)
+                 isGrounded = true;*/
     }
 
     void ControlStates()
     {
         //if (onPhone == false)
         //{
-            if (thisRigidBody.velocity.magnitude > 4 && thisRigidBody.velocity.magnitude <= 6)
-            {
-                currentState = animStates.RUN;
-            }
-            if (thisRigidBody.velocity.magnitude > 0.1f && thisRigidBody.velocity.magnitude <= 4)
-            {
-                currentState = animStates.WALK;
-            }
-            else if (thisRigidBody.velocity.magnitude <= 0.1f)
-            {
-                currentState = animStates.IDLE;
-            }
+        if (thisRigidBody.velocity.magnitude > 4 && thisRigidBody.velocity.magnitude <= 6)
+        {
+            currentState = animStates.RUN;
+        }
+        if (thisRigidBody.velocity.magnitude > 0.1f && thisRigidBody.velocity.magnitude <= 4)
+        {
+            currentState = animStates.WALK;
+        }
+        else if (thisRigidBody.velocity.magnitude <= 0.1f)
+        {
+            currentState = animStates.IDLE;
+        }
         //}
         //else if(onPhone == true)
         //{

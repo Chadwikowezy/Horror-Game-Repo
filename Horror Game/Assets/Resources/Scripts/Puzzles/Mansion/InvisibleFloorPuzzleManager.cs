@@ -15,6 +15,7 @@ public class InvisibleFloorPuzzleManager : MonoBehaviour
     public bool beginFogFollow = false;
     public GameObject[] fogEffects;
 
+
     void Start()
     {
         player = FindObjectOfType<PlayerMotor>();

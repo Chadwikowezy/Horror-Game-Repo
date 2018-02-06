@@ -38,13 +38,18 @@ public class InsanityManager : MonoBehaviour
     public bool justCollected = false;
     private Camera mainCamera;
 
+    private AudioManager audioManager;
+
+    public bool insanityBreakPlay = true;
+
     void Start()
     {
         insanityImg = GetComponentInChildren<Image>();
         cameraMotor = FindObjectOfType<CameraMotor>();
         mainCamera = Camera.main;
-        mainCamera.GetComponent<PostProcessingBehaviour>().profile.motionBlur.enabled = false;
-        mainCamera.GetComponent<PostProcessingBehaviour>().profile.depthOfField.enabled = false;
+        //mainCamera.GetComponent<PostProcessingBehaviour>().profile.motionBlur.enabled = false;
+        //mainCamera.GetComponent<PostProcessingBehaviour>().profile.depthOfField.enabled = false;
+        audioManager = FindObjectOfType<AudioManager>();
     }
 
     void Update()
@@ -53,11 +58,11 @@ public class InsanityManager : MonoBehaviour
         {
             if (CurrentInsanity == 0)
             {
+                audioManager.breath_Heartbeat.volume = .5f;
+
                 sensitivityLvl = 3;
                 cameraMotor.sensitivityX = sensitivityLvl;
                 cameraMotor.sensitivityY = sensitivityLvl;
-                mainCamera.GetComponent<PostProcessingBehaviour>().profile.motionBlur.enabled = false;
-                mainCamera.GetComponent<PostProcessingBehaviour>().profile.depthOfField.enabled = false;
 
                 Color c = insanityImg.color;
                 c.a = 1;
@@ -68,17 +73,18 @@ public class InsanityManager : MonoBehaviour
                     insanityImg.color = c;
                     if (currentTime <= 0)
                     {
+                        insanityBreakPlay = true;
                         beginDraining = false;
                     }
                 }
             }
             else if (CurrentInsanity == 1 && maxInsanity == 3)
             {
+                audioManager.breath_Heartbeat.volume = .75f;
+
                 sensitivityLvl = 4;
                 cameraMotor.sensitivityX = sensitivityLvl;
                 cameraMotor.sensitivityY = sensitivityLvl;
-                mainCamera.GetComponent<PostProcessingBehaviour>().profile.motionBlur.enabled = true;
-                mainCamera.GetComponent<PostProcessingBehaviour>().profile.depthOfField.enabled = true;
 
                 Color c = insanityImg.color;
                 c.a = 1;
@@ -89,17 +95,18 @@ public class InsanityManager : MonoBehaviour
                     insanityImg.color = c;
                     if (currentTime <= 22)
                     {
+                        insanityBreakPlay = true;
                         beginDraining = false;
                     }
                 }
             }
             else if (CurrentInsanity == 2 && maxInsanity == 3 || currentInsanity == 1 && maxInsanity == 2)
             {
+                audioManager.breath_Heartbeat.volume = 1f;
+
                 sensitivityLvl = 5;
                 cameraMotor.sensitivityX = sensitivityLvl;
                 cameraMotor.sensitivityY = sensitivityLvl;
-                mainCamera.GetComponent<PostProcessingBehaviour>().profile.motionBlur.enabled = true;
-                mainCamera.GetComponent<PostProcessingBehaviour>().profile.depthOfField.enabled = true;
 
                 Color c = insanityImg.color;
                 c.a = 1;
@@ -110,12 +117,20 @@ public class InsanityManager : MonoBehaviour
                     insanityImg.color = c;
                     if (currentTime <= 44)
                     {
+                        insanityBreakPlay = true;
                         beginDraining = false;
                     }
                 }
             }
             else if (currentInsanity == 3 && maxInsanity == 3 || currentInsanity == 1 && maxInsanity == 1 || currentInsanity == 2 && maxInsanity == 2)
             {
+                if (insanityBreakPlay == true)
+                {
+                    audioManager.InsanityBreaking(1);
+                    audioManager.breath_Heartbeat.volume = 1f;
+                    insanityBreakPlay = false;
+                }
+
                 Color c = insanityBreakImg.color;
                 c.a = 1;
                 if (currentTime < 100)
@@ -125,8 +140,6 @@ public class InsanityManager : MonoBehaviour
                     insanityBreakImg.color = c;
                     if (currentTime >= 100)
                     {
-                        mainCamera.GetComponent<PostProcessingBehaviour>().profile.motionBlur.enabled = false;
-                        mainCamera.GetComponent<PostProcessingBehaviour>().profile.depthOfField.enabled = false;
                         int scene = SceneManager.GetActiveScene().buildIndex;
                         SceneManager.LoadScene(scene, LoadSceneMode.Single);
                     }
@@ -156,6 +169,8 @@ public class InsanityManager : MonoBehaviour
     public void UpdatePillCount(int pill)
     {
         //Debug.Log("Current before pill count: " + PillStackCount);
+        
+
         if (PillStackCount < pillStackMin)
         {
             PillStackCount = pillStackMin;
@@ -168,6 +183,8 @@ public class InsanityManager : MonoBehaviour
         {
             PillStackCount += pill;
             AlterInsanity(-1);
+            //play swallow sound
+            audioManager.InsanityBreaking(0);
             //Debug.Log("Current after pill count: " + PillStackCount);
         }        
         if(pill > 0 && PillStackCount < pillStackMax)

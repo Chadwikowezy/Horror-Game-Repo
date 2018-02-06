@@ -15,26 +15,32 @@ public class LightManager : MonoBehaviour
     private float timeOff = .5f;
     private float changeTime = 0;
 
+    private AudioManager audioManager;
+
 	void Start ()
     {
         spector = FindObjectOfType<Spector>();
         player = FindObjectOfType<PlayerMotor>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
 	
 	void LateUpdate ()
     {
-        for (int i = 0; i < lightObjects.Count; i++)
+        if(spector.transform.position.y < 5)
         {
-            if(Vector3.Distance(lightObjects[i].transform.position, player.transform.position) < 30f)
+            for (int i = 0; i < lightObjects.Count; i++)
             {
-                lightObjects[i].SetActive(true);
-                FlashOnSpectorDistance();
+                if (Vector3.Distance(lightObjects[i].transform.position, player.transform.position) < 25f)
+                {
+                    lightObjects[i].SetActive(true);
+                    FlashOnSpectorDistance();
+                }
+                else
+                {
+                    lightObjects[i].SetActive(false);
+                }
             }
-            else
-            {
-                lightObjects[i].SetActive(false);
-            }
-        }
+        }      
     }
 
     void FlashOnSpectorDistance()
@@ -52,6 +58,8 @@ public class LightManager : MonoBehaviour
                     }
                     else
                     {
+                        //flicker light sound
+                        audioManager.FlickerLight();
                         changeTime = Time.time + timeOff;
                     }
                 }

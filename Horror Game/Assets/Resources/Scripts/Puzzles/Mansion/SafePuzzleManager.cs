@@ -23,6 +23,8 @@ public class SafePuzzleManager : MonoBehaviour
     private GameController gameController;
 
     private PhoneManager phoneManager;
+
+    private AudioManager audioManager;
     #endregion
 
     #region recieved actor call to begin
@@ -38,6 +40,7 @@ public class SafePuzzleManager : MonoBehaviour
         GenerateValues();
         gameController = FindObjectOfType<GameController>();
         phoneManager = FindObjectOfType<PhoneManager>();
+        audioManager = FindObjectOfType<AudioManager>();
     }
     #endregion
 
@@ -149,6 +152,7 @@ public class SafePuzzleManager : MonoBehaviour
     {
         if (value_01 == correctValue_01 && value_02 == correctValue_02 && value_03 == correctValue_03)
         {
+            audioManager.ObjectBegin(2);
             actor.data.masionPuzzle_F1_03 = true;
             phoneManager.NewMessageNotification();
             sectionDoor.SetActive(false);
@@ -158,6 +162,7 @@ public class SafePuzzleManager : MonoBehaviour
         }
         else
         {
+            audioManager.ObjectBegin(5);
             safeUIPanel.SetActive(false);
             incorrectInputNotice.SetActive(true);
         }

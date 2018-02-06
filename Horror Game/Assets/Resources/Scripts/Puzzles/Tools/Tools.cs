@@ -25,6 +25,8 @@ public class Tools : MonoBehaviour
     private PhoneManager phoneManager;
 
     public GameObject fingerPrint;
+
+    private AudioManager audioManager;
     #endregion
 
     #region start
@@ -36,7 +38,7 @@ public class Tools : MonoBehaviour
         sectionManager = FindObjectOfType<SectionManager>();
         toolManager = FindObjectOfType<ToolsManager>();
         phoneManager = FindObjectOfType<PhoneManager>();
-
+        audioManager = FindObjectOfType<AudioManager>();
         gameController = FindObjectOfType<GameController>();
 
         if(transform.tag == "Tool")
@@ -115,6 +117,8 @@ public class Tools : MonoBehaviour
     #region OnTriggerEnter and OnTriggerExit function calls
     void IncorrectTilePressed()
     {
+        audioManager.ObjectBegin(0);//play drum sound
+
         toolManager.tilesValue = 0;
         toolManager.tileOneSequence = false;
         toolManager.tileTwoSequence = false;
@@ -151,6 +155,7 @@ public class Tools : MonoBehaviour
                             if(toolManager.tileOneSequence == false)
                             {
                                 toolManager.tilesValue += 1;
+                                audioManager.ObjectBegin(4);
                             }
                             toolManager.tileOneSequence = true;
                         }
@@ -167,6 +172,7 @@ public class Tools : MonoBehaviour
                             if(toolManager.tileTwoSequence == false)
                             {
                                 toolManager.tilesValue += 1;
+                                audioManager.ObjectBegin(4);
                             }
                             toolManager.tileTwoSequence = true;
                         }
@@ -183,6 +189,7 @@ public class Tools : MonoBehaviour
                             if(toolManager.tileThreeSequence == false)
                             {
                                 toolManager.tilesValue += 1;
+                                audioManager.ObjectBegin(4);
                             }
                             toolManager.tileThreeSequence = true;
                         }
@@ -203,6 +210,7 @@ public class Tools : MonoBehaviour
                             toolManager.tileFourSequence = true;
                             if (toolManager.tilesValue == 4)
                             {
+                                audioManager.ObjectBegin(2);//play woman wailing
                                 tilePuzzleManager = FindObjectOfType<TilesPuzzleManager>();
                                 if (tilePuzzleManager.sectionDoor == enabled)
                                 {

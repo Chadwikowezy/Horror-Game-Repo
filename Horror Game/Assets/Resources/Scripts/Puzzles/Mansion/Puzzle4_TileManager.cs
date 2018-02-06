@@ -14,6 +14,8 @@ public class Puzzle4_TileManager : MonoBehaviour
     public GameObject arms;
 
     public bool hasFinishedProcess;
+    private AudioManager audioManager;
+
 
     void Start ()
     {
@@ -22,6 +24,7 @@ public class Puzzle4_TileManager : MonoBehaviour
         mainCamera = Camera.main;
         handleCanvas = FindObjectOfType<HandleCanvas>();
         thisPuzzleManager = FindObjectOfType<InvisibleFloorPuzzleManager>();
+        audioManager = FindObjectOfType<AudioManager>();
 
         if (this.gameObject.tag == "PullPlayer_Tile")
         {
@@ -35,12 +38,16 @@ public class Puzzle4_TileManager : MonoBehaviour
         {
             if(this.gameObject.tag == "PullPlayer_Tile")
             {
+                audioManager.objectSounds.clip = audioManager.objectSoundClips[3];
+                audioManager.objectSounds.Play();                
                 StartCoroutine(ArmPullResetAnim());
                 //call player arm animation effect here
             }
             else if (this.gameObject.tag == "AlertMonster_Tile")
             {
                 //Audio asset for noise of incorrect tile plays in this moment
+                audioManager.objectSounds.clip = audioManager.objectSoundClips[0];
+                audioManager.objectSounds.Play();
                 monster.AlertPosition = AlertPosition();
             }
         }
