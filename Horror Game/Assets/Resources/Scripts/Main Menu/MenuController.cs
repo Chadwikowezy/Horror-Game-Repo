@@ -23,6 +23,7 @@ public class MenuController : MonoBehaviour
 
     [Header("Animators")]
     public Animator menuOptionsAnim;
+    public Animator monsterAnim;
 
     private MenuSelections _selections;
 
@@ -31,6 +32,10 @@ public class MenuController : MonoBehaviour
         spawnMenuSelections();
 
         StartCoroutine(flickerLight());
+    }
+    private void Update()
+    {
+        monsterAnim.Play("Menu Idle");
     }
 
     IEnumerator flickerLight()
