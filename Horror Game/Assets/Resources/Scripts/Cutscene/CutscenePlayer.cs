@@ -23,16 +23,20 @@ public class CutscenePlayer : MonoBehaviour
                 _myAgent.speed = 0;
             else
                 _myAgent.speed = moveSpeed;
+
+            _stoped = value;
         }
     }
 
     private void Start()
     {
-        _currentWaypoint = 0;
         _myAgent = GetComponent<NavMeshAgent>();
-        _myAgent.SetDestination(waypoints[_currentWaypoint].position);
         _anim = GetComponentInChildren<Animator>();
         _cam = FindObjectOfType<CutsceneCamera>();
+        _currentWaypoint = 0;
+
+        if(waypoints.Length > 0)
+            _myAgent.SetDestination(waypoints[_currentWaypoint].position);
     }
     private void Update()
     {
@@ -50,9 +54,9 @@ public class CutscenePlayer : MonoBehaviour
         StartCoroutine(takeKnockBack(direction, amount));
     }
 
-    IEnumerator takeKnockBack(Vector3 direction, float amount)
+    public IEnumerator takeKnockBack(Vector3 direction, float amount)
     {
-        GetComponentInChildren<Animator>().Play("Jump Back");
+        GetComponentInChildren<Animator>().CrossFade("Jump Back",0.1f);
 
         float originalAcceleration = _myAgent.acceleration;
 
@@ -67,6 +71,8 @@ public class CutscenePlayer : MonoBehaviour
         _myAgent.speed = moveSpeed;
         _myAgent.angularSpeed = 500;
         _myAgent.acceleration = originalAcceleration;
-        _cam.lookTarget = null;
+
+        if (_cam != null)
+            _cam.lookTarget = null;
     }
 }
