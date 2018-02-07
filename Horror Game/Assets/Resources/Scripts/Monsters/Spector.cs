@@ -16,16 +16,18 @@ public class Spector : MonoBehaviour
     public float alertedDuration;
     public float detectionDistance;
     public float attackDistance;
+    public float attackCooldown;
 
     private bool _attacking;
+    private string _playerTag;
     private MonsterStates _previousState;
     private MonsterStates _currentState;
     private Vector3 _alertPosition;
     private NavMeshAgent _myAgent;
     private GameObject _player;
     private AudioManager _audioManager;
+    private WaitForEndOfFrame _frameWait;
     
-
     //Properties
     public MonsterStates PreviousState
     {
@@ -57,7 +59,9 @@ public class Spector : MonoBehaviour
     {
         _myAgent = GetComponent<NavMeshAgent>();
         _player = FindObjectOfType<PlayerMotor>().gameObject;
+        _playerTag = _player.tag;
         _audioManager = FindObjectOfType<AudioManager>();
+        _frameWait = new WaitForEndOfFrame();
 
         CurrentState = MonsterStates.Idle;   
     }
@@ -99,13 +103,11 @@ public class Spector : MonoBehaviour
 
         if ((transform.position - _player.transform.position).magnitude < detectionDistance && _currentState != MonsterStates.Chasing)
         {
-            Ray ray = new Ray(transform.position, _player.transform.position - transform.position);
+            Ray ray = new Ray(head.transform.position, _player.transform.position - head.transform.position);
             RaycastHit hit;
 
-            print(CurrentState);
-
             if (Physics.Raycast(ray, out hit, detectionDistance))
-                if (hit.transform.gameObject.tag == "Player")
+                if (hit.transform.gameObject.CompareTag(_playerTag))
                     CurrentState = MonsterStates.Chasing;
         }
     }
@@ -189,14 +191,12 @@ public class Spector : MonoBehaviour
 
         while (_currentState == MonsterStates.Chasing)
         {
-            yield return new WaitForEndOfFrame();
-
             Ray ray = new Ray(head.transform.position, _player.transform.position - head.transform.position);
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit, detectionDistance))
             {
-                if (hit.transform.gameObject.tag == "Player")
+                if (hit.transform.gameObject.CompareTag(_playerTag))
                 {
                     _myAgent.SetDestination(_player.transform.position);
 
@@ -209,12 +209,13 @@ public class Spector : MonoBehaviour
                     CurrentState = MonsterStates.Alerted;
                 }
             }
+
+            yield return _frameWait;
         }
     }
     IEnumerator Attacking()
     {
         _audioManager.SpectorBeginSound(0);//scream sound
-
         _attacking = true;
         _myAgent.SetDestination(transform.position);
         _myAgent.speed = 0;
@@ -224,9 +225,12 @@ public class Spector : MonoBehaviour
         yield return new WaitForSeconds(attackAnim.length);
 
         _myAgent.speed = runSpeed;
-        setRandomWaypoint(-transform.forward * 5);
-
-        yield return new WaitForSeconds(3f);
+        _myAgent.SetDestination(-transform.forward * 5);
+        StartCoroutine(resetAttack());
+    }
+    IEnumerator resetAttack()
+    {
+        yield return new WaitForSeconds(attackCooldown);
 
         _attacking = false;
         CurrentState = MonsterStates.Patrol;
