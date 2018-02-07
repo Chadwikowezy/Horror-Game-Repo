@@ -22,6 +22,11 @@ public class OnTriggerTeleport : MonoBehaviour
     public GameObject Ambience_01,
                       Ambience_02;
 
+    private SectionManager sectionManager;
+    private GameController gameController;
+
+    private SpectorToCrypt spectorToCrypt;
+
     #endregion
 
     IEnumerator FunctionDelay()
@@ -33,7 +38,10 @@ public class OnTriggerTeleport : MonoBehaviour
     #region Functions
     public void Start()
     {
-        targetPrefab = GameObject.FindGameObjectWithTag("Player");
+        targetPrefab = GameObject.FindObjectOfType<PlayerMotor>().gameObject;
+        sectionManager = FindObjectOfType<SectionManager>();
+        gameController = FindObjectOfType<GameController>();
+        spectorToCrypt = FindObjectOfType<SpectorToCrypt>();
     }
     private void Teleport()
     {
@@ -44,6 +52,10 @@ public class OnTriggerTeleport : MonoBehaviour
         Ambience_01.SetActive(false);
         Ambience_02.SetActive(true);
         source.Play();
+
+        sectionManager.mausoleumPuzzle = true;
+        gameController.Save();
+        spectorToCrypt.TeleportSpector();
     }
     #endregion
 

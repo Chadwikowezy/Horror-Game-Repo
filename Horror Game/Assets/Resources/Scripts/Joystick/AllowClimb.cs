@@ -8,7 +8,6 @@ public class AllowClimb : MonoBehaviour
     private HandleCanvas handleCanvas;
 
     public GameObject climbButton;
-    public Animator playerAnimObj;
 
     public bool isClimbing;
     public bool canClimb;
@@ -30,16 +29,13 @@ public class AllowClimb : MonoBehaviour
         if (isClimbing == true && canClimb == true)
         {
             handleCanvas.canUseButtons = false;
-            playerAnimObj.SetInteger("Idle", 0);
-            playerAnimObj.SetInteger("Walk", 0);
-            playerAnimObj.SetInteger("Run", 0);
-            playerAnimObj.SetInteger("Phone", 0);
             //playerAnimObj.SetInteger("Climb", 1);
 
             Vector3 playerDir = new Vector3(transform.position.x, player.transform.position.y, transform.position.z);
             player.transform.LookAt(playerDir);
 
-            player.GetComponentInChildren<Camera>().transform.LookAt(lookPos.position);
+            Camera cam = Camera.main;
+            cam.transform.LookAt(lookPos.position);
 
             StartCoroutine(ClimbPhase());
         }
@@ -61,21 +57,6 @@ public class AllowClimb : MonoBehaviour
     {
         isClimbing = true;
         climbButton.SetActive(false);
-    }
-
-    void CheckOrientation()
-    {
-        if(enabled == true && isClimbing == false)
-        {
-            RaycastHit hit;
-            if(Physics.Raycast(player.transform.position, player.transform.forward, out hit, 5f))
-            {
-                if(hit.collider.GetComponent<AllowClimb>())
-                {
-
-                }
-            }
-        }
     }
 
     void OnCollisionStay(Collision other)

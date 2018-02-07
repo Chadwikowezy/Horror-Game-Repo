@@ -31,8 +31,6 @@ public class PlayerMotor : MonoBehaviour
 
     public bool playStepsAudio = true;
     public bool playRunAudio = true;
-
-    private string _groundTag = "Ground";
     #endregion
 
     #region start
@@ -171,18 +169,12 @@ public class PlayerMotor : MonoBehaviour
     #region OnCollisionEnter & OnCollisionExit functions
     void OnCollisionStay(Collision other)
     {
-        if(other.gameObject.CompareTag(_groundTag))
-        {
-            isGrounded = true;
-        }
+        isGrounded = true;
     }
-    
+
     void OnCollisionExit(Collision other)
     {
-        if(other.gameObject.CompareTag(_groundTag))
-        {
-            isGrounded = false;
-        }
+        isGrounded = false;
     }
     #endregion
 }

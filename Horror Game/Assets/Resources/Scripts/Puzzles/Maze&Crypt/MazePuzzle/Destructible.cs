@@ -12,6 +12,8 @@ public class Destructible : MonoBehaviour
     private GameObject inputText;
     private ToolsManager toolManager;
 
+
+
     IEnumerator FunctionDelay()
     {
         yield return new WaitForSeconds(0.2f);
