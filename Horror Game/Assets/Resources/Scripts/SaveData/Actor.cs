@@ -208,8 +208,7 @@ public class Actor : MonoBehaviour
                 camMotor.sensitivityY = data.sensitivity;
             }
         }
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Maze-Crypt") &&
-            data.masionPuzzle_F2_01 == true && data.mausoleumPuzzle == false)
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Maze-Crypt"))
         {
             if (data.mausoleumPuzzle == false)
             {

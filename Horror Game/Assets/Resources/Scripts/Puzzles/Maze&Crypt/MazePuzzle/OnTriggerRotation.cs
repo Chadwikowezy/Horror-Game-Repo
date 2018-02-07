@@ -42,6 +42,10 @@ public class OnTriggerRotation : MonoBehaviour
 
     public bool activated = false;
     public bool option_01, option_02, option_03;
+
+    private AudioManager audioManager;
+
+    private bool confirmDelay = true;
     #endregion
 
     #region Coroutines
@@ -58,7 +62,7 @@ public class OnTriggerRotation : MonoBehaviour
     {
         spector = FindObjectOfType<Spector>();
         rotation = targetPrefab.gameObject.GetComponent<Rotation>();
-
+        audioManager = FindObjectOfType<AudioManager>();
     }
     public void PlayAudio_01()
     {
@@ -87,57 +91,76 @@ public class OnTriggerRotation : MonoBehaviour
 
     public void ConfirmBlock()
     {
-        RotationCalculator();
-
-        if (rotation.correctRotation == 0)
+        if(confirmDelay == true)
         {
+            RotationCalculator();
 
-            if (option_01 == true)
+            if (rotation.correctRotation == 0)
             {
-                PlayAudio_01();
-                inputTrigger.SetActive(false);
-                anim.Play("CoffinOpen");
-                item.SetActive(true);
-                inputTrigger.SetActive(false);
-                inputSprite02.SetActive(false);
-                inputSprite.SetActive(false);
+                if (option_01 == true)
+                {
+                    PlayAudio_01();
+                    inputTrigger.SetActive(false);
+                    anim.Play("CoffinOpen");
+                    item.SetActive(true);
+                    inputTrigger.SetActive(false);
+                    inputSprite02.SetActive(false);
+                    inputSprite.SetActive(false);
+                }
+                else
+                {
+                    spector.AlertPosition = transform.position;
+                    //add drum
+                    audioManager.ObjectBegin(0);
+                }
             }
-        }
-
-        if (rotation.correctRotation == 1)
-        {
-            
-            if (option_02 == true)
+            if (rotation.correctRotation == 1)
             {
-                PlayAudio_01();
-                inputTrigger.SetActive(false);
-                anim.Play("CoffinOpen");
-                item.SetActive(true);
-                inputTrigger.SetActive(false);
-                inputSprite02.SetActive(false);
-                inputSprite.SetActive(false);
-            }
-        }
 
-        if (rotation.correctRotation == 2)
-        {
-            
-            if (option_03 == true)
+                if (option_02 == true)
+                {
+                    PlayAudio_01();
+                    inputTrigger.SetActive(false);
+                    anim.Play("CoffinOpen");
+                    item.SetActive(true);
+                    inputTrigger.SetActive(false);
+                    inputSprite02.SetActive(false);
+                    inputSprite.SetActive(false);
+                }
+                else
+                {
+                    spector.AlertPosition = transform.position;
+                    //add drum
+                    audioManager.ObjectBegin(0);
+                }
+            }
+            if (rotation.correctRotation == 2)
             {
-                PlayAudio_01();
-                inputTrigger.SetActive(false);
-                anim.Play("CoffinOpen");
-                item.SetActive(true);
-                inputTrigger.SetActive(false);
-                inputSprite02.SetActive(false);
-                inputSprite.SetActive(false);
+                if (option_03 == true)
+                {
+                    PlayAudio_01();
+                    inputTrigger.SetActive(false);
+                    anim.Play("CoffinOpen");
+                    item.SetActive(true);
+                    inputTrigger.SetActive(false);
+                    inputSprite02.SetActive(false);
+                    inputSprite.SetActive(false);
+                }
+                else
+                {
+                    spector.AlertPosition = transform.position;
+                    //add drum
+                    audioManager.ObjectBegin(0);
+                }
             }
-        }
-
-        else
-        {
-            spector.AlertPosition = transform.position;
-        }
+            confirmDelay = false;
+            StartCoroutine(ConfirmButtonDelay());
+        }       
+    }
+    IEnumerator ConfirmButtonDelay()
+    {
+        yield return new WaitForSeconds(1.5f);
+        confirmDelay = true;
     }
 
     public void RotationCalculator()
@@ -145,18 +168,15 @@ public class OnTriggerRotation : MonoBehaviour
         if (rotation.timesRotated == 1)
         {            
             option_01 = true;
-        }
-
+        }       
         if (rotation.timesRotated == 3)
         {
             option_02 = true;
         }
-
         if (rotation.timesRotated == 5)
         {            
             option_03 = true;
         }
-
     }
 
     #endregion
