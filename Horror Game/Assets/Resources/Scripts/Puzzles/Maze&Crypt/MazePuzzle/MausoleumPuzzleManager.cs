@@ -12,12 +12,18 @@ public class MausoleumPuzzleManager : MonoBehaviour
     public List<Tools> tools = new List<Tools>();
 
     private ToolCollect toolCollect;
+
+    private SectionManager sectionManager;
+    private GameController gameController;
     #endregion
 
     #region Functions
 	void Start ()
     {
         toolCollect = FindObjectOfType<ToolCollect>();
+        sectionManager = FindObjectOfType<SectionManager>();
+        gameController = FindObjectOfType<GameController>();
+
         foreach (Tools tool in tools)
         {
             toolCollect.mausoleumTools.Add(tool);
@@ -32,6 +38,9 @@ public class MausoleumPuzzleManager : MonoBehaviour
 
     public void sceneChange()
     {
+        sectionManager.cryptPuzzle = true;
+        gameController.Save();
+
         SceneManager.LoadScene("Graveyard Cutscene", LoadSceneMode.Additive);
     }
     #endregion
