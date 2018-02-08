@@ -12,13 +12,10 @@ public class OptionsManager : MonoBehaviour
 
     public List<GameObject> difficultyButtons = new List<GameObject>();
     public Slider audioLevel;
-    public Slider lightLevel;
     public Slider sensitivity;
 
     private CameraMotor camMotor;
     private InsanityManager insanityManager;
-
-    public List<Light> pointLights = new List<Light>();
 
     void Start()
     {
@@ -38,7 +35,6 @@ public class OptionsManager : MonoBehaviour
         gameController = FindObjectOfType<GameController>();
 
         actor.data.audioLevel = (int)audioLevel.value;
-        actor.data.lightLevel = (int)lightLevel.value;
         actor.data.sensitivity = (int)sensitivity.value;
         if (actor.data.setMaxInsanity <= 0)
         {
@@ -79,13 +75,6 @@ public class OptionsManager : MonoBehaviour
                 insanityManager.maxInsanity = actor.data.setMaxInsanity;
 
                 audioLevel.value = actor.data.audioLevel;
-                //set audio
-
-                lightLevel.value = actor.data.lightLevel;
-                for (int i = 0; i < pointLights.Count; i++)
-                {
-                    pointLights[i].intensity = lightLevel.value;
-                }
             }
         }
     }
