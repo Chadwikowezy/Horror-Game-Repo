@@ -11,7 +11,6 @@ public class AudioManager : MonoBehaviour
     public AudioSource phoneSounds;
     public AudioSource insanitySounds;
     public AudioSource spectorSounds;
-    public AudioSource lightFlickerSounds;
     public AudioSource levelToneSounds;
 
     public List<AudioClip> playerStepClips = new List<AudioClip>();
@@ -79,11 +78,6 @@ public class AudioManager : MonoBehaviour
         int waitLength = Random.Range(40, 121);
         yield return new WaitForSeconds(waitLength);
         playRandomToneClip = true;
-    }
-
-    public void FlickerLight()
-    {
-        lightFlickerSounds.Play();
     }
 
     void Update()

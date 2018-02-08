@@ -15,13 +15,10 @@ public class LightManager : MonoBehaviour
     private float timeOff = .5f;
     private float changeTime = 0;
 
-    private AudioManager audioManager;
-
 	void Start ()
     {
         spector = FindObjectOfType<Spector>();
         player = FindObjectOfType<PlayerMotor>();
-        audioManager = FindObjectOfType<AudioManager>();
     }
 	
 	void LateUpdate ()
@@ -59,7 +56,6 @@ public class LightManager : MonoBehaviour
                     else
                     {
                         //flicker light sound
-                        audioManager.FlickerLight();
                         changeTime = Time.time + timeOff;
                     }
                 }

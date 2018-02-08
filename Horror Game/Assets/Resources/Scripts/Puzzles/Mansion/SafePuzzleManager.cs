@@ -19,7 +19,7 @@ public class SafePuzzleManager : MonoBehaviour
     public Text _val01, _val02, _val03;
 
     private Actor actor;
-    public GameObject sectionDoor;
+    public List<GameObject> sectionDoor = new List<GameObject>();
     private GameController gameController;
 
     private PhoneManager phoneManager;
@@ -37,10 +37,10 @@ public class SafePuzzleManager : MonoBehaviour
         safeUIPanel.SetActive(false);
         incorrectInputNotice.SetActive(false);
 
-        GenerateValues();
         gameController = FindObjectOfType<GameController>();
         phoneManager = FindObjectOfType<PhoneManager>();
         audioManager = FindObjectOfType<AudioManager>();
+        GenerateValues();
     }
     #endregion
 
@@ -49,7 +49,10 @@ public class SafePuzzleManager : MonoBehaviour
     {
         if (actor.data.masionPuzzle_F1_03 == false)
         {
-            sectionDoor.SetActive(true);
+            for (int i = 0; i < sectionDoor.Count; i++)
+            {
+                sectionDoor[i].SetActive(true);
+            }
             SafeLockCanvasObj.SetActive(true);
             correctValue_01 = Random.Range(0, 10);
             correctValue_02 = Random.Range(0, 10);
@@ -88,7 +91,11 @@ public class SafePuzzleManager : MonoBehaviour
         else if (actor.data.masionPuzzle_F1_03 == true)
         {
             SafeLockCanvasObj.SetActive(false);
-            sectionDoor.SetActive(false);
+            for (int i = 0; i < sectionDoor.Count; i++)
+            {
+                sectionDoor[i].GetComponent<Animator>().SetInteger("Open", 1);
+            }
+            audioManager.ObjectBegin(1);//play door creek
             gameObject.SetActive(false);
         }
     }
@@ -152,17 +159,21 @@ public class SafePuzzleManager : MonoBehaviour
     {
         if (value_01 == correctValue_01 && value_02 == correctValue_02 && value_03 == correctValue_03)
         {
-            audioManager.ObjectBegin(2);
+            for (int i = 0; i < sectionDoor.Count; i++)
+            {
+                sectionDoor[i].GetComponent<Animator>().SetInteger("Open", 1);
+            }
+            audioManager.ObjectBegin(1);//play door creek
+
             actor.data.masionPuzzle_F1_03 = true;
             phoneManager.NewMessageNotification();
-            sectionDoor.SetActive(false);
             gameController.Save();
             SafeLockCanvasObj.SetActive(false);
             safeUIPanel.SetActive(false);
         }
         else
         {
-            audioManager.ObjectBegin(5);
+            audioManager.ObjectBegin(4);//drum echo
             safeUIPanel.SetActive(false);
             incorrectInputNotice.SetActive(true);
         }
