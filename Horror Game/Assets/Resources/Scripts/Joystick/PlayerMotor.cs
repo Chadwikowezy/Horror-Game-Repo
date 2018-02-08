@@ -169,7 +169,10 @@ public class PlayerMotor : MonoBehaviour
     #region OnCollisionEnter & OnCollisionExit functions
     void OnCollisionStay(Collision other)
     {
-        isGrounded = true;
+        if(other.gameObject.tag == "Ground")
+        {
+            isGrounded = true;
+        }
     }
 
     void OnCollisionExit(Collision other)

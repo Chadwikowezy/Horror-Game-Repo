@@ -80,7 +80,6 @@ public class Actor : MonoBehaviour
         data.statueObjectsForPedestal.Clear();
         data.setMaxInsanity = 3;
         data.audioLevel = 3;
-        data.lightLevel = 2;
         data.sensitivity = 2;
     }
 
@@ -169,19 +168,6 @@ public class Actor : MonoBehaviour
         if (data.audioLevel > 0)
         {
             optionsManager.audioLevel.value = data.audioLevel;
-        }
-        //setting light involved
-        if (data.lightLevel > 0)
-        {
-            optionsManager.lightLevel.value = data.lightLevel;
-            if (optionsManager.pointLights.Count > 0)
-            {
-                for (int i = 0; i < optionsManager.pointLights.Count; i++)
-                {
-                    optionsManager.pointLights[i].intensity = data.lightLevel;
-                }
-            }
-
         }
         if (data.sensitivity > 0)
         {
@@ -333,7 +319,6 @@ public class ActorData
 
     public int setMaxInsanity;
     public int audioLevel;
-    public int lightLevel;
     public int sensitivity;
 }
 #endregion

@@ -21,11 +21,14 @@ public class TilesPuzzleManager : MonoBehaviour
     public GameObject sectionDoor;
 
     private int point_01, point_02, point_03, point_04;
+
+    private AudioManager audioManager;
     #endregion
 
     #region recieved actor call to begin
     public void RecievedCall()
-    {       
+    {
+        audioManager = FindObjectOfType<AudioManager>();
         GenerateTiles();     
     }
     #endregion
@@ -83,7 +86,8 @@ public class TilesPuzzleManager : MonoBehaviour
             }
             else
             {
-                sectionDoor.SetActive(false);               
+                sectionDoor.GetComponent<Animator>().SetInteger("Open", 1);
+                audioManager.ObjectBegin(2);//door creek sound             
                 gameObject.SetActive(false);
             }
         }

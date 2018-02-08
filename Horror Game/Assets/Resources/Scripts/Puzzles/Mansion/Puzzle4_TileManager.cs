@@ -38,16 +38,14 @@ public class Puzzle4_TileManager : MonoBehaviour
         {
             if(this.gameObject.tag == "PullPlayer_Tile")
             {
-                audioManager.objectSounds.clip = audioManager.objectSoundClips[3];
-                audioManager.objectSounds.Play();                
+                audioManager.ObjectBegin(2);                
                 StartCoroutine(ArmPullResetAnim());
                 //call player arm animation effect here
             }
             else if (this.gameObject.tag == "AlertMonster_Tile")
             {
                 //Audio asset for noise of incorrect tile plays in this moment
-                audioManager.objectSounds.clip = audioManager.objectSoundClips[0];
-                audioManager.objectSounds.Play();
+                audioManager.ObjectBegin(0);
                 monster.AlertPosition = AlertPosition();
             }
         }

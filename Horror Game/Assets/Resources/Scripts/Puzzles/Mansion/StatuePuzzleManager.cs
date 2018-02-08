@@ -125,7 +125,8 @@ public class StatuePuzzleManager : MonoBehaviour
         }
         else if (actor.data.masionPuzzle_F1_01 == true)
         {
-            sectionDoor.SetActive(false);
+            sectionDoor.GetComponent<Animator>().SetInteger("Open", 1);
+            audioManager.ObjectBegin(1);//door creek sound
             foreach (GameObject stat in statueDisplayObjs)
             {
                 stat.GetComponent<PedistalObjectLoad>().ReceievedCall();
@@ -183,7 +184,7 @@ public class StatuePuzzleManager : MonoBehaviour
     {
         if (toolManager.statuesCollected == 3 && toolManager.correctStatueSequence == true)
         {
-            audioManager.ObjectBegin(2);//woman wailing sound
+            audioManager.ObjectBegin(1);//door creek sound
 
             foreach (GameObject statue in statueDisplayObjs)
             {
@@ -202,9 +203,10 @@ public class StatuePuzzleManager : MonoBehaviour
                 {
                     statueObjs[i].SetActive(false);
                 }
-            }           
+            }
 
-            sectionDoor.SetActive(false);
+            sectionDoor.GetComponent<Animator>().SetInteger("Open", 1);
+
             phoneManager.NewMessageNotification();
             gameController.Save();
             placeStatuesImg.SetActive(false);
@@ -212,7 +214,7 @@ public class StatuePuzzleManager : MonoBehaviour
         }
         if(toolManager.correctStatueSequence == false)
         {
-            audioManager.ObjectBegin(1);//creepy string sound
+            audioManager.ObjectBegin(4);//drum echo sound
 
             foreach (Tools statue in toolCollect.sectionOneTools)
             {
