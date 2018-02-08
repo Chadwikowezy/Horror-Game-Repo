@@ -155,7 +155,7 @@ public class Tools : MonoBehaviour
                             if(toolManager.tileOneSequence == false)
                             {
                                 toolManager.tilesValue += 1;
-                                audioManager.ObjectBegin(4);
+                                audioManager.ObjectBegin(3);
                             }
                             toolManager.tileOneSequence = true;
                         }
@@ -172,7 +172,7 @@ public class Tools : MonoBehaviour
                             if(toolManager.tileTwoSequence == false)
                             {
                                 toolManager.tilesValue += 1;
-                                audioManager.ObjectBegin(4);
+                                audioManager.ObjectBegin(3);
                             }
                             toolManager.tileTwoSequence = true;
                         }
@@ -189,7 +189,7 @@ public class Tools : MonoBehaviour
                             if(toolManager.tileThreeSequence == false)
                             {
                                 toolManager.tilesValue += 1;
-                                audioManager.ObjectBegin(4);
+                                audioManager.ObjectBegin(3);
                             }
                             toolManager.tileThreeSequence = true;
                         }
@@ -210,12 +210,10 @@ public class Tools : MonoBehaviour
                             toolManager.tileFourSequence = true;
                             if (toolManager.tilesValue == 4)
                             {
-                                audioManager.ObjectBegin(2);//play woman wailing
                                 tilePuzzleManager = FindObjectOfType<TilesPuzzleManager>();
-                                if (tilePuzzleManager.sectionDoor == enabled)
-                                {
-                                    tilePuzzleManager.sectionDoor.SetActive(false);
-                                }
+                                tilePuzzleManager.sectionDoor.GetComponent<Animator>().SetInteger("Open", 1);
+                                audioManager.ObjectBegin(1);//play door creek
+
                                 SectionManager sectionManager = FindObjectOfType<SectionManager>();
                                 sectionManager.masionPuzzle_F1_02 = true;
                                 phoneManager.NewMessageNotification();

@@ -27,6 +27,8 @@ public class Spector : MonoBehaviour
     private GameObject _player;
     private AudioManager _audioManager;
     private WaitForEndOfFrame _frameWait;
+
+    private InsanityManager insanityManager;
     
     //Properties
     public MonsterStates PreviousState
@@ -62,7 +64,7 @@ public class Spector : MonoBehaviour
         _playerTag = _player.tag;
         _audioManager = FindObjectOfType<AudioManager>();
         _frameWait = new WaitForEndOfFrame();
-
+        insanityManager = FindObjectOfType<InsanityManager>();
         CurrentState = MonsterStates.Idle;   
     }
     private void Update()
@@ -215,18 +217,21 @@ public class Spector : MonoBehaviour
     }
     IEnumerator Attacking()
     {
-        _audioManager.SpectorBeginSound(0);//scream sound
-        _attacking = true;
-        _myAgent.SetDestination(transform.position);
-        _myAgent.speed = 0;
-        _player.GetComponent<CameraMotor>().MonsterAttackEffect();
-        GetComponentInChildren<Animator>().CrossFade("Spector Attack", 0.25f);
+        if(insanityManager.CurrentInsanity < insanityManager.maxInsanity)
+        {
+            _audioManager.SpectorBeginSound(0);//scream sound
+            _attacking = true;
+            _myAgent.SetDestination(transform.position);
+            _myAgent.speed = 0;
+            _player.GetComponent<CameraMotor>().MonsterAttackEffect();
+            GetComponentInChildren<Animator>().CrossFade("Spector Attack", 0.25f);
 
-        yield return new WaitForSeconds(attackAnim.length);
+            yield return new WaitForSeconds(attackAnim.length);
 
-        _myAgent.speed = runSpeed;
-        _myAgent.SetDestination(-transform.forward * 5);
-        StartCoroutine(resetAttack());
+            _myAgent.speed = runSpeed;
+            _myAgent.SetDestination(-transform.forward * 5);
+            StartCoroutine(resetAttack());
+        } 
     }
     IEnumerator resetAttack()
     {
