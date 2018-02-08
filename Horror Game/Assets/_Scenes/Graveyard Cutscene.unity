@@ -156,7 +156,6 @@ GameObject:
   - component: {fileID: 20243616}
   - component: {fileID: 20243619}
   - component: {fileID: 20243618}
-  - component: {fileID: 20243617}
   m_Layer: 0
   m_Name: Base_Door_Shape_001
   m_TagString: Untagged
@@ -178,21 +177,6 @@ Transform:
   m_Father: {fileID: 1648608682}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &20243617
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64242858799656090, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 20243615}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300210, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &20243618
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -720,7 +704,6 @@ GameObject:
   - component: {fileID: 66931455}
   - component: {fileID: 66931458}
   - component: {fileID: 66931457}
-  - component: {fileID: 66931456}
   m_Layer: 0
   m_Name: Rock_018
   m_TagString: Untagged
@@ -742,21 +725,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &66931456
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64208491837500452, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 66931454}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300164, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &66931457
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -811,7 +779,6 @@ GameObject:
   - component: {fileID: 81303894}
   - component: {fileID: 81303897}
   - component: {fileID: 81303896}
-  - component: {fileID: 81303895}
   m_Layer: 0
   m_Name: Glass_001
   m_TagString: Untagged
@@ -833,21 +800,6 @@ Transform:
   m_Father: {fileID: 1648608682}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &81303895
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64395469661887906, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 81303893}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300212, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &81303896
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -902,7 +854,6 @@ GameObject:
   - component: {fileID: 85232105}
   - component: {fileID: 85232108}
   - component: {fileID: 85232107}
-  - component: {fileID: 85232106}
   m_Layer: 0
   m_Name: Tower_Base_001
   m_TagString: Untagged
@@ -924,21 +875,6 @@ Transform:
   m_Father: {fileID: 275993489}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &85232106
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64882403542058204, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 85232104}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300038, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &85232107
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -993,7 +929,6 @@ GameObject:
   - component: {fileID: 85481143}
   - component: {fileID: 85481146}
   - component: {fileID: 85481145}
-  - component: {fileID: 85481144}
   m_Layer: 0
   m_Name: Rock_030
   m_TagString: Untagged
@@ -1015,21 +950,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &85481144
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64644888169862598, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 85481142}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300140, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &85481145
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1084,7 +1004,6 @@ GameObject:
   - component: {fileID: 91258170}
   - component: {fileID: 91258173}
   - component: {fileID: 91258172}
-  - component: {fileID: 91258171}
   m_Layer: 0
   m_Name: Rock_002
   m_TagString: Untagged
@@ -1106,21 +1025,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &91258171
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64033453250328254, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 91258169}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300196, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &91258172
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1175,7 +1079,6 @@ GameObject:
   - component: {fileID: 106068906}
   - component: {fileID: 106068909}
   - component: {fileID: 106068908}
-  - component: {fileID: 106068907}
   m_Layer: 0
   m_Name: Linning_001
   m_TagString: Untagged
@@ -1197,21 +1100,6 @@ Transform:
   m_Father: {fileID: 1798865150}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &106068907
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64238029537160338, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 106068905}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300096, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &106068908
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1266,7 +1154,6 @@ GameObject:
   - component: {fileID: 112197232}
   - component: {fileID: 112197235}
   - component: {fileID: 112197234}
-  - component: {fileID: 112197233}
   m_Layer: 0
   m_Name: Rock_027
   m_TagString: Untagged
@@ -1288,21 +1175,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &112197233
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64595521056531974, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 112197231}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300146, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &112197234
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1404,7 +1276,8 @@ Prefab:
       propertyPath: m_Name
       value: Graveyard Fence (15)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &126636133 stripped
@@ -1698,7 +1571,6 @@ GameObject:
   - component: {fileID: 178510321}
   - component: {fileID: 178510324}
   - component: {fileID: 178510323}
-  - component: {fileID: 178510322}
   m_Layer: 0
   m_Name: Rock_022
   m_TagString: Untagged
@@ -1720,21 +1592,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &178510322
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64787704550115482, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 178510320}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300156, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &178510323
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1865,7 +1722,8 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &186351117 stripped
@@ -2122,7 +1980,6 @@ GameObject:
   - component: {fileID: 217499839}
   - component: {fileID: 217499842}
   - component: {fileID: 217499841}
-  - component: {fileID: 217499840}
   m_Layer: 0
   m_Name: Linning_015
   m_TagString: Untagged
@@ -2144,21 +2001,6 @@ Transform:
   m_Father: {fileID: 321965318}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &217499840
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64619877214191742, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 217499838}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300056, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &217499841
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2245,7 +2087,6 @@ GameObject:
   - component: {fileID: 238482108}
   - component: {fileID: 238482111}
   - component: {fileID: 238482110}
-  - component: {fileID: 238482109}
   m_Layer: 0
   m_Name: Rock_005
   m_TagString: Untagged
@@ -2267,21 +2108,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &238482109
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64437095939584336, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 238482107}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300190, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &238482110
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2388,7 +2214,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 246323403}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -599.8116, z: 0}
+  m_LocalPosition: {x: 0, y: -599.2485, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 791098668}
@@ -2506,7 +2332,6 @@ GameObject:
   - component: {fileID: 253103052}
   - component: {fileID: 253103055}
   - component: {fileID: 253103054}
-  - component: {fileID: 253103053}
   m_Layer: 0
   m_Name: Tower_Top_Eves_001
   m_TagString: Untagged
@@ -2528,21 +2353,6 @@ Transform:
   m_Father: {fileID: 275993489}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &253103053
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64603058291110410, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 253103051}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300034, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &253103054
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2662,7 +2472,6 @@ GameObject:
   - component: {fileID: 260998813}
   - component: {fileID: 260998816}
   - component: {fileID: 260998815}
-  - component: {fileID: 260998814}
   m_Layer: 0
   m_Name: Lantern_Candle_001
   m_TagString: Untagged
@@ -2684,21 +2493,6 @@ Transform:
   m_Father: {fileID: 1052821351}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &260998814
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64341072077744756, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 260998812}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300008, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &260998815
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2949,7 +2743,6 @@ GameObject:
   - component: {fileID: 273570685}
   - component: {fileID: 273570688}
   - component: {fileID: 273570687}
-  - component: {fileID: 273570686}
   m_Layer: 0
   m_Name: Rock_009
   m_TagString: Untagged
@@ -2971,21 +2764,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &273570686
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64607018985534222, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 273570684}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300182, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &273570687
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3140,7 +2918,6 @@ GameObject:
   - component: {fileID: 283094583}
   - component: {fileID: 283094586}
   - component: {fileID: 283094585}
-  - component: {fileID: 283094584}
   m_Layer: 0
   m_Name: Door_Handle
   m_TagString: Untagged
@@ -3162,21 +2939,6 @@ Transform:
   m_Father: {fileID: 2048017383}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &283094584
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64769888750500530, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 283094582}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300216, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &283094585
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3392,7 +3154,6 @@ GameObject:
   - component: {fileID: 290983805}
   - component: {fileID: 290983808}
   - component: {fileID: 290983807}
-  - component: {fileID: 290983806}
   m_Layer: 0
   m_Name: Wood_001
   m_TagString: Untagged
@@ -3414,21 +3175,6 @@ Transform:
   m_Father: {fileID: 1798865150}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &290983806
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64868935113506766, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 290983804}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300098, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &290983807
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3483,7 +3229,6 @@ GameObject:
   - component: {fileID: 291691625}
   - component: {fileID: 291691628}
   - component: {fileID: 291691627}
-  - component: {fileID: 291691626}
   m_Layer: 0
   m_Name: Tower_Top_Eves_005
   m_TagString: Untagged
@@ -3505,21 +3250,6 @@ Transform:
   m_Father: {fileID: 824207132}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &291691626
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64825950098763268, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 291691624}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300016, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &291691627
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3764,7 +3494,8 @@ Prefab:
       propertyPath: m_Name
       value: Graveyard Fence (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &301692014 stripped
@@ -3997,7 +3728,6 @@ GameObject:
   - component: {fileID: 324037800}
   - component: {fileID: 324037803}
   - component: {fileID: 324037802}
-  - component: {fileID: 324037801}
   m_Layer: 0
   m_Name: Roof_Interior
   m_TagString: Untagged
@@ -4019,21 +3749,6 @@ Transform:
   m_Father: {fileID: 1137221805}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &324037801
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64505138835848826, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 324037799}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300126, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &324037802
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4093,7 +3808,6 @@ GameObject:
   - component: {fileID: 345101315}
   - component: {fileID: 345101318}
   - component: {fileID: 345101317}
-  - component: {fileID: 345101316}
   m_Layer: 0
   m_Name: Rock_015
   m_TagString: Untagged
@@ -4115,21 +3829,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &345101316
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64690192476761594, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 345101314}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300170, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &345101317
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4216,7 +3915,8 @@ Prefab:
       propertyPath: m_Name
       value: Graveyard Fence (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &345350504 stripped
@@ -4298,7 +3998,6 @@ GameObject:
   - component: {fileID: 351243196}
   - component: {fileID: 351243199}
   - component: {fileID: 351243198}
-  - component: {fileID: 351243197}
   m_Layer: 0
   m_Name: Wood_011
   m_TagString: Untagged
@@ -4320,21 +4019,6 @@ Transform:
   m_Father: {fileID: 1188372058}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &351243197
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64022664699327770, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 351243195}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300074, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &351243198
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4453,7 +4137,8 @@ Prefab:
       propertyPath: m_Name
       value: Graveyard Fence (28)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &362804159 stripped
@@ -4540,7 +4225,6 @@ GameObject:
   - component: {fileID: 394624424}
   - component: {fileID: 394624427}
   - component: {fileID: 394624426}
-  - component: {fileID: 394624425}
   m_Layer: 0
   m_Name: Rock_019
   m_TagString: Untagged
@@ -4562,21 +4246,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &394624425
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64249165728897276, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 394624423}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300162, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &394624426
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4631,7 +4300,6 @@ GameObject:
   - component: {fileID: 398309811}
   - component: {fileID: 398309814}
   - component: {fileID: 398309813}
-  - component: {fileID: 398309812}
   m_Layer: 0
   m_Name: Tower_Top
   m_TagString: Untagged
@@ -4653,21 +4321,6 @@ Transform:
   m_Father: {fileID: 1017250800}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &398309812
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64595794874412974, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 398309810}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300048, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &398309813
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4858,7 +4511,8 @@ Prefab:
       propertyPath: m_Name
       value: Graveyard Fence (12)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &412815583 stripped
@@ -4877,7 +4531,6 @@ GameObject:
   - component: {fileID: 430625705}
   - component: {fileID: 430625708}
   - component: {fileID: 430625707}
-  - component: {fileID: 430625706}
   m_Layer: 0
   m_Name: Linning_011
   m_TagString: Untagged
@@ -4899,21 +4552,6 @@ Transform:
   m_Father: {fileID: 1188372058}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &430625706
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64142962296305914, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 430625704}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300072, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &430625707
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5256,7 +4894,6 @@ GameObject:
   - component: {fileID: 459011801}
   - component: {fileID: 459011804}
   - component: {fileID: 459011803}
-  - component: {fileID: 459011802}
   m_Layer: 0
   m_Name: Tower_Base_003
   m_TagString: Untagged
@@ -5278,21 +4915,6 @@ Transform:
   m_Father: {fileID: 568617856}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &459011802
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64954321657077774, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 459011800}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300030, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &459011803
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5391,7 +5013,8 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &465999027 stripped
@@ -5567,7 +5190,8 @@ Prefab:
       propertyPath: m_Name
       value: Graveyard Fence (19)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &479473298 stripped
@@ -5586,7 +5210,6 @@ GameObject:
   - component: {fileID: 485526570}
   - component: {fileID: 485526573}
   - component: {fileID: 485526572}
-  - component: {fileID: 485526571}
   m_Layer: 0
   m_Name: Wood_013
   m_TagString: Untagged
@@ -5608,21 +5231,6 @@ Transform:
   m_Father: {fileID: 771890531}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &485526571
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64147809052881850, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 485526569}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300066, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &485526572
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5742,7 +5350,6 @@ GameObject:
   - component: {fileID: 494371390}
   - component: {fileID: 494371393}
   - component: {fileID: 494371392}
-  - component: {fileID: 494371391}
   m_Layer: 0
   m_Name: Lanter_Pole
   m_TagString: Untagged
@@ -5764,21 +5371,6 @@ Transform:
   m_Father: {fileID: 624200963}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &494371391
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64140677723367288, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 494371389}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300012, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &494371392
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5833,7 +5425,6 @@ GameObject:
   - component: {fileID: 495014790}
   - component: {fileID: 495014793}
   - component: {fileID: 495014792}
-  - component: {fileID: 495014791}
   m_Layer: 0
   m_Name: Wood_002
   m_TagString: Untagged
@@ -5855,21 +5446,6 @@ Transform:
   m_Father: {fileID: 1228771672}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &495014791
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64058824452398168, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 495014789}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300112, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &495014792
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5956,7 +5532,8 @@ Prefab:
       propertyPath: m_Name
       value: Graveyard Fence (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &499337287 stripped
@@ -6088,7 +5665,6 @@ GameObject:
   - component: {fileID: 520094515}
   - component: {fileID: 520094518}
   - component: {fileID: 520094517}
-  - component: {fileID: 520094516}
   m_Layer: 0
   m_Name: Rock_024
   m_TagString: Untagged
@@ -6110,21 +5686,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &520094516
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64138164320944508, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 520094514}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300152, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &520094517
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6254,7 +5815,6 @@ GameObject:
   - component: {fileID: 525911731}
   - component: {fileID: 525911734}
   - component: {fileID: 525911733}
-  - component: {fileID: 525911732}
   m_Layer: 0
   m_Name: Linning
   m_TagString: Untagged
@@ -6276,21 +5836,6 @@ Transform:
   m_Father: {fileID: 180517316}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &525911732
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64178113831462416, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 525911730}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300118, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &525911733
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6436,7 +5981,8 @@ Prefab:
       propertyPath: m_Name
       value: Graveyard Fence (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &534357138 stripped
@@ -6455,7 +6001,6 @@ GameObject:
   - component: {fileID: 535661923}
   - component: {fileID: 535661926}
   - component: {fileID: 535661925}
-  - component: {fileID: 535661924}
   m_Layer: 0
   m_Name: Linning_005
   m_TagString: Untagged
@@ -6477,21 +6022,6 @@ Transform:
   m_Father: {fileID: 2037957586}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &535661924
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64665918649288896, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 535661922}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300094, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &535661925
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6656,7 +6186,8 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &559103233 stripped
@@ -6708,7 +6239,6 @@ GameObject:
   - component: {fileID: 571597456}
   - component: {fileID: 571597459}
   - component: {fileID: 571597458}
-  - component: {fileID: 571597457}
   m_Layer: 0
   m_Name: Accent_Lines_001
   m_TagString: Untagged
@@ -6730,21 +6260,6 @@ Transform:
   m_Father: {fileID: 1648608682}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &571597457
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64848562853131330, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 571597455}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300208, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &571597458
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6843,7 +6358,8 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &576295668 stripped
@@ -6862,7 +6378,6 @@ GameObject:
   - component: {fileID: 581747060}
   - component: {fileID: 581747063}
   - component: {fileID: 581747062}
-  - component: {fileID: 581747061}
   m_Layer: 0
   m_Name: Rock_013
   m_TagString: Untagged
@@ -6884,21 +6399,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &581747061
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64361623283649976, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 581747059}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300174, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &581747062
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -6963,7 +6463,6 @@ GameObject:
   - component: {fileID: 588584081}
   - component: {fileID: 588584084}
   - component: {fileID: 588584083}
-  - component: {fileID: 588584082}
   m_Layer: 0
   m_Name: Lantern_Base
   m_TagString: Untagged
@@ -6985,21 +6484,6 @@ Transform:
   m_Father: {fileID: 624200963}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &588584082
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64718699662414332, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 588584080}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300014, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &588584083
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7134,7 +6618,6 @@ GameObject:
   - component: {fileID: 611763160}
   - component: {fileID: 611763163}
   - component: {fileID: 611763162}
-  - component: {fileID: 611763161}
   m_Layer: 0
   m_Name: Wood_007
   m_TagString: Untagged
@@ -7156,21 +6639,6 @@ Transform:
   m_Father: {fileID: 355991051}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &611763161
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64179740162860746, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 611763159}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300090, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &611763162
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7352,7 +6820,6 @@ GameObject:
   - component: {fileID: 629791715}
   - component: {fileID: 629791718}
   - component: {fileID: 629791717}
-  - component: {fileID: 629791716}
   m_Layer: 0
   m_Name: Rock_012
   m_TagString: Untagged
@@ -7374,21 +6841,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &629791716
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64893143513218018, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 629791714}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300176, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &629791717
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7577,7 +7029,8 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &662747274 stripped
@@ -7601,7 +7054,6 @@ GameObject:
   - component: {fileID: 684063993}
   - component: {fileID: 684063996}
   - component: {fileID: 684063995}
-  - component: {fileID: 684063994}
   m_Layer: 0
   m_Name: Rock_016
   m_TagString: Untagged
@@ -7623,21 +7075,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &684063994
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64422619218069038, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 684063992}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300168, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &684063995
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7724,7 +7161,8 @@ Prefab:
       propertyPath: m_Name
       value: Graveyard Fence (27)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &689913094 stripped
@@ -7743,7 +7181,6 @@ GameObject:
   - component: {fileID: 697158459}
   - component: {fileID: 697158462}
   - component: {fileID: 697158461}
-  - component: {fileID: 697158460}
   m_Layer: 0
   m_Name: Tower_Base_005
   m_TagString: Untagged
@@ -7765,21 +7202,6 @@ Transform:
   m_Father: {fileID: 824207132}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &697158460
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64136620645979980, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 697158458}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300018, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &697158461
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7989,7 +7411,9 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 135345847116673988, guid: b7bb8f00cb040574e8b31c8f1c86ee4d, type: 2}
+    - {fileID: 135212747345501178, guid: b7bb8f00cb040574e8b31c8f1c86ee4d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: b7bb8f00cb040574e8b31c8f1c86ee4d, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &719702938
@@ -8035,7 +7459,8 @@ Prefab:
       propertyPath: m_Name
       value: Graveyard Fence (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &719702939 stripped
@@ -8672,7 +8097,8 @@ Prefab:
       propertyPath: m_Name
       value: Graveyard Fence (29)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &787050979 stripped
@@ -8809,8 +8235,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 791098664}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 318.5, y: 199, z: 0}
-  m_LocalScale: {x: 0.33177084, y: 0.33177084, z: 0.33177084}
+  m_LocalPosition: {x: 239.5, y: 149.5, z: 0}
+  m_LocalScale: {x: 0.24947914, y: 0.24947914, z: 0.24947914}
   m_Children:
   - {fileID: 246323404}
   m_Father: {fileID: 0}
@@ -8832,7 +8258,6 @@ GameObject:
   - component: {fileID: 792075769}
   - component: {fileID: 792075772}
   - component: {fileID: 792075771}
-  - component: {fileID: 792075770}
   m_Layer: 0
   m_Name: Linning_016
   m_TagString: Untagged
@@ -8854,21 +8279,6 @@ Transform:
   m_Father: {fileID: 1932541266}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &792075770
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64351397379610788, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 792075768}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300054, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &792075771
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -8928,7 +8338,6 @@ GameObject:
   - component: {fileID: 793811171}
   - component: {fileID: 793811174}
   - component: {fileID: 793811173}
-  - component: {fileID: 793811172}
   m_Layer: 0
   m_Name: Wood_010
   m_TagString: Untagged
@@ -8950,21 +8359,6 @@ Transform:
   m_Father: {fileID: 141742123}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &793811172
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64404763432383664, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 793811170}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300076, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &793811173
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9111,7 +8505,6 @@ GameObject:
   - component: {fileID: 797202951}
   - component: {fileID: 797202954}
   - component: {fileID: 797202953}
-  - component: {fileID: 797202952}
   m_Layer: 0
   m_Name: Tower_Top_Eves_000
   m_TagString: Untagged
@@ -9133,21 +8526,6 @@ Transform:
   m_Father: {fileID: 1017250800}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &797202952
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64552604869201100, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 797202950}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300046, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &797202953
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9230,7 +8608,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65795321116116764, guid: 597bdb0e65e3d454fa5f113d9ba2bc1e, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 597bdb0e65e3d454fa5f113d9ba2bc1e, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &805818819 stripped
@@ -9370,7 +8749,6 @@ GameObject:
   - component: {fileID: 849793841}
   - component: {fileID: 849793844}
   - component: {fileID: 849793843}
-  - component: {fileID: 849793842}
   m_Layer: 0
   m_Name: Tower_Top_004
   m_TagString: Untagged
@@ -9392,21 +8770,6 @@ Transform:
   m_Father: {fileID: 1201648456}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &849793842
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64073159086768916, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 849793840}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300024, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &849793843
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9461,7 +8824,6 @@ GameObject:
   - component: {fileID: 855199374}
   - component: {fileID: 855199377}
   - component: {fileID: 855199376}
-  - component: {fileID: 855199375}
   m_Layer: 0
   m_Name: Rock_028
   m_TagString: Untagged
@@ -9483,21 +8845,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &855199375
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64674471613101190, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 855199373}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300144, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &855199376
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9557,7 +8904,6 @@ GameObject:
   - component: {fileID: 859090191}
   - component: {fileID: 859090194}
   - component: {fileID: 859090193}
-  - component: {fileID: 859090192}
   m_Layer: 0
   m_Name: Linning_014
   m_TagString: Untagged
@@ -9579,21 +8925,6 @@ Transform:
   m_Father: {fileID: 155001071}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &859090192
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64177582051773008, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 859090190}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300062, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &859090193
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9844,7 +9175,8 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &898965919 stripped
@@ -9863,7 +9195,6 @@ GameObject:
   - component: {fileID: 902846624}
   - component: {fileID: 902846627}
   - component: {fileID: 902846626}
-  - component: {fileID: 902846625}
   m_Layer: 0
   m_Name: Tower_Top_Eves_002
   m_TagString: Untagged
@@ -9885,21 +9216,6 @@ Transform:
   m_Father: {fileID: 943044851}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &902846625
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64261301035361628, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 902846623}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300040, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &902846626
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9959,7 +9275,6 @@ GameObject:
   - component: {fileID: 908487884}
   - component: {fileID: 908487887}
   - component: {fileID: 908487886}
-  - component: {fileID: 908487885}
   m_Layer: 0
   m_Name: Tower_Top_Eves_004
   m_TagString: Untagged
@@ -9981,21 +9296,6 @@ Transform:
   m_Father: {fileID: 1201648456}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &908487885
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64101702151707526, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 908487883}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300022, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &908487886
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10094,7 +9394,6 @@ GameObject:
   - component: {fileID: 910637413}
   - component: {fileID: 910637416}
   - component: {fileID: 910637415}
-  - component: {fileID: 910637414}
   m_Layer: 0
   m_Name: Tower_Base
   m_TagString: Untagged
@@ -10116,21 +9415,6 @@ Transform:
   m_Father: {fileID: 1017250800}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &910637414
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64110601973591494, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 910637412}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300050, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &910637415
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10484,7 +9768,8 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &943474319 stripped
@@ -10540,7 +9825,6 @@ GameObject:
   - component: {fileID: 948018282}
   - component: {fileID: 948018285}
   - component: {fileID: 948018284}
-  - component: {fileID: 948018283}
   m_Layer: 0
   m_Name: Rock_031
   m_TagString: Untagged
@@ -10562,21 +9846,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &948018283
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64821796975597672, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 948018281}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300138, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &948018284
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10631,7 +9900,6 @@ GameObject:
   - component: {fileID: 948492887}
   - component: {fileID: 948492890}
   - component: {fileID: 948492889}
-  - component: {fileID: 948492888}
   m_Layer: 0
   m_Name: Linning_004
   m_TagString: Untagged
@@ -10653,21 +9921,6 @@ Transform:
   m_Father: {fileID: 1274926777}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &948492888
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64753723007146728, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 948492886}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300106, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &948492889
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10722,7 +9975,6 @@ GameObject:
   - component: {fileID: 952667049}
   - component: {fileID: 952667052}
   - component: {fileID: 952667051}
-  - component: {fileID: 952667050}
   m_Layer: 0
   m_Name: Linning_013
   m_TagString: Untagged
@@ -10744,21 +9996,6 @@ Transform:
   m_Father: {fileID: 771890531}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &952667050
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64835021769315912, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 952667048}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300064, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &952667051
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10960,7 +10197,8 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &981889214 stripped
@@ -10979,7 +10217,6 @@ GameObject:
   - component: {fileID: 982029136}
   - component: {fileID: 982029139}
   - component: {fileID: 982029138}
-  - component: {fileID: 982029137}
   m_Layer: 0
   m_Name: Tower_Base_002
   m_TagString: Untagged
@@ -11001,21 +10238,6 @@ Transform:
   m_Father: {fileID: 943044851}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &982029137
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64731779973829432, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 982029135}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300042, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &982029138
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11196,7 +10418,6 @@ GameObject:
   - component: {fileID: 990699616}
   - component: {fileID: 990699619}
   - component: {fileID: 990699618}
-  - component: {fileID: 990699617}
   m_Layer: 0
   m_Name: Wood_005
   m_TagString: Untagged
@@ -11218,21 +10439,6 @@ Transform:
   m_Father: {fileID: 2037957586}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &990699617
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64574941052139572, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 990699615}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300092, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &990699618
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11287,7 +10493,6 @@ GameObject:
   - component: {fileID: 996972965}
   - component: {fileID: 996972968}
   - component: {fileID: 996972967}
-  - component: {fileID: 996972966}
   m_Layer: 0
   m_Name: Rock_017
   m_TagString: Untagged
@@ -11309,21 +10514,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &996972966
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64700706697877792, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 996972964}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300166, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &996972967
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11383,7 +10573,6 @@ GameObject:
   - component: {fileID: 1006189940}
   - component: {fileID: 1006189943}
   - component: {fileID: 1006189942}
-  - component: {fileID: 1006189941}
   m_Layer: 0
   m_Name: Right_Door_Frame
   m_TagString: Untagged
@@ -11405,21 +10594,6 @@ Transform:
   m_Father: {fileID: 929968155}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1006189941
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64544202234595550, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1006189939}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300226, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1006189942
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11530,7 +10704,6 @@ GameObject:
   - component: {fileID: 1013638151}
   - component: {fileID: 1013638154}
   - component: {fileID: 1013638153}
-  - component: {fileID: 1013638152}
   m_Layer: 0
   m_Name: Rock_001
   m_TagString: Untagged
@@ -11552,21 +10725,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1013638152
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64960966843848262, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1013638150}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300198, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1013638153
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11754,7 +10912,8 @@ Prefab:
       propertyPath: m_Name
       value: Graveyard Fence (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1027563560 stripped
@@ -11773,7 +10932,6 @@ GameObject:
   - component: {fileID: 1031222926}
   - component: {fileID: 1031222929}
   - component: {fileID: 1031222928}
-  - component: {fileID: 1031222927}
   m_Layer: 0
   m_Name: Glass
   m_TagString: Untagged
@@ -11795,21 +10953,6 @@ Transform:
   m_Father: {fileID: 2048017383}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1031222927
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64352075032213106, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1031222925}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300218, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1031222928
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11864,7 +11007,6 @@ GameObject:
   - component: {fileID: 1034298376}
   - component: {fileID: 1034298379}
   - component: {fileID: 1034298378}
-  - component: {fileID: 1034298377}
   m_Layer: 0
   m_Name: Exterior_Walls
   m_TagString: Untagged
@@ -11886,21 +11028,6 @@ Transform:
   m_Father: {fileID: 929968155}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1034298377
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64124892415885708, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1034298375}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300232, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1034298378
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11959,7 +11086,6 @@ GameObject:
   - component: {fileID: 1046387814}
   - component: {fileID: 1046387817}
   - component: {fileID: 1046387816}
-  - component: {fileID: 1046387815}
   m_Layer: 0
   m_Name: Tree
   m_TagString: Untagged
@@ -11980,21 +11106,6 @@ Transform:
   m_Father: {fileID: 1556465393}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1046387815
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400002, guid: 858905319e3739a42a09afb42d6f47ec,
-    type: 3}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1046387813}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300002, guid: 858905319e3739a42a09afb42d6f47ec, type: 3}
 --- !u!23 &1046387816
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12255,7 +11366,6 @@ GameObject:
   - component: {fileID: 1053460189}
   - component: {fileID: 1053460192}
   - component: {fileID: 1053460191}
-  - component: {fileID: 1053460190}
   m_Layer: 0
   m_Name: Rock_032
   m_TagString: Untagged
@@ -12277,21 +11387,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1053460190
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64829836211838720, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1053460188}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300136, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1053460191
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12378,7 +11473,8 @@ Prefab:
       propertyPath: m_Name
       value: Graveyard Fence (16)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1055591953 stripped
@@ -12397,7 +11493,6 @@ GameObject:
   - component: {fileID: 1059203734}
   - component: {fileID: 1059203737}
   - component: {fileID: 1059203736}
-  - component: {fileID: 1059203735}
   m_Layer: 0
   m_Name: Rock_011
   m_TagString: Untagged
@@ -12419,21 +11514,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1059203735
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64675707678647856, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1059203733}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300178, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1059203736
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12532,7 +11612,8 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1071729942 stripped
@@ -12556,7 +11637,6 @@ GameObject:
   - component: {fileID: 1077715562}
   - component: {fileID: 1077715565}
   - component: {fileID: 1077715564}
-  - component: {fileID: 1077715563}
   m_Layer: 0
   m_Name: Roof_Shingles
   m_TagString: Untagged
@@ -12578,21 +11658,6 @@ Transform:
   m_Father: {fileID: 1137221805}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1077715563
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64586084473967452, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1077715561}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300130, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1077715564
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12647,7 +11712,6 @@ GameObject:
   - component: {fileID: 1077871328}
   - component: {fileID: 1077871331}
   - component: {fileID: 1077871330}
-  - component: {fileID: 1077871329}
   m_Layer: 0
   m_Name: Rock_021
   m_TagString: Untagged
@@ -12669,21 +11733,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1077871329
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64216864321580904, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1077871327}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300158, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1077871330
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12738,7 +11787,6 @@ GameObject:
   - component: {fileID: 1095087595}
   - component: {fileID: 1095087598}
   - component: {fileID: 1095087597}
-  - component: {fileID: 1095087596}
   m_Layer: 0
   m_Name: Rock_026
   m_TagString: Untagged
@@ -12760,21 +11808,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1095087596
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64730474877330228, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1095087594}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300148, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1095087597
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12829,7 +11862,6 @@ GameObject:
   - component: {fileID: 1097379203}
   - component: {fileID: 1097379206}
   - component: {fileID: 1097379205}
-  - component: {fileID: 1097379204}
   m_Layer: 0
   m_Name: Tower_Top_005
   m_TagString: Untagged
@@ -12851,21 +11883,6 @@ Transform:
   m_Father: {fileID: 824207132}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1097379204
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64506675530830496, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1097379202}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300020, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1097379205
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13129,7 +12146,9 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 135345847116673988, guid: b7bb8f00cb040574e8b31c8f1c86ee4d, type: 2}
+    - {fileID: 135212747345501178, guid: b7bb8f00cb040574e8b31c8f1c86ee4d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: b7bb8f00cb040574e8b31c8f1c86ee4d, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1121636171
@@ -13143,7 +12162,6 @@ GameObject:
   - component: {fileID: 1121636172}
   - component: {fileID: 1121636175}
   - component: {fileID: 1121636174}
-  - component: {fileID: 1121636173}
   m_Layer: 0
   m_Name: Tower_Top_Eves_003
   m_TagString: Untagged
@@ -13165,21 +12183,6 @@ Transform:
   m_Father: {fileID: 568617856}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1121636173
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64889779765997100, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1121636171}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300028, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1121636174
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13294,7 +12297,6 @@ GameObject:
   - component: {fileID: 1132768993}
   - component: {fileID: 1132768996}
   - component: {fileID: 1132768995}
-  - component: {fileID: 1132768994}
   m_Layer: 0
   m_Name: Linning_006
   m_TagString: Untagged
@@ -13316,21 +12318,6 @@ Transform:
   m_Father: {fileID: 299994056}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1132768994
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64658975949659334, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1132768992}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300102, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1132768995
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13479,7 +12466,6 @@ GameObject:
   - component: {fileID: 1142397865}
   - component: {fileID: 1142397868}
   - component: {fileID: 1142397867}
-  - component: {fileID: 1142397866}
   m_Layer: 0
   m_Name: Wood_016
   m_TagString: Untagged
@@ -13501,21 +12487,6 @@ Transform:
   m_Father: {fileID: 1932541266}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1142397866
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64551294367181290, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1142397864}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300052, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1142397867
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13570,7 +12541,6 @@ GameObject:
   - component: {fileID: 1148385713}
   - component: {fileID: 1148385716}
   - component: {fileID: 1148385715}
-  - component: {fileID: 1148385714}
   m_Layer: 0
   m_Name: Left_Shelf
   m_TagString: Untagged
@@ -13592,21 +12562,6 @@ Transform:
   m_Father: {fileID: 2134820}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1148385714
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64004956401000784, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1148385712}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300202, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1148385715
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13666,7 +12621,6 @@ GameObject:
   - component: {fileID: 1157696581}
   - component: {fileID: 1157696584}
   - component: {fileID: 1157696583}
-  - component: {fileID: 1157696582}
   m_Layer: 0
   m_Name: Lantern_Candle
   m_TagString: Untagged
@@ -13688,21 +12642,6 @@ Transform:
   m_Father: {fileID: 624200963}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1157696582
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64812728345998930, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1157696580}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300010, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1157696583
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13903,7 +12842,8 @@ Prefab:
       propertyPath: m_Name
       value: Graveyard Fence (14)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1174769976 stripped
@@ -13922,7 +12862,6 @@ GameObject:
   - component: {fileID: 1180806004}
   - component: {fileID: 1180806007}
   - component: {fileID: 1180806006}
-  - component: {fileID: 1180806005}
   m_Layer: 0
   m_Name: Tower_Top_003
   m_TagString: Untagged
@@ -13944,21 +12883,6 @@ Transform:
   m_Father: {fileID: 568617856}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1180806005
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64101091688287572, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1180806003}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300032, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1180806006
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14013,7 +12937,6 @@ GameObject:
   - component: {fileID: 1187521220}
   - component: {fileID: 1187521223}
   - component: {fileID: 1187521222}
-  - component: {fileID: 1187521221}
   m_Layer: 0
   m_Name: Linning_003
   m_TagString: Untagged
@@ -14035,21 +12958,6 @@ Transform:
   m_Father: {fileID: 946608679}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1187521221
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64423053358193886, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1187521219}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300108, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1187521222
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14136,7 +13044,6 @@ GameObject:
   - component: {fileID: 1193504545}
   - component: {fileID: 1193504548}
   - component: {fileID: 1193504547}
-  - component: {fileID: 1193504546}
   m_Layer: 0
   m_Name: Rock
   m_TagString: Untagged
@@ -14158,21 +13065,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1193504546
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64523625099516730, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1193504544}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300200, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1193504547
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14365,7 +13257,6 @@ GameObject:
   - component: {fileID: 1200258273}
   - component: {fileID: 1200258276}
   - component: {fileID: 1200258275}
-  - component: {fileID: 1200258274}
   m_Layer: 0
   m_Name: Linning_010
   m_TagString: Untagged
@@ -14387,21 +13278,6 @@ Transform:
   m_Father: {fileID: 141742123}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1200258274
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64976848288942288, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1200258272}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300078, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1200258275
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14456,7 +13332,6 @@ GameObject:
   - component: {fileID: 1200837568}
   - component: {fileID: 1200837571}
   - component: {fileID: 1200837570}
-  - component: {fileID: 1200837569}
   m_Layer: 0
   m_Name: Wood_008
   m_TagString: Untagged
@@ -14478,21 +13353,6 @@ Transform:
   m_Father: {fileID: 217652874}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1200837569
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64556464945160946, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1200837567}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300084, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1200837570
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14629,7 +13489,8 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1211968151 stripped
@@ -14712,7 +13573,8 @@ Prefab:
       propertyPath: m_Name
       value: Graveyard Fence (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1247644670 stripped
@@ -14731,7 +13593,6 @@ GameObject:
   - component: {fileID: 1270006557}
   - component: {fileID: 1270006560}
   - component: {fileID: 1270006559}
-  - component: {fileID: 1270006558}
   m_Layer: 0
   m_Name: Rock_033
   m_TagString: Untagged
@@ -14753,21 +13614,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1270006558
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64560023957349250, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1270006556}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300134, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1270006559
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14822,7 +13668,6 @@ GameObject:
   - component: {fileID: 1274111412}
   - component: {fileID: 1274111415}
   - component: {fileID: 1274111414}
-  - component: {fileID: 1274111413}
   m_Layer: 0
   m_Name: Right_Shelf
   m_TagString: Untagged
@@ -14844,21 +13689,6 @@ Transform:
   m_Father: {fileID: 2134820}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1274111413
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64461977997423898, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1274111411}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300204, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1274111414
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15001,7 +13831,9 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 135345847116673988, guid: b7bb8f00cb040574e8b31c8f1c86ee4d, type: 2}
+    - {fileID: 135212747345501178, guid: b7bb8f00cb040574e8b31c8f1c86ee4d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: b7bb8f00cb040574e8b31c8f1c86ee4d, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1292317446
@@ -15015,7 +13847,6 @@ GameObject:
   - component: {fileID: 1292317447}
   - component: {fileID: 1292317450}
   - component: {fileID: 1292317449}
-  - component: {fileID: 1292317448}
   m_Layer: 0
   m_Name: Linning_009
   m_TagString: Untagged
@@ -15037,21 +13868,6 @@ Transform:
   m_Father: {fileID: 1501440827}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1292317448
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64389766453214032, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1292317446}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300080, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1292317449
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15134,7 +13950,6 @@ GameObject:
   - component: {fileID: 1311376357}
   - component: {fileID: 1311376360}
   - component: {fileID: 1311376359}
-  - component: {fileID: 1311376358}
   m_Layer: 0
   m_Name: Wood
   m_TagString: Untagged
@@ -15156,21 +13971,6 @@ Transform:
   m_Father: {fileID: 180517316}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1311376358
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64334219700883328, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1311376356}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300116, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1311376359
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15225,7 +14025,6 @@ GameObject:
   - component: {fileID: 1314419229}
   - component: {fileID: 1314419232}
   - component: {fileID: 1314419231}
-  - component: {fileID: 1314419230}
   m_Layer: 0
   m_Name: Wood_012
   m_TagString: Untagged
@@ -15247,21 +14046,6 @@ Transform:
   m_Father: {fileID: 708340372}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1314419230
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64538118195960498, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1314419228}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300068, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1314419231
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15379,7 +14163,6 @@ GameObject:
   - component: {fileID: 1323596915}
   - component: {fileID: 1323596918}
   - component: {fileID: 1323596917}
-  - component: {fileID: 1323596916}
   m_Layer: 0
   m_Name: Linning_002
   m_TagString: Untagged
@@ -15401,21 +14184,6 @@ Transform:
   m_Father: {fileID: 1228771672}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1323596916
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64064306946081418, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1323596914}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300114, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1323596917
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15470,7 +14238,6 @@ GameObject:
   - component: {fileID: 1330027066}
   - component: {fileID: 1330027069}
   - component: {fileID: 1330027068}
-  - component: {fileID: 1330027067}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Untagged
@@ -15492,21 +14259,6 @@ Transform:
   m_Father: {fileID: 929968155}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1330027067
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64732386377419240, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1330027065}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300230, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1330027068
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15627,7 +14379,6 @@ GameObject:
   - component: {fileID: 1375647604}
   - component: {fileID: 1375647607}
   - component: {fileID: 1375647606}
-  - component: {fileID: 1375647605}
   m_Layer: 0
   m_Name: Wood_006
   m_TagString: Untagged
@@ -15649,21 +14400,6 @@ Transform:
   m_Father: {fileID: 299994056}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1375647605
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64592327763790118, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1375647603}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300100, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1375647606
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -15781,7 +14517,6 @@ GameObject:
   - component: {fileID: 1408096551}
   - component: {fileID: 1408096554}
   - component: {fileID: 1408096553}
-  - component: {fileID: 1408096552}
   m_Layer: 0
   m_Name: Rock_034
   m_TagString: Untagged
@@ -15803,21 +14538,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1408096552
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64257181096899060, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1408096550}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300132, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1408096553
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16654,7 +15374,6 @@ GameObject:
   - component: {fileID: 1420672964}
   - component: {fileID: 1420672967}
   - component: {fileID: 1420672966}
-  - component: {fileID: 1420672965}
   m_Layer: 0
   m_Name: Rock_010
   m_TagString: Untagged
@@ -16676,21 +15395,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1420672965
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64248217649365942, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1420672963}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300180, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1420672966
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16816,7 +15520,6 @@ GameObject:
   - component: {fileID: 1437286182}
   - component: {fileID: 1437286185}
   - component: {fileID: 1437286184}
-  - component: {fileID: 1437286183}
   m_Layer: 0
   m_Name: Rock_007
   m_TagString: Untagged
@@ -16838,21 +15541,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1437286183
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64066764743647996, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1437286181}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300186, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1437286184
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16935,7 +15623,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1445730666 stripped
@@ -16954,7 +15643,6 @@ GameObject:
   - component: {fileID: 1448160827}
   - component: {fileID: 1448160830}
   - component: {fileID: 1448160829}
-  - component: {fileID: 1448160828}
   m_Layer: 0
   m_Name: Linning_012
   m_TagString: Untagged
@@ -16976,21 +15664,6 @@ Transform:
   m_Father: {fileID: 708340372}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1448160828
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64301809651154532, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1448160826}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300070, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1448160829
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17050,7 +15723,6 @@ GameObject:
   - component: {fileID: 1492111147}
   - component: {fileID: 1492111150}
   - component: {fileID: 1492111149}
-  - component: {fileID: 1492111148}
   m_Layer: 0
   m_Name: Rock_029
   m_TagString: Untagged
@@ -17072,21 +15744,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1492111148
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64700191471724230, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1492111146}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300142, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1492111149
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17582,7 +16239,6 @@ GameObject:
   - component: {fileID: 1597603962}
   - component: {fileID: 1597603965}
   - component: {fileID: 1597603964}
-  - component: {fileID: 1597603963}
   m_Layer: 0
   m_Name: Rock_020
   m_TagString: Untagged
@@ -17604,21 +16260,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1597603963
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64398988289468912, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1597603961}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300160, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1597603964
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17740,7 +16381,6 @@ GameObject:
   - component: {fileID: 1637392520}
   - component: {fileID: 1637392523}
   - component: {fileID: 1637392522}
-  - component: {fileID: 1637392521}
   m_Layer: 0
   m_Name: Wood_014
   m_TagString: Untagged
@@ -17762,21 +16402,6 @@ Transform:
   m_Father: {fileID: 155001071}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1637392521
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64285361451145080, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1637392519}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300060, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1637392522
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17865,7 +16490,6 @@ GameObject:
   - component: {fileID: 1649213929}
   - component: {fileID: 1649213932}
   - component: {fileID: 1649213931}
-  - component: {fileID: 1649213930}
   m_Layer: 0
   m_Name: Left_Door_Frame
   m_TagString: Untagged
@@ -17887,21 +16511,6 @@ Transform:
   m_Father: {fileID: 929968155}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1649213930
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64781330775681140, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1649213928}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300228, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1649213931
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -17956,7 +16565,6 @@ GameObject:
   - component: {fileID: 1652508417}
   - component: {fileID: 1652508420}
   - component: {fileID: 1652508419}
-  - component: {fileID: 1652508418}
   m_Layer: 0
   m_Name: Roof_Eves
   m_TagString: Untagged
@@ -17978,21 +16586,6 @@ Transform:
   m_Father: {fileID: 1137221805}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1652508418
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64381880513814496, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1652508416}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300128, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1652508419
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18047,9 +16640,6 @@ GameObject:
   - component: {fileID: 1663106785}
   - component: {fileID: 1663106784}
   - component: {fileID: 1663106783}
-  - component: {fileID: 1663106782}
-  - component: {fileID: 1663106781}
-  - component: {fileID: 1663106780}
   m_Layer: 0
   m_Name: Coffin_Base
   m_TagString: Untagged
@@ -18057,53 +16647,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1663106780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114507317013419576, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1663106779}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ed629c66b440754facf6c291c667dbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerPrefab: {fileID: 1663106779}
-  targetPrefab: {fileID: 1754977996}
-  speed: 0
-  xRot: 0
-  yRot: 0
-  zRot: 0
-  rot: {x: 0, y: 0, z: 0}
---- !u!65 &1663106781
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 65388606615157982, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1663106779}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4.227635, y: 1.9887497, z: 1.0101563}
-  m_Center: {x: 0, y: 4.006771, z: 0.50507814}
---- !u!64 &1663106782
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64708283741456080, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1663106779}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300120, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1663106783
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18216,7 +16759,8 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1676353570 stripped
@@ -18366,7 +16910,6 @@ GameObject:
   - component: {fileID: 1692061835}
   - component: {fileID: 1692061838}
   - component: {fileID: 1692061837}
-  - component: {fileID: 1692061836}
   m_Layer: 0
   m_Name: Wood_004
   m_TagString: Untagged
@@ -18388,21 +16931,6 @@ Transform:
   m_Father: {fileID: 1274926777}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1692061836
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64926843838079898, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1692061834}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300104, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1692061837
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18520,7 +17048,6 @@ GameObject:
   - component: {fileID: 1713629965}
   - component: {fileID: 1713629968}
   - component: {fileID: 1713629967}
-  - component: {fileID: 1713629966}
   m_Layer: 0
   m_Name: Door_Handle_001
   m_TagString: Untagged
@@ -18542,21 +17069,6 @@ Transform:
   m_Father: {fileID: 1648608682}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1713629966
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64035021725834732, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1713629964}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300214, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1713629967
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18611,7 +17123,6 @@ GameObject:
   - component: {fileID: 1713756732}
   - component: {fileID: 1713756735}
   - component: {fileID: 1713756734}
-  - component: {fileID: 1713756733}
   m_Layer: 0
   m_Name: Rock_023
   m_TagString: Untagged
@@ -18633,21 +17144,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1713756733
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64111581437349652, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1713756731}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300154, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1713756734
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18702,7 +17198,6 @@ GameObject:
   - component: {fileID: 1715155116}
   - component: {fileID: 1715155119}
   - component: {fileID: 1715155118}
-  - component: {fileID: 1715155117}
   m_Layer: 0
   m_Name: Wood_009
   m_TagString: Untagged
@@ -18724,21 +17219,6 @@ Transform:
   m_Father: {fileID: 1501440827}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1715155117
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64834579297133042, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1715155115}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300082, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1715155118
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18793,7 +17273,6 @@ GameObject:
   - component: {fileID: 1715628520}
   - component: {fileID: 1715628523}
   - component: {fileID: 1715628522}
-  - component: {fileID: 1715628521}
   m_Layer: 0
   m_Name: Cross
   m_TagString: Untagged
@@ -18815,21 +17294,6 @@ Transform:
   m_Father: {fileID: 1137221805}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1715628521
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64058624467448216, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1715628519}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300124, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1715628522
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18966,7 +17430,6 @@ GameObject:
   - component: {fileID: 1735767160}
   - component: {fileID: 1735767163}
   - component: {fileID: 1735767162}
-  - component: {fileID: 1735767161}
   m_Layer: 0
   m_Name: Rock_025
   m_TagString: Untagged
@@ -18988,21 +17451,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1735767161
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64716938249381308, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1735767159}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300150, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1735767162
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19057,7 +17505,6 @@ GameObject:
   - component: {fileID: 1742495320}
   - component: {fileID: 1742495323}
   - component: {fileID: 1742495322}
-  - component: {fileID: 1742495321}
   m_Layer: 0
   m_Name: Rock_003
   m_TagString: Untagged
@@ -19079,21 +17526,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1742495321
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64755047170101546, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1742495319}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300194, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1742495322
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19255,7 +17687,8 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1750534243 stripped
@@ -19344,9 +17777,6 @@ GameObject:
   - component: {fileID: 1754977997}
   - component: {fileID: 1754978002}
   - component: {fileID: 1754978001}
-  - component: {fileID: 1754978000}
-  - component: {fileID: 1754977999}
-  - component: {fileID: 1754977998}
   m_Layer: 0
   m_Name: Coffin_Top
   m_TagString: Untagged
@@ -19368,53 +17798,6 @@ Transform:
   m_Father: {fileID: 1122500329}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1754977998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 114924923795858906, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1754977996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ed629c66b440754facf6c291c667dbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerPrefab: {fileID: 1754977996}
-  targetPrefab: {fileID: 1663106779}
-  speed: 0
-  xRot: 0
-  yRot: 0
-  zRot: 0
-  rot: {x: 0, y: 0, z: 0}
---- !u!65 &1754977999
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 65851801941849108, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1754977996}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4.218401, y: 1.966444, z: 0.24183208}
-  m_Center: {x: 0, y: 4.006771, z: 1.1310723}
---- !u!64 &1754978000
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64164360241283826, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1754977996}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300122, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1754978001
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19469,7 +17852,6 @@ GameObject:
   - component: {fileID: 1759721387}
   - component: {fileID: 1759721390}
   - component: {fileID: 1759721389}
-  - component: {fileID: 1759721388}
   m_Layer: 0
   m_Name: Back_Shelf
   m_TagString: Untagged
@@ -19491,21 +17873,6 @@ Transform:
   m_Father: {fileID: 2134820}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1759721388
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64499841328483362, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1759721386}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300206, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1759721389
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19667,7 +18034,8 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1784784762 stripped
@@ -19868,7 +18236,6 @@ GameObject:
   - component: {fileID: 1803687446}
   - component: {fileID: 1803687449}
   - component: {fileID: 1803687448}
-  - component: {fileID: 1803687447}
   m_Layer: 0
   m_Name: Rock_004
   m_TagString: Untagged
@@ -19890,21 +18257,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1803687447
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64731462595032666, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1803687445}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300192, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1803687448
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -19964,7 +18316,6 @@ GameObject:
   - component: {fileID: 1816248821}
   - component: {fileID: 1816248824}
   - component: {fileID: 1816248823}
-  - component: {fileID: 1816248822}
   m_Layer: 0
   m_Name: Rock_006
   m_TagString: Untagged
@@ -19986,21 +18337,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1816248822
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64905840520239506, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1816248820}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300188, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1816248823
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20055,7 +18391,6 @@ GameObject:
   - component: {fileID: 1825398538}
   - component: {fileID: 1825398541}
   - component: {fileID: 1825398540}
-  - component: {fileID: 1825398539}
   m_Layer: 0
   m_Name: Base_Door_Shape
   m_TagString: Untagged
@@ -20077,21 +18412,6 @@ Transform:
   m_Father: {fileID: 2048017383}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1825398539
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64747040232262818, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1825398537}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300220, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1825398540
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20318,7 +18638,6 @@ GameObject:
   - component: {fileID: 1847575346}
   - component: {fileID: 1847575349}
   - component: {fileID: 1847575348}
-  - component: {fileID: 1847575347}
   m_Layer: 0
   m_Name: Tree_001
   m_TagString: Untagged
@@ -20339,21 +18658,6 @@ Transform:
   m_Father: {fileID: 1556465393}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1847575347
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6400004, guid: 858905319e3739a42a09afb42d6f47ec,
-    type: 3}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1847575345}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: 858905319e3739a42a09afb42d6f47ec, type: 3}
 --- !u!23 &1847575348
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20558,7 +18862,9 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 135345847116673988, guid: b7bb8f00cb040574e8b31c8f1c86ee4d, type: 2}
+    - {fileID: 135212747345501178, guid: b7bb8f00cb040574e8b31c8f1c86ee4d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: b7bb8f00cb040574e8b31c8f1c86ee4d, type: 2}
   m_IsPrefabParent: 0
 --- !u!1001 &1922924762
@@ -20616,7 +18922,8 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.0000005
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65725591129175892, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0a4ed25b0ab2fe3448a0081be5b750fd, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1922924763 stripped
@@ -20788,7 +19095,6 @@ GameObject:
   - component: {fileID: 1950668614}
   - component: {fileID: 1950668617}
   - component: {fileID: 1950668616}
-  - component: {fileID: 1950668615}
   m_Layer: 0
   m_Name: Wood_015
   m_TagString: Untagged
@@ -20810,21 +19116,6 @@ Transform:
   m_Father: {fileID: 321965318}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1950668615
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64088118593521354, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1950668613}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300058, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1950668616
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20879,7 +19170,6 @@ GameObject:
   - component: {fileID: 1952596487}
   - component: {fileID: 1952596490}
   - component: {fileID: 1952596489}
-  - component: {fileID: 1952596488}
   m_Layer: 0
   m_Name: Lantern_Base_001
   m_TagString: Untagged
@@ -20901,21 +19191,6 @@ Transform:
   m_Father: {fileID: 1052821351}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1952596488
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64533968430364602, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1952596486}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300004, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1952596489
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21029,7 +19304,6 @@ GameObject:
   - component: {fileID: 1956967006}
   - component: {fileID: 1956967009}
   - component: {fileID: 1956967008}
-  - component: {fileID: 1956967007}
   m_Layer: 0
   m_Name: Wood_003
   m_TagString: Untagged
@@ -21051,21 +19325,6 @@ Transform:
   m_Father: {fileID: 946608679}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1956967007
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64704755812396756, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1956967005}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300110, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1956967008
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21152,7 +19411,8 @@ Prefab:
       propertyPath: m_Name
       value: Graveyard Fence Gate (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 65795321116116764, guid: 597bdb0e65e3d454fa5f113d9ba2bc1e, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 597bdb0e65e3d454fa5f113d9ba2bc1e, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &1962217726 stripped
@@ -21171,7 +19431,6 @@ GameObject:
   - component: {fileID: 1966410310}
   - component: {fileID: 1966410313}
   - component: {fileID: 1966410312}
-  - component: {fileID: 1966410311}
   m_Layer: 0
   m_Name: Tower_Base_004
   m_TagString: Untagged
@@ -21193,21 +19452,6 @@ Transform:
   m_Father: {fileID: 1201648456}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1966410311
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64922945383064210, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1966410309}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300026, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &1966410312
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21341,7 +19585,6 @@ GameObject:
   - component: {fileID: 2014481807}
   - component: {fileID: 2014481810}
   - component: {fileID: 2014481809}
-  - component: {fileID: 2014481808}
   m_Layer: 0
   m_Name: Linning_008
   m_TagString: Untagged
@@ -21363,21 +19606,6 @@ Transform:
   m_Father: {fileID: 217652874}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &2014481808
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64171682720510812, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2014481806}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300086, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &2014481809
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21437,7 +19665,6 @@ GameObject:
   - component: {fileID: 2020136594}
   - component: {fileID: 2020136597}
   - component: {fileID: 2020136596}
-  - component: {fileID: 2020136595}
   m_Layer: 0
   m_Name: Lanter_Pole_002
   m_TagString: Untagged
@@ -21459,21 +19686,6 @@ Transform:
   m_Father: {fileID: 1052821351}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &2020136595
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64107184719337642, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2020136593}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300006, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &2020136596
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21666,7 +19878,6 @@ GameObject:
   - component: {fileID: 2040885838}
   - component: {fileID: 2040885841}
   - component: {fileID: 2040885840}
-  - component: {fileID: 2040885839}
   m_Layer: 0
   m_Name: Linning_007
   m_TagString: Untagged
@@ -21688,21 +19899,6 @@ Transform:
   m_Father: {fileID: 355991051}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &2040885839
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64203942657615372, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2040885837}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300088, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &2040885840
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -21913,7 +20109,6 @@ GameObject:
   - component: {fileID: 2069393412}
   - component: {fileID: 2069393415}
   - component: {fileID: 2069393414}
-  - component: {fileID: 2069393413}
   m_Layer: 0
   m_Name: Interior_Walls
   m_TagString: Untagged
@@ -21935,21 +20130,6 @@ Transform:
   m_Father: {fileID: 929968155}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &2069393413
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64392480319525160, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2069393411}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300224, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &2069393414
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22004,7 +20184,6 @@ GameObject:
   - component: {fileID: 2071188573}
   - component: {fileID: 2071188576}
   - component: {fileID: 2071188575}
-  - component: {fileID: 2071188574}
   m_Layer: 0
   m_Name: Rock_008
   m_TagString: Untagged
@@ -22026,21 +20205,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &2071188574
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64611757407847446, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2071188572}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300184, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &2071188575
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22095,7 +20259,6 @@ GameObject:
   - component: {fileID: 2071494436}
   - component: {fileID: 2071494439}
   - component: {fileID: 2071494438}
-  - component: {fileID: 2071494437}
   m_Layer: 0
   m_Name: Tower_Top_001
   m_TagString: Untagged
@@ -22117,21 +20280,6 @@ Transform:
   m_Father: {fileID: 275993489}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &2071494437
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64207430049380116, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2071494435}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300036, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &2071494438
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22350,7 +20498,6 @@ GameObject:
   - component: {fileID: 2110965461}
   - component: {fileID: 2110965464}
   - component: {fileID: 2110965463}
-  - component: {fileID: 2110965462}
   m_Layer: 0
   m_Name: Rock_014
   m_TagString: Untagged
@@ -22372,21 +20519,6 @@ Transform:
   m_Father: {fileID: 1116254070}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &2110965462
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64153648016646178, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2110965460}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300172, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &2110965463
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22441,7 +20573,6 @@ GameObject:
   - component: {fileID: 2116110182}
   - component: {fileID: 2116110185}
   - component: {fileID: 2116110184}
-  - component: {fileID: 2116110183}
   m_Layer: 0
   m_Name: Tower_Top_002
   m_TagString: Untagged
@@ -22463,21 +20594,6 @@ Transform:
   m_Father: {fileID: 943044851}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &2116110183
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64904429391647030, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2116110181}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300044, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &2116110184
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -22532,7 +20648,6 @@ GameObject:
   - component: {fileID: 2119549440}
   - component: {fileID: 2119549443}
   - component: {fileID: 2119549442}
-  - component: {fileID: 2119549441}
   m_Layer: 0
   m_Name: Accent_Lines
   m_TagString: Untagged
@@ -22554,21 +20669,6 @@ Transform:
   m_Father: {fileID: 2048017383}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &2119549441
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 64092614402242994, guid: 21610608f4a67084f83d444568c856fb,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2119549439}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300222, guid: 18df3dae9a186c94da0c9ef4d7d28127, type: 3}
 --- !u!23 &2119549442
 MeshRenderer:
   m_ObjectHideFlags: 0
