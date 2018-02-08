@@ -68,7 +68,7 @@ public class OnTriggerRotation : MonoBehaviour
     {
         source.clip = GetComponent<OnTriggerRotation>().clip_01;
         source.Play();
-        StartCoroutine("AudioDelay");
+        
     }
 
     public void PlayAudio_02()
@@ -81,7 +81,8 @@ public class OnTriggerRotation : MonoBehaviour
     {
         targetPrefab.transform.Rotate(xRot, yRot, zRot);
         SecondaryTargetPrefab.transform.Rotate(xRot, yRot, zRot);
-        PlayAudio_01();
+        PlayAudio_02();
+        spector.AlertPosition = transform.position; 
     }
 
     public void RotateBlock_02()
