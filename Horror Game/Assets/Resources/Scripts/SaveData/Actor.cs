@@ -202,7 +202,9 @@ public class Actor : MonoBehaviour
             }
             else
             {
-                player.GetComponent<Transform>().position = data.playerPos;
+                //player.GetComponent<Transform>().position = data.playerPos;
+                OnTriggerTeleport teleport = FindObjectOfType<OnTriggerTeleport>();
+                teleport.Teleport();
             }
         }
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Mansion"))
