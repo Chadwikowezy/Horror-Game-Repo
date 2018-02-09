@@ -188,31 +188,34 @@ public class Spector : MonoBehaviour
     }
     IEnumerator chasing()
     {
-        _audioManager.SpectorBeginSound(1);
-        _myAgent.speed = runSpeed;
-
-        while (_currentState == MonsterStates.Chasing)
+        if (insanityManager.CurrentInsanity < insanityManager.maxInsanity)
         {
-            Ray ray = new Ray(head.transform.position, _player.transform.position - head.transform.position);
-            RaycastHit hit;
+            _audioManager.SpectorBeginSound(1);
+            _myAgent.speed = runSpeed;
 
-            if (Physics.Raycast(ray, out hit, detectionDistance))
+            while (_currentState == MonsterStates.Chasing)
             {
-                if (hit.transform.gameObject.CompareTag(_playerTag))
-                {
-                    _myAgent.SetDestination(_player.transform.position);
+                Ray ray = new Ray(head.transform.position, _player.transform.position - head.transform.position);
+                RaycastHit hit;
 
-                    if ((transform.position - _player.transform.position).magnitude < attackDistance)
-                        CurrentState = MonsterStates.Attacking;
-                }
-                else
+                if (Physics.Raycast(ray, out hit, detectionDistance))
                 {
-                    _alertPosition = _player.transform.position;
-                    CurrentState = MonsterStates.Alerted;
+                    if (hit.transform.gameObject.CompareTag(_playerTag))
+                    {
+                        _myAgent.SetDestination(_player.transform.position);
+
+                        if ((transform.position - _player.transform.position).magnitude < attackDistance)
+                            CurrentState = MonsterStates.Attacking;
+                    }
+                    else
+                    {
+                        _alertPosition = _player.transform.position;
+                        CurrentState = MonsterStates.Alerted;
+                    }
                 }
+
+                yield return _frameWait;
             }
-
-            yield return _frameWait;
         }
     }
     IEnumerator Attacking()
