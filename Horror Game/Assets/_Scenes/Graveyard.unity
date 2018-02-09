@@ -15924,6 +15924,7 @@ GameObject:
   m_Component:
   - component: {fileID: 877778309}
   - component: {fileID: 877778310}
+  - component: {fileID: 877778311}
   m_Layer: 5
   m_Name: InsanityManager
   m_TagString: Untagged
@@ -15979,6 +15980,18 @@ MonoBehaviour:
   justCollected: 0
   insanityBreakPlay: 1
   unityAds: {fileID: 0}
+--- !u!114 &877778311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 877778308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 394faf6f9cab4ae4ebe872a43da11559, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameId: 1699021
 --- !u!1001 &891087494
 Prefab:
   m_ObjectHideFlags: 0
