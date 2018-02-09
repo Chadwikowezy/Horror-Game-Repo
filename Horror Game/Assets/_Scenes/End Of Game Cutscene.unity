@@ -8494,6 +8494,21 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -5.66
       objectReference: {fileID: 0}
+    - target: {fileID: 198584375405575020, guid: 5b9d20e8e0e468d41befee63b4fd2ba6,
+        type: 2}
+      propertyPath: randomSeed
+      value: -193653228
+      objectReference: {fileID: 0}
+    - target: {fileID: 198584375405575020, guid: 5b9d20e8e0e468d41befee63b4fd2ba6,
+        type: 2}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 198584375405575020, guid: 5b9d20e8e0e468d41befee63b4fd2ba6,
+        type: 2}
+      propertyPath: InitialModule.startColor.maxColor.a
+      value: 0.11764706
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 195838769332955566, guid: 5b9d20e8e0e468d41befee63b4fd2ba6, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 5b9d20e8e0e468d41befee63b4fd2ba6, type: 2}
@@ -8811,6 +8826,10 @@ Prefab:
         type: 2}
       propertyPath: ShapeModule.m_Scale.z
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1501288747043496, guid: 53077713291ad174595dcc13b0cfee8e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 53077713291ad174595dcc13b0cfee8e, type: 2}

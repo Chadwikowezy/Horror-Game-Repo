@@ -23,6 +23,7 @@ SubShader
         ZWrite Off
         Blend SrcAlpha OneMinusSrcAlpha
         ColorMask RGB
+
         Material 
 		{
             Diffuse [_Color]
