@@ -180,6 +180,13 @@ public class StatuePuzzleManager : MonoBehaviour
     #endregion
 
     #region placestatues button event call
+    void HideAlpha(Image img)
+    {
+        Color c = img.color;
+        c.a = 0;
+        img.color = c;
+        Debug.Log(c.a);
+    }
     public void PlaceStatues()
     {
         if (toolManager.statuesCollected == 3 && toolManager.correctStatueSequence == true)
@@ -192,7 +199,8 @@ public class StatuePuzzleManager : MonoBehaviour
             }
             foreach (Image toolUI in toolUISlots)
             {
-                toolUI.sprite = transparentEmpty;
+                HideAlpha(toolUI);
+                //toolUI.sprite = transparentEmpty;
             }
             sectionManager.masionPuzzle_F1_01 = true;
 
@@ -221,7 +229,8 @@ public class StatuePuzzleManager : MonoBehaviour
                 statue.gameObject.SetActive(true);
                 foreach (Image toolUI in toolUISlots)
                 {
-                    toolUI.sprite = transparentEmpty;
+                    HideAlpha(toolUI);
+                    //toolUI.sprite = transparentEmpty;
                 }
                 placeStatuesImg.SetActive(false);
                 toolManager.statuesCollected = 0;
