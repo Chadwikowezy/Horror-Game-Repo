@@ -14,6 +14,8 @@ public class SpectorToCrypt : MonoBehaviour
 	
 	public void TeleportSpector()
     {
+        spector = FindObjectOfType<Spector>();
+
         spector.GetComponent<NavMeshAgent>().Warp(transform.position);
     }
 }

@@ -16,6 +16,10 @@ public class OnTriggerTeleport : MonoBehaviour
 
     public AudioSource phoneDrop;
 
+    public GameObject PhoneObj;
+    public List<GameObject> phoneUI = new List<GameObject>();
+    public List<GameObject> newUIElements = new List<GameObject>();
+
    [SerializeField]
     private bool activated = false;
 
@@ -38,12 +42,15 @@ public class OnTriggerTeleport : MonoBehaviour
     #region Functions
     public void Start()
     {
-        targetPrefab = GameObject.FindObjectOfType<PlayerMotor>().gameObject;
+        if(targetPrefab == null)
+        {
+            targetPrefab = GameObject.FindObjectOfType<PlayerMotor>().gameObject;
+        }
         sectionManager = FindObjectOfType<SectionManager>();
         gameController = FindObjectOfType<GameController>();
         spectorToCrypt = FindObjectOfType<SpectorToCrypt>();
     }
-    private void Teleport()
+    public void Teleport()
     {
         AudioSource source = GetComponent<AudioSource>();
         targetPrefab.transform.position = destination.transform.position;
@@ -53,10 +60,22 @@ public class OnTriggerTeleport : MonoBehaviour
         Ambience_02.SetActive(true);
         source.Play();
 
-        sectionManager.mausoleumPuzzle = true;
-        gameController.Save();
+        for (int i = 0; i < 2; i++)
+        {
+            phoneUI[i].SetActive(false);
+            newUIElements[i].SetActive(true);
+        }
+        PhoneObj.SetActive(false);
+        spectorToCrypt = FindObjectOfType<SpectorToCrypt>();
         spectorToCrypt.TeleportSpector();
     }
+
+    public void AddSaveInPlay()
+    {
+        sectionManager.mausoleumPuzzle = true;
+        gameController.Save();
+    }
+
     #endregion
 
     #region Triggers
@@ -68,6 +87,7 @@ public class OnTriggerTeleport : MonoBehaviour
             if (activated == false)
             {
                 Teleport();
+                AddSaveInPlay();
                 activated = true;
             }
 
