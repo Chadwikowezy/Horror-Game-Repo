@@ -47,6 +47,13 @@ public class ToolCollect : MonoBehaviour
     }
     #endregion
 
+    void EnableAlpha(Image img)
+    {
+        Color c = img.color;
+        c.a = 1;
+        img.color = c;
+    }
+
     #region Assign Toolbar image sprites
     public void AssignToolSprite(Tools tool)
     {
@@ -56,16 +63,19 @@ public class ToolCollect : MonoBehaviour
         {
             if(slotOneFilled == false)
             {
+                EnableAlpha(toolManager.toolBar01);
                 toolManager.toolBar01.sprite = abstractArt_01;
                 slotOneFilled = true;
             }
             else if(slotOneFilled == true && slotTwoFilled == false)
             {
+                EnableAlpha(toolManager.toolBar02);
                 toolManager.toolBar02.sprite = abstractArt_01;
                 slotTwoFilled = true;
             }
             else if(slotOneFilled == true && slotTwoFilled == true && slotThreeFilled == false)
             {
+                EnableAlpha(toolManager.toolBar03);
                 toolManager.toolBar03.sprite = abstractArt_01;
                 slotThreeFilled = true;
             }
@@ -74,16 +84,19 @@ public class ToolCollect : MonoBehaviour
         {
             if (slotOneFilled == false)
             {
+                EnableAlpha(toolManager.toolBar01);
                 toolManager.toolBar01.sprite = abstractArt_02;
                 slotOneFilled = true;
             }
             else if (slotOneFilled == true && slotTwoFilled == false)
             {
+                EnableAlpha(toolManager.toolBar02);
                 toolManager.toolBar02.sprite = abstractArt_02;
                 slotTwoFilled = true;
             }
             else if (slotOneFilled == true && slotTwoFilled == true && slotThreeFilled == false)
             {
+                EnableAlpha(toolManager.toolBar03);
                 toolManager.toolBar03.sprite = abstractArt_02;
                 slotThreeFilled = true;
             }
@@ -92,16 +105,19 @@ public class ToolCollect : MonoBehaviour
         {
             if (slotOneFilled == false)
             {
+                EnableAlpha(toolManager.toolBar01);
                 toolManager.toolBar01.sprite = abstractArt_03;
                 slotOneFilled = true;
             }
             else if (slotOneFilled == true && slotTwoFilled == false)
             {
+                EnableAlpha(toolManager.toolBar02);
                 toolManager.toolBar02.sprite = abstractArt_03;
                 slotTwoFilled = true;
             }
             else if (slotOneFilled == true && slotTwoFilled == true && slotThreeFilled == false)
             {
+                EnableAlpha(toolManager.toolBar03);
                 toolManager.toolBar03.sprite = abstractArt_03;
                 slotThreeFilled = true;
             }
@@ -110,16 +126,19 @@ public class ToolCollect : MonoBehaviour
         {
             if (slotOneFilled == false)
             {
+                EnableAlpha(toolManager.toolBar01);
                 toolManager.toolBar01.sprite = abstractArt_04;
                 slotOneFilled = true;
             }
             else if (slotOneFilled == true && slotTwoFilled == false)
             {
+                EnableAlpha(toolManager.toolBar02);
                 toolManager.toolBar02.sprite = abstractArt_04;
                 slotTwoFilled = true;
             }
             else if (slotOneFilled == true && slotTwoFilled == true && slotThreeFilled == false)
             {
+                EnableAlpha(toolManager.toolBar03);
                 toolManager.toolBar03.sprite = abstractArt_04;
                 slotThreeFilled = true;
             }
@@ -128,16 +147,19 @@ public class ToolCollect : MonoBehaviour
         {
             if (slotOneFilled == false)
             {
+                EnableAlpha(toolManager.toolBar01);
                 toolManager.toolBar01.sprite = abstractArt_05;
                 slotOneFilled = true;
             }
             else if (slotOneFilled == true && slotTwoFilled == false)
             {
+                EnableAlpha(toolManager.toolBar02);
                 toolManager.toolBar02.sprite = abstractArt_05;
                 slotTwoFilled = true;
             }
             else if (slotOneFilled == true && slotTwoFilled == true && slotThreeFilled == false)
             {
+                EnableAlpha(toolManager.toolBar03);
                 toolManager.toolBar03.sprite = abstractArt_05;
                 slotThreeFilled = true;
             }
@@ -146,16 +168,19 @@ public class ToolCollect : MonoBehaviour
         {
             if (slotOneFilled == false)
             {
+                EnableAlpha(toolManager.toolBar01);
                 toolManager.toolBar01.sprite = abstractArt_06;
                 slotOneFilled = true;
             }
             else if (slotOneFilled == true && slotTwoFilled == false)
             {
+                EnableAlpha(toolManager.toolBar02);
                 toolManager.toolBar02.sprite = abstractArt_06;
                 slotTwoFilled = true;
             }
             else if (slotOneFilled == true && slotTwoFilled == true && slotThreeFilled == false)
             {
+                EnableAlpha(toolManager.toolBar03);
                 toolManager.toolBar03.sprite = abstractArt_06;
                 slotThreeFilled = true;
             }
