@@ -1,42 +1,60 @@
 ﻿Shader "Custom/GhostShader" 
 {
-	Properties 
+	Properties
 	{
-		_Color ("Main Color", Color) = (1,1,1,1)
-		_SpecColor ("Spec Color", Color) = (1,1,1,0)
-		_Emission ("Emissive Color", Color) = (0,0,0,0)
-		_Shininess ("Shininess", Range (0.1, 1)) = 0.7
-		_MainTex ("Base (RGB) Trans (A)", 2D) = "white" {}
+		_TexTint ("Texture Tint", COLOR) = (1, 1, 1, 1)
+		_MainTex ("Texture", 2D) = "white" {}
 	}
- 
-SubShader 
-{
-    Tags {"RenderType"="Transparent" "Queue"="Transparent"}
-    // Render into depth buffer only
-    Pass 
-	{
-		ColorMask 0
-	}
-    // Render normally
-    Pass 
-	{
-        ZWrite Off
-        Blend SrcAlpha OneMinusSrcAlpha
-        ColorMask RGB
 
-        Material 
+	SubShader
+	{
+		Tags {"Queue" = "Transparent"}
+
+		Pass
+		{ ColorMask 0 }
+		Pass
 		{
-            Diffuse [_Color]
-            Ambient [_Color]
-            Shininess [_Shininess]
-            Specular [_SpecColor]
-            Emission [_Emission]
-        }
-        Lighting On
-        SetTexture [_MainTex] 
-		{
-            Combine texture * primary DOUBLE, texture * primary
-        }
-    }
-}
+			Cull Back
+			ZWrite Off
+			Blend SrcAlpha OneMinusSrcAlpha
+
+			CGPROGRAM
+
+			#pragma vertex vert
+			#pragma fragment frag
+
+			uniform sampler2D _MainTex;
+			float4 _TexTint;
+
+			struct vertexInput
+			{
+				float4 vertex : POSITION;
+				float4 texcoord : TEXCOORD0;
+			};
+			struct vertexOutput
+			{
+				float4 pos : SV_POSITION;
+				float4 tex : TEXCOORD0;
+			};
+
+			vertexOutput vert (vertexInput input)
+			{
+				vertexOutput output;
+
+				output.tex = input.texcoord;
+				output.pos = UnityObjectToClipPos(input.vertex);
+				return output;
+			}
+			float4 frag(vertexOutput input) : COLOR
+			{
+				float4 color = tex2D(_MainTex, input.tex.xy) * _TexTint;
+
+				return color;
+			}
+
+			ENDCG
+		}
+	}
+
+	Fallback "Unlit/Transparent"
 }
