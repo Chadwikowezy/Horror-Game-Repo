@@ -42,6 +42,8 @@ public class InsanityManager : MonoBehaviour
 
     public bool insanityBreakPlay = true;
 
+    public UnityAds unityAds;
+
     void Start()
     {
         insanityImg = GetComponentInChildren<Image>();
@@ -50,6 +52,10 @@ public class InsanityManager : MonoBehaviour
         //mainCamera.GetComponent<PostProcessingBehaviour>().profile.motionBlur.enabled = false;
         //mainCamera.GetComponent<PostProcessingBehaviour>().profile.depthOfField.enabled = false;
         audioManager = FindObjectOfType<AudioManager>();
+        if(unityAds == null)
+        {
+            unityAds = GetComponent<UnityAds>();
+        }
     }
 
     void Update()
@@ -140,6 +146,7 @@ public class InsanityManager : MonoBehaviour
                     insanityBreakImg.color = c;
                     if (currentTime >= 100)
                     {
+                        unityAds.ShowAd();
                         int scene = SceneManager.GetActiveScene().buildIndex;
                         SceneManager.LoadScene(scene, LoadSceneMode.Single);
                     }
