@@ -8,9 +8,7 @@ public class Graveyard_Optimizing : MonoBehaviour
     private PlayerMotor player;
 
     public List<GameObject> graveyardObjects = new List<GameObject>();
-    public List<GameObject> fenceObjs = new List<GameObject>();
     public List<GameObject> rockClusters = new List<GameObject>();
-    public List<GameObject> mausoleumObjects = new List<GameObject>();
 
     void Start ()
     {
@@ -21,9 +19,7 @@ public class Graveyard_Optimizing : MonoBehaviour
 	void Update ()
     {
         ObjectCulling(graveyardObjects);
-        ObjectCulling(fenceObjs);
         ObjectCulling(rockClusters);
-        ObjectCulling(mausoleumObjects);
     }
 
     void ObjectCulling(List<GameObject> colliderObjs)
