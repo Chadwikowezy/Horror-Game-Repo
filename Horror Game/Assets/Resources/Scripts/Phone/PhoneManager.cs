@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PhoneManager : MonoBehaviour
 {
@@ -290,15 +291,17 @@ public class PhoneManager : MonoBehaviour
 
     IEnumerator FlashNotification()
     {
-        //player phone vibration sound effect
-        for (int i = 0; i < 4; i++)
+        if(SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Maze-Crypt") && actor.data.mausoleumPuzzle == true)
         {
-            newMessageNotification.SetActive(true);
-            audioManager.phoneBeginSound(0);//playing vibration sound
-            yield return new WaitForSeconds(.5f);
+            for (int i = 0; i < 4; i++)
+            {
+                newMessageNotification.SetActive(true);
+                audioManager.phoneBeginSound(0);//playing vibration sound
+                yield return new WaitForSeconds(.5f);
+                newMessageNotification.SetActive(false);
+                yield return new WaitForSeconds(.5f);
+            }
             newMessageNotification.SetActive(false);
-            yield return new WaitForSeconds(.5f);
-        }
-        newMessageNotification.SetActive(false);
+        }     
     }
 }

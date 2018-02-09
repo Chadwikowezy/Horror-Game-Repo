@@ -47,9 +47,7 @@ public class SceneLaunchManager : MonoBehaviour
             actor.data.masionPuzzle_F1_03 == false ||
             actor.data.masionPuzzle_F2_01 == false)
             {
-                SceneManager.LoadScene("Graveyard");
-                //SceneManager.LoadScene("Maze-Crypt");
-                //SceneManager.LoadScene("Mansion");
+                SceneManager.LoadScene("Mansion");
             }
             else if (actor.data.masionPuzzle_F1_01 == true &&
                 actor.data.masionPuzzle_F1_02 == true &&
