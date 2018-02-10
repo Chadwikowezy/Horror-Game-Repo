@@ -291,17 +291,14 @@ public class PhoneManager : MonoBehaviour
 
     IEnumerator FlashNotification()
     {
-        if(SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Maze-Crypt") && actor.data.mausoleumPuzzle == true)
+        for (int i = 0; i < 4; i++)
         {
-            for (int i = 0; i < 4; i++)
-            {
-                newMessageNotification.SetActive(true);
-                audioManager.phoneBeginSound(0);//playing vibration sound
-                yield return new WaitForSeconds(.5f);
-                newMessageNotification.SetActive(false);
-                yield return new WaitForSeconds(.5f);
-            }
+            newMessageNotification.SetActive(true);
+            audioManager.phoneBeginSound(0);//playing vibration sound
+            yield return new WaitForSeconds(.5f);
             newMessageNotification.SetActive(false);
-        }     
+            yield return new WaitForSeconds(.5f);
+        }
+        newMessageNotification.SetActive(false);
     }
 }

@@ -13,7 +13,6 @@ public class EnableFogCheck : MonoBehaviour
         invisibleFloorPuzzleManager = FindObjectOfType<InvisibleFloorPuzzleManager>();
         if (invisibleFloorPuzzleManager.hasFallen == true)
         {
-            invisibleFloorPuzzleManager.beginFogFollow = true;
             invisibleFloorPuzzleManager.hasFallen = false;
 
             fogEffectLeft.SetActive(false);
@@ -21,7 +20,6 @@ public class EnableFogCheck : MonoBehaviour
         }
         else
         {
-            invisibleFloorPuzzleManager.beginFogFollow = false;
             invisibleFloorPuzzleManager.hasFallen = true;
 
             fogEffectLeft.SetActive(true);

@@ -9,12 +9,7 @@ public class InvisibleFloorPuzzleManager : MonoBehaviour
     public List<GameObject> alertTiles = new List<GameObject>();
     public List<GameObject> pullThruTiles = new List<GameObject>();
 
-    public Transform fogEnableRange;
-    public GameObject fogEffect;
     public bool hasFallen = true;
-    public bool beginFogFollow = false;
-    public GameObject[] fogEffects;
-
 
     void Start()
     {
@@ -23,41 +18,7 @@ public class InvisibleFloorPuzzleManager : MonoBehaviour
 
     void Update()
     {
-        CheckTileLists();
-        EnableFogSystem();
-        if(beginFogFollow == true)
-        {
-            FogFollowPlayer(fogEffect.gameObject.transform);
-        }
-    }
-
-    public void FogFollowPlayer(Transform fog)
-    {
-        if(hasFallen == false)
-        {
-            fogEffect.SetActive(true);
-            Vector3 playerVec = new Vector3(player.transform.position.x + 5, fog.position.y, player.transform.position.z);
-            fog.transform.position = playerVec;
-        }    
-    }
-
-    void EnableFogSystem()
-    {
-        //enable left side
-        if (Vector3.Distance (fogEnableRange.transform.position, player.transform.position) <= 15f && beginFogFollow == false)
-        {
-            foreach (GameObject fog in fogEffects)
-            {
-                fog.SetActive(true);
-            }
-        }
-        else
-        {
-            foreach (GameObject fog in fogEffects)
-            {
-                fog.SetActive(false);
-            }
-        }
+        CheckTileLists();        
     }
 
     void CheckTileLists()
