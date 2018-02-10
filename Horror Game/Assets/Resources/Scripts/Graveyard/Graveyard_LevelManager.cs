@@ -122,13 +122,13 @@ public class Graveyard_LevelManager : MonoBehaviour
         graveyardCanvas.sortingOrder = 2;
         fadeOutScreen.gameObject.SetActive(true);
 
-        while (fadeOutScreen.color != Color.black)
+        while (fadeOutScreen.color.a < 0.99f)
         {
             fadeOutScreen.color = Color.Lerp(fadeOutScreen.color, Color.black, fadeSpeed);
 
             yield return new WaitForFixedUpdate();
         }
 
-        //SceneManager.LoadScene("End Game Cutscene");
+        SceneManager.LoadScene("End Of Game Cutscene");
     }
 }
