@@ -56,14 +56,17 @@ public class CameraMotor : MonoBehaviour
     #region LateUpdate
     void LateUpdate()
     {
-        currentX += joystick.Horizontal() * sensitivityX;
+        if(handleCanvas.canUseButtons == true)
+        {
+            currentX += joystick.Horizontal() * sensitivityX;
 
-        currentY += -joystick.Vertical() * sensitivityY;
-        currentY = ClampAngle(currentY, Y_ANGLE_MIN, Y_ANGLE_MAX);
+            currentY += -joystick.Vertical() * sensitivityY;
+            currentY = ClampAngle(currentY, Y_ANGLE_MIN, Y_ANGLE_MAX);
 
 
-        dir = new Vector3(0, .75f, -distance);
-        rotation = Quaternion.Euler(currentY, currentX, 0);
+            dir = new Vector3(0, .75f, -distance);
+            rotation = Quaternion.Euler(currentY, currentX, 0);
+        }     
     }
     #endregion
 
@@ -71,7 +74,10 @@ public class CameraMotor : MonoBehaviour
     void FixedUpdate()
     {
         playerCam.position = camTargetPos.transform.position;
-        cameraRotation();
+        if(handleCanvas.canUseButtons == true)
+        {
+            cameraRotation();
+        }
     }
     #endregion
 
