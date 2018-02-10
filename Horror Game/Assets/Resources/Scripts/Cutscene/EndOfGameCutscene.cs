@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndOfGameCutscene : MonoBehaviour
 {
@@ -52,5 +53,9 @@ public class EndOfGameCutscene : MonoBehaviour
 
             yield return new WaitForSeconds(waitTimes[i]);
         }
+    }
+    public void loadMainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
     }
 }
