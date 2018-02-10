@@ -94,8 +94,6 @@ public class Puzzle4_TileManager : MonoBehaviour
         handleCanvas.canUseButtons = true;
 
         hasFinishedProcess = true;
-        thisPuzzleManager.beginFogFollow = false;
-        thisPuzzleManager.fogEffect.SetActive(false);
         thisPuzzleManager.hasFallen = true;
     }
 }
