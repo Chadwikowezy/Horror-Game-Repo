@@ -16,7 +16,7 @@ RenderSettings:
   serializedVersion: 8
   m_Fog: 1
   m_FogColor: {r: 0.6764706, g: 0.6764706, b: 0.6764706, a: 1}
-  m_FogMode: 3
+  m_FogMode: 2
   m_FogDensity: 0.07
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
@@ -1295,7 +1295,7 @@ MonoBehaviour:
   buttonEvent: {fileID: 147843989}
   canPath: 1
   footprintsPlay: 1
-  audio: {fileID: 60571752}
+  audioPlay: {fileID: 60571752}
 --- !u!82 &60571752
 AudioSource:
   m_ObjectHideFlags: 0
@@ -9806,8 +9806,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 594272699}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 409.5, y: 256, z: 0}
-  m_LocalScale: {x: 0.511875, y: 0.511875, z: 0.511875}
+  m_LocalPosition: {x: 467.5, y: 292, z: 0}
+  m_LocalScale: {x: 0.584375, y: 0.584375, z: 0.584375}
   m_Children:
   - {fileID: 147843990}
   m_Father: {fileID: 0}
@@ -20891,7 +20891,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\t\tShut up"
+  m_Text: "\t\tOh shut it"
 --- !u!222 &1228493987
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -24867,7 +24867,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 25b70f1263da751478cfad497d2d7785, type: 3}
   - {fileID: 8300000, guid: ba8320cd54021294db3f1691c6f27211, type: 3}
   rainSound: {fileID: 1094629194}
-  rainLight: {fileID: 8300000, guid: c5880bf6497034346bb3253654dbed0c, type: 3}
+  womanWailing: {fileID: 8300000, guid: bea6530f4e6f40441ab6809396e36af9, type: 3}
   heartSound: {fileID: 1094629195}
 --- !u!82 &1512535600
 AudioSource:

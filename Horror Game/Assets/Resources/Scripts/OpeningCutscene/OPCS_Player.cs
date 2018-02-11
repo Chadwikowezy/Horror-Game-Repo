@@ -14,7 +14,7 @@ public class OPCS_Player : MonoBehaviour
     public GameObject buttonEvent;
     public bool canPath = true;
     public bool footprintsPlay = true;
-    public AudioSource audio;
+    public AudioSource audioPlay;
 
     void Start ()
     {
@@ -31,7 +31,7 @@ public class OPCS_Player : MonoBehaviour
         {
             if(footprintsPlay == true)
             {
-                audio.Play();
+                audioPlay.Play();
                 footprintsPlay = false;
             }
         }
@@ -49,7 +49,7 @@ public class OPCS_Player : MonoBehaviour
                 if (nextPathNode == 6)
                 {
                     //Debug.Log(pathNodes[nextPathNode].name);
-                    audio.Stop();
+                    audioPlay.Stop();
                     canPath = false;
                     buttonEvent.SetActive(true);
                 }

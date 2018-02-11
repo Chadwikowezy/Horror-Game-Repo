@@ -21,6 +21,8 @@ public class EndOfGameCanvas : MonoBehaviour
     private float creditsYChange;
     private Vector3 newScrollPos;
 
+    public AudioSource audioSource_01, audioSource_02, audioSource_03;
+
     private void Update()
     {
         if (gameEnding == false)
@@ -28,7 +30,11 @@ public class EndOfGameCanvas : MonoBehaviour
             fadeOutScreen.color = Color.Lerp(fadeOutScreen.color, Color.clear, fadeSpeed * Time.deltaTime);
 
             if ((player.transform.position - endOfGameTrigger.transform.position).magnitude < detectionDistance)
+            {
                 gameEnding = true;
+                StartCoroutine("AudioDelay");
+            }
+               
         }
         else
         {
@@ -43,5 +49,13 @@ public class EndOfGameCanvas : MonoBehaviour
                 credits.transform.localPosition = newScrollPos;
             }
         }
+    }
+
+    IEnumerator AudioDelay()
+    {
+        yield return new WaitForSeconds(3f);
+        audioSource_01.Stop();
+        audioSource_02.Stop();
+        audioSource_03.Play();
     }
 }

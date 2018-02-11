@@ -21,6 +21,9 @@ public class EndOfGameCutscene : MonoBehaviour
     public Animator playerAnim;
     public Animator spectorAnim;
 
+    [Header("AudioSources")]
+    public AudioSource audioSource_01, audioSource_02, audioSource_03, audioSource_04, audioSource_05, audioSource_06;
+
     private void Start()
     {
         StartCoroutine(startCutscene());
@@ -38,17 +41,31 @@ public class EndOfGameCutscene : MonoBehaviour
             {
                 CutscenePlayer _player = player.GetComponent<CutscenePlayer>();
                 _player.Stoped = true;
-
+               
                 yield return new WaitForSeconds(1f);
+                audioSource_02.volume = 1;
 
                 _player.knockBack(player.transform.position + (waypoints[1].transform.position - player.transform.position), 1);
                 _player.enabled = false;
 
-                yield return new WaitForSeconds(13f);
+                yield return new WaitForSeconds(1f);
+                audioSource_03.Play();
+
+                yield return new WaitForSeconds(5.5f);
+                audioSource_03.Stop();
+
+                yield return new WaitForSeconds(0.5f);
+                audioSource_01.Play();           
+
+                yield return new WaitForSeconds(5f);
+                audioSource_04.Play();
+                audioSource_06.Play();
 
                 _player.moveSpeed = 2;
                 _player.gameObject.GetComponent<UnityEngine.AI.NavMeshAgent>().speed = 2;
                 _player.enabled = true;
+
+                
             }
 
             yield return new WaitForSeconds(waitTimes[i]);
