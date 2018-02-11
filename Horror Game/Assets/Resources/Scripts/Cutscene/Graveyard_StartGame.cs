@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Graveyard_StartGame : MonoBehaviour
@@ -11,6 +12,7 @@ public class Graveyard_StartGame : MonoBehaviour
     public float detectionDistance;
     public GameObject[] doors;
     public GameObject monster;
+    public Image fadeImage;
 
     [Header("Flickering Light")]
     public Light[] flickeringLights;
@@ -45,7 +47,6 @@ public class Graveyard_StartGame : MonoBehaviour
             door.transform.rotation = Quaternion.Euler(new Vector3(0, 180,0));
 
         StartCoroutine(flickerLight());
-        StartCoroutine(loadGameplayScene());
     }
 
     IEnumerator flickerLight()
@@ -71,10 +72,13 @@ public class Graveyard_StartGame : MonoBehaviour
             foreach (Light light in flickeringLights)
                 light.enabled = !light.enabled;
         }
+
+        fadeImage.gameObject.SetActive(true);
+        fadeImage.color = Color.black;
+        loadGameplayScene();
     }
-    IEnumerator loadGameplayScene()
+    void loadGameplayScene()
     {
-        yield return new WaitForSeconds(5f);
         SceneManager.LoadScene("Graveyard");
     }
 }

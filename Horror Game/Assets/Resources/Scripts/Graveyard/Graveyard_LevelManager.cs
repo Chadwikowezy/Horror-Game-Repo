@@ -57,7 +57,7 @@ public class Graveyard_LevelManager : MonoBehaviour
     private void Start()
     {
         player.transform.localScale = new Vector3(1.3f, 1.3f, 1.3f);
-        StartCoroutine(lightFadeIn());
+        StartCoroutine(fadeIntoScene());
     }
 
     public void pickupKnifeButton()
@@ -89,32 +89,6 @@ public class Graveyard_LevelManager : MonoBehaviour
         }
     }
 
-    IEnumerator lightFadeIn()
-    {
-        float _currentTime = 0;
-        float _lerpAmount = 0;
-        Color _currentLightColor = startingLights[0].color;
-
-        while (_currentLightColor != Color.white)
-        {
-            yield return new WaitForFixedUpdate();
-
-            _currentTime += Time.fixedDeltaTime;
-            if (_currentTime > fadeDuration)
-                _currentTime = fadeDuration;
-            _lerpAmount = _currentTime / fadeDuration;
-            _currentLightColor = Color.Lerp(_currentLightColor, Color.white, _lerpAmount);
-
-            for (int i = 0; i < startingLights.Length; i++)
-                startingLights[i].color = _currentLightColor;
-        }
-
-        for (int i = 0; i < startingLights.Length; i++)
-        {
-            startingLights[i].gameObject.GetComponent<LightGlow>().enabled = true;
-            yield return new WaitForSeconds(1f);
-        }
-    }
     IEnumerator loadEndOfGameAnimation()
     {
         yield return new WaitForSeconds(1f);
@@ -130,5 +104,24 @@ public class Graveyard_LevelManager : MonoBehaviour
         }
 
         SceneManager.LoadScene("End Of Game Cutscene");
+    }
+    IEnumerator fadeIntoScene()
+    {
+        fadeOutScreen.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(1f);
+
+        graveyardCanvas.sortingOrder = 2;
+
+        while (fadeOutScreen.color.a > 0.1f)
+        {
+            fadeOutScreen.color = Color.Lerp(fadeOutScreen.color, Color.clear, fadeSpeed);
+
+            yield return new WaitForFixedUpdate();
+        }
+
+        graveyardCanvas.sortingOrder = 0;
+
+        fadeOutScreen.gameObject.SetActive(false);
     }
 }

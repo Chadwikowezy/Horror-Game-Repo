@@ -25,6 +25,8 @@ public class EndOfGameCanvas : MonoBehaviour
     {
         if (gameEnding == false)
         {
+            fadeOutScreen.color = Color.Lerp(fadeOutScreen.color, Color.clear, fadeSpeed * Time.deltaTime);
+
             if ((player.transform.position - endOfGameTrigger.transform.position).magnitude < detectionDistance)
                 gameEnding = true;
         }
