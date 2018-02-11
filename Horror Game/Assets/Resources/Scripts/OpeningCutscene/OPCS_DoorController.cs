@@ -16,7 +16,7 @@ public class OPCS_DoorController : MonoBehaviour
     public List<AudioClip> doorSounds = new List<AudioClip>();
 
     public AudioSource rainSound;
-    public AudioClip rainLight;
+    public AudioClip womanWailing;
     public AudioSource heartSound;
 
     void Start ()
@@ -74,7 +74,7 @@ public class OPCS_DoorController : MonoBehaviour
         cam.rotSpeed = .4f;
         cam.target = cam.panRotTransforms[3].transform;
 
-        rainSound.clip = rainLight;
+        rainSound.clip = womanWailing;
         rainSound.volume = .15f;
         rainSound.Play();
 
