@@ -5,6 +5,7 @@ using UnityEngine;
 public class AllowClimb : MonoBehaviour
 {
     private PlayerMotor player;
+    public GameObject head;
     private HandleCanvas handleCanvas;
 
     public GameObject climbButton;
@@ -29,13 +30,11 @@ public class AllowClimb : MonoBehaviour
         if (isClimbing == true && canClimb == true)
         {
             handleCanvas.canUseButtons = false;
-            //playerAnimObj.SetInteger("Climb", 1);
 
             Vector3 playerDir = new Vector3(transform.position.x, player.transform.position.y, transform.position.z);
             player.transform.LookAt(playerDir);
 
-            Camera cam = Camera.main;
-            cam.transform.LookAt(lookPos.position);
+            head.transform.LookAt(lookPos.position);
 
             StartCoroutine(ClimbPhase());
         }
@@ -79,12 +78,21 @@ public class AllowClimb : MonoBehaviour
     {
         if (other.gameObject.GetComponent<PlayerMotor>())
         {
-            player.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * .5f);
+            player.GetComponent<Rigidbody>().AddRelativeForce(Vector3.forward * 1f);
             player.GetComponent<Rigidbody>().useGravity = true;
-            handleCanvas.canUseButtons = true;
             canClimb = false;
             isClimbing = false;
+            handleCanvas.canUseButtons = true;
             climbButton.SetActive(false);
         }
+    }
+    IEnumerator ReturnControl()
+    {
+        yield return new WaitForSeconds(1f);
+    }
+
+    void ResetCameraRotation()
+    {
+
     }
 }
