@@ -21,7 +21,6 @@ public class SceneLaunchManager : MonoBehaviour
     IEnumerator StartDelay()
     {
         yield return new WaitForSeconds(3f);
-        //SceneManager.LoadScene("OpeningCutscene");
         actor.ResetDataAttributes();
         gameController.Save();
         SceneManager.LoadScene("OpeningCutscene");
@@ -66,7 +65,6 @@ public class SceneLaunchManager : MonoBehaviour
         }
         else
         {
-            //SceneManager.LoadScene("OpeningCutscene");
             actor.ResetDataAttributes();
             gameController.Save();
             SceneManager.LoadScene("OpeningCutscene");

@@ -11,6 +11,7 @@ public class PhoneManager : MonoBehaviour
     public bool phoneIsDead = false;
     public GameObject phoneCamera;
     public GameObject phoneCameraUIObjs;
+    public GameObject messageObj;
 
     public float maxBatteryLife = 60,
         minBatteryLife = 0, 
@@ -29,7 +30,6 @@ public class PhoneManager : MonoBehaviour
     public GameObject message_03;
     public GameObject message_04;
     public GameObject message_05;
-    public GameObject messageObj;
     private bool messagesDisplayed = false;
     private Actor actor;
 
@@ -42,7 +42,7 @@ public class PhoneManager : MonoBehaviour
     public bool canActivatePhone = true;
 
     //public GameObject dummyPhone;
-    public List<GameObject> playerDisableObjs;
+    //public List<GameObject> playerDisableObjs;
 
     private AudioManager audioManager;
 
@@ -109,10 +109,10 @@ public class PhoneManager : MonoBehaviour
             playerMotor.onPhone = true;
             yield return new WaitForSeconds(.01f);
 
-            for (int i = 0; i < playerDisableObjs.Count; i++)
+            /*for (int i = 0; i < playerDisableObjs.Count; i++)
             {
                 playerDisableObjs[i].layer = LayerMask.NameToLayer("DisableFromView");
-            }
+            }*/
             phoneCamera.SetActive(true);
             phoneCameraUIObjs.SetActive(false);
             messageObj.SetActive(true);
@@ -166,10 +166,10 @@ public class PhoneManager : MonoBehaviour
             playerMotor.onPhone = true;
             yield return new WaitForSeconds(.01f);
 
-            for (int i = 0; i < playerDisableObjs.Count; i++)
+            /*for (int i = 0; i < playerDisableObjs.Count; i++)
             {
                 playerDisableObjs[i].layer = LayerMask.NameToLayer("DisableFromView");
-            }
+            }*/
             phoneCamera.SetActive(true);
             messageObj.SetActive(false);
             phoneCameraUIObjs.SetActive(true);
@@ -190,10 +190,10 @@ public class PhoneManager : MonoBehaviour
             isOn = false;
             playerMotor.onPhone = false;
             yield return new WaitForSeconds(0.6f);
-            for (int i = 0; i < playerDisableObjs.Count; i++)
+           /* for (int i = 0; i < playerDisableObjs.Count; i++)
             {
                 playerDisableObjs[i].layer = LayerMask.NameToLayer("Default");
-            }
+            }*/
             //dummyPhone.SetActive(false);
             messageObj.SetActive(false);
             phoneCamera.SetActive(false);
@@ -212,10 +212,10 @@ public class PhoneManager : MonoBehaviour
             isOn = false;
             playerMotor.onPhone = false;
             yield return new WaitForSeconds(0.6f);
-            for (int i = 0; i < playerDisableObjs.Count; i++)
+            /*for (int i = 0; i < playerDisableObjs.Count; i++)
             {
                 playerDisableObjs[i].layer = LayerMask.NameToLayer("Default");
-            }
+            }*/
             //dummyPhone.SetActive(false);
             phoneCamera.SetActive(false);
 

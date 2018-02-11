@@ -10,7 +10,7 @@ public class CollectPills : MonoBehaviour
     public GameObject collectPillImg;
     public GameObject pillsFullMessage;
 
-    private bool activePill = false;
+    public bool activePill = false;
 
     void Start()
     {
@@ -39,6 +39,7 @@ public class CollectPills : MonoBehaviour
         {
             collectPillImg.SetActive(false);
             insanityManager.justCollected = false;
+            activePill = false;
             Destroy(this.gameObject);
         }
     }

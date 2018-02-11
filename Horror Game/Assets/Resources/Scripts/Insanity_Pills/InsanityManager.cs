@@ -183,6 +183,15 @@ public class InsanityManager : MonoBehaviour
         //Debug.Log("current insanity: " + CurrentInsanity);
     }
 
+    public void UpdatePillData(int pill)
+    {
+        if (pill > 0 && PillStackCount < pillStackMax)
+        {
+            PillStackCount += pill;
+        }
+        pillStackTxt.text = PillStackCount.ToString();
+    }
+
     public void UpdatePillCount(int pill)
     {
         //Debug.Log("Current before pill count: " + PillStackCount);
@@ -235,7 +244,6 @@ public class InsanityManager : MonoBehaviour
                 }
             }
         }
-        
     }
 }
 

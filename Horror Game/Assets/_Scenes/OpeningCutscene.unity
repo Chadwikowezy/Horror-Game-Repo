@@ -15,9 +15,9 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 8
   m_Fog: 1
-  m_FogColor: {r: 0.678, g: 0.678, b: 0.678, a: 0.597}
+  m_FogColor: {r: 0.6764706, g: 0.6764706, b: 0.6764706, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.03
+  m_FogDensity: 0.07
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
@@ -505,7 +505,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\t\tSo is getting trapped huh?"
+  m_Text: "\t\tReally, and how's that working out for you \n\t\tatm......."
 --- !u!222 &21322927
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5148,6 +5148,57 @@ Prefab:
     - {fileID: 9500000, guid: d249ee4205bc79c4290256dcdc72ed9b, type: 3}
   m_ParentPrefab: {fileID: 100100000, guid: d249ee4205bc79c4290256dcdc72ed9b, type: 3}
   m_IsPrefabParent: 0
+--- !u!1001 &257046204
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 406004366}
+    m_Modifications:
+    - target: {fileID: 4556396979161854, guid: 34de1271c72489643b62eb9321e7294e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -22.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556396979161854, guid: 34de1271c72489643b62eb9321e7294e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556396979161854, guid: 34de1271c72489643b62eb9321e7294e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -21.37
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556396979161854, guid: 34de1271c72489643b62eb9321e7294e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556396979161854, guid: 34de1271c72489643b62eb9321e7294e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556396979161854, guid: 34de1271c72489643b62eb9321e7294e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556396979161854, guid: 34de1271c72489643b62eb9321e7294e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4556396979161854, guid: 34de1271c72489643b62eb9321e7294e, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1970660321449784, guid: 34de1271c72489643b62eb9321e7294e, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 34de1271c72489643b62eb9321e7294e, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &257046205 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4556396979161854, guid: 34de1271c72489643b62eb9321e7294e,
+    type: 2}
+  m_PrefabInternal: {fileID: 257046204}
 --- !u!1001 &257765578
 Prefab:
   m_ObjectHideFlags: 0
@@ -6710,6 +6761,35 @@ Transform:
   m_Father: {fileID: 1814936870}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 3.5100002, y: -25.146002, z: -0.439}
+--- !u!1 &406004365
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 406004366}
+  m_Layer: 0
+  m_Name: MansionProps
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &406004366
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 406004365}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -49.941357, y: 5.4376006, z: -158.30736}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 257046205}
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &406916131
 GameObject:
   m_ObjectHideFlags: 0
@@ -9726,8 +9806,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 594272699}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 338.5, y: 211.5, z: 0}
-  m_LocalScale: {x: 0.423125, y: 0.423125, z: 0.423125}
+  m_LocalPosition: {x: 409.5, y: 256, z: 0}
+  m_LocalScale: {x: 0.511875, y: 0.511875, z: 0.511875}
   m_Children:
   - {fileID: 147843990}
   m_Father: {fileID: 0}
@@ -13969,7 +14049,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\t\tWhat are you ghost hunting or something?"
+  m_Text: "\t\tWtf are you ghost hunting or something?"
 --- !u!222 &863072266
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16160,7 +16240,7 @@ GameObject:
   - component: {fileID: 967564973}
   - component: {fileID: 967564974}
   m_Layer: 0
-  m_Name: Phone
+  m_Name: Phone_disableObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28525,7 +28605,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\t\tAlright I\u2019m OMW"
+  m_Text: "\t\tAlright I\u2019ll head over there now"
 --- !u!222 &1703400134
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -36034,7 +36114,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\t\tHurry man, something feels really off"
+  m_Text: "\t\tHurry man, something feels really off here"
 --- !u!222 &2088861668
 CanvasRenderer:
   m_ObjectHideFlags: 0

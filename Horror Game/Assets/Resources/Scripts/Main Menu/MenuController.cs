@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class MenuController : MonoBehaviour
 {
     public Image fadeScreenImage;
-    public Slider volumeSlider;
     public Slider sensitivitySlider;
 
     [Header("Menus")]
@@ -77,7 +76,6 @@ public class MenuController : MonoBehaviour
             _selections = menuSelections.AddComponent<MenuSelections>();
         }
 
-        _selections.volumeLevel = volumeSlider.value;
         _selections.sensitivity = sensitivitySlider.value;
     }
 
@@ -119,10 +117,6 @@ public class MenuController : MonoBehaviour
     public void insaneDifficultyButton()
     {
         _selections.difficultyLevel = 2;
-    }
-    public void volumeSliderUpdate()
-    {
-        _selections.volumeLevel = volumeSlider.value;
     }
     public void sensitivitySliderUpdate()
     {

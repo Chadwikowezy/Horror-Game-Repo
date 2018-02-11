@@ -10,6 +10,7 @@ public class Maze_Optimizing : MonoBehaviour
     public List<GameObject> mazeBorderPieces = new List<GameObject>();
     public List<GameObject> MazeInnerPieces = new List<GameObject>();
     public List<GameObject> mausoleums = new List<GameObject>();
+    public List<GameObject> objectPieces = new List<GameObject>();
 
     public List<GameObject> cryptPieces = new List<GameObject>();
 
@@ -23,8 +24,8 @@ public class Maze_Optimizing : MonoBehaviour
     {
         HedgeCulling(mazeBorderPieces);
         HedgeCulling(MazeInnerPieces);
-        ObjectCulling(mausoleums);
-
+        ObjectCulling(objectPieces);
+        MausoleumCull(mausoleums);
         CryptCulling(cryptPieces);
     }
 
@@ -53,7 +54,7 @@ public class Maze_Optimizing : MonoBehaviour
         {
             if (colliderObj != null)
             {
-                if (Vector3.Distance(colliderObj.transform.position, player.transform.position) > 40 || player.transform.position.y < 0)
+                if (Vector3.Distance(colliderObj.transform.position, player.transform.position) > 25 || player.transform.position.y < 0)
                 {
                     colliderObj.SetActive(false);
                 }
@@ -91,6 +92,25 @@ public class Maze_Optimizing : MonoBehaviour
                             colliderObj.GetComponent<Collider>().enabled = false;
                         }
                     }
+                }
+            }
+
+        }
+    }
+
+    void MausoleumCull(List<GameObject> colliderObjs)
+    {
+        foreach (GameObject colliderObj in colliderObjs)
+        {
+            if (colliderObj != null)
+            {
+                if (Vector3.Distance(colliderObj.transform.position, player.transform.position) > 40 || player.transform.position.y < 0)
+                {
+                    colliderObj.SetActive(false);
+                }
+                else
+                {
+                    colliderObj.SetActive(true);                    
                 }
             }
 

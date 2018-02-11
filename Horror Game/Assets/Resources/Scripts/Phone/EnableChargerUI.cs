@@ -16,6 +16,12 @@ public class EnableChargerUI : MonoBehaviour
     {
         if(other.gameObject.tag == "Player")
         {
+            phoneManager.canActivatePhone = false;
+            if(phoneManager.phoneCamera == enabled)
+            {
+                phoneManager.isOn = false;
+                phoneManager.phoneCamera.SetActive(false);
+            }
             phoneManager.phoneCameraUIObjs.SetActive(false);
             phoneChargeButtonEvent.SetActive(true);
         }
@@ -24,6 +30,7 @@ public class EnableChargerUI : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            phoneManager.canActivatePhone = true;
             phoneChargeButtonEvent.SetActive(false);
             phoneManager.chargingPhone = false;
             phoneManager.batteryChargingUI.SetActive(false);

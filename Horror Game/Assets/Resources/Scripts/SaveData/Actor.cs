@@ -79,7 +79,6 @@ public class Actor : MonoBehaviour
         data.pillsCarried = 0;
         data.statueObjectsForPedestal.Clear();
         data.setMaxInsanity = 3;
-        data.audioLevel = 3;
         data.sensitivity = 2;
     }
 
@@ -163,12 +162,7 @@ public class Actor : MonoBehaviour
     #region Load Data call
     public void LoadData()
     {
-        optionsManager = FindObjectOfType<OptionsManager>();
-        //setting audio involved
-        if (data.audioLevel > 0)
-        {
-            optionsManager.audioLevel.value = data.audioLevel;
-        }
+        optionsManager = FindObjectOfType<OptionsManager>();        
         if (data.sensitivity > 0)
         {
             optionsManager.sensitivity.value = data.sensitivity;
@@ -182,7 +176,7 @@ public class Actor : MonoBehaviour
             sectionManager = FindObjectOfType<SectionManager>();
             camMotor = FindObjectOfType<CameraMotor>();
             //setting insanity involved         
-            insanityManager.UpdatePillCount(data.pillsCarried);
+            insanityManager.UpdatePillData(data.pillsCarried);
             if (data.setMaxInsanity > 0)
             {
                 insanityManager.maxInsanity = data.setMaxInsanity;
@@ -320,7 +314,6 @@ public class ActorData
     public List<int> statueObjectsForPedestal;
 
     public int setMaxInsanity;
-    public int audioLevel;
     public int sensitivity;
 }
 #endregion

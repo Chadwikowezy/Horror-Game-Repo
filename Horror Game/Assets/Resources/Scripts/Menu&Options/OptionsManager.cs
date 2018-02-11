@@ -11,7 +11,6 @@ public class OptionsManager : MonoBehaviour
     public GameObject optionsPanel;
 
     public List<GameObject> difficultyButtons = new List<GameObject>();
-    public Slider audioLevel;
     public Slider sensitivity;
 
     private CameraMotor camMotor;
@@ -34,7 +33,6 @@ public class OptionsManager : MonoBehaviour
         actor = FindObjectOfType<Actor>();
         gameController = FindObjectOfType<GameController>();
 
-        actor.data.audioLevel = (int)audioLevel.value;
         actor.data.sensitivity = (int)sensitivity.value;
         if (actor.data.setMaxInsanity <= 0)
         {
@@ -73,8 +71,6 @@ public class OptionsManager : MonoBehaviour
                 camMotor.sensitivityY = sensitivity.value;
 
                 insanityManager.maxInsanity = actor.data.setMaxInsanity;
-
-                audioLevel.value = actor.data.audioLevel;
             }
         }
     }
