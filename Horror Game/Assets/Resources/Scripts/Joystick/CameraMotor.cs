@@ -37,7 +37,7 @@ public class CameraMotor : MonoBehaviour
     public Transform crouchLOS_OBJ;
 
     private Vector3 dir;
-    private Quaternion rotation;
+    private Vector3 targetEuler;
     private Quaternion lookRotation;
     #endregion
 
@@ -63,9 +63,7 @@ public class CameraMotor : MonoBehaviour
             currentY += -joystick.Vertical() * sensitivityY;
             currentY = ClampAngle(currentY, Y_ANGLE_MIN, Y_ANGLE_MAX);
 
-
             dir = new Vector3(0, .75f, -distance);
-            rotation = Quaternion.Euler(currentY, currentX, 0);
         }     
     }
     #endregion
@@ -102,11 +100,14 @@ public class CameraMotor : MonoBehaviour
 
     void cameraRotation()
     {
-        Vector3 targetEuler = camTargetPos.rotation.eulerAngles;
+        Vector3 newEuler = camTargetPos.rotation.eulerAngles;
 
-        targetEuler.x = targetEuler.x + -joystick.Vertical() * yCamLimit;
+        targetEuler.x += -joystick.Vertical() * sensitivityY;
+        targetEuler.x = Mathf.Clamp(targetEuler.x, -yCamLimit, yCamLimit);
+        targetEuler.y = 0;
         targetEuler.z = 0;
-        lookRotation = Quaternion.Slerp(playerCam.transform.rotation, Quaternion.Euler(targetEuler), lookDamp * Time.fixedDeltaTime);
+
+        lookRotation = Quaternion.Slerp(playerCam.transform.rotation, Quaternion.Euler(newEuler + targetEuler), lookDamp * Time.fixedDeltaTime);
 
         playerCam.rotation = lookRotation;
     }

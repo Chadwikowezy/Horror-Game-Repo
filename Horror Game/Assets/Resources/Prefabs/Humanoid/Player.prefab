@@ -1021,8 +1021,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1680895926089448}
-  m_LocalRotation: {x: -0, y: 0.9238791, z: -0, w: 0.3826846}
-  m_LocalPosition: {x: -78.978, y: 1, z: -172.152}
+  m_LocalRotation: {x: 0, y: 0.92387956, z: 0, w: 0.38268343}
+  m_LocalPosition: {x: -79.009, y: 1, z: -172.111}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4281661748896294}
@@ -1610,14 +1610,14 @@ MonoBehaviour:
   camerasPrefab: {fileID: 1929419884055374, guid: cabe31db312d2cf4db050576d5da9e36,
     type: 2}
   movSpeed: 0.1
-  lookDamp: 10
+  lookDamp: 15
   joystick: {fileID: 0}
   lineOfSight: {fileID: 0}
   playerCam: {fileID: 0}
   camTargetPos: {fileID: 4679072930334162}
   yCamLimit: 45
-  sensitivityX: 15
-  sensitivityY: 1
+  sensitivityX: 1.5
+  sensitivityY: 1.5
   playerAnimObj: {fileID: 1707277611323346}
   cameraChild: {fileID: 0}
   crouchLOS_OBJ: {fileID: 4747649779955742}
@@ -1634,7 +1634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   drag: 0.5
-  sensitivity: 1
+  sensitivity: 1.5
   currentState: 0
   joystick: {fileID: 0}
   rotJoystick: {fileID: 0}
@@ -2161,7 +2161,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 10279a408d65de649ba93231006c7cc7, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
