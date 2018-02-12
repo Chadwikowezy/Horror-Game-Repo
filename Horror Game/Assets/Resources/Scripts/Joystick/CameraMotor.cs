@@ -101,6 +101,7 @@ public class CameraMotor : MonoBehaviour
     void cameraRotation()
     {
         Vector3 newEuler = camTargetPos.rotation.eulerAngles;
+        newEuler.z = 0;
 
         targetEuler.x += -joystick.Vertical() * sensitivityY;
         targetEuler.x = Mathf.Clamp(targetEuler.x, -yCamLimit, yCamLimit);
