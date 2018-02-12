@@ -8,6 +8,8 @@ public class Graveyard_LevelManager : MonoBehaviour
 {
     public GameObject player;
     public GameObject spector;
+    public GameObject playerNote;
+    public GameObject exitNoteButton;
 
     [Space(10), Header("Start Light Fade In")]
     public Light[] startingLights;
@@ -58,8 +60,13 @@ public class Graveyard_LevelManager : MonoBehaviour
     {
         player.transform.localScale = new Vector3(1.3f, 1.3f, 1.3f);
         StartCoroutine(fadeIntoScene());
+        StartCoroutine(openNote());
     }
 
+    public void closeNoteButton()
+    {
+        StartCoroutine(closeNote());
+    }
     public void pickupKnifeButton()
     {
         HasKnife = true;
@@ -89,6 +96,26 @@ public class Graveyard_LevelManager : MonoBehaviour
         }
     }
 
+    IEnumerator openNote()
+    {
+        yield return new WaitForSeconds(2.5f);
+
+        playerNote.SetActive(true);
+
+        yield return new WaitForSeconds(1f);
+
+        exitNoteButton.SetActive(true);
+    }
+    IEnumerator closeNote()
+    {
+        playerNote.GetComponent<Animator>().SetBool("Closed", true);
+        exitNoteButton.SetActive(false);
+
+        yield return new WaitForSeconds(1f);
+
+        playerNote.SetActive(false);
+        player.GetComponent<PlayerMotor>().enabled = true;
+    }
     IEnumerator loadEndOfGameAnimation()
     {
         yield return new WaitForSeconds(1f);
