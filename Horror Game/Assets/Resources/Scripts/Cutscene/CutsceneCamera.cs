@@ -14,7 +14,7 @@ public class CutsceneCamera : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.position = Vector3.Lerp(transform.position, targetCameraPos.position, moveSpeed * 0.1f);
+        transform.position = Vector3.Lerp(transform.position, targetCameraPos.position, moveSpeed * 1f);
 
         rotateCamera();
     }
