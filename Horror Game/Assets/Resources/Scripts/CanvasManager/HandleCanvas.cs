@@ -8,8 +8,8 @@ public class HandleCanvas : MonoBehaviour
     #region variables
     public bool canUseButtons;
 
-    private float framerate = 0.0f;
-    public Text framerateTxt;
+    //private float framerate = 0.0f;
+    //public Text framerateTxt;
 
     static int desiredFramerate = 60;
     #endregion
@@ -26,13 +26,13 @@ public class HandleCanvas : MonoBehaviour
         canUseButtons = true;
     }
 
-    void Update()
-    {
-        framerate += (Time.unscaledDeltaTime - framerate) * 0.1f;
-        float msec = framerate * 1000.0f;
-        float fps = 1.0f / framerate;
+    //void Update()
+    //{
+    //    framerate += (Time.unscaledDeltaTime - framerate) * 0.1f;
+    //    float msec = framerate * 1000.0f;
+    //    float fps = 1.0f / framerate;
 
-        framerateTxt.text = "Framerate: " + ((int)fps).ToString();
-    }
+    //    framerateTxt.text = "Framerate: " + ((int)fps).ToString();
+    //}
     #endregion
 }
