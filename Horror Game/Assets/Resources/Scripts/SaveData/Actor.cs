@@ -21,6 +21,7 @@ public class Actor : MonoBehaviour
     private PhoneManager phoneManager;
     private ToolsManager toolManager;
     private CameraMotor camMotor;
+    private PlayerMotor playerMotor;
 
     private OptionsManager optionsManager;
 
@@ -79,7 +80,7 @@ public class Actor : MonoBehaviour
         data.pillsCarried = 0;
         data.statueObjectsForPedestal.Clear();
         data.setMaxInsanity = 3;
-        data.sensitivity = 2;
+        data.sensitivity = 1;
     }
 
     #region Store Data call
@@ -175,6 +176,7 @@ public class Actor : MonoBehaviour
             insanityManager = FindObjectOfType<InsanityManager>();
             sectionManager = FindObjectOfType<SectionManager>();
             camMotor = FindObjectOfType<CameraMotor>();
+            playerMotor = FindObjectOfType<PlayerMotor>();
             //setting insanity involved         
             insanityManager.UpdatePillData(data.pillsCarried);
             if (data.setMaxInsanity > 0)
@@ -184,7 +186,7 @@ public class Actor : MonoBehaviour
             //setting sensitivity involved
             if (data.sensitivity > 0)
             {
-                camMotor.sensitivityX = data.sensitivity;
+                playerMotor.sensitivity = data.sensitivity;
                 camMotor.sensitivityY = data.sensitivity;
             }
         }
@@ -314,6 +316,6 @@ public class ActorData
     public List<int> statueObjectsForPedestal;
 
     public int setMaxInsanity;
-    public int sensitivity;
+    public float sensitivity;
 }
 #endregion

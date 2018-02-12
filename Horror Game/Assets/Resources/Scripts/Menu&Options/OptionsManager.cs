@@ -14,6 +14,7 @@ public class OptionsManager : MonoBehaviour
     public Slider sensitivity;
 
     private CameraMotor camMotor;
+    private PlayerMotor playerMotor;
     private InsanityManager insanityManager;
 
     void Start()
@@ -22,6 +23,7 @@ public class OptionsManager : MonoBehaviour
           SceneManager.GetActiveScene() != SceneManager.GetSceneByName("OpeningCutscene"))
         {
             camMotor = FindObjectOfType<CameraMotor>();
+            playerMotor = FindObjectOfType<PlayerMotor>();
             insanityManager = FindObjectOfType<InsanityManager>();
         }
     }
@@ -33,7 +35,7 @@ public class OptionsManager : MonoBehaviour
         actor = FindObjectOfType<Actor>();
         gameController = FindObjectOfType<GameController>();
 
-        actor.data.sensitivity = (int)sensitivity.value;
+        actor.data.sensitivity = sensitivity.value;
         if (actor.data.setMaxInsanity <= 0)
         {
             actor.data.setMaxInsanity = 3;
@@ -67,7 +69,7 @@ public class OptionsManager : MonoBehaviour
                 actor = FindObjectOfType<Actor>();
 
                 sensitivity.value = actor.data.sensitivity;
-                camMotor.sensitivityX = sensitivity.value;
+                playerMotor.sensitivity = sensitivity.value;
                 camMotor.sensitivityY = sensitivity.value;
 
                 insanityManager.maxInsanity = actor.data.setMaxInsanity;
