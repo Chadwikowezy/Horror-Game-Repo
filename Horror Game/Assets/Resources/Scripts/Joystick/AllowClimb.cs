@@ -14,6 +14,7 @@ public class AllowClimb : MonoBehaviour
     public bool canClimb;
 
     public Transform lookPos;
+    public Transform moveToPos;
 
     private Vector3 climbOrientation = new Vector3(0, 0, 0);
 
@@ -29,6 +30,8 @@ public class AllowClimb : MonoBehaviour
 
         if (isClimbing == true && canClimb == true)
         {
+            climbButton.SetActive(false);
+
             handleCanvas.canUseButtons = false;
 
             Vector3 playerDir = new Vector3(transform.position.x, player.transform.position.y, transform.position.z);
@@ -41,7 +44,7 @@ public class AllowClimb : MonoBehaviour
         else
         {
             player.GetComponent<Rigidbody>().useGravity = true;
-        }
+        }        
     }
     IEnumerator ClimbPhase()
     {
@@ -53,7 +56,8 @@ public class AllowClimb : MonoBehaviour
     }
 
     public void ClimbButtonEvent()
-    {
+    {       
+        player.transform.position = moveToPos.position;        
         isClimbing = true;
         climbButton.SetActive(false);
     }
@@ -65,13 +69,10 @@ public class AllowClimb : MonoBehaviour
             canClimb = true;
         }
     }
-
-    void OnCollisionEnter(Collision other)
+  
+    IEnumerator ReturnControl()
     {
-        if (other.gameObject.GetComponent<PlayerMotor>())
-        {
-            climbButton.SetActive(true);
-        }
+        yield return new WaitForSeconds(1f);
     }
 
     void OnCollisionExit(Collision other)
@@ -85,14 +86,5 @@ public class AllowClimb : MonoBehaviour
             handleCanvas.canUseButtons = true;
             climbButton.SetActive(false);
         }
-    }
-    IEnumerator ReturnControl()
-    {
-        yield return new WaitForSeconds(1f);
-    }
-
-    void ResetCameraRotation()
-    {
-
     }
 }
