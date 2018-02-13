@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.PostProcessing;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -51,8 +50,6 @@ public class InsanityManager : MonoBehaviour
         cameraMotor = FindObjectOfType<CameraMotor>();
         handleCanvas = FindObjectOfType<HandleCanvas>();
         mainCamera = Camera.main;
-        //mainCamera.GetComponent<PostProcessingBehaviour>().profile.motionBlur.enabled = false;
-        //mainCamera.GetComponent<PostProcessingBehaviour>().profile.depthOfField.enabled = false;
         audioManager = FindObjectOfType<AudioManager>();
         if(unityAds == null)
         {
@@ -180,7 +177,6 @@ public class InsanityManager : MonoBehaviour
         {
             CurrentInsanity = minInsanity;
         }
-        //Debug.Log("current insanity: " + CurrentInsanity);
     }
 
     public void UpdatePillData(int pill)
@@ -194,7 +190,6 @@ public class InsanityManager : MonoBehaviour
 
     public void UpdatePillCount(int pill)
     {
-        //Debug.Log("Current before pill count: " + PillStackCount);
         if(currentInsanity < maxInsanity)
         {
             if (PillStackCount < pillStackMin)
@@ -209,9 +204,7 @@ public class InsanityManager : MonoBehaviour
             {
                 PillStackCount += pill;
                 AlterInsanity(-1);
-                //play swallow sound
                 audioManager.InsanityBreaking(0);
-                //Debug.Log("Current after pill count: " + PillStackCount);
             }
             if (pill > 0 && PillStackCount < pillStackMax)
             {

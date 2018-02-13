@@ -582,7 +582,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: 9fab77f315556d049816bc6cf613536d, type: 2}
 --- !u!81 &27544216
 AudioListener:
   m_ObjectHideFlags: 0
@@ -9806,8 +9805,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 594272699}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 465, y: 290.5, z: 0}
-  m_LocalScale: {x: 0.58125, y: 0.58125, z: 0.58125}
+  m_LocalPosition: {x: 485, y: 303, z: 0}
+  m_LocalScale: {x: 0.60625, y: 0.60625, z: 0.60625}
   m_Children:
   - {fileID: 147843990}
   m_Father: {fileID: 0}
@@ -26803,7 +26802,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1617929494}
   - component: {fileID: 1617929493}
-  - component: {fileID: 1617929492}
   - component: {fileID: 1617929491}
   m_Layer: 0
   m_Name: Ground
@@ -26846,20 +26844,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &1617929492
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1617929490}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_InflateMesh: 0
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1617929493
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -26874,7 +26858,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1617929490}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -130, y: -0.01, z: -161.7}
+  m_LocalPosition: {x: -130, y: -0.02, z: -161.7}
   m_LocalScale: {x: 13.25, y: 1, z: 5.128079}
   m_Children: []
   m_Father: {fileID: 0}
@@ -27159,7 +27143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioclip_01: {fileID: 8300000, guid: 81734979291251248b4edbec080d0ebe, type: 3}
   audioclip_02: {fileID: 8300000, guid: b32b3b371232da741bdc2000e65cb91c, type: 3}
-  audioclip_03: {fileID: 8300000, guid: afcc7a946680ad94fb11b78cc85f8361, type: 3}
+  audioclip_03: {fileID: 8300000, guid: c913c2a4526f9bd4fbf14ed6cd1e6ece, type: 3}
   audioclip_04: {fileID: 8300000, guid: c0c87a20cfe93b34c86758adcaf3d76e, type: 3}
   audioclip_05: {fileID: 8300000, guid: bd8a2ca6f2eb03442b48e90c777e6ea9, type: 3}
   audioclip_06: {fileID: 8300000, guid: 0a89ddb6e4920af49831709aea7d56f7, type: 3}
@@ -29065,10 +29049,6 @@ Prefab:
     - target: {fileID: 4027871593421932, guid: 9e65513d625442242a04e558e2a6e119, type: 2}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1399592618986888, guid: 9e65513d625442242a04e558e2a6e119, type: 2}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9e65513d625442242a04e558e2a6e119, type: 2}
