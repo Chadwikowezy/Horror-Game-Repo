@@ -19,6 +19,7 @@ public class SafePuzzleManager : MonoBehaviour
     public Text _val01, _val02, _val03;
 
     private Actor actor;
+    private SectionManager sectionManager;
     public List<GameObject> sectionDoor = new List<GameObject>();
     private GameController gameController;
 
@@ -37,6 +38,7 @@ public class SafePuzzleManager : MonoBehaviour
         safeUIPanel.SetActive(false);
         incorrectInputNotice.SetActive(false);
 
+        sectionManager = FindObjectOfType<SectionManager>();
         gameController = FindObjectOfType<GameController>();
         phoneManager = FindObjectOfType<PhoneManager>();
         audioManager = FindObjectOfType<AudioManager>();
@@ -164,8 +166,7 @@ public class SafePuzzleManager : MonoBehaviour
                 sectionDoor[i].GetComponent<Animator>().SetInteger("Open", 1);
             }
             audioManager.ObjectBegin(1);//play door creek
-
-            actor.data.masionPuzzle_F1_03 = true;
+            sectionManager.masionPuzzle_F1_03 = true;
             phoneManager.NewMessageNotification();
             gameController.Save();
             SafeLockCanvasObj.SetActive(false);

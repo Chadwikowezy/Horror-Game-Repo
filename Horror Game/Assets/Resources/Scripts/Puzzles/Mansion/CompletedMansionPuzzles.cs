@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class CompletedMansionPuzzles : MonoBehaviour
 {
     private Actor actor;
+    private SectionManager sectionManager;
     private GameController gameController;
     public GameObject completedMansionImg;
 
@@ -13,12 +14,13 @@ public class CompletedMansionPuzzles : MonoBehaviour
     {
         actor = FindObjectOfType<Actor>();
         gameController = FindObjectOfType<GameController>();
+        sectionManager = FindObjectOfType<SectionManager>();
 
         if (actor.data.masionPuzzle_F2_01 == false)
         {
             if (other.gameObject.tag == "Player")
             {
-                actor.data.masionPuzzle_F2_01 = true;
+                sectionManager.masionPuzzle_F2_01 = true;
 
                 gameController.Save();
 
@@ -30,7 +32,7 @@ public class CompletedMansionPuzzles : MonoBehaviour
     IEnumerator LoadNextScene()
     {
         completedMansionImg.SetActive(true);
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Maze-Crypt");
     }
 }

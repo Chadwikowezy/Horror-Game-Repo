@@ -31,9 +31,10 @@ public class InsanityManager : MonoBehaviour
     public int pillStackMin = 0;
     public int pillStackMax = 3;
 
-    private CameraMotor cameraMotor;
+    //private CameraMotor cameraMotor;
+    //private PlayerMotor playerMotor;
     private HandleCanvas handleCanvas;
-    private int sensitivityLvl;
+    //private int sensitivityLvl;
 
     public bool justCollected = false;
     private Camera mainCamera;
@@ -47,7 +48,8 @@ public class InsanityManager : MonoBehaviour
     void Start()
     {
         insanityImg = GetComponentInChildren<Image>();
-        cameraMotor = FindObjectOfType<CameraMotor>();
+        //cameraMotor = FindObjectOfType<CameraMotor>();
+        //playerMotor = FindObjectOfType<PlayerMotor>();
         handleCanvas = FindObjectOfType<HandleCanvas>();
         mainCamera = Camera.main;
         audioManager = FindObjectOfType<AudioManager>();
@@ -63,13 +65,13 @@ public class InsanityManager : MonoBehaviour
         {
             if (CurrentInsanity == 0)
             {
-                handleCanvas.canUseButtons = true;
+                //handleCanvas.canUseButtons = true;
 
                 audioManager.breath_Heartbeat.volume = .5f;
 
-                sensitivityLvl = 3;
-                cameraMotor.sensitivityX = sensitivityLvl;
-                cameraMotor.sensitivityY = sensitivityLvl;
+                //sensitivityLvl = 3;
+                //playerMotor.sensitivity = sensitivityLvl;
+                //cameraMotor.sensitivityY = sensitivityLvl;
 
                 Color c = insanityImg.color;
                 c.a = 1;
@@ -87,13 +89,13 @@ public class InsanityManager : MonoBehaviour
             }
             else if (CurrentInsanity == 1 && maxInsanity == 3)
             {
-                handleCanvas.canUseButtons = true;
+                //handleCanvas.canUseButtons = true;
 
                 audioManager.breath_Heartbeat.volume = .75f;
 
-                sensitivityLvl = 4;
-                cameraMotor.sensitivityX = sensitivityLvl;
-                cameraMotor.sensitivityY = sensitivityLvl;
+                //sensitivityLvl = 4;
+                //playerMotor.sensitivity = sensitivityLvl;
+                //cameraMotor.sensitivityY = sensitivityLvl;
 
                 Color c = insanityImg.color;
                 c.a = 1;
@@ -111,13 +113,13 @@ public class InsanityManager : MonoBehaviour
             }
             else if (CurrentInsanity == 2 && maxInsanity == 3 || currentInsanity == 1 && maxInsanity == 2)
             {
-                handleCanvas.canUseButtons = true;
+                //handleCanvas.canUseButtons = true;
 
                 audioManager.breath_Heartbeat.volume = 1f;
 
-                sensitivityLvl = 5;
-                cameraMotor.sensitivityX = sensitivityLvl;
-                cameraMotor.sensitivityY = sensitivityLvl;
+                //sensitivityLvl = 5;
+                //playerMotor.sensitivity = sensitivityLvl;
+                //cameraMotor.sensitivityY = sensitivityLvl;
 
                 Color c = insanityImg.color;
                 c.a = 1;

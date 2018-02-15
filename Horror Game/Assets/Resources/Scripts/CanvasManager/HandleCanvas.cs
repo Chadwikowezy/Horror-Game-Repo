@@ -23,16 +23,16 @@ public class HandleCanvas : MonoBehaviour
 
     void Start()
     {
-        canUseButtons = true;
+        canUseButtons = true;        
     }
 
-    //void Update()
-    //{
-    //    framerate += (Time.unscaledDeltaTime - framerate) * 0.1f;
-    //    float msec = framerate * 1000.0f;
-    //    float fps = 1.0f / framerate;
+    /*void Update()
+    {
+        framerate += (Time.unscaledDeltaTime - framerate) * 0.1f;
+        float msec = framerate * 1000.0f;
+        float fps = 1.0f / framerate;
 
-    //    framerateTxt.text = "Framerate: " + ((int)fps).ToString();
-    //}
+        framerateTxt.text = "Framerate: " + ((int)fps).ToString();
+    }*/
     #endregion
 }

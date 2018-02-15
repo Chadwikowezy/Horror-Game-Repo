@@ -41,7 +41,7 @@ public class MausoleumPuzzleManager : MonoBehaviour
         sectionManager.cryptPuzzle = true;
         gameController.Save();
 
-        SceneManager.LoadScene("Graveyard Cutscene", LoadSceneMode.Additive);
+        SceneManager.LoadScene("Graveyard Cutscene");
     }
     #endregion
 }

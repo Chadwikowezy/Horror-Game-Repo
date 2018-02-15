@@ -135,10 +135,12 @@ public class CameraMotor : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         Spector spector = FindObjectOfType<Spector>();
         Vector3 monsterDir = new Vector3(spector.transform.position.x, transform.position.y, spector.transform.position.z);
-        Vector3 knockbackDir = monsterDir - transform.position;
-
-        GetComponent<Rigidbody>().AddForce(-knockbackDir.normalized * 500f);
-        yield return new WaitForSeconds(.5f);
+        if(gameObject.layer == LayerMask.NameToLayer("Default"))
+        {
+            Vector3 knockbackDir = monsterDir - transform.position;
+            GetComponent<Rigidbody>().AddForce(-knockbackDir.normalized * 500f);
+        }        
+        yield return new WaitForSeconds(1f);
         insanityManager.AlterInsanity(1);
         handleCanvas.canUseButtons = true;
     }

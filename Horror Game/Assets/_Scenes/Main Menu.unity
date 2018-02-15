@@ -203,7 +203,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 73827030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -884.99994, y: 585.42804, z: 0}
+  m_LocalPosition: {x: -885, y: 584.87024, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1725971138}
@@ -2112,7 +2112,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 867418389}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -834.99994, y: -100, z: 0}
+  m_LocalPosition: {x: -835, y: -100, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 199671140}
@@ -4480,6 +4480,7 @@ GameObject:
   - component: {fileID: 1725971137}
   - component: {fileID: 1725971136}
   - component: {fileID: 1725971135}
+  - component: {fileID: 1725971139}
   m_Layer: 5
   m_Name: Main Menu Canvas
   m_TagString: Untagged
@@ -4551,8 +4552,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1725971134}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 420.5, y: 263, z: 0}
-  m_LocalScale: {x: 0.43802086, y: 0.43802086, z: 0.43802086}
+  m_LocalPosition: {x: 462.5, y: 289, z: 0}
+  m_LocalScale: {x: 0.48177084, y: 0.48177084, z: 0.48177084}
   m_Children:
   - {fileID: 73827031}
   - {fileID: 867418390}
@@ -4567,6 +4568,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1725971139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1725971134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7895524ace5b2a48a4ebf3b67fd3e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canUseButtons: 0
 --- !u!1 &1755498676
 GameObject:
   m_ObjectHideFlags: 0

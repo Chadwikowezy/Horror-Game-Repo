@@ -19,6 +19,8 @@ public class OPCS_DoorController : MonoBehaviour
     public AudioClip womanWailing;
     public AudioSource heartSound;
 
+    public GameObject loadingScreen;
+
     void Start ()
     {
         anim = GetComponent<Animator>();
@@ -82,7 +84,10 @@ public class OPCS_DoorController : MonoBehaviour
         cam.rotSpeed = .3f;
         cam.target = cam.panRotTransforms[4].transform;
 
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
+        loadingScreen.SetActive(true);
+
+        yield return new WaitForSeconds(1f);
         SceneManager.LoadScene("Mansion");
     }
 

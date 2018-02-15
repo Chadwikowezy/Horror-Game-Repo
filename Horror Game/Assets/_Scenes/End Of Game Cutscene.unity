@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 1
   m_FogColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.05
+  m_FogDensity: 0.1
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.1, g: 0.1, b: 0.1, a: 1}
@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 4
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -14213,6 +14213,7 @@ GameObject:
   - component: {fileID: 1088454671}
   - component: {fileID: 1088454670}
   - component: {fileID: 1088454674}
+  - component: {fileID: 1088454675}
   m_Layer: 5
   m_Name: End Game Canvas
   m_TagString: Untagged
@@ -14284,8 +14285,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1088454669}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 349.5, y: 218.5, z: 0}
-  m_LocalScale: {x: 0.436875, y: 0.436875, z: 0.436875}
+  m_LocalPosition: {x: 185.5, y: 116, z: 0}
+  m_LocalScale: {x: 0.231875, y: 0.231875, z: 0.231875}
   m_Children:
   - {fileID: 1188603194}
   - {fileID: 1928627570}
@@ -14319,6 +14320,18 @@ MonoBehaviour:
   audioSource_01: {fileID: 756859220}
   audioSource_02: {fileID: 756859223}
   audioSource_03: {fileID: 756859222}
+--- !u!114 &1088454675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1088454669}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7895524ace5b2a48a4ebf3b67fd3e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canUseButtons: 0
 --- !u!1 &1095087594
 GameObject:
   m_ObjectHideFlags: 0
@@ -14613,6 +14626,11 @@ Prefab:
       propertyPath: rotateSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 137493690658235704, guid: ce4bdb578b4e519428d72080bf0170e9,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 94bd44b44cbd63f4582e149106902dfe, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ce4bdb578b4e519428d72080bf0170e9, type: 2}
   m_IsPrefabParent: 0
@@ -23400,15 +23418,15 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0.597}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.6
-  far clip plane: 1000
+  near clip plane: 0.75
+  far clip plane: 70
   field of view: 60
   orthographic: 0
   orthographic size: 5
