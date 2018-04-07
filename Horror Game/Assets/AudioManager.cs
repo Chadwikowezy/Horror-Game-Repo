@@ -71,7 +71,7 @@ public class AudioManager : MonoBehaviour
     {
         playRandomToneClip = false;
         int clipValue = Random.Range(0, levelToneSoundClips.Count);
-        Debug.Log("clip val:" + clipValue);
+       // Debug.Log("clip val:" + clipValue);
         levelToneSounds.clip = levelToneSoundClips[clipValue];
         levelToneSounds.Play();
 

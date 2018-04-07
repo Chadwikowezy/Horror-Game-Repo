@@ -39,6 +39,10 @@ public class CameraMotor : MonoBehaviour
     private Vector3 dir;
     private Vector3 targetEuler;
     private Quaternion lookRotation;
+
+    public List<GameObject> layerObjects = new List<GameObject>();
+
+    public bool canKnockback;
     #endregion
 
     #region start
@@ -115,7 +119,20 @@ public class CameraMotor : MonoBehaviour
 
     public void MonsterAttackEffect()//Chad - for spector attack
     {
+        if (gameObject.layer == LayerMask.NameToLayer("Default"))
+        {
+            canKnockback = true;
+        }
+        else
+        {
+            canKnockback = false;
+        }
         handleCanvas.canUseButtons = false;
+        for (int i = 0; i < layerObjects.Count; i++)
+        {
+            layerObjects[i].layer = LayerMask.NameToLayer("Invisible");
+        }
+
         Spector spector = FindObjectOfType<Spector>();
 
         Vector3 playerDir = new Vector3(spector.transform.position.x, transform.position.y, spector.transform.position.z);
@@ -135,13 +152,21 @@ public class CameraMotor : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         Spector spector = FindObjectOfType<Spector>();
         Vector3 monsterDir = new Vector3(spector.transform.position.x, transform.position.y, spector.transform.position.z);
-        if(gameObject.layer == LayerMask.NameToLayer("Default"))
+        if(canKnockback == true)
         {
             Vector3 knockbackDir = monsterDir - transform.position;
             GetComponent<Rigidbody>().AddForce(-knockbackDir.normalized * 500f);
-        }        
-        yield return new WaitForSeconds(1f);
-        insanityManager.AlterInsanity(1);
+            canKnockback = false;
+        }
         handleCanvas.canUseButtons = true;
+        insanityManager.AlterInsanity(1);
+        yield return new WaitForSeconds(1f);
+        if(insanityManager.CurrentInsanity < insanityManager.maxInsanity)
+        {
+            for (int i = 0; i < layerObjects.Count; i++)
+            {
+                layerObjects[i].layer = LayerMask.NameToLayer("Default");
+            }
+        }      
     }
 }

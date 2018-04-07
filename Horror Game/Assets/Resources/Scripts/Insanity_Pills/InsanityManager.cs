@@ -32,7 +32,6 @@ public class InsanityManager : MonoBehaviour
     public int pillStackMax = 3;
 
     //private CameraMotor cameraMotor;
-    //private PlayerMotor playerMotor;
     private HandleCanvas handleCanvas;
     //private int sensitivityLvl;
 
@@ -45,11 +44,13 @@ public class InsanityManager : MonoBehaviour
 
     public UnityAds unityAds;
 
+    //private PlayerMotor playerMotor;
+
     void Start()
     {
         insanityImg = GetComponentInChildren<Image>();
-        //cameraMotor = FindObjectOfType<CameraMotor>();
         //playerMotor = FindObjectOfType<PlayerMotor>();
+        //cameraMotor = FindObjectOfType<CameraMotor>();
         handleCanvas = FindObjectOfType<HandleCanvas>();
         mainCamera = Camera.main;
         audioManager = FindObjectOfType<AudioManager>();
@@ -68,7 +69,7 @@ public class InsanityManager : MonoBehaviour
                 //handleCanvas.canUseButtons = true;
 
                 audioManager.breath_Heartbeat.volume = .5f;
-
+           
                 //sensitivityLvl = 3;
                 //playerMotor.sensitivity = sensitivityLvl;
                 //cameraMotor.sensitivityY = sensitivityLvl;
@@ -92,7 +93,7 @@ public class InsanityManager : MonoBehaviour
                 //handleCanvas.canUseButtons = true;
 
                 audioManager.breath_Heartbeat.volume = .75f;
-
+         
                 //sensitivityLvl = 4;
                 //playerMotor.sensitivity = sensitivityLvl;
                 //cameraMotor.sensitivityY = sensitivityLvl;
@@ -116,7 +117,7 @@ public class InsanityManager : MonoBehaviour
                 //handleCanvas.canUseButtons = true;
 
                 audioManager.breath_Heartbeat.volume = 1f;
-
+            
                 //sensitivityLvl = 5;
                 //playerMotor.sensitivity = sensitivityLvl;
                 //cameraMotor.sensitivityY = sensitivityLvl;
@@ -138,6 +139,11 @@ public class InsanityManager : MonoBehaviour
             else if (currentInsanity == 3 && maxInsanity == 3 || currentInsanity == 1 && maxInsanity == 1 || currentInsanity == 2 && maxInsanity == 2)
             {
                 handleCanvas.canUseButtons = false;
+
+                /*for (int i = 0; i < cameraMotor.layerObjects.Count; i++)
+                {
+                    cameraMotor.layerObjects[i].layer = LayerMask.NameToLayer("Invisible");
+                }*/
 
                 if (insanityBreakPlay == true)
                 {

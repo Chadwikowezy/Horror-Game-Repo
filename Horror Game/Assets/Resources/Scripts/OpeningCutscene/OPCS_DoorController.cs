@@ -77,6 +77,7 @@ public class OPCS_DoorController : MonoBehaviour
         cam.target = cam.panRotTransforms[3].transform;
 
         rainSound.clip = womanWailing;
+        rainSound.loop = false;
         rainSound.volume = .15f;
         rainSound.Play();
 
